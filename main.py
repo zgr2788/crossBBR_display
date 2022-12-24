@@ -3,6 +3,7 @@ import fastapi as _fastapi
 import fastapi.templating as _templates
 import fastapi.staticfiles as _StaticFiles
 import jinja2 as _jinja2
+import os
 
 app = _fastapi.FastAPI()
 app.mount("/static", _StaticFiles.StaticFiles(directory="Static"), name="Static")
@@ -14,6 +15,16 @@ templates = _templates.Jinja2Templates(directory = "Templates")
 async def main_page(request: _fastapi.Request):
     gene_list = await _services.fetchGeneList()
     return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
+
+@app.get("/barplot/{gene_id}")
+async def main_page(request: _fastapi.Request, gene_id: str):
+    counts_dict, gene_id = await _services.fetchCounts(gene_id)
+    
+    # TODO: Implement scaling change
+    await _services.fetchCountsPlot(counts_dict, gene_id, "log1p")
+
+    return templates.TemplateResponse(gene_id + "_counts_" + "log1p" + ".html", context={'request' : request})
+
 
 """
 try:

@@ -20,7 +20,7 @@ count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.
 sample_table = _pd.read_csv("sampleTable_final_ideal_dots.csv")
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
 tissues = set(list(sample_tissue_map.values()))
-genes_ref = _pd.read_csv("Counts/Gene_names_ref.csv")
+genes_ref = _pd.read_csv("Gene_names_ref.csv")
 aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
 
 # Precondition : none
@@ -31,7 +31,7 @@ async def fetchGeneList():
 
 # Precondition: gene_id -> str
 # Returns : counts_dict = {filename : counts sum per tissue group} 
-def fetchCounts(gene_id):
+async def fetchCounts(gene_id):
     counts_dict = {}
     
     for id, df in count_dict.items():
@@ -54,7 +54,7 @@ def fetchCounts(gene_id):
 
 # Precondition : counts -> dict from fetchCounts
 # Returns : plot for counts per tissue per sample
-def fetchCountsPlot(counts_dict, gene_id, scale_type):
+async def fetchCountsPlot(counts_dict, gene_id, scale_type):
     
 
     fnames = list(counts_dict.keys())
@@ -89,7 +89,7 @@ def fetchCountsPlot(counts_dict, gene_id, scale_type):
         scale_type = "sqrt"
         counts = [_np.sqrt(count) for count in counts]
 
-    _io.output_file(gene_id + "_counts_" + scale_type + ".html")
+    _io.output_file("Templates/" + gene_id + "_counts_" + scale_type + ".html", title=gene_id + "_counts_" + scale_type)
     _plot.curdoc().theme = 'light_minimal'
 
     source = _plotmod.ColumnDataSource(data=dict(x=x, counts=counts))
@@ -114,7 +114,7 @@ def fetchCountsPlot(counts_dict, gene_id, scale_type):
     p.xaxis.major_label_orientation = 1
     p.xgrid.grid_line_color = None
 
-    _io.show(p)
+    _io.save(p)
 
 
 # Precondition : counts -> dict from fetchCounts
@@ -206,4 +206,4 @@ def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     p.xaxis.major_label_orientation = 1
     p.xgrid.grid_line_color = None
 
-    _io.show(p)
+    _io.save(p)
