@@ -9,7 +9,6 @@ import bokeh.transform as _trans
 from bokeh.palettes import Category20
 from bokeh.sampledata.autompg2 import autompg2
 
-templates = "Templates/"
 counts = "Counts/"
 aggreg = "Aggregs/"
 
