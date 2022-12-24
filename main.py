@@ -18,6 +18,17 @@ async def main_page(request: _fastapi.Request):
     gene_list = await _services.fetchGeneList()
     return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
 
+# Main page search function
+@app.post("/")
+async def main_page(request: _fastapi.Request, search_string : str = _fastapi.Form()):
+
+    gene_list = await _services.fetchGeneList()
+
+    if search_string:
+        gene_list = gene_list[gene_list["gene_names"].str.contains(search_string, case=False)]
+
+    return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
+
 @app.get("/barplot/{gene_id}")
 async def main_page(request: _fastapi.Request, gene_id: str):
     counts_dict, gene_id = await _services.fetchCounts(gene_id)

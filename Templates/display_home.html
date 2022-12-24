@@ -17,7 +17,7 @@
     <!--navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><h1>Aggregation Results Explorer</h1></a>
+        <a class="navbar-brand" href="#"><h1><p class="text-primary">Aggregation Results Explorer</p></h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,10 +25,16 @@
           <ul class="navbar-nav me-auto">
             <!--add navbar items here-->
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-sm-2" type="search" placeholder="Gene symbol (ex. CLDN6)">
+
+          <!--implement search here-->
+          <form class="d-flex mx-auto" method="post">
+            <input class="form-control me-sm-2" type="search" name="search_string" placeholder="Gene symbol (ex. CLDN6)" required>
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Filter</button>
+            &nbsp&nbsp
+            <a class="btn btn-secondary my-2 my-sm-0" href="">Reset</a>
           </form>
+
+          
         </div>
       </div>
     </nav>
@@ -38,8 +44,8 @@
         <tr>
           <th scope="col"><p class="text-info">Ensembl ID</p></th>
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
-          <th scope="col"><p class="text-info">Rank p-val</th>
-          <th scope="col"></th>
+          <th scope="col"><p class="text-info">Rank p-val</p></th>
+          <th scope="col"><p class="text-info">Actions</p></th>
         </tr>
       </thead>
       <tbody>
