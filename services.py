@@ -46,6 +46,7 @@ def fetchCounts(gene_id):
 
     return counts_dict, gene_id 
 
+
 # Precondition : counts -> dict from fetchCounts
 # Returns : plot for counts per tissue per sample
 def fetchCountsPlot(counts_dict, gene_id, scale_type):
@@ -105,11 +106,10 @@ def fetchCountsPlot(counts_dict, gene_id, scale_type):
         source=source,
         fill_color=_trans.factor_cmap('x', palette=Category20[len(cols)], factors=cols, start=1, end=2))
     
-    p.y_range.start = 0
-    p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
     p.xgrid.grid_line_color = None
 
+    _io.show(p)
 
 
 # Precondition : counts -> dict from fetchCounts
@@ -200,3 +200,5 @@ def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
     p.xgrid.grid_line_color = None
+
+    _io.show(p)
