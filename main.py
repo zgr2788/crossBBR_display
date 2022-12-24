@@ -13,6 +13,8 @@ templates = _templates.Jinja2Templates(directory = "Templates")
 # Main page
 @app.get("/")
 async def main_page(request: _fastapi.Request):
+    
+    # TODO: Implement string search for gene symbols
     gene_list = await _services.fetchGeneList()
     return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
 
@@ -25,6 +27,15 @@ async def main_page(request: _fastapi.Request, gene_id: str):
 
     return templates.TemplateResponse(gene_id + "_counts_" + "log1p" + ".html", context={'request' : request})
 
+
+@app.get("/boxplot/{gene_id}")
+async def main_page(request: _fastapi.Request, gene_id: str):
+    counts_dict, gene_id = await _services.fetchCounts(gene_id)
+    
+    # TODO: Implement scaling change
+    await _services.fetchCountsBoxPlot(counts_dict, gene_id, "log1p")
+
+    return templates.TemplateResponse(gene_id + "_counts_boxplot_" + "log1p" + ".html", context={'request' : request})
 
 """
 try:

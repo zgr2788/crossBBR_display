@@ -119,7 +119,7 @@ async def fetchCountsPlot(counts_dict, gene_id, scale_type):
 
 # Precondition : counts -> dict from fetchCounts
 # Returns : boxplot for counts across 5 runs per tissue 
-def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
+async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     
 
     fnames = list(counts_dict.keys())
@@ -168,7 +168,7 @@ def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
         graph_df["q3"] = _np.sqrt(graph_df["q3"])
 
 
-    _io.output_file(gene_id + "_counts_boxplot_" + scale_type + ".html")
+    _io.output_file("Templates/" + gene_id + "_counts_boxplot_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
     _plot.curdoc().theme = 'light_minimal'
 
 
