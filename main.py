@@ -5,14 +5,15 @@ import fastapi.staticfiles as _StaticFiles
 import jinja2 as _jinja2
 
 app = _fastapi.FastAPI()
-app.mount("/static", _StaticFiles.StaticFiles(directory="static"), name="static")
+app.mount("/static", _StaticFiles.StaticFiles(directory="Static"), name="Static")
 templates = _templates.Jinja2Templates(directory = "Templates")
 
 
 # Main page
 @app.get("/")
 async def main_page(request: _fastapi.Request):
-    return templates.TemplateResponse('display_home.html', context = {'request' : request})
+    gene_list = await _services.fetchGeneList()
+    return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
 
 """
 try:

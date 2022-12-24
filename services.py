@@ -20,7 +20,13 @@ count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.
 sample_table = _pd.read_csv("sampleTable_final_ideal_dots.csv")
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
 tissues = set(list(sample_tissue_map.values()))
-#aggreg_dict = {fname : _pd.read_csv(aggreg + fname, index_col=0) for fname in os.listdir(aggreg)}
+genes_ref = _pd.read_csv("Counts/Gene_names_ref.csv")
+aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
+
+# Precondition : none
+# Returns : Gene list -> List of genes with attributes
+async def fetchGeneList():
+    return(aggreg_ref)
 
 
 # Precondition: gene_id -> str
