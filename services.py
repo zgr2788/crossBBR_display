@@ -88,10 +88,13 @@ def fetchCountsPlot(counts_dict, gene_id, scale_type):
     source = _plotmod.ColumnDataSource(data=dict(x=x, counts=counts))
 
     p = _plot.figure(
-        x_range=_plotmod.FactorRange(*x), 
+        x_range=_plotmod.FactorRange(*x, bound = "auto"),
+        y_range= _plotmod.Range1d(0, max(counts), bounds="auto"),
         width = int(1920 * 0.9), 
         height= int(1080 * 0.9), 
         title= gene_id + " Counts per Tissue per Run (" + scale_type + " scaled)",
+        y_axis_label="Normalized Count",
+        sizing_mode='scale_width'
         )
 
     p.vbar(
@@ -105,8 +108,6 @@ def fetchCountsPlot(counts_dict, gene_id, scale_type):
     p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
     p.xgrid.grid_line_color = None
-
-    _io.show(p)
 
 
 
@@ -145,87 +146,61 @@ def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     q3 = [data_qtiles[tissue][2] for tissue in cols] * len(fnames)
 
     graph_df = _pd.DataFrame.from_dict({'Tissue' : col_tis, 'Count' : count_data, 'q1' : q1, 'q2' : q2, 'q3' : q3})
-    print(graph_df.head())
-    #print(qtile_col_list)
 
-    """
-    x = [(run, tiss) for run in fnames for tiss in cols]
-    counts  = [counts_dict[fname][tiss] for fname in fnames for tiss in cols]
 
     if scale_type == "log1p":
-        counts = [_np.log1p(count) for count in counts]
+        graph_df["Count"] = _np.log1p(graph_df["Count"])
+        graph_df["q1"] = _np.log1p(graph_df["q1"])
+        graph_df["q2"] = _np.log1p(graph_df["q2"])
+        graph_df["q3"] = _np.log1p(graph_df["q3"])
+
     else:
         scale_type = "sqrt"
-        counts = [_np.sqrt(count) for count in counts]
+        graph_df["Count"] = _np.sqrt(graph_df["Count"])
+        graph_df["q1"] = _np.sqrt(graph_df["q1"])
+        graph_df["q2"] = _np.sqrt(graph_df["q2"])
+        graph_df["q3"] = _np.sqrt(graph_df["q3"])
 
-    _io.output_file(gene_id + "_counts_" + scale_type + ".html")
 
-    source = _plotmod.ColumnDataSource(data=dict(x=x, counts=counts))
+    _io.output_file(gene_id + "_counts_boxplot_" + scale_type + ".html")
+
+
+    iqr = graph_df.q3 - graph_df.q1
+    graph_df["upper"] = graph_df.q3 + 1.5*iqr
+    graph_df["lower"] = graph_df.q1 - 1.5*iqr
+    graph_df.lower = [max(curVal, 0) for curVal in graph_df.lower]
+
+
+    source = _plotmod.ColumnDataSource(graph_df)
 
     p = _plot.figure(
-        x_range=_plotmod.FactorRange(*x), 
+        x_range=_plotmod.FactorRange(*cols, bounds="auto"),
+        title= gene_id + " counts distribution across Runs per Tissue",
+        y_axis_label="Normalized counts",
         width = int(1920 * 0.9), 
-        height= int(1080 * 0.9), 
-        title= gene_id + " Counts per Tissue per Run (" + scale_type + " scaled)",
-        )
+        height= int(1080 * 0.9),
+        sizing_mode='scale_width',
+        y_range=_plotmod.Range1d(0, max([num for num in graph_df.to_numpy().flatten() if isinstance(num, float)]), bounds="auto")
+    )
 
-    p.vbar(
-        x='x', 
-        top='counts', 
-        width=0.9, 
-        source=source,
-        fill_color=_trans.factor_cmap('x', palette=Category20[len(cols)], factors=cols, start=1, end=2))
-    
+    whisker = _plotmod.Whisker(base="Tissue", upper="upper", lower="lower", source=source)
+    whisker.upper_head.size = whisker.lower_head.size = 20
+    p.add_layout(whisker)
+
+    cmap = _trans.factor_cmap("Tissue", palette=Category20[len(cols)], factors=cols)
+    p.vbar("Tissue", 0.7, "q2", "q3", source=source, color=cmap, line_color="black")
+    p.vbar("Tissue", 0.7, "q1", "q2", source=source, color=cmap, line_color="black")
+
+    outliers = graph_df[~graph_df.Count.between(graph_df.lower, graph_df.upper)]
+    p.scatter("Tissue", "Count", source=outliers, size=6, color="black", alpha=0.3)
+
     p.y_range.start = 0
     p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
     p.xgrid.grid_line_color = None
-
+   
     _io.show(p)
-    """
+
 
 counts_dict, gene_id = fetchCounts("ENSG00000184697")
 fetchCountsBoxPlot(counts_dict, gene_id, "log1p")
-
-
-df = autompg2[["class", "hwy"]].rename(columns={"class": "kind"})
-
-kinds = df.kind.unique()
-
-# compute quantiles
-qs = df.groupby("kind").hwy.quantile([0.25, 0.5, 0.75])
-qs = qs.unstack().reset_index()
-qs.columns = ["kind", "q1", "q2", "q3"]
-
-df = _pd.merge(df, qs, on="kind", how="left")
-print(df.head())
-"""
-# compute IQR outlier bounds
-iqr = df.q3 - df.q1
-df["upper"] = df.q3 + 1.5*iqr
-df["lower"] = df.q1 - 1.5*iqr
-
-source = ColumnDataSource(df)
-
-p = figure(x_range=kinds, tools="", toolbar_location=None,
-           title="Highway MPG distribution by vehicle class",
-           background_fill_color="#eaefef", y_axis_label="MPG")
-
-# outlier range
-whisker = Whisker(base="kind", upper="upper", lower="lower", source=source)
-whisker.upper_head.size = whisker.lower_head.size = 20
-p.add_layout(whisker)
-
-# quantile boxes
-cmap = factor_cmap("kind", "TolRainbow7", kinds)
-p.vbar("kind", 0.7, "q2", "q3", source=source, color=cmap, line_color="black")
-p.vbar("kind", 0.7, "q1", "q2", source=source, color=cmap, line_color="black")
-
-# outliers
-outliers = df[~df.hwy.between(df.lower, df.upper)]
-p.scatter("kind", "hwy", source=outliers, size=6, color="black", alpha=0.3)
-
-p.xgrid.grid_line_color = None
-p.axis.major_label_text_font_size="14px"
-p.axis.axis_label_text_font_size="12px"
-"""
