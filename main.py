@@ -13,8 +13,6 @@ templates = _templates.Jinja2Templates(directory = "Templates")
 # Main page
 @app.get("/")
 async def main_page(request: _fastapi.Request):
-    
-    # TODO: Implement string search for gene symbols
     gene_list = await _services.fetchGeneList()
     return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
 
@@ -30,7 +28,7 @@ async def main_page(request: _fastapi.Request, search_string : str = _fastapi.Fo
     return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
 
 @app.get("/barplot/{gene_id}")
-async def main_page(request: _fastapi.Request, gene_id: str):
+async def main_page(request: _fastapi.Request, gene_id: str, sqrt : bool = _fastapi.Form(False), log1p : bool = _fastapi.Form(False)):
     counts_dict, gene_id = await _services.fetchCounts(gene_id)
     
     # TODO: Implement scaling change

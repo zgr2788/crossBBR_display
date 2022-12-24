@@ -14,7 +14,7 @@
 
 
 
-    <!--navbar -->
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><h1><p class="text-primary">Aggregation Results Explorer</p></h1></a>
@@ -23,18 +23,33 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
-            <!--add navbar items here-->
+            <!-- add navbar items here -->
+            <li class="nav-item px-5"></li>
+            <li class="nav-item px-5"></li>
+            <!-- substring search for symbols -->
+            <li class="nav-item px-5">
+              <form class="d-flex" method="post">
+                <input class="form-control me-sm-2" type="search" name="search_string" placeholder="Gene symbol (ex. CLDN6)" required>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Filter</button>
+                &nbsp&nbsp
+                <a class="btn btn-secondary my-2 my-sm-0" href="">Reset</a>
+              </form>
+            </li>
+            <li class="nav-item px-5"></li>
+            <li class="nav-item px-5"></li>
+            <!-- select normalization type -->
+            <li class = "nav-item px-2"> 
+              <h2><p class="text-info">Normalization:</p></h2>
+            </li>
+            <li class="nav-item px-2">
+              <div class="btn-group" role="group">
+                <input type="radio" class="btn-check" name="sqrt" id="btnradio1" autocomplete="off" checked="">
+                <label class="btn btn-outline-primary" for="btnradio1">sqrt</label>
+                <input type="radio" class="btn-check" name="log1p" id="btnradio2" autocomplete="off" checked="">
+                <label class="btn btn-outline-primary" for="btnradio2">log1p</label>
+              </div>
+            </li>
           </ul>
-
-          <!--implement search here-->
-          <form class="d-flex mx-auto" method="post">
-            <input class="form-control me-sm-2" type="search" name="search_string" placeholder="Gene symbol (ex. CLDN6)" required>
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Filter</button>
-            &nbsp&nbsp
-            <a class="btn btn-secondary my-2 my-sm-0" href="">Reset</a>
-          </form>
-
-          
         </div>
       </div>
     </nav>
