@@ -84,11 +84,12 @@ def fetchCountsPlot(counts_dict, gene_id, scale_type):
         counts = [_np.sqrt(count) for count in counts]
 
     _io.output_file(gene_id + "_counts_" + scale_type + ".html")
+    _plot.curdoc().theme = 'light_minimal'
 
     source = _plotmod.ColumnDataSource(data=dict(x=x, counts=counts))
 
     p = _plot.figure(
-        x_range=_plotmod.FactorRange(*x, bound = "auto"),
+        x_range=_plotmod.FactorRange(*x, bounds = "auto"),
         y_range= _plotmod.Range1d(0, max(counts), bounds="auto"),
         width = int(1920 * 0.9), 
         height= int(1080 * 0.9), 
@@ -163,6 +164,7 @@ def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
 
 
     _io.output_file(gene_id + "_counts_boxplot_" + scale_type + ".html")
+    _plot.curdoc().theme = 'light_minimal'
 
 
     iqr = graph_df.q3 - graph_df.q1
@@ -198,9 +200,3 @@ def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     p.x_range.range_padding = 0.1
     p.xaxis.major_label_orientation = 1
     p.xgrid.grid_line_color = None
-   
-    _io.show(p)
-
-
-counts_dict, gene_id = fetchCounts("ENSG00000184697")
-fetchCountsBoxPlot(counts_dict, gene_id, "log1p")

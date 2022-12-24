@@ -28,7 +28,6 @@ elif service == "ctrbox":
         sys.exit()
     _services.fetchCountsBoxPlot(counts_dict, gene_id, scale_type)
 
-
 else:
     print("Service not recognized")
     sys.exit()
