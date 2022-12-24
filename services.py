@@ -7,6 +7,7 @@ import bokeh.plotting as _plot
 import bokeh.models as _plotmod
 import bokeh.transform as _trans
 from bokeh.palettes import Category20
+from bokeh.sampledata.autompg2 import autompg2
 
 templates = "Templates/"
 counts = "Counts/"
@@ -133,10 +134,21 @@ def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     for tissue in cols:
         tiss_count_list = [counts_dict[fname][tissue] for fname in fnames]
         data[tissue] = tiss_count_list
+    
+    data_qtiles = {tissue : [_np.quantile(data[tissue], quant) for quant in [0.25,0.50,0.75]] for tissue in cols}
+    qtile_col_list = [data_qtiles[tissue] for tissue in cols]
 
-    data['run'] = fnames
+    col_tis = cols*len(fnames)
+    count_data = [data[tissue][i] for i in range(len(fnames)) for tissue in cols]
+    q1 = [data_qtiles[tissue][0] for tissue in cols] * len(fnames)
+    q2 = [data_qtiles[tissue][1] for tissue in cols] * len(fnames)
+    q3 = [data_qtiles[tissue][2] for tissue in cols] * len(fnames)
 
+    graph_df = _pd.DataFrame.from_dict({'Tissue' : col_tis, 'Count' : count_data, 'q1' : q1, 'q2' : q2, 'q3' : q3})
+    print(graph_df.head())
+    #print(qtile_col_list)
 
+    """
     x = [(run, tiss) for run in fnames for tiss in cols]
     counts  = [counts_dict[fname][tiss] for fname in fnames for tiss in cols]
 
@@ -170,5 +182,50 @@ def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     p.xgrid.grid_line_color = None
 
     _io.show(p)
+    """
+
+counts_dict, gene_id = fetchCounts("ENSG00000184697")
+fetchCountsBoxPlot(counts_dict, gene_id, "log1p")
 
 
+df = autompg2[["class", "hwy"]].rename(columns={"class": "kind"})
+
+kinds = df.kind.unique()
+
+# compute quantiles
+qs = df.groupby("kind").hwy.quantile([0.25, 0.5, 0.75])
+qs = qs.unstack().reset_index()
+qs.columns = ["kind", "q1", "q2", "q3"]
+
+df = _pd.merge(df, qs, on="kind", how="left")
+print(df.head())
+"""
+# compute IQR outlier bounds
+iqr = df.q3 - df.q1
+df["upper"] = df.q3 + 1.5*iqr
+df["lower"] = df.q1 - 1.5*iqr
+
+source = ColumnDataSource(df)
+
+p = figure(x_range=kinds, tools="", toolbar_location=None,
+           title="Highway MPG distribution by vehicle class",
+           background_fill_color="#eaefef", y_axis_label="MPG")
+
+# outlier range
+whisker = Whisker(base="kind", upper="upper", lower="lower", source=source)
+whisker.upper_head.size = whisker.lower_head.size = 20
+p.add_layout(whisker)
+
+# quantile boxes
+cmap = factor_cmap("kind", "TolRainbow7", kinds)
+p.vbar("kind", 0.7, "q2", "q3", source=source, color=cmap, line_color="black")
+p.vbar("kind", 0.7, "q1", "q2", source=source, color=cmap, line_color="black")
+
+# outliers
+outliers = df[~df.hwy.between(df.lower, df.upper)]
+p.scatter("kind", "hwy", source=outliers, size=6, color="black", alpha=0.3)
+
+p.xgrid.grid_line_color = None
+p.axis.major_label_text_font_size="14px"
+p.axis.axis_label_text_font_size="12px"
+"""
