@@ -88,8 +88,72 @@ def fetchCountsPlot(counts_dict, gene_id, scale_type):
 
     p = _plot.figure(
         x_range=_plotmod.FactorRange(*x), 
-        width = 1920, 
-        height=1080, 
+        width = int(1920 * 0.9), 
+        height= int(1080 * 0.9), 
+        title= gene_id + " Counts per Tissue per Run (" + scale_type + " scaled)",
+        )
+
+    p.vbar(
+        x='x', 
+        top='counts', 
+        width=0.9, 
+        source=source,
+        fill_color=_trans.factor_cmap('x', palette=Category20[len(cols)], factors=cols, start=1, end=2))
+    
+    p.y_range.start = 0
+    p.x_range.range_padding = 0.1
+    p.xaxis.major_label_orientation = 1
+    p.xgrid.grid_line_color = None
+
+    _io.show(p)
+
+
+
+# Precondition : counts -> dict from fetchCounts
+# Returns : boxplot for counts across 5 runs per tissue 
+def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
+    
+
+    fnames = list(counts_dict.keys())
+    cols = list(counts_dict["Counts_raw.csv"].keys())
+
+    if cols[0] != "Brain":
+        idx = 1
+        
+        while cols[idx] != "Brain":
+            idx += 1
+        
+        temp = cols[0]
+        cols[0] = cols[idx]
+        cols[idx] = temp 
+
+
+    data = {}
+
+    for tissue in cols:
+        tiss_count_list = [counts_dict[fname][tissue] for fname in fnames]
+        data[tissue] = tiss_count_list
+
+    data['run'] = fnames
+
+
+    x = [(run, tiss) for run in fnames for tiss in cols]
+    counts  = [counts_dict[fname][tiss] for fname in fnames for tiss in cols]
+
+    if scale_type == "log1p":
+        counts = [_np.log1p(count) for count in counts]
+    else:
+        scale_type = "sqrt"
+        counts = [_np.sqrt(count) for count in counts]
+
+    _io.output_file(gene_id + "_counts_" + scale_type + ".html")
+
+    source = _plotmod.ColumnDataSource(data=dict(x=x, counts=counts))
+
+    p = _plot.figure(
+        x_range=_plotmod.FactorRange(*x), 
+        width = int(1920 * 0.9), 
+        height= int(1080 * 0.9), 
         title= gene_id + " Counts per Tissue per Run (" + scale_type + " scaled)",
         )
 

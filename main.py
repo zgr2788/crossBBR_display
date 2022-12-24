@@ -10,6 +10,7 @@ except:
 
 import services as _services
 
+# ctr
 if service == "ctr":
     try:
         counts_dict, gene_id = _services.fetchCounts(gene_id)
@@ -17,6 +18,16 @@ if service == "ctr":
         print("Gene ID not recognized")
         sys.exit()
     _services.fetchCountsPlot(counts_dict, gene_id, scale_type)
+
+#ctr-box
+elif service == "ctrbox":
+    try:
+        counts_dict, gene_id = _services.fetchCounts(gene_id)
+    except:
+        print("Gene ID not recognized")
+        sys.exit()
+    _services.fetchCountsBoxPlot(counts_dict, gene_id, scale_type)
+
 
 else:
     print("Service not recognized")
