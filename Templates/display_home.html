@@ -37,19 +37,6 @@
             </li>
             <li class="nav-item px-5"></li>
             <li class="nav-item px-5"></li>
-            <!-- select normalization type -->
-            <li class = "nav-item px-2"> 
-              <h2><p class="text-info">Normalization:</p></h2>
-            </li>
-            <li class="nav-item px-2">
-              {% if scale_mode == 'log1p' %}
-              <a href="/setscale/sqrt" class="btn btn-outline-primary">sqrt</a>
-              <a href="/setscale/log1p" class="btn btn-primary">log1p</a>
-              {% else %}
-              <a href="/setscale/sqrt" class="btn btn-primary">sqrt</a>
-              <a href="/setscale/log1p" class="btn btn-outline-primary">log1p</a>
-              {% endif %}
-            </li>
           </ul>
         </div>
       </div>
@@ -61,7 +48,8 @@
           <th scope="col"><p class="text-info">Ensembl ID</p></th>
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
           <th scope="col"><p class="text-info">Rank p-val</p></th>
-          <th scope="col"><p class="text-info">Actions</p></th>
+          <th scope="col"><p class="text-info">Actions - sqrt norm</p></th>
+          <th scope="col"><p class="text-info">Actions - log1p norm</p></th>
         </tr>
       </thead>
       <tbody>
@@ -71,8 +59,12 @@
           <td>{{ val['gene_names'] }}</td>
           <td>{{ val['Score'] }}</td>
           <td>
-            <a href="/barplot/{{ val['Name'] }}" class="btn btn-primary">Counts-Bar</a>
-            <a href="/boxplot/{{ val['Name'] }}" class="btn btn-primary">Counts-Box</a>
+            <a href="/barplot/{{ val['Name'] }}/sqrt" class="btn btn-primary">Counts-Bar</a>
+            <a href="/boxplot/{{ val['Name'] }}/sqrt" class="btn btn-primary">Counts-Box</a>
+          </td>
+          <td>
+            <a href="/barplot/{{ val['Name'] }}/log1p" class="btn btn-primary">Counts-Bar</a>
+            <a href="/boxplot/{{ val['Name'] }}/log1p" class="btn btn-primary">Counts-Box</a>
           </td>
 
         </tr>
