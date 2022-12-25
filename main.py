@@ -47,7 +47,7 @@ async def bar_plot(request: _fastapi.Request, gene_id: str, btnradio = _fastapi.
     # TODO: Implement scaling change
     await _services.fetchCountsPlot(counts_dict, gene_id, scale_mode)
 
-    return templates.TemplateResponse(gene_id + "_counts_" + "log1p" + ".html", context={'request' : request})
+    return templates.TemplateResponse(gene_id + "_counts_" + scale_mode + ".html", context={'request' : request})
 
 @app.get("/boxplot/{gene_id}")
 async def box_plot(request: _fastapi.Request, gene_id: str):
@@ -56,4 +56,4 @@ async def box_plot(request: _fastapi.Request, gene_id: str):
     # TODO: Implement scaling change
     await _services.fetchCountsBoxPlot(counts_dict, gene_id, scale_mode)
 
-    return templates.TemplateResponse(gene_id + "_counts_boxplot_" + "log1p" + ".html", context={'request' : request})
+    return templates.TemplateResponse(gene_id + "_counts_boxplot_" + scale_mode + ".html", context={'request' : request})
