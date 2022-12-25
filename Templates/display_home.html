@@ -42,12 +42,13 @@
               <h2><p class="text-info">Normalization:</p></h2>
             </li>
             <li class="nav-item px-2">
-              <div class="btn-group" role="group">
-                <input type="radio" class="btn-check" name="sqrt" id="btnradio1" autocomplete="off" checked="">
-                <label class="btn btn-outline-primary" for="btnradio1">sqrt</label>
-                <input type="radio" class="btn-check" name="log1p" id="btnradio2" autocomplete="off" checked="">
-                <label class="btn btn-outline-primary" for="btnradio2">log1p</label>
-              </div>
+              {% if scale_mode == 'log1p' %}
+              <a href="/setscale/sqrt" class="btn btn-outline-primary">sqrt</a>
+              <a href="/setscale/log1p" class="btn btn-primary">log1p</a>
+              {% else %}
+              <a href="/setscale/sqrt" class="btn btn-primary">sqrt</a>
+              <a href="/setscale/log1p" class="btn btn-outline-primary">log1p</a>
+              {% endif %}
             </li>
           </ul>
         </div>
