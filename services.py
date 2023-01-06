@@ -31,7 +31,7 @@ async def fetchGeneList():
 
 # Precondition: gene_id -> str
 # Returns : counts_dict = {filename : counts sum per tissue group} 
-async def fetchCounts(gene_id):
+def fetchCounts(gene_id):
     counts_dict = {}
     
     for id, df in count_dict.items():
@@ -221,5 +221,48 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
     _io.save(p)
 
 
-def fetchCountsIntraVariancePlot(counts_dict, gene_id, scale_type = "log1p"):
-    pass
+# Precondition : counts -> count_dict primitive, NOT from fetchCounts
+# Returns : Intrasample variance plot for brain over 4 runs (cs +- / select +-) 
+def fetchCountsIntraVariancePlot(count_dict, gene_id, scale_type = "log1p"):
+    
+    # Construct data corpus
+    for id, df in count_dict.items():
+        
+        graph_df = _pd.DataFrame()
+
+        try:
+            gene_series = df.loc[gene_id]
+            q1, q2, q3 = (_np.quantile(gene_series.values, quant) for quant in [0.25,0.50,0.75])
+            cur_df = {"Run" : [id]*len(gene_series), "Count" : gene_series.values, "q1" : q1, "q2" : q2, "q3" : q3}
+            print(cur_df)
+            break    
+        except:
+            return "Gene ID not found in one of the count matrices!"
+    """    
+        gene_tis_dict = {tis_name : 0 for tis_name in tissues}
+
+        for sample_name in gene_series.index:
+            gene_tis_dict[sample_tissue_map[sample_name]] += gene_series[sample_name]
+        
+        counts_dict[id] = gene_tis_dict
+    
+    if cols[0] != "Brain":
+        idx = 1
+        
+        while cols[idx] != "Brain":
+            idx += 1
+        
+        temp = cols[0]
+        cols[0] = cols[idx]
+        cols[idx] = temp 
+
+
+    data = {}
+
+    for tissue in cols:
+        tiss_count_list = [counts_dict[fname][tissue] for fname in fnames]
+        data[tissue] = tiss_count_list
+    """
+
+gene_id = "ENSG00000184697"
+fetchCountsIntraVariancePlot(count_dict, gene_id)
