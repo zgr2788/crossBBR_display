@@ -161,7 +161,13 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
     q2 = [data_qtiles[tissue][1] for tissue in cols] * len(fnames)
     q3 = [data_qtiles[tissue][2] for tissue in cols] * len(fnames)
 
-    graph_df = _pd.DataFrame.from_dict({'Tissue' : col_tis, 'Count' : count_data, 'q1' : q1, 'q2' : q2, 'q3' : q3})
+    graph_df = _pd.DataFrame.from_dict({
+        'Tissue' : col_tis, 
+        'Count' : count_data, 
+        'q1' : q1, 
+        'q2' : q2, 
+        'q3' : q3
+    })
 
 
     # Scale values, sqrt disabled on deploy
@@ -225,19 +231,36 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
 # Returns : Intrasample variance plot for brain over 4 runs (cs +- / select +-) 
 def fetchCountsIntraVariancePlot(count_dict, gene_id, scale_type = "log1p"):
     
+    graph_df = _pd.DataFrame(columns = ["Run", "Count", "q1", "q2", "q3"])
+    brain_samples = [key for key in list(sample_tissue_map.keys()) if sample_tissue_map[key] == 'Brain']
+    print(len(brain_samples))
     # Construct data corpus
     for id, df in count_dict.items():
         
-        graph_df = _pd.DataFrame()
-
         try:
             gene_series = df.loc[gene_id]
-            q1, q2, q3 = (_np.quantile(gene_series.values, quant) for quant in [0.25,0.50,0.75])
-            cur_df = {"Run" : [id]*len(gene_series), "Count" : gene_series.values, "q1" : q1, "q2" : q2, "q3" : q3}
-            print(cur_df)
-            break    
+            sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
+            gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
+
+            gene_series_norm = _np.log1p(gene_series_filt.values)
+            
+            q1, q2, q3 = (_np.quantile(gene_series_norm, quant) for quant in [0.25,0.50,0.75])
+            
+            cur_df = _pd.DataFrame.from_dict({
+                "Run" : [id]*len(gene_series_norm), 
+                "Count" : gene_series_norm, 
+                "q1" : q1, 
+                "q2" : q2, 
+                "q3" : q3
+            })
+            
+            graph_df = _pd.concat([graph_df, cur_df])
+        
         except:
             return "Gene ID not found in one of the count matrices!"
+    
+    print(graph_df)
+
     """    
         gene_tis_dict = {tis_name : 0 for tis_name in tissues}
 
@@ -265,4 +288,4 @@ def fetchCountsIntraVariancePlot(count_dict, gene_id, scale_type = "log1p"):
     """
 
 gene_id = "ENSG00000184697"
-fetchCountsIntraVariancePlot(count_dict, gene_id)
+print(fetchCountsIntraVariancePlot(count_dict, gene_id))
