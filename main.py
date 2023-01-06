@@ -27,18 +27,18 @@ async def search_main(request: _fastapi.Request, search_string : str = _fastapi.
     return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
 
 
-@app.get("/barplot/{gene_id}/{norm}")
-async def bar_plot(request: _fastapi.Request, gene_id: str, norm : str):
+@app.get("/plots/barplot/{gene_id}/")
+async def bar_plot(request: _fastapi.Request, gene_id: str):
     counts_dict, gene_id = await _services.fetchCounts(gene_id)
     
-    await _services.fetchCountsPlot(counts_dict, gene_id, norm)
+    await _services.fetchCountsPlot(counts_dict, gene_id)
 
-    return templates.TemplateResponse(gene_id + "_counts_" + norm + ".html", context={'request' : request})
+    return templates.TemplateResponse(gene_id + "_counts_log1p" + ".html", context={'request' : request})
 
-@app.get("/boxplot/{gene_id}/{norm}")
-async def box_plot(request: _fastapi.Request, gene_id: str, norm : str):
+@app.get("/plots/boxplot/{gene_id}/")
+async def box_plot(request: _fastapi.Request, gene_id: str):
     counts_dict, gene_id = await _services.fetchCounts(gene_id)
     
-    await _services.fetchCountsBoxPlot(counts_dict, gene_id, norm)
+    await _services.fetchCountsBoxPlot(counts_dict, gene_id)
 
-    return templates.TemplateResponse(gene_id + "_counts_boxplot_" + norm + ".html", context={'request' : request})
+    return templates.TemplateResponse(gene_id + "_counts_boxplot_log1p" + ".html", context={'request' : request})

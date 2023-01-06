@@ -17,7 +17,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><h1><p class="text-primary">Aggregation Results Explorer</p></h1></a>
+        <a class="navbar-brand" href=""><h1><p class="text-primary">Aggregation Results Explorer</p></h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,8 +48,7 @@
           <th scope="col"><p class="text-info">Ensembl ID</p></th>
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
           <th scope="col"><p class="text-info">Rank p-val</p></th>
-          <th scope="col"><p class="text-info">Actions - sqrt norm</p></th>
-          <th scope="col"><p class="text-info">Actions - log1p norm</p></th>
+          <th scope="col"><p class="text-info">Actions</p></th>
         </tr>
       </thead>
       <tbody>
@@ -59,12 +58,8 @@
           <td>{{ val['gene_names'] }}</td>
           <td>{{ val['Score'] }}</td>
           <td>
-            <a href="/barplot/{{ val['Name'] }}/sqrt" class="btn btn-primary">Counts-Bar</a>
-            <a href="/boxplot/{{ val['Name'] }}/sqrt" class="btn btn-primary">Counts-Box</a>
-          </td>
-          <td>
-            <a href="/barplot/{{ val['Name'] }}/log1p" class="btn btn-primary">Counts-Bar</a>
-            <a href="/boxplot/{{ val['Name'] }}/log1p" class="btn btn-primary">Counts-Box</a>
+            <a href="/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Bar</a>
+            <a href="/plots/boxplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Box</a>
           </td>
 
         </tr>

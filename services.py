@@ -54,7 +54,7 @@ async def fetchCounts(gene_id):
 
 # Precondition : counts -> dict from fetchCounts
 # Returns : plot for counts per tissue per sample
-async def fetchCountsPlot(counts_dict, gene_id, scale_type):
+async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p"):
     
 
     fnames = list(counts_dict.keys())
@@ -119,7 +119,7 @@ async def fetchCountsPlot(counts_dict, gene_id, scale_type):
 
 # Precondition : counts -> dict from fetchCounts
 # Returns : boxplot for counts across 5 runs per tissue 
-async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
+async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
     
 
     fnames = list(counts_dict.keys())
@@ -141,6 +141,14 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     for tissue in cols:
         tiss_count_list = [counts_dict[fname][tissue] for fname in fnames]
         data[tissue] = tiss_count_list
+    
+    for key in list(data.keys()):
+        cur_list = data[key]
+        temp_avg = (max(cur_list) + min(cur_list)) / 2.0
+        cur_list = [cur_list[i] if cur_list[i] != 0 else temp_avg for i in range(len(cur_list))]
+        data[key] = cur_list
+    
+    print(data)
     
     data_qtiles = {tissue : [_np.quantile(data[tissue], quant) for quant in [0.25,0.50,0.75]] for tissue in cols}
     qtile_col_list = [data_qtiles[tissue] for tissue in cols]
@@ -207,3 +215,7 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type):
     p.xgrid.grid_line_color = None
 
     _io.save(p)
+
+
+def fetchCountsIntraVariancePlot(counts_dict, gene_id, scale_type = "log1p"):
+    pass
