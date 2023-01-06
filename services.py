@@ -56,7 +56,7 @@ async def fetchCounts(gene_id):
 # Returns : plot for counts per tissue per sample
 async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p"):
     
-
+    # Get data corpus
     fnames = list(counts_dict.keys())
     cols = list(counts_dict["Counts_raw.csv"].keys())
 
@@ -83,12 +83,14 @@ async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p"):
     x = [(run, tiss) for run in fnames for tiss in cols]
     counts  = [counts_dict[fname][tiss] for fname in fnames for tiss in cols]
 
+    # Scale values, sqrt disabled on deploy
     if scale_type == "log1p":
         counts = [_np.log1p(count) for count in counts]
     else:
         scale_type = "sqrt"
         counts = [_np.sqrt(count) for count in counts]
 
+    # Plot output
     _io.output_file("Templates/" + gene_id + "_counts_" + scale_type + ".html", title=gene_id + "_counts_" + scale_type)
     _plot.curdoc().theme = 'light_minimal'
 
@@ -121,7 +123,7 @@ async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p"):
 # Returns : boxplot for counts across 5 runs per tissue 
 async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
     
-
+    # Construct data corpus
     fnames = list(counts_dict.keys())
     cols = list(counts_dict["Counts_raw.csv"].keys())
 
@@ -142,13 +144,13 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
         tiss_count_list = [counts_dict[fname][tissue] for fname in fnames]
         data[tissue] = tiss_count_list
     
+    # Mask 0 values for less vital organs, include only 2/4 comparisons, fill rest with average of two
+    # Theoretically decreases confidence, but logical since they are bound to be 0 in the other 2 comparisons
     for key in list(data.keys()):
         cur_list = data[key]
         temp_avg = (max(cur_list) + min(cur_list)) / 2.0
         cur_list = [cur_list[i] if cur_list[i] != 0 else temp_avg for i in range(len(cur_list))]
         data[key] = cur_list
-    
-    print(data)
     
     data_qtiles = {tissue : [_np.quantile(data[tissue], quant) for quant in [0.25,0.50,0.75]] for tissue in cols}
     qtile_col_list = [data_qtiles[tissue] for tissue in cols]
@@ -162,6 +164,7 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
     graph_df = _pd.DataFrame.from_dict({'Tissue' : col_tis, 'Count' : count_data, 'q1' : q1, 'q2' : q2, 'q3' : q3})
 
 
+    # Scale values, sqrt disabled on deploy
     if scale_type == "log1p":
         graph_df["Count"] = _np.log1p(graph_df["Count"])
         graph_df["q1"] = _np.log1p(graph_df["q1"])
@@ -176,6 +179,7 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
         graph_df["q3"] = _np.sqrt(graph_df["q3"])
 
 
+    # Plot output
     _io.output_file("Templates/" + gene_id + "_counts_boxplot_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
     _plot.curdoc().theme = 'light_minimal'
 
