@@ -31,7 +31,7 @@ async def fetchGeneList():
 
 # Precondition: gene_id -> str
 # Returns : counts_dict = {filename : counts sum per tissue group} 
-def fetchCounts(gene_id):
+async def fetchCounts(gene_id):
     counts_dict = {}
     
     for id, df in count_dict.items():
@@ -229,7 +229,7 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
 
 # Precondition : counts -> count_dict primitive, NOT from fetchCounts
 # Returns : Intrasample variance plot for brain over 4 runs (cs +- / select +-) 
-def fetchCountsIntraVariancePlot(count_dict, gene_id, scale_type = "log1p"):
+async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_type = "log1p"):
     
     graph_df = _pd.DataFrame(columns = ["Run", "Count", "q1", "q2", "q3"])
     fnames = []
@@ -300,6 +300,3 @@ def fetchCountsIntraVariancePlot(count_dict, gene_id, scale_type = "log1p"):
     p.xgrid.grid_line_color = None
 
     _io.save(p)
-
-gene_id = "ENSG00000184697"
-fetchCountsIntraVariancePlot(count_dict, gene_id)

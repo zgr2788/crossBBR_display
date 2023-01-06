@@ -42,3 +42,11 @@ async def box_plot(request: _fastapi.Request, gene_id: str):
     await _services.fetchCountsBoxPlot(counts_dict, gene_id)
 
     return templates.TemplateResponse(gene_id + "_counts_boxplot_log1p" + ".html", context={'request' : request})
+
+@app.get("/plots/intravarbox/{gene_id}/")
+async def intravar_box_plot(request: _fastapi.Request, gene_id: str):
+    counts_dict, gene_id = await _services.fetchCounts(gene_id)
+    
+    await _services.fetchCountsIntraVariancePlot(gene_id)
+
+    return templates.TemplateResponse(gene_id + "_counts_intravar_box_log1p" + ".html", context={'request' : request})
