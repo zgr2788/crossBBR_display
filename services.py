@@ -232,17 +232,20 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
 def fetchCountsIntraVariancePlot(count_dict, gene_id, scale_type = "log1p"):
     
     graph_df = _pd.DataFrame(columns = ["Run", "Count", "q1", "q2", "q3"])
+    fnames = []
     brain_samples = [key for key in list(sample_tissue_map.keys()) if sample_tissue_map[key] == 'Brain']
-    print(len(brain_samples))
+    
     # Construct data corpus
     for id, df in count_dict.items():
+        
+        fnames.append(id)
         
         try:
             gene_series = df.loc[gene_id]
             sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
             gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
 
-            gene_series_norm = _np.log1p(gene_series_filt.values)
+            gene_series_norm = _np.log1p(gene_series_filt)
             
             q1, q2, q3 = (_np.quantile(gene_series_norm, quant) for quant in [0.25,0.50,0.75])
             
@@ -256,36 +259,47 @@ def fetchCountsIntraVariancePlot(count_dict, gene_id, scale_type = "log1p"):
             
             graph_df = _pd.concat([graph_df, cur_df])
         
-        except:
-            return "Gene ID not found in one of the count matrices!"
+        except Exception as err:
+            return err # "Gene ID not found in one of the count matrices!"
     
-    print(graph_df)
+    # Plot Output
+    _io.output_file("Templates/" + gene_id + "_counts_intravar_box_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
+    _plot.curdoc().theme = 'light_minimal'
 
-    """    
-        gene_tis_dict = {tis_name : 0 for tis_name in tissues}
+    iqr = graph_df.q3 - graph_df.q1
+    graph_df["upper"] = graph_df.q3 + 1.5*iqr
+    graph_df["lower"] = graph_df.q1 - 1.5*iqr
+    graph_df.lower = [max(curVal, 0) for curVal in graph_df.lower]
 
-        for sample_name in gene_series.index:
-            gene_tis_dict[sample_tissue_map[sample_name]] += gene_series[sample_name]
-        
-        counts_dict[id] = gene_tis_dict
-    
-    if cols[0] != "Brain":
-        idx = 1
-        
-        while cols[idx] != "Brain":
-            idx += 1
-        
-        temp = cols[0]
-        cols[0] = cols[idx]
-        cols[idx] = temp 
+    source = _plotmod.ColumnDataSource(graph_df)
 
+    p = _plot.figure(
+        x_range=_plotmod.FactorRange(*fnames, bounds="auto"),
+        title= gene_id + " counts intrasample variance across Runs",
+        y_axis_label="Normalized counts",
+        width = int(1920 * 0.9), 
+        height= int(1080 * 0.9),
+        sizing_mode='scale_width',
+        y_range=_plotmod.Range1d(0, max([num for num in graph_df.to_numpy().flatten() if isinstance(num, float)]), bounds="auto")
+    )
 
-    data = {}
+    whisker = _plotmod.Whisker(base="Run", upper="upper", lower="lower", source=source)
+    whisker.upper_head.size = whisker.lower_head.size = 20
+    p.add_layout(whisker)
 
-    for tissue in cols:
-        tiss_count_list = [counts_dict[fname][tissue] for fname in fnames]
-        data[tissue] = tiss_count_list
-    """
+    cmap = _trans.factor_cmap("Run", palette=Category20[len(fnames)], factors=fnames)
+    p.vbar("Run", 0.7, "q2", "q3", source=source, color=cmap, line_color="black")
+    p.vbar("Run", 0.7, "q1", "q2", source=source, color=cmap, line_color="black")
+
+    outliers = graph_df[~graph_df.Count.between(graph_df.lower, graph_df.upper)]
+    p.scatter("Run", "Count", source=outliers, size=6, color="black", alpha=0.3)
+
+    p.y_range.start = 0
+    p.x_range.range_padding = 0.1
+    p.xaxis.major_label_orientation = 1
+    p.xgrid.grid_line_color = None
+
+    _io.save(p)
 
 gene_id = "ENSG00000184697"
-print(fetchCountsIntraVariancePlot(count_dict, gene_id))
+fetchCountsIntraVariancePlot(count_dict, gene_id)
