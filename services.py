@@ -237,30 +237,30 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
     
     # Construct data corpus
     for id, df in count_dict.items():
+        if id != "Counts_nocs_select.csv" and id != "Counts_cs_select.csv": # Skip these 2 for prettier plots, the conclusions drawn will be the same anyway
         
-        fnames.append(id)
-        
-        try:
-            gene_series = df.loc[gene_id]
-            sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
-            gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
+            fnames.append(id)
+            try:
+                gene_series = df.loc[gene_id]
+                sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
+                gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
 
-            gene_series_norm = _np.log1p(gene_series_filt)
-            
-            q1, q2, q3 = (_np.quantile(gene_series_norm, quant) for quant in [0.25,0.50,0.75])
-            
-            cur_df = _pd.DataFrame.from_dict({
-                "Run" : [id]*len(gene_series_norm), 
-                "Count" : gene_series_norm, 
-                "q1" : q1, 
-                "q2" : q2, 
-                "q3" : q3
-            })
-            
-            graph_df = _pd.concat([graph_df, cur_df])
-        
-        except Exception as err:
-            return err # "Gene ID not found in one of the count matrices!"
+                gene_series_norm = _np.log1p(gene_series_filt)
+
+                q1, q2, q3 = (_np.quantile(gene_series_norm, quant) for quant in [0.25,0.50,0.75])
+
+                cur_df = _pd.DataFrame.from_dict({
+                    "Run" : [id]*len(gene_series_norm), 
+                    "Count" : gene_series_norm, 
+                    "q1" : q1, 
+                    "q2" : q2, 
+                    "q3" : q3
+                })
+
+                graph_df = _pd.concat([graph_df, cur_df])
+
+            except:
+                return "Gene ID not found in one of the count matrices!"
     
     # Plot Output
     _io.output_file("Templates/" + gene_id + "_counts_intravar_box_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
