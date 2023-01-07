@@ -17,6 +17,7 @@ count_dict = {}
 aggreg_dict = {}
 var_info = None
 
+# Read data
 with open("Counts/var_info.pickle", "rb") as f:
     var_info = _pickle.load(f)
     f.close()
@@ -26,7 +27,15 @@ sample_table = _pd.read_csv("sampleTable_final_ideal_dots.csv")
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
 tissues = set(list(sample_tissue_map.values()))
 genes_ref = _pd.read_csv("Gene_names_ref.csv")
+
+# Read and construct aggregation reference
 aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
+aggreg_ref["Variance Impact"] = [var_info[gene_name][0] for gene_name in aggreg_ref["Name"].values]
+aggreg_ref["Confidence Score"] = _np.sqrt([var_info[gene_name][1] for gene_name in aggreg_ref["Name"].values])
+aggreg_ref["Variance Confidence Score"] = ( aggreg_ref["Confidence Score"] - aggreg_ref["Confidence Score"] .min()) / (aggreg_ref["Confidence Score"] .max() - aggreg_ref["Confidence Score"] .min()) * 100
+
+aggreg_ref["Variance Impact"] = aggreg_ref["Variance Impact"].apply(lambda x: '{0:.2f}'.format(x))
+aggreg_ref["Variance Confidence Score"] = aggreg_ref["Variance Confidence Score"].apply(lambda x: '{0:.2f}'.format(x))
 
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes
@@ -305,3 +314,6 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
     p.xgrid.grid_line_color = None
 
     _io.save(p)
+
+
+print(aggreg_ref.head())

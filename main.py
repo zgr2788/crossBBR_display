@@ -26,7 +26,7 @@ async def search_main(request: _fastapi.Request, search_string : str = _fastapi.
 
     return templates.TemplateResponse('display_home.html', context = {'request' : request, 'genes_df' : gene_list})
 
-
+# For count barplots
 @app.get("/plots/barplot/{gene_id}/")
 async def bar_plot(request: _fastapi.Request, gene_id: str):
     counts_dict, gene_id = await _services.fetchCounts(gene_id)
@@ -35,6 +35,7 @@ async def bar_plot(request: _fastapi.Request, gene_id: str):
 
     return templates.TemplateResponse(gene_id + "_counts_log1p" + ".html", context={'request' : request})
 
+# For count boxplots
 @app.get("/plots/boxplot/{gene_id}/")
 async def box_plot(request: _fastapi.Request, gene_id: str):
     counts_dict, gene_id = await _services.fetchCounts(gene_id)
@@ -43,6 +44,7 @@ async def box_plot(request: _fastapi.Request, gene_id: str):
 
     return templates.TemplateResponse(gene_id + "_counts_boxplot_log1p" + ".html", context={'request' : request})
 
+# For intra-sample variance
 @app.get("/plots/intravarbox/{gene_id}/")
 async def intravar_box_plot(request: _fastapi.Request, gene_id: str):
     counts_dict, gene_id = await _services.fetchCounts(gene_id)
