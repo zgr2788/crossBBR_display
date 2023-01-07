@@ -14,6 +14,7 @@ import services as _services
 import numpy as _np
 import sys
 import os
+import pickle as _pickle
 
 def calcVarScore(gene_id, which = "intra"):
     
@@ -34,8 +35,8 @@ def calcVarScore(gene_id, which = "intra"):
                 gene_series_norm = _np.log1p(gene_series_filt)
                 var_table[id] = _np.var(gene_series_norm)
     
-            except:
-                return "Gene ID not found in one of the count matrices!"
+            except Exception as err:
+                return err # "Gene ID not found in one of the count matrices!"
     
     var_diff_cs = var_table["Counts_cs_all.csv"] - var_table["Counts_nocs_all.csv"] # Which way stem cell deriven samples drive the expression
     var_spread = _np.var([var_table["Counts_cs_all.csv"], var_table["Counts_nocs_all.csv"]]) # Confidence score (higher -> cs vs no-cs sample difference is less significant)
@@ -44,9 +45,13 @@ def calcVarScore(gene_id, which = "intra"):
 
 
 # Fetch experiment data
-gene_list = list(_services.aggreg_ref["gene_names"].values)
-subj ="ENSG00000118777"  # "ENSG00000184697"
-print(calcVarScore(subj, "intra"))
-#intra_var_scores = [calcVarScore(gene, "intra") for gene in gene_list]
-#inter_var_scores = [calcVarScore(gene, "inter") for gene in gene_list]
+gene_list = list(_services.aggreg_ref["Name"].values)
+
+intra_var_scores = {gene : calcVarScore(gene) for gene in gene_list}
+
+with open('var_info.pickle', 'wb') as f:
+    _pickle.dump(intra_var_scores, f)
+    f.close()
+
+
 

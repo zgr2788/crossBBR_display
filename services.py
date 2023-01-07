@@ -2,6 +2,7 @@ import os
 import sys
 import pandas as _pd
 import numpy as _np
+import pickle as _pickle
 import bokeh.io as _io
 import bokeh.plotting as _plot
 import bokeh.models as _plotmod
@@ -14,9 +15,13 @@ aggreg = "Aggregs/"
 
 count_dict = {}
 aggreg_dict = {}
+var_info = None
 
-    
-count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.listdir(counts)}
+with open("Counts/var_info.pickle", "rb") as f:
+    var_info = _pickle.load(f)
+    f.close()
+
+count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.listdir(counts) if ".csv" in fname}
 sample_table = _pd.read_csv("sampleTable_final_ideal_dots.csv")
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
 tissues = set(list(sample_tissue_map.values()))
