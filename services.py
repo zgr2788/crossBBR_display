@@ -251,7 +251,8 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
     
     # Construct data corpus
     for id, df in count_dict.items():
-        if id != "Counts_nocs_select.csv" and id != "Counts_cs_select.csv": # Skip these 2 for prettier plots, the conclusions drawn will be the same anyway
+        
+        if id not in ["Counts_cs_select.csv", "Counts_nocs_select.csv", "Counts_raw.csv"]: # Skip these 3, conclusions will not be affected
         
             fnames.append(id)
             try:
@@ -301,7 +302,7 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
     whisker.upper_head.size = whisker.lower_head.size = 20
     p.add_layout(whisker)
 
-    cmap = _trans.factor_cmap("Run", palette=Category20[len(fnames)], factors=fnames)
+    cmap = _trans.factor_cmap("Run", palette=Category20[3], factors=fnames)
     p.vbar("Run", 0.7, "q2", "q3", source=source, color=cmap, line_color="black")
     p.vbar("Run", 0.7, "q1", "q2", source=source, color=cmap, line_color="black")
 
