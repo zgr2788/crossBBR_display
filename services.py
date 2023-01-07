@@ -31,7 +31,7 @@ genes_ref = _pd.read_csv("Gene_names_ref.csv")
 # Read and construct aggregation reference
 aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
 aggreg_ref["Variance Impact"] = [var_info[gene_name][0] for gene_name in aggreg_ref["Name"].values]
-aggreg_ref["Confidence Score"] = _np.sqrt([var_info[gene_name][1] for gene_name in aggreg_ref["Name"].values])
+aggreg_ref["Confidence Score"] = _np.log1p([var_info[gene_name][1] for gene_name in aggreg_ref["Name"].values])
 aggreg_ref["Variance Confidence Score"] = ( aggreg_ref["Confidence Score"] - aggreg_ref["Confidence Score"] .min()) / (aggreg_ref["Confidence Score"] .max() - aggreg_ref["Confidence Score"] .min()) * 100
 
 aggreg_ref["Variance Impact"] = aggreg_ref["Variance Impact"].apply(lambda x: '{0:.2f}'.format(x))
@@ -314,6 +314,3 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
     p.xgrid.grid_line_color = None
 
     _io.save(p)
-
-
-print(aggreg_ref.head())

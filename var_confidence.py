@@ -23,7 +23,7 @@ def calcVarScore(gene_id, which = "intra"):
     # Calculate intra-experiment (inter-sample per run) variance
         
     var_table = {} # Keep them hashed, so that we are sure the variances belong to the correct file
-    
+    med_table = {}
     for id, df in _services.count_dict.items():
         
         if id not in ["Counts_cs_select.csv", "Counts_nocs_select.csv", "Counts_raw.csv"]: # Skip these 3, conclusions will not be affected
@@ -34,14 +34,16 @@ def calcVarScore(gene_id, which = "intra"):
                 gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
                 gene_series_norm = _np.log1p(gene_series_filt)
                 var_table[id] = _np.var(gene_series_norm)
+                med_table[id] = _np.median(gene_series_norm)
     
             except Exception as err:
                 return err # "Gene ID not found in one of the count matrices!"
     
+    median_avg = _np.average([var_table["Counts_cs_all.csv"], var_table["Counts_nocs_all.csv"]]) # Normalize variance spread by average
     var_diff_cs = var_table["Counts_cs_all.csv"] - var_table["Counts_nocs_all.csv"] # Which way stem cell deriven samples drive the expression
     var_spread = _np.var([var_table["Counts_cs_all.csv"], var_table["Counts_nocs_all.csv"]]) # Confidence score (higher -> cs vs no-cs sample difference is less significant)
     
-    return (var_diff_cs, 1/var_spread)
+    return (var_diff_cs, median_avg/var_spread)
 
 
 # Fetch experiment data
