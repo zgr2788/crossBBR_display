@@ -22,7 +22,7 @@ def calcVarScore(gene_id, which = "intra"):
 
     # Calculate intra-experiment (inter-sample per run) variance
         
-    var_table = {} # Keep them hashed, so that we are sure the variances belong to the correct file
+    std_table = {} # Keep them hashed, so that we are sure the variances belong to the correct file
     med_table = {}
     for id, df in _services.count_dict.items():
         
@@ -33,17 +33,17 @@ def calcVarScore(gene_id, which = "intra"):
                 sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
                 gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
                 gene_series_norm = _np.log1p(gene_series_filt)
-                var_table[id] = _np.var(gene_series_norm)
+                std_table[id] = _np.std(gene_series_norm)
                 med_table[id] = _np.median(gene_series_norm)
     
             except Exception as err:
                 return err # "Gene ID not found in one of the count matrices!"
     
-    median_avg = _np.average([var_table["Counts_cs_all.csv"], var_table["Counts_nocs_all.csv"]]) # Normalize variance spread by average
-    var_diff_cs = var_table["Counts_cs_all.csv"] - var_table["Counts_nocs_all.csv"] # Which way stem cell deriven samples drive the expression
-    var_spread = _np.var([var_table["Counts_cs_all.csv"], var_table["Counts_nocs_all.csv"]]) # Confidence score (higher -> cs vs no-cs sample difference is less significant)
+    median_avg = _np.average([std_table["Counts_cs_all.csv"], std_table["Counts_nocs_all.csv"]]) # Normalize variance spread by average
+    std_diff_cs = std_table["Counts_cs_all.csv"] - std_table["Counts_nocs_all.csv"] # Which way stem cell deriven samples drive the expression
+    std_spread = _np.std([std_table["Counts_cs_all.csv"], std_table["Counts_nocs_all.csv"]]) # Confidence score (higher -> cs vs no-cs sample difference is less significant)
     
-    return (var_diff_cs, median_avg/var_spread)
+    return (std_diff_cs, median_avg/std_spread)
 
 
 # Fetch experiment data
