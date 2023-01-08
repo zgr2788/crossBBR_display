@@ -22,6 +22,10 @@ with open("Counts/var_info.pickle", "rb") as f:
     var_info = _pickle.load(f)
     f.close()
 
+with open("Counts/var_info_nonzero.pickle", "rb") as f:
+    var_info_nz = _pickle.load(f)
+    f.close()
+
 count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.listdir(counts) if ".csv" in fname}
 sample_table = _pd.read_csv("sampleTable_final_ideal_dots.csv")
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
@@ -30,12 +34,22 @@ genes_ref = _pd.read_csv("Gene_names_ref.csv")
 
 # Read and construct aggregation reference
 aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
+
+# Variance impact - with 0's considered as biological variance
 aggreg_ref["Variance Impact"] = [var_info[gene_name][0] for gene_name in aggreg_ref["Name"].values]
 aggreg_ref["Confidence Score"] = _np.log1p([var_info[gene_name][1] for gene_name in aggreg_ref["Name"].values])
 aggreg_ref["Variance Confidence Score"] = ( aggreg_ref["Confidence Score"] - aggreg_ref["Confidence Score"] .min()) / (aggreg_ref["Confidence Score"] .max() - aggreg_ref["Confidence Score"] .min()) * 100
 
 aggreg_ref["Variance Impact"] = aggreg_ref["Variance Impact"].apply(lambda x: '{0:.2f}'.format(x))
 aggreg_ref["Variance Confidence Score"] = aggreg_ref["Variance Confidence Score"].apply(lambda x: '{0:.2f}'.format(x))
+
+# Variance impact - with 0's considered as technical variance, therefore filtered
+aggreg_ref["Variance Impact - Zerofilt"] = [var_info_nz[gene_name][0] for gene_name in aggreg_ref["Name"].values]
+aggreg_ref["Confidence Score - Zerofilt"] = _np.log1p([var_info_nz[gene_name][1] for gene_name in aggreg_ref["Name"].values])
+aggreg_ref["Variance Confidence Score - Zerofilt"] = ( aggreg_ref["Confidence Score - Zerofilt"] - aggreg_ref["Confidence Score - Zerofilt"] .min()) / (aggreg_ref["Confidence Score - Zerofilt"] .max() - aggreg_ref["Confidence Score - Zerofilt"] .min()) * 100
+
+aggreg_ref["Variance Impact - Zerofilt"] = aggreg_ref["Variance Impact - Zerofilt"].apply(lambda x: '{0:.2f}'.format(x))
+aggreg_ref["Variance Confidence Score - Zerofilt"] = aggreg_ref["Variance Confidence Score - Zerofilt"].apply(lambda x: '{0:.2f}'.format(x))
 
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes
@@ -243,7 +257,7 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
 
 # Precondition : counts -> count_dict primitive, NOT from fetchCounts
 # Returns : Intrasample variance plot for brain over 4 runs (cs +- / select +-) 
-async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_type = "log1p"):
+async def fetchCountsIntraVariancePlot(gene_id, zero_filt = False, count_dict = count_dict, scale_type = "log1p"):
     
     graph_df = _pd.DataFrame(columns = ["Run", "Count", "lower", "upper"])
     fnames = []
@@ -259,6 +273,9 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
                 gene_series = df.loc[gene_id]
                 sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
                 gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
+
+                if zero_filt:
+                    gene_series_filt = [count for count in gene_series_filt if count != 0]
 
                 gene_series_norm = _np.log1p(gene_series_filt)
 

@@ -45,7 +45,7 @@ def calcVarScore(gene_id, filter_zeros = False , which = "intra"):
                 return err # "Gene ID not found in one of the count matrices!"
     
     median_avg = _np.average([std_table["Counts_cs_all.csv"], std_table["Counts_nocs_all.csv"]]) # Normalize variance spread by average
-    std_diff_cs = std_table["Counts_cs_all.csv"] - std_table["Counts_nocs_all.csv"] # Which way stem cell deriven samples drive the expression
+    std_diff_cs = std_table["Counts_cs_all.csv"] - std_table["Counts_nocs_all.csv"] # Which way stem cell deriven samples drive the variance of expression distribution
     std_spread = _np.std([std_table["Counts_cs_all.csv"], std_table["Counts_nocs_all.csv"]]) # Confidence score (higher -> cs vs no-cs sample difference is less significant)
     
     return (std_diff_cs, median_avg/std_spread)

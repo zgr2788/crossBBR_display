@@ -48,8 +48,10 @@
           <th scope="col"><p class="text-info">Ensembl ID</p></th>
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
           <th scope="col"><p class="text-info">Rank p-val</p></th>
-          <th scope="col"><p class="text-info">Log Deviation Impact</p></th>
-          <th scope="col"><p class="text-info">Log Deviation Confidence Score</p></th>
+          <th scope="col"><p class="text-info">LDI</p></th>
+          <th scope="col"><p class="text-info">LD Confidence</p></th>
+          <th scope="col"><p class="text-info">LDI - Zero Filtered</p></th>
+          <th scope="col"><p class="text-info">LD Confidence - Zero Filtered</p></th>
           <th scope="col"><p class="text-info">Actions</p></th>
         </tr>
       </thead>
@@ -61,10 +63,14 @@
           <td>{{ val['Score'] }}</td>
           <td>{{ val['Variance Impact'] }}</td>
           <td>{{ val['Variance Confidence Score'] }}</td>
+          <td>{{ val['Variance Impact - Zerofilt'] }}</td>
+          <td>{{ val['Variance Confidence Score - Zerofilt'] }}</td>
+          
           <td>
             <a href="/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Bar</a>
             <a href="/plots/boxplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Box</a>
-            <a href="/plots/intravarbox/{{ val['Name'] }}/" class="btn btn-primary">Intravar-Box</a>
+            <a href="/plots/intravar/{{ val['Name'] }}/" class="btn btn-primary">Intravar</a>
+            <a href="/plots/intravarnz/{{ val['Name'] }}/" class="btn btn-primary">Intravar-Zerofilt</a>
           </td>
 
         </tr>
