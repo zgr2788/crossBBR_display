@@ -7,7 +7,7 @@ import bokeh.io as _io
 import bokeh.plotting as _plot
 import bokeh.models as _plotmod
 import bokeh.transform as _trans
-from bokeh.palettes import Category20
+from bokeh.palettes import Category20, Category10
 from bokeh.sampledata.autompg2 import autompg2
 
 counts = "Counts/"
@@ -245,7 +245,7 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
 # Returns : Intrasample variance plot for brain over 4 runs (cs +- / select +-) 
 async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_type = "log1p"):
     
-    graph_df = _pd.DataFrame(columns = ["Run", "Count", "q1", "q2", "q3"])
+    graph_df = _pd.DataFrame(columns = ["Run", "Count", "lower", "upper"])
     fnames = []
     brain_samples = [key for key in list(sample_tissue_map.keys()) if sample_tissue_map[key] == 'Brain']
     
@@ -262,14 +262,13 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
 
                 gene_series_norm = _np.log1p(gene_series_filt)
 
-                q1, q2, q3 = (_np.quantile(gene_series_norm, quant) for quant in [0.25,0.50,0.75])
+                lower, upper = (_np.quantile(gene_series_norm, quant) for quant in [0.20,0.80])
 
                 cur_df = _pd.DataFrame.from_dict({
                     "Run" : [id]*len(gene_series_norm), 
                     "Count" : gene_series_norm, 
-                    "q1" : q1, 
-                    "q2" : q2, 
-                    "q3" : q3
+                    "lower" : lower, 
+                    "upper" : upper 
                 })
 
                 graph_df = _pd.concat([graph_df, cur_df])
@@ -280,11 +279,6 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
     # Plot Output
     _io.output_file("Templates/" + gene_id + "_counts_intravar_box_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
     _plot.curdoc().theme = 'light_minimal'
-
-    iqr = graph_df.q3 - graph_df.q1
-    graph_df["upper"] = graph_df.q3 + 1.5*iqr
-    graph_df["lower"] = graph_df.q1 - 1.5*iqr
-    graph_df.lower = [max(curVal, 0) for curVal in graph_df.lower]
 
     source = _plotmod.ColumnDataSource(graph_df)
 
@@ -298,16 +292,19 @@ async def fetchCountsIntraVariancePlot(gene_id, count_dict = count_dict, scale_t
         y_range=_plotmod.Range1d(0, max([num for num in graph_df.to_numpy().flatten() if isinstance(num, float)]), bounds="auto")
     )
 
-    whisker = _plotmod.Whisker(base="Run", upper="upper", lower="lower", source=source)
+    whisker = _plotmod.Whisker(base="Run", upper="upper", lower="lower", source=source, level="annotation", line_width = 2)
     whisker.upper_head.size = whisker.lower_head.size = 20
     p.add_layout(whisker)
 
-    cmap = _trans.factor_cmap("Run", palette=Category20[3], factors=fnames)
-    p.vbar("Run", 0.7, "q2", "q3", source=source, color=cmap, line_color="black")
-    p.vbar("Run", 0.7, "q1", "q2", source=source, color=cmap, line_color="black")
+    cmap = _trans.factor_cmap("Run", palette=Category10[3], factors=fnames)
+    p.circle(_trans.jitter("Run", 0.3, range=p.x_range), "Count", source=graph_df,
+         alpha=0.5, size=13, line_color="white",
+         color=cmap)
+    #p.vbar("Run", 0.7, "q2", "q3", source=source, color=cmap, line_color="black")
+    #p.vbar("Run", 0.7, "q1", "q2", source=source, color=cmap, line_color="black")
 
-    outliers = graph_df[~graph_df.Count.between(graph_df.lower, graph_df.upper)]
-    p.scatter("Run", "Count", source=outliers, size=6, color="black", alpha=0.3)
+    #outliers = graph_df[~graph_df.Count.between(graph_df.lower, graph_df.upper)]
+    #p.scatter("Run", "Count", source=outliers, size=6, color="black", alpha=0.3)
 
     p.y_range.start = 0
     p.x_range.range_padding = 0.1
