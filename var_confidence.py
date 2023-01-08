@@ -16,7 +16,7 @@ import sys
 import os
 import pickle as _pickle
 
-def calcVarScore(gene_id, which = "intra"):
+def calcVarScore(gene_id, filter_zeros = False , which = "intra"):
     
     brain_samples = [key for key in list(_services.sample_tissue_map.keys()) if _services.sample_tissue_map[key] == 'Brain']
 
@@ -32,10 +32,15 @@ def calcVarScore(gene_id, which = "intra"):
                 gene_series = df.loc[gene_id]
                 sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
                 gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
+
+                if filter_zeros:
+                    gene_series_filt = [count for count in gene_series_filt if count != 0]
+                
                 gene_series_norm = _np.log1p(gene_series_filt)
                 std_table[id] = _np.std(gene_series_norm)
                 med_table[id] = _np.median(gene_series_norm)
-    
+
+
             except Exception as err:
                 return err # "Gene ID not found in one of the count matrices!"
     
@@ -48,12 +53,17 @@ def calcVarScore(gene_id, which = "intra"):
 
 # Fetch experiment data
 gene_list = list(_services.aggreg_ref["Name"].values)
-
 intra_var_scores = {gene : calcVarScore(gene) for gene in gene_list}
+intra_var_nonzero_scores = {gene : calcVarScore(gene, filter_zeros=True) for gene in gene_list}
 
 with open('var_info.pickle', 'wb') as f:
     _pickle.dump(intra_var_scores, f)
     f.close()
+
+with open('var_info_nonzero.pickle', 'wb') as f:
+    _pickle.dump(intra_var_nonzero_scores, f)
+    f.close()
+
 
 
 
