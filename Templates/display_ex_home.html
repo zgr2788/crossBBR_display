@@ -74,6 +74,18 @@
           {% if exmode == "DESeq2" or exmode == "Wilcox" %}
           <th scope="col"><p class="text-info">Bootstrap Validated?</p></th>
           {% endif %}
+
+          {% if exmode == "All" %}
+          <th scope="col"><p class="text-info">Encountered in DESeq2?</p></th>
+          <th scope="col"><p class="text-info">DESeq2 Bootstrap Validated?</p></th>
+          <th scope="col"><p class="text-info">Encountered in Wilcox?</p></th>
+          <th scope="col"><p class="text-info">Wilcox Bootstrap Validated?</p></th>
+          {% endif %}
+
+          {% if exmode == "DESeq2 Validation" or exmode == "Wilcox Validation" %}
+          <th scope="col"><p class="text-info">Encountered Originally?</p></th>
+          {% endif %}
+
         </tr>
       </thead>
       <tbody>
@@ -82,14 +94,17 @@
           <th scope="row">{{ val['Name'] }}</th>
           <td>{{ val['gene_names'] }}</td>
           <td>{{ val['Score'] }}</td>
-          {% if exmode == "DESeq2" or exmode == "Wilcox" %}
+          {% if exmode != "All" %}
           <td>{{ val['Validated'] }}</td>
           {% endif %}
-          
-          <td>
-            <a href="/csexc" class="btn btn-primary">TBD</a>          
-          </td>
 
+          {% if exmode == "All" %}
+          <td>{{ val['DESeq2 Appeared'] }}</td>
+          <td>{{ val['DESeq2 Validated'] }}</td>
+          <td>{{ val['Wilcox Appeared'] }}</td>
+          <td>{{ val['Wilcox Validated'] }}</td>
+
+          {% endif %}
         </tr>
         {% endfor %}
       </tbody>

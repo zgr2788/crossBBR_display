@@ -36,6 +36,7 @@ tissues = set(list(sample_tissue_map.values()))
 aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
 aggreg_ex_ref = _pd.read_csv("Aggregs/aggreg_all.csv")
 aggreg_ex_deseq2 = _pd.read_csv("Aggregs/aggreg_deseq2.csv")
+aggreg_ex_deseq2_valid = _pd.read_csv("Aggregs/aggreg_deseq2_valid.csv")
 aggreg_ex_wilcox = _pd.read_csv("Aggregs/aggreg_wilcox.csv")
 
 # Variance impact - with 0's considered as biological variance
@@ -71,13 +72,19 @@ async def fetchExGeneList(which = "All"):
         raise _fastapi.HTTPException(404, "Unexpected input on results!")
     
 
-    if which == "all":
+    if which == "All":
         return aggreg_ex_ref
     
-    elif which == "deseq2":
+    elif which == "DESeq2":
         return aggreg_ex_deseq2
     
-    else:
+    elif which == "Wilcox":
+        return aggreg_ex_wilcox
+
+    elif which == "DESeq2 Validation":
+        return aggreg_ex_deseq2_valid 
+    
+    else :
         return aggreg_ex_wilcox
     
 
