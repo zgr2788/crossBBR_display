@@ -2,6 +2,7 @@ import os
 import sys
 import pandas as _pd
 import numpy as _np
+import fastapi as _fastapi
 import pickle as _pickle
 import bokeh.io as _io
 import bokeh.plotting as _plot
@@ -33,6 +34,9 @@ tissues = set(list(sample_tissue_map.values()))
 
 # Read and construct aggregation reference
 aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
+aggreg_ex_ref = _pd.read_csv("Aggregs/aggreg_all.csv")
+aggreg_ex_deseq2 = _pd.read_csv("Aggregs/aggreg_deseq2.csv")
+aggreg_ex_wilcox = _pd.read_csv("Aggregs/aggreg_wilcox.csv")
 
 # Variance impact - with 0's considered as biological variance
 aggreg_ref["Variance Impact"] = [var_info[gene_name][0] for gene_name in aggreg_ref["Name"].values]
@@ -56,6 +60,26 @@ aggreg_ref["Variance Confidence Score - Zerofilt"] = aggreg_ref["Variance Confid
 async def fetchGeneList():
     return(aggreg_ref)
 
+
+# Precondition : none
+# Returns : Gene list -> List of genes with attributes for SC excluded
+
+async def fetchExGeneList(which = "all"):
+    opts = ["all", "deseq2", "wilcox"]
+
+    if which not in opts:
+        raise _fastapi.HTTPException(404, "Unexpected input on results!")
+    
+
+    if which == "all":
+        return aggreg_ex_ref
+    
+    elif which == "deseq2":
+        return aggreg_ex_deseq2
+    
+    else:
+        return aggreg_ex_wilcox
+    
 
 # Precondition: gene_id -> str
 # Returns : counts_dict = {filename : counts sum per tissue group} 

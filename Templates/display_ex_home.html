@@ -25,7 +25,24 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
             <!-- add navbar items here -->
-            <li class="nav-item px-5"></li>
+            <!-- include both -->
+            <li class="nav-item px-5">
+              <form class="d-flex" method="get" action="/csexc/reset">
+                <button class="btn btn-info my-2 my-sm-0" type="submit">DESeq2 + Wilcox</button>
+              </form>
+            </li>
+            <!-- switch to wilcox only -->
+            <li class="nav-item px-5">
+              <form class="d-flex" method="get" action="/csexc/wilcox">
+                <button class="btn btn-info my-2 my-sm-0" type="submit">Wilcox Only</button>
+              </form>
+            </li>
+            <!-- switch to deseq2 only -->
+            <li class="nav-item px-5">
+              <form class="d-flex" method="get" action="/csexc/deseq2">
+                <button class="btn btn-info my-2 my-sm-0" type="submit">DESeq2 Only</button>
+              </form>
+            </li>
             <!-- back to landing -->
             <li class="nav-item px-5">
               <form class="d-flex" method="get" action="/">
@@ -41,8 +58,7 @@
                 <a class="btn btn-secondary my-2 my-sm-0" href="">Reset</a>
               </form>
             </li>
-            <li class="nav-item px-5"></li>
-            <li class="nav-item px-5"></li>
+           
           </ul>
         </div>
       </div>
@@ -54,10 +70,6 @@
           <th scope="col"><p class="text-info">Ensembl ID</p></th>
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
           <th scope="col"><p class="text-info">Rank p-val</p></th>
-          <th scope="col"><p class="text-info">LDI</p></th>
-          <th scope="col"><p class="text-info">LD Confidence</p></th>
-          <th scope="col"><p class="text-info">LDI - Zero Filtered</p></th>
-          <th scope="col"><p class="text-info">LD Confidence - Zero Filtered</p></th>
           <th scope="col"><p class="text-info">Actions</p></th>
         </tr>
       </thead>
@@ -67,16 +79,9 @@
           <th scope="row">{{ val['Name'] }}</th>
           <td>{{ val['gene_names'] }}</td>
           <td>{{ val['Score'] }}</td>
-          <td>{{ val['Variance Impact'] }}</td>
-          <td>{{ val['Variance Confidence Score'] }}</td>
-          <td>{{ val['Variance Impact - Zerofilt'] }}</td>
-          <td>{{ val['Variance Confidence Score - Zerofilt'] }}</td>
           
           <td>
-            <a href="/csinc/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Bar</a>
-            <a href="/csinc/plots/boxplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Box</a>
-            <a href="/csinc/plots/intravar/{{ val['Name'] }}/" class="btn btn-primary">Intravar</a>
-            <a href="/csinc/plots/intravarnz/{{ val['Name'] }}/" class="btn btn-primary">Intravar-Zerofilt</a>
+            <a href="/csexc" class="btn btn-primary">TBD</a>          
           </td>
 
         </tr>
