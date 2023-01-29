@@ -71,7 +71,9 @@
           <th scope="col"><p class="text-info">Ensembl ID</p></th>
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
           <th scope="col"><p class="text-info">Rank p-val</p></th>
-          <th scope="col"><p class="text-info">Actions</p></th>
+          {% if exmode == "DESeq2" or exmode == "Wilcox" %}
+          <th scope="col"><p class="text-info">Bootstrap Validated?</p></th>
+          {% endif %}
         </tr>
       </thead>
       <tbody>
@@ -80,6 +82,9 @@
           <th scope="row">{{ val['Name'] }}</th>
           <td>{{ val['gene_names'] }}</td>
           <td>{{ val['Score'] }}</td>
+          {% if exmode == "DESeq2" or exmode == "Wilcox" %}
+          <td>{{ val['Validated'] }}</td>
+          {% endif %}
           
           <td>
             <a href="/csexc" class="btn btn-primary">TBD</a>          
