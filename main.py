@@ -14,44 +14,44 @@ templates = _templates.Jinja2Templates(directory = "Templates")
 @app.get("/")
 async def landing(request: _fastapi.Request):
     response = templates.TemplateResponse('landing.html', context = {'request' : request})
-    response.set_cookie(key="exmode", value="all")
+    response.set_cookie(key="exmode", value="All")
     return response
 
 # CS excluded results page
 @app.get("/csexc")
-async def ex_main_page(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="all")):
+async def ex_main_page(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="All")):
     gene_list = await _services.fetchExGeneList(exmode)
-    return templates.TemplateResponse('display_ex_home.html', context = {'request' : request, 'genes_df' : gene_list})
+    return templates.TemplateResponse('display_ex_home.html', context = {'request' : request, 'genes_df' : gene_list, 'exmode' : exmode})
 
 # Search CS excluded results
 @app.post("/csexc")
-async def ex_main_search(request: _fastapi.Request, search_string : str = _fastapi.Form(), exmode : Union[str, None] = _fastapi.Cookie(default="all")):
+async def ex_main_search(request: _fastapi.Request, search_string : str = _fastapi.Form(), exmode : Union[str, None] = _fastapi.Cookie(default="All")):
     gene_list = await _services.fetchExGeneList(exmode)
 
     if search_string:
         gene_list = gene_list[gene_list["gene_names"].str.contains(search_string, case=False)]
 
-    return templates.TemplateResponse('display_ex_home.html', context = {'request' : request, 'genes_df' : gene_list})
+    return templates.TemplateResponse('display_ex_home.html', context = {'request' : request, 'genes_df' : gene_list, 'exmode' : exmode})
 
 # CS excluded (reset route)
 @app.get("/csexc/reset")
-async def ex_main_reset(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="all")):
+async def ex_main_reset(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="All")):
     response = RedirectResponse("/csexc")
-    response.set_cookie(key="exmode", value="all")
+    response.set_cookie(key="exmode", value="All")
     return response
 
 # CS excluded (deseq2 only route)
 @app.get("/csexc/deseq2")
-async def ex_main_deseq2(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="all")):
+async def ex_main_deseq2(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="All")):
     response = RedirectResponse("/csexc")
-    response.set_cookie(key="exmode", value="deseq2")
+    response.set_cookie(key="exmode", value="DESeq2")
     return response
 
 # CS excluded (wilcox only route)
 @app.get("/csexc/wilcox")
-async def ex_main_wilcox(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="all")):
+async def ex_main_wilcox(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="All")):
     response = RedirectResponse("/csexc")
-    response.set_cookie(key="exmode", value="wilcox")
+    response.set_cookie(key="exmode", value="Wilcox")
     return response
 
 # CS included results page

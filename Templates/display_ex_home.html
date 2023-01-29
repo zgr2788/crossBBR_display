@@ -18,37 +18,38 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href=""><h1><p class="text-primary">Aggregation Results Explorer</p></h1></a>
+        <a class="navbar-brand" href=""><h1><p class="text-primary">Aggregation Results Explorer&emsp;&emsp;&emsp;</p></h1></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
             <!-- add navbar items here -->
-            <!-- include both -->
-            <li class="nav-item px-5">
-              <form class="d-flex" method="get" action="/csexc/reset">
-                <button class="btn btn-info my-2 my-sm-0" type="submit">DESeq2 + Wilcox</button>
-              </form>
+            <!-- Info -->
+            <li class="nav-item px-7">
+              <p class="text-info">Currently Displaying: {{ exmode }}</p>
             </li>
-            <!-- switch to wilcox only -->
-            <li class="nav-item px-5">
-              <form class="d-flex" method="get" action="/csexc/wilcox">
-                <button class="btn btn-info my-2 my-sm-0" type="submit">Wilcox Only</button>
-              </form>
+            &emsp;&emsp;&emsp;&emsp;
+            <!-- Dropdown for results -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Select Results to Display</a>
+              <div class="dropdown-menu" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 42px);" data-popper-placement="bottom-start">
+                <a class="dropdown-item" href="/csexc/reset">Wilcox + DESeq2 Aggregated</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/csexc/wilcox">Wilcox</a>
+                <a class="dropdown-item" href="/csexc/valid/wilcox">Wilcox Validation</a>
+                <a class="dropdown-item" href="/csexc/deseq2">DESeq2</a>
+                <a class="dropdown-item" href="/csexc/valid/deseq2">DESeq2 Validation</a>
+              </div>
             </li>
-            <!-- switch to deseq2 only -->
-            <li class="nav-item px-5">
-              <form class="d-flex" method="get" action="/csexc/deseq2">
-                <button class="btn btn-info my-2 my-sm-0" type="submit">DESeq2 Only</button>
-              </form>
-            </li>
+            &emsp;&emsp;
             <!-- back to landing -->
             <li class="nav-item px-5">
               <form class="d-flex" method="get" action="/">
                 <button class="btn btn-danger my-2 my-sm-0" type="submit">Go Back</button>
               </form>
             </li>
+            &emsp;&emsp;
             <!-- substring search for symbols -->
             <li class="nav-item px-5">
               <form class="d-flex" method="post">

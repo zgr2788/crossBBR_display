@@ -64,8 +64,8 @@ async def fetchGeneList():
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes for SC excluded
 
-async def fetchExGeneList(which = "all"):
-    opts = ["all", "deseq2", "wilcox"]
+async def fetchExGeneList(which = "All"):
+    opts = ["All", "DESeq2", "Wilcox", "DESeq2 Validation", "Wilcox Validation"]
 
     if which not in opts:
         raise _fastapi.HTTPException(404, "Unexpected input on results!")
