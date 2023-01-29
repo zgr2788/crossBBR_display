@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="{{ url_for('Static', path='/style.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="../Static/style.css"> 
+  <title>BBB GEX Explorer</title>
+</head>
+
+<body>
+     <!-- navbar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href=""><h1><p class="text-primary">Aggregation Results Explorer</p></h1></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <!-- add navbar items here -->
+              <li class="nav-item px-5"></li>
+              <li class="nav-item px-5"></li>
+              <li class="nav-item px-5"></li>
+              <li class="nav-item px-5"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <br><br><br><br><br><br><br><br><br><br>
+    
+
+    <h1 class="text-center">Include iPSC-Derived BMEC?</h1>
+    <br><br>
+    <div class="col text-center">
+        <form action="/csinc" method="get">
+            <button class="btn btn-lg btn-primary text-center" type="submit">Yes</button>
+        </form>
+
+        &emsp;
+        
+        <form action="/csexc" method="get">
+            <button class="btn btn-lg btn-primary text-center" type="submit">No</button>
+        </form>
+    </div>
+
+
+   
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

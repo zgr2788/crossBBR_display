@@ -26,7 +26,12 @@
           <ul class="navbar-nav me-auto">
             <!-- add navbar items here -->
             <li class="nav-item px-5"></li>
-            <li class="nav-item px-5"></li>
+            <!-- back to landing -->
+            <li class="nav-item px-5">
+              <form class="d-flex" method="get" action="/">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Go Back</button>
+              </form>
+            </li>
             <!-- substring search for symbols -->
             <li class="nav-item px-5">
               <form class="d-flex" method="post">
@@ -68,10 +73,10 @@
           <td>{{ val['Variance Confidence Score - Zerofilt'] }}</td>
           
           <td>
-            <a href="/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Bar</a>
-            <a href="/plots/boxplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Box</a>
-            <a href="/plots/intravar/{{ val['Name'] }}/" class="btn btn-primary">Intravar</a>
-            <a href="/plots/intravarnz/{{ val['Name'] }}/" class="btn btn-primary">Intravar-Zerofilt</a>
+            <a href="/csinc/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Bar</a>
+            <a href="/csinc/plots/boxplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Box</a>
+            <a href="/csinc/plots/intravar/{{ val['Name'] }}/" class="btn btn-primary">Intravar</a>
+            <a href="/csinc/plots/intravarnz/{{ val['Name'] }}/" class="btn btn-primary">Intravar-Zerofilt</a>
           </td>
 
         </tr>

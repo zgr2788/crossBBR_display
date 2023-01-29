@@ -30,7 +30,6 @@ count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.
 sample_table = _pd.read_csv("sampleTable_final_ideal_dots.csv")
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
 tissues = set(list(sample_tissue_map.values()))
-genes_ref = _pd.read_csv("Gene_names_ref.csv")
 
 # Read and construct aggregation reference
 aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
@@ -53,6 +52,7 @@ aggreg_ref["Variance Confidence Score - Zerofilt"] = aggreg_ref["Variance Confid
 
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes
+
 async def fetchGeneList():
     return(aggreg_ref)
 
