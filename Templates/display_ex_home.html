@@ -76,14 +76,14 @@
           {% endif %}
 
           {% if exmode == "All" %}
-          <th scope="col"><p class="text-info">Encountered in DESeq2?</p></th>
+          <th scope="col"><p class="text-info">Encountered in DESeq2 Aggregate?</p></th>
           <th scope="col"><p class="text-info">DESeq2 Bootstrap Validated?</p></th>
-          <th scope="col"><p class="text-info">Encountered in Wilcox?</p></th>
+          <th scope="col"><p class="text-info">Encountered in Wilcox Aggregate?</p></th>
           <th scope="col"><p class="text-info">Wilcox Bootstrap Validated?</p></th>
           {% endif %}
 
           {% if exmode == "DESeq2 Validation" or exmode == "Wilcox Validation" %}
-          <th scope="col"><p class="text-info">Encountered Originally?</p></th>
+          <th scope="col"><p class="text-info">Encountered in Original Aggregate?</p></th>
           {% endif %}
 
         </tr>
@@ -99,10 +99,10 @@
           {% endif %}
 
           {% if exmode == "All" %}
-          <td>{{ val['DESeq2 Appeared'] }}</td>
-          <td>{{ val['DESeq2 Validated'] }}</td>
-          <td>{{ val['Wilcox Appeared'] }}</td>
-          <td>{{ val['Wilcox Validated'] }}</td>
+          <td>{{ val['DESeq2_Appeared'] }}</td>
+          <td>{{ val['DESeq2_Validated'] }}</td>
+          <td>{{ val['Wilcox_Appeared'] }}</td>
+          <td>{{ val['Wilcox_Validated'] }}</td>
 
           {% endif %}
         </tr>

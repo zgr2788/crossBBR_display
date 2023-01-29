@@ -54,6 +54,13 @@ async def ex_main_deseq2_valid(request: _fastapi.Request, exmode : Union[str, No
     response.set_cookie(key="exmode", value="DESeq2 Validation")
     return response
 
+# CS excluded (wilcox valid route)
+@app.get("/csexc/valid/wilcox")
+async def ex_main_deseq2_valid(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="All")):
+    response = RedirectResponse("/csexc")
+    response.set_cookie(key="exmode", value="Wilcox Validation")
+    return response
+
 # CS excluded (wilcox only route)
 @app.get("/csexc/wilcox")
 async def ex_main_wilcox(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="All")):

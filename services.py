@@ -38,6 +38,7 @@ aggreg_ex_ref = _pd.read_csv("Aggregs/aggreg_all.csv")
 aggreg_ex_deseq2 = _pd.read_csv("Aggregs/aggreg_deseq2.csv")
 aggreg_ex_deseq2_valid = _pd.read_csv("Aggregs/aggreg_deseq2_valid.csv")
 aggreg_ex_wilcox = _pd.read_csv("Aggregs/aggreg_wilcox.csv")
+aggreg_ex_wilcox_valid = _pd.read_csv("Aggregs/aggreg_wilcox_valid.csv")
 
 # Variance impact - with 0's considered as biological variance
 aggreg_ref["Variance Impact"] = [var_info[gene_name][0] for gene_name in aggreg_ref["Name"].values]
@@ -85,7 +86,7 @@ async def fetchExGeneList(which = "All"):
         return aggreg_ex_deseq2_valid 
     
     else :
-        return aggreg_ex_wilcox
+        return aggreg_ex_wilcox_valid
     
 
 # Precondition: gene_id -> str
