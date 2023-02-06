@@ -17,6 +17,8 @@ async def landing(request: _fastapi.Request):
     response.set_cookie(key="exmode", value="All")
     return response
 
+#################################################################
+
 # CS excluded results page
 @app.get("/csexc")
 async def ex_main_page(request: _fastapi.Request, exmode : Union[str, None] = _fastapi.Cookie(default="All")):
@@ -67,6 +69,19 @@ async def ex_main_wilcox(request: _fastapi.Request, exmode : Union[str, None] = 
     response = RedirectResponse("/csexc")
     response.set_cookie(key="exmode", value="Wilcox")
     return response
+
+# CS excluded test route
+@app.get("/csexc/plots/barplot/{gene_id}")
+async def bar_plot(request: _fastapi.Request, gene_id: str):
+    #gene_id = "ENSG00000203747"
+
+    counts_dict, gene_id = await _services.fetchCounts(gene_id, include_cs=False)
+    
+    await _services.fetchCountsPlot(counts_dict, gene_id, include_cs=False)
+
+    return templates.TemplateResponse(gene_id + "_counts_log1p" + "_csexc.html", context={'request' : request})
+
+#################################################################
 
 # CS included results page
 @app.get("/csinc")

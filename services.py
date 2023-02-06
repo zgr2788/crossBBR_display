@@ -91,30 +91,31 @@ async def fetchExGeneList(which = "All"):
 
 # Precondition: gene_id -> str
 # Returns : counts_dict = {filename : counts sum per tissue group} 
-async def fetchCounts(gene_id):
+async def fetchCounts(gene_id, include_cs = True):
     counts_dict = {}
     
     for id, df in count_dict.items():
         
-        
-        try:
-            gene_series = df.loc[gene_id]
-        except:
-            return "Gene ID not found in one of the count matrices!"
-        
-        gene_tis_dict = {tis_name : 0 for tis_name in tissues}
+        if include_cs or (("nocs" in id) or ("raw" in id)):
+            
+            try:
+                gene_series = df.loc[gene_id]
+            except:
+                return "Gene ID not found in one of the count matrices!"
 
-        for sample_name in gene_series.index:
-            gene_tis_dict[sample_tissue_map[sample_name]] += gene_series[sample_name]
-        
-        counts_dict[id] = gene_tis_dict
+            gene_tis_dict = {tis_name : 0 for tis_name in tissues}
+
+            for sample_name in gene_series.index:
+                gene_tis_dict[sample_tissue_map[sample_name]] += gene_series[sample_name]
+
+            counts_dict[id] = gene_tis_dict
 
     return counts_dict, gene_id 
 
 
 # Precondition : counts -> dict from fetchCounts
 # Returns : plot for counts per tissue per sample
-async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p"):
+async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p", include_cs=True):
     
     # Get data corpus
     fnames = list(counts_dict.keys())
@@ -151,7 +152,11 @@ async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p"):
         counts = [_np.sqrt(count) for count in counts]
 
     # Plot output
-    _io.output_file("Templates/" + gene_id + "_counts_" + scale_type + ".html", title=gene_id + "_counts_" + scale_type)
+    if include_cs:
+        _io.output_file("Templates/" + gene_id + "_counts_" + scale_type + ".html", title=gene_id + "_counts_" + scale_type)
+    
+    else:
+        _io.output_file("Templates/" + gene_id + "_counts_" + scale_type + "_csexc.html", title=gene_id + "_counts_" + scale_type)
     _plot.curdoc().theme = 'light_minimal'
 
     source = _plotmod.ColumnDataSource(data=dict(x=x, counts=counts))
