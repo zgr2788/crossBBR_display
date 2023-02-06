@@ -70,16 +70,24 @@ async def ex_main_wilcox(request: _fastapi.Request, exmode : Union[str, None] = 
     response.set_cookie(key="exmode", value="Wilcox")
     return response
 
-# CS excluded test route
+# For count barplots
 @app.get("/csexc/plots/barplot/{gene_id}")
 async def bar_plot(request: _fastapi.Request, gene_id: str):
-    #gene_id = "ENSG00000203747"
 
     counts_dict, gene_id = await _services.fetchCounts(gene_id, include_cs=False)
     
     await _services.fetchCountsPlot(counts_dict, gene_id, include_cs=False)
 
     return templates.TemplateResponse(gene_id + "_counts_log1p" + "_csexc.html", context={'request' : request})
+
+# For intra-sample variance
+@app.get("/csexc/plots/intravar/{gene_id}/")
+async def intravar_box_plot(request: _fastapi.Request, gene_id: str):
+    counts_dict, gene_id = await _services.fetchCounts(gene_id, include_cs=False)
+    
+    await _services.fetchCountsIntraVariancePlot(gene_id, zero_filt=True, include_cs=False)
+
+    return templates.TemplateResponse(gene_id + "_counts_intravar_box_log1p" + "_csexc.html", context={'request' : request})
 
 #################################################################
 

@@ -115,7 +115,7 @@ async def fetchCounts(gene_id, include_cs = True):
 
 # Precondition : counts -> dict from fetchCounts
 # Returns : plot for counts per tissue per sample
-async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p", include_cs=True):
+async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p", include_cs = True):
     
     # Get data corpus
     fnames = list(counts_dict.keys())
@@ -157,6 +157,7 @@ async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p", include_cs
     
     else:
         _io.output_file("Templates/" + gene_id + "_counts_" + scale_type + "_csexc.html", title=gene_id + "_counts_" + scale_type)
+    
     _plot.curdoc().theme = 'light_minimal'
 
     source = _plotmod.ColumnDataSource(data=dict(x=x, counts=counts))
@@ -185,8 +186,8 @@ async def fetchCountsPlot(counts_dict, gene_id, scale_type = "log1p", include_cs
 
 
 # Precondition : counts -> dict from fetchCounts
-# Returns : boxplot for counts across 5 runs per tissue 
-async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
+# Returns : boxplot for counts across 3 or 5 runs per tissue 
+async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p", include_cs = True):
     
     # Construct data corpus
     fnames = list(counts_dict.keys())
@@ -251,7 +252,11 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
 
 
     # Plot output
-    _io.output_file("Templates/" + gene_id + "_counts_boxplot_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
+    if include_cs:
+        _io.output_file("Templates/" + gene_id + "_counts_boxplot_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
+    
+    else:
+        _io.output_file("Templates/" + gene_id + "_counts_boxplot_" + scale_type + "_csexc.html", title=gene_id + "_counts_boxplot_" + scale_type)
     _plot.curdoc().theme = 'light_minimal'
 
 
@@ -293,8 +298,8 @@ async def fetchCountsBoxPlot(counts_dict, gene_id, scale_type = "log1p"):
 
 
 # Precondition : counts -> count_dict primitive, NOT from fetchCounts
-# Returns : Intrasample variance plot for brain over 4 runs (cs +- / select +-) 
-async def fetchCountsIntraVariancePlot(gene_id, zero_filt = False, count_dict = count_dict, scale_type = "log1p"):
+# Returns : Intrasample variance plot for brain over 2 runs (cs +-) or only noCS
+async def fetchCountsIntraVariancePlot(gene_id, zero_filt = False, count_dict = count_dict, scale_type = "log1p", include_cs = True):
     
     graph_df = _pd.DataFrame(columns = ["Run", "Count", "lower", "upper"])
     fnames = []
@@ -304,34 +309,40 @@ async def fetchCountsIntraVariancePlot(gene_id, zero_filt = False, count_dict = 
     for id, df in count_dict.items():
         
         if id not in ["Counts_cs_select.csv", "Counts_nocs_select.csv", "Counts_raw.csv"]: # Skip these 3, conclusions will not be affected
-        
-            fnames.append(id)
-            try:
-                gene_series = df.loc[gene_id]
-                sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
-                gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
+            
+            if include_cs or ("nocs" in id):
+                
+                fnames.append(id)
+                try:
+                    gene_series = df.loc[gene_id]
+                    sample_mask = [1 if gene_series.index[i] in brain_samples else 0 for i in range(len(gene_series.index))]
+                    gene_series_filt = [gene_series[i] for i in range(len(gene_series)) if sample_mask[i] == 1]
 
-                if zero_filt:
-                    gene_series_filt = [count for count in gene_series_filt if count != 0]
+                    if zero_filt:
+                        gene_series_filt = [count for count in gene_series_filt if count != 0]
 
-                gene_series_norm = _np.log1p(gene_series_filt)
+                    gene_series_norm = _np.log1p(gene_series_filt)
 
-                lower, upper = (_np.quantile(gene_series_norm, quant) for quant in [0.20,0.80])
+                    lower, upper = (_np.quantile(gene_series_norm, quant) for quant in [0.20,0.80])
 
-                cur_df = _pd.DataFrame.from_dict({
-                    "Run" : [id]*len(gene_series_norm), 
-                    "Count" : gene_series_norm, 
-                    "lower" : lower, 
-                    "upper" : upper 
-                })
+                    cur_df = _pd.DataFrame.from_dict({
+                        "Run" : [id]*len(gene_series_norm), 
+                        "Count" : gene_series_norm, 
+                        "lower" : lower, 
+                        "upper" : upper 
+                    })
 
-                graph_df = _pd.concat([graph_df, cur_df])
+                    graph_df = _pd.concat([graph_df, cur_df])
 
-            except:
-                return "Gene ID not found in one of the count matrices!"
+                except:
+                    return "Gene ID not found in one of the count matrices!"
     
     # Plot Output
-    _io.output_file("Templates/" + gene_id + "_counts_intravar_box_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
+    if include_cs:
+        _io.output_file("Templates/" + gene_id + "_counts_intravar_box_" + scale_type + ".html", title=gene_id + "_counts_boxplot_" + scale_type)
+    else:
+        _io.output_file("Templates/" + gene_id + "_counts_intravar_box_" + scale_type + "_csexc.html", title=gene_id + "_counts_boxplot_" + scale_type)
+    
     _plot.curdoc().theme = 'light_minimal'
 
     source = _plotmod.ColumnDataSource(graph_df)
