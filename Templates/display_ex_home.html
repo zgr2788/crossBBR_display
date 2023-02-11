@@ -96,15 +96,53 @@
           <th scope="row">{{ val['Name'] }}</th>
           <td>{{ val['gene_names'] }}</td>
           <td>{{ val['Score'] }}</td>
+          
+          <!-- Validation pages -->
           {% if exmode != "All" %}
-          <td>{{ val['Validated'] }}</td>
+          
+          <td>
+            {% if val['Validated'] %}
+            &#x2714;
+            {% else %} 
+            &#x2718;
+            {% endif %}
+          </td>
+
           {% endif %}
 
+          <!-- Main page -->
           {% if exmode == "All" %}
-          <td>{{ val['DESeq2_Appeared'] }}</td>
-          <td>{{ val['DESeq2_Validated'] }}</td>
-          <td>{{ val['Wilcox_Appeared'] }}</td>
-          <td>{{ val['Wilcox_Validated'] }}</td>
+          <td>
+            {% if val['DESeq2_Appeared'] %}
+            &#x2714;
+            {% else %} 
+            &#x2718;
+            {% endif %}
+          </td>
+
+          <td>
+            {% if val['DESeq2_Validated'] %}
+            &#x2714;
+            {% else %} 
+            &#x2718;
+            {% endif %}
+          </td>
+
+          <td>
+            {% if val['Wilcox_Appeared'] %}
+            &#x2714;
+            {% else %} 
+            &#x2718;
+            {% endif %}
+          </td>
+
+          <td>
+            {% if val['Wilcox_Validated'] %}
+            &#x2714;
+            {% else %} 
+            &#x2718;
+            {% endif %}
+          </td>
 
           {% endif %}
           <td>
