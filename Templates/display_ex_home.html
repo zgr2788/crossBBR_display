@@ -72,19 +72,21 @@
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
           <th scope="col"><p class="text-info">Rank p-val</p></th>
           {% if exmode == "DESeq2" or exmode == "Wilcox" %}
-          <th scope="col"><p class="text-info">Bootstrap Validated?</p></th>
+          <th scope="col"><p class="text-info">Top in Bootstrap?</p></th>
           {% endif %}
 
           {% if exmode == "All" %}
-          <th scope="col"><p class="text-info">Encountered in DESeq2 Aggregate?</p></th>
-          <th scope="col"><p class="text-info">DESeq2 Bootstrap Validated?</p></th>
-          <th scope="col"><p class="text-info">Encountered in Wilcox Aggregate?</p></th>
-          <th scope="col"><p class="text-info">Wilcox Bootstrap Validated?</p></th>
+          <th scope="col"><p class="text-info">Top in DESeq2 Aggregate?</p></th>
+          <th scope="col"><p class="text-info">Top in DESeq2 Bootstrap?</p></th>
+          <th scope="col"><p class="text-info">Top in WRST Aggregate?</p></th>
+          <th scope="col"><p class="text-info">Top in WRST Bootstrap?</p></th>
           {% endif %}
 
           {% if exmode == "DESeq2 Validation" or exmode == "Wilcox Validation" %}
-          <th scope="col"><p class="text-info">Encountered in Original Aggregate?</p></th>
+          <th scope="col"><p class="text-info">Top in Original?</p></th>
           {% endif %}
+
+          <th scope="col"><p class="text-info">Actions</p></th>
 
         </tr>
       </thead>
@@ -105,6 +107,10 @@
           <td>{{ val['Wilcox_Validated'] }}</td>
 
           {% endif %}
+          <td>
+            <a href="/csexc/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Bar</a>
+            <a href="/csexc/plots/intravar/{{ val['Name'] }}/" class="btn btn-primary">Intravar-Zerofilt</a>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
