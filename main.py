@@ -89,6 +89,16 @@ async def intravar_box_plot(request: _fastapi.Request, gene_id: str):
 
     return templates.TemplateResponse(gene_id + "_counts_intravar_box_log1p" + "_csexc.html", context={'request' : request})
 
+# For count plots with sample info
+@app.get("/csexc/plots/counts/{gene_id}/")
+async def counts_plot(request: _fastapi.Request, gene_id: str):
+
+    counts_dict, gene_id = await _services.fetchCounts(gene_id, include_cs=False)
+    
+    await _services.fetchSampleCountDistrib(gene_id, include_cs=False)
+
+    return templates.TemplateResponse(gene_id + "_counts_whisk_log1p" + "_csexc.html", context={'request' : request})
+
 #################################################################
 
 # CS included results page

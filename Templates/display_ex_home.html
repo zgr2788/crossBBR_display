@@ -146,8 +146,9 @@
 
           {% endif %}
           <td>
-            <a href="/csexc/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Bar</a>
-            <a href="/csexc/plots/intravar/{{ val['Name'] }}/" class="btn btn-primary">Intravar-Zerofilt</a>
+            <a href="/csexc/plots/counts/{{ val['Name'] }}/" class="btn btn-primary">Counts</a>
+            <a href="/csexc/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Summed Counts</a>
+            <a href="/csexc/plots/intravar/{{ val['Name'] }}/" class="btn btn-primary">Brain Intravariance</a>
           </td>
         </tr>
         {% endfor %}

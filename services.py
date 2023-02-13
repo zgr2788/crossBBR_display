@@ -377,7 +377,7 @@ async def fetchCountsIntraVariancePlot(gene_id, zero_filt = False, count_dict = 
 
 # Precondition : counts -> count_dict primitive, NOT from fetchCounts
 # Returns : Sample count distribution in runs per tissue  
-def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count_dict, scale_type = "log1p", include_cs = False):
+async def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count_dict, scale_type = "log1p", include_cs = False):
     
     graph_df_list = []
     
@@ -460,15 +460,17 @@ def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count_dict,
     for df in graph_df_list:
         source = _plotmod.ColumnDataSource(df)
 
-        whisker = _plotmod.Whisker(base="Tissue", upper="upper", lower="lower", source=source, level="annotation", line_width = 2)
+        whisker = _plotmod.Whisker(base="Tissue", upper="upper", lower="lower", source=source, level="annotation", line_width = 1)
         mid = _plotmod.Whisker(base="Tissue", upper="middle", lower="middle", source=source, level="annotation", line_width = 2)
-        whisker.upper_head.size = whisker.lower_head.size = mid.upper_head.size = mid.lower_head.size = 20
+        whisker.upper_head.size = whisker.lower_head.size = 20
+        mid.upper_head.size = mid.lower_head.size = 40
+        mid.upper_head.line_color = mid.lower_head.line_color = 'red'
         p.add_layout(whisker)
         p.add_layout(mid)
 
         cmap = _trans.factor_cmap("Tissue", palette=Category20[len(tissues)], factors=tissues)
         p.circle(_trans.jitter("Tissue", 0.3, range=p.x_range), "Count", source=df,
-            alpha=0.5, size=13, line_color="white",
+            alpha=0.2, size=13, line_color="white",
             color=cmap)
 
     p.y_range.start = 0
@@ -477,10 +479,3 @@ def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count_dict,
     p.xgrid.grid_line_color = None
 
     _io.save(p)
-    
-
-
-
-geneid="ENSG00000167889"
-
-print(fetchSampleCountDistrib(geneid))
