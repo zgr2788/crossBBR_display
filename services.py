@@ -454,15 +454,17 @@ def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count_dict,
         width = int(1920 * 0.9), 
         height= int(1080 * 0.9),
         sizing_mode='scale_width',
-        y_range=_plotmod.Range1d(0, y_max, bounds="auto")
+        y_range=_plotmod.Range1d(0, y_max+1, bounds="auto")
     )
 
     for df in graph_df_list:
         source = _plotmod.ColumnDataSource(df)
 
         whisker = _plotmod.Whisker(base="Tissue", upper="upper", lower="lower", source=source, level="annotation", line_width = 2)
-        whisker.upper_head.size = whisker.lower_head.size = 20
+        mid = _plotmod.Whisker(base="Tissue", upper="middle", lower="middle", source=source, level="annotation", line_width = 2)
+        whisker.upper_head.size = whisker.lower_head.size = mid.upper_head.size = mid.lower_head.size = 20
         p.add_layout(whisker)
+        p.add_layout(mid)
 
         cmap = _trans.factor_cmap("Tissue", palette=Category20[len(tissues)], factors=tissues)
         p.circle(_trans.jitter("Tissue", 0.3, range=p.x_range), "Count", source=df,
