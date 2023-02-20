@@ -80,7 +80,6 @@ aggreg_ref["Variance Confidence Score - Zerofilt"] = aggreg_ref["Variance Confid
 # Returns : Gene list -> List of genes with attributes
 
 async def fetchGeneList():
-    print(aggreg_ref.columns)
     return(aggreg_ref)
 
 
