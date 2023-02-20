@@ -58,6 +58,7 @@
           <th scope="col"><p class="text-info">LD Confidence</p></th>
           <th scope="col"><p class="text-info">LDI - Zero Filtered</p></th>
           <th scope="col"><p class="text-info">LD Confidence - Zero Filtered</p></th>
+          <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
           <th scope="col"><p class="text-info">Actions</p></th>
         </tr>
       </thead>
@@ -71,6 +72,7 @@
           <td>{{ val['Variance Confidence Score'] }}</td>
           <td>{{ val['Variance Impact - Zerofilt'] }}</td>
           <td>{{ val['Variance Confidence Score - Zerofilt'] }}</td>
+          <td>{{ val['Mean Perfusion Score'] }}</td>
           
           <td>
             <a href="/csinc/plots/barplot/{{ val['Name'] }}/" class="btn btn-primary">Counts-Bar</a>

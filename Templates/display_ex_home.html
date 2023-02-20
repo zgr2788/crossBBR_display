@@ -71,6 +71,7 @@
           <th scope="col"><p class="text-info">Ensembl ID</p></th>
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
           <th scope="col"><p class="text-info">Rank p-val</p></th>
+          <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
           {% if exmode == "DESeq2" or exmode == "Wilcox" %}
           <th scope="col"><p class="text-info">Top in Bootstrap?</p></th>
           {% endif %}
@@ -96,6 +97,7 @@
           <th scope="row">{{ val['Name'] }}</th>
           <td>{{ val['gene_names'] }}</td>
           <td>{{ val['Score'] }}</td>
+          <td>{{ val['Mean Perfusion Score'] }}</td>
           
           <!-- Validation pages -->
           {% if exmode != "All" %}

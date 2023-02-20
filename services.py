@@ -29,9 +29,20 @@ with open("Counts/var_info_nonzero.pickle", "rb") as f:
     f.close()
 
 count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.listdir(counts) if ".csv" in fname}
-sample_table = _pd.read_csv("sampleTable_final_ideal_dots.csv")
+sample_table = _pd.read_csv("Metadata/sampleTable_final_ideal_dots.csv")
+perf_score_ref  = _pd.read_csv("Metadata/gene_perf_rate_master.csv", index_col=0)
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
 tissues = list(set(list(sample_tissue_map.values())))
+
+# Wrapper for gene perfusion scores
+def perfWrapper(gene_id, ref=perf_score_ref):
+    try:
+        score = perf_score_ref["meanPerfusionScore"][gene_id]
+    
+    except:
+        score = -1
+    
+    return score
 
 # Read and construct aggregation reference
 aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
@@ -40,6 +51,14 @@ aggreg_ex_deseq2 = _pd.read_csv("Aggregs/aggreg_deseq2.csv")
 aggreg_ex_deseq2_valid = _pd.read_csv("Aggregs/aggreg_deseq2_valid.csv")
 aggreg_ex_wilcox = _pd.read_csv("Aggregs/aggreg_wilcox.csv")
 aggreg_ex_wilcox_valid = _pd.read_csv("Aggregs/aggreg_wilcox_valid.csv")
+
+# Add perfusion scores to aggregates
+aggreg_ref["Mean Perfusion Score"] = aggreg_ref["Name"].apply(lambda x: perfWrapper(x))
+aggreg_ex_ref["Mean Perfusion Score"] = aggreg_ex_ref["Name"].apply(lambda x: perfWrapper(x))
+aggreg_ex_deseq2["Mean Perfusion Score"] = aggreg_ex_deseq2["Name"].apply(lambda x: perfWrapper(x))
+aggreg_ex_deseq2_valid["Mean Perfusion Score"] = aggreg_ex_deseq2_valid["Name"].apply(lambda x: perfWrapper(x))
+aggreg_ex_wilcox["Mean Perfusion Score"] = aggreg_ex_wilcox["Name"].apply(lambda x: perfWrapper(x))
+aggreg_ex_wilcox_valid["Mean Perfusion Score"] = aggreg_ex_wilcox_valid["Name"].apply(lambda x: perfWrapper(x))
 
 # Variance impact - with 0's considered as biological variance
 aggreg_ref["Variance Impact"] = [var_info[gene_name][0] for gene_name in aggreg_ref["Name"].values]
@@ -61,6 +80,7 @@ aggreg_ref["Variance Confidence Score - Zerofilt"] = aggreg_ref["Variance Confid
 # Returns : Gene list -> List of genes with attributes
 
 async def fetchGeneList():
+    print(aggreg_ref.columns)
     return(aggreg_ref)
 
 
@@ -479,3 +499,4 @@ async def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count
         p.xgrid.grid_line_color = None
     
         _io.save(p)
+
