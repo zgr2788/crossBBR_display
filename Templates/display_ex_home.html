@@ -95,7 +95,7 @@
         {% for key, val in genes_df.iterrows() %}
         <tr class="table-active">
           <th scope="row">{{ val['Name'] }}</th>
-          <td>{{ val['gene_names'] }}</td>
+          <td> <a href="https://www.ebi.ac.uk/interpro/search/text/{{ val['uniprot'] }}" target="_blank">{{ val['gene_names'] }}</a> </td> 
           <td>{{ val['Score'] }}</td>
           <td>{{ val['Mean Perfusion Score'] }}</td>
           
