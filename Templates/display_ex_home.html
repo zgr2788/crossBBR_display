@@ -81,6 +81,7 @@
           <th scope="col"><p class="text-info">Top in DESeq2 Bootstrap?</p></th>
           <th scope="col"><p class="text-info">Top in WRST Aggregate?</p></th>
           <th scope="col"><p class="text-info">Top in WRST Bootstrap?</p></th>
+          <th scope="col"><p class="text-info">Protein Evidence?</p></th>
           {% endif %}
 
           {% if exmode == "DESeq2 Validation" or exmode == "Wilcox Validation" %}
@@ -140,6 +141,14 @@
 
           <td>
             {% if val['Wilcox_Validated'] %}
+            &#x2714;
+            {% else %} 
+            &#x2718;
+            {% endif %}
+          </td>
+
+          <td>
+            {% if val['Prot_Evidence'] %}
             &#x2714;
             {% else %} 
             &#x2718;
