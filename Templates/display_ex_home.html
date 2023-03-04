@@ -56,113 +56,272 @@
       <p>Vestibulum pretium metus aliquam tortor dapibus, non vestibulum lorem accumsan. Vestibulum interdum tortor vitae nisl laoreet, in interdum lacus consequat. In tempor dolor at nulla dictum, quis pretium metus euismod. Nam feugiat sit amet enim vitae blandit. Integer facilisis justo at velit pharetra ultricies. Sed eu lectus non felis blandit sagittis. Ut hendrerit non dolor id aliquam. Pellentesque consequat nisi vel eros rhoncus, eget consectetur metus rhoncus. In sed neque mollis, rhoncus turpis in, feugiat felis. Quisque posuere euismod consequat. Praesent vitae ante et lacus vehicula fringilla in ac ligula. Morbi nec suscipit tortor. Sed aliquet lorem quam, et molestie nisl vulputate ac. Donec faucibus ligula vel hendrerit sollicitudin. In hac habitasse platea dictumst.</p>
     </div>
     <br>
-    <div class="row">
-      <h1>Gene Table</h1>
-    </div>
-    <br>
 
     <!-- Genetable -->
-    <table class="table table-hover center">
-      <thead>
-        <tr class="table-active bg-transparent">
-          <th scope="col"><p class="text-info">Ensembl ID</p></th>
-          <th scope="col"><p class="text-info">Gene Symbol</p></th>
-          <th scope="col"><p class="text-info">Rank p-val</p></th>
-          <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
-          {% if rnaseq_disp == "DESeq2" or rnaseq_disp == "Wilcox" %}
-          <th scope="col"><p class="text-info">Top in Bootstrap?</p></th>
-          {% endif %}
+    <div class="row">
+      <h1>Gene Tables</h1>
+      <br>
+    </div>
+      <!-- Tab switch -->
+    <div class="container-fluid">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active text-warning" data-bs-toggle="tab" href="#All" aria-selected="true" role="tab" tabindex="-1"><strong>All</strong></a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link text-warning" data-bs-toggle="tab" href="#DESeq2" aria-selected="false" role="tab"><strong>DESeq2</strong></a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link text-warning" data-bs-toggle="tab" href="#DESeq2-Valid" aria-selected="false" role="tab"><strong>DESeq2 Validation</strong></a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link text-warning" data-bs-toggle="tab" href="#Wilcox" aria-selected="false" role="tab"><strong>Wilcox</strong></a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link text-warning" data-bs-toggle="tab" href="#Wilcox-Valid" aria-selected="false" role="tab"><strong>Wilcox Validation</strong></a>
+        </li>
+      </ul>
+      <br>
+      <!-- Tables -->
+      <div id="navTabContent" class="tab-content">
+        
+        <!-- All -->
+        <div class="tab-pane fade active show" id="All" role="tabpanel">
+          <div class="table-responsive">
+            <table class="table table-hover center">
+              <thead>
+                <tr class="table-active bg-transparent">
+                  <th scope="col"><p class="text-info">Ensembl ID</p></th>
+                  <th scope="col"><p class="text-info">Gene Symbol</p></th>
+                  <th scope="col"><p class="text-info">Rank p-val</p></th>
+                  <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
+                  <th scope="col"><p class="text-info">Top in DESeq2 Aggregate?</p></th>
+                  <th scope="col"><p class="text-info">Top in DESeq2 Bootstrap?</p></th>
+                  <th scope="col"><p class="text-info">Top in WRST Aggregate?</p></th>
+                  <th scope="col"><p class="text-info">Top in WRST Bootstrap?</p></th>
+                  <th scope="col"><p class="text-info">Protein Evidence?</p></th>
+                  <th scope="col"><p class="text-info text-center">Actions</p></th>
+                
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, val in genes_df.iterrows() %}
+                <tr class="table-active">
+                  <th scope="row">{{ val['Name'] }}</th>
+                  <td> <a href="https://www.ebi.ac.uk/interpro/search/text/{{ val['uniprot'] }}" target="_blank">{{ val['gene_names'] }}</a> </td> 
+                  <td>{{ val['Score'] }}</td>
+                  <td>{{ val['Mean Perfusion Score'] }}</td>
 
-          {% if rnaseq_disp  == "All"%}
-          <th scope="col"><p class="text-info">Top in DESeq2 Aggregate?</p></th>
-          <th scope="col"><p class="text-info">Top in DESeq2 Bootstrap?</p></th>
-          <th scope="col"><p class="text-info">Top in WRST Aggregate?</p></th>
-          <th scope="col"><p class="text-info">Top in WRST Bootstrap?</p></th>
-          <th scope="col"><p class="text-info">Protein Evidence?</p></th>
-          {% endif %}
+                  <!-- Main page -->
+                  <td>
+                    {% if val['DESeq2_Appeared'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                
+                  <td>
+                    {% if val['DESeq2_Validated'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                
+                  <td>
+                    {% if val['Wilcox_Appeared'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                
+                  <td>
+                    {% if val['Wilcox_Validated'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                
+                  <td>
+                    {% if val['Prot_Evidence'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                
+                  <td>
+                    <a href="/omics/plots/counts/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Counts</a>
+                    <a href="/omics/plots/intravar/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Brain Intravariance</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-          {% if rnaseq_disp == "DESeq2 Validation" or rnaseq_disp == "Wilcox Validation" %}
-          <th scope="col"><p class="text-info">Top in Original?</p></th>
-          {% endif %}
+        <!-- DESeq2 -->
+        <div class="tab-pane fade" id="DESeq2" role="tabpanel">
+          <div class="table-responsive">
+            <table class="table table-hover center">
+              <thead>
+                <tr class="table-active bg-transparent">
+                  <th scope="col"><p class="text-info">Ensembl ID</p></th>
+                  <th scope="col"><p class="text-info">Gene Symbol</p></th>
+                  <th scope="col"><p class="text-info">Rank p-val</p></th>
+                  <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
+                  <th scope="col"><p class="text-info">Top in Bootstrap?</p></th>
+                  <th scope="col"><p class="text-info text-center">Actions</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, val in genes_deseq2_df.iterrows() %}
+                <tr class="table-active">
+                  <th scope="row">{{ val['Name'] }}</th>
+                  <td> <a href="https://www.ebi.ac.uk/interpro/search/text/{{ val['uniprot'] }}" target="_blank">{{ val['gene_names'] }}</a> </td> 
+                  <td>{{ val['Score'] }}</td>
+                  <td>{{ val['Mean Perfusion Score'] }}</td>
+                  <td>
+                    {% if val['Validated'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                  <td class="text-center">
+                    <a href="/omics/plots/counts/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Counts</a>
+                    <a href="/omics/plots/intravar/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Brain Intravariance</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-          <th scope="col"><p class="text-info text-center">Actions</p></th>
+        <!-- DESeq2 Validation -->
+        <div class="tab-pane fade" id="DESeq2-Valid" role="tabpanel">
+          <div class="table-responsive">
+            <table class="table table-hover center">
+              <thead>
+                <tr class="table-active bg-transparent">
+                  <th scope="col"><p class="text-info">Ensembl ID</p></th>
+                  <th scope="col"><p class="text-info">Gene Symbol</p></th>
+                  <th scope="col"><p class="text-info">Rank p-val</p></th>
+                  <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
+                  <th scope="col"><p class="text-info">Top in DESeq2?</p></th>
+                  <th scope="col"><p class="text-info text-center">Actions</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, val in genes_deseq2_valid_df.iterrows() %}
+                <tr class="table-active">
+                  <th scope="row">{{ val['Name'] }}</th>
+                  <td> <a href="https://www.ebi.ac.uk/interpro/search/text/{{ val['uniprot'] }}" target="_blank">{{ val['gene_names'] }}</a> </td> 
+                  <td>{{ val['Score'] }}</td>
+                  <td>{{ val['Mean Perfusion Score'] }}</td>
+                  <td>
+                    {% if val['Validated'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                  <td class="text-center">
+                    <a href="/omics/plots/counts/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Counts</a>
+                    <a href="/omics/plots/intravar/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Brain Intravariance</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-        </tr>
-      </thead>
-      <tbody>
-        {% for key, val in genes_df.iterrows() %}
-        <tr class="table-active">
-          <th scope="row">{{ val['Name'] }}</th>
-          <td> <a href="https://www.ebi.ac.uk/interpro/search/text/{{ val['uniprot'] }}" target="_blank">{{ val['gene_names'] }}</a> </td> 
-          <td>{{ val['Score'] }}</td>
-          <td>{{ val['Mean Perfusion Score'] }}</td>
-          
-          <!-- Validation pages -->
-          {% if rnaseq_disp != "All" %}
-          
-          <td>
-            {% if val['Validated'] %}
-            &#x2714;
-            {% else %} 
-            &#x2718;
-            {% endif %}
-          </td>
+        <!-- Wilcox -->
+        <div class="tab-pane fade" id="Wilcox" role="tabpanel">
+          <div class="table-responsive">
+            <table class="table table-hover center">
+              <thead>
+                <tr class="table-active bg-transparent">
+                  <th scope="col"><p class="text-info">Ensembl ID</p></th>
+                  <th scope="col"><p class="text-info">Gene Symbol</p></th>
+                  <th scope="col"><p class="text-info">Rank p-val</p></th>
+                  <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
+                  <th scope="col"><p class="text-info">Top in Bootstrap?</p></th>
+                  <th scope="col"><p class="text-info text-center">Actions</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, val in genes_wilcox_df.iterrows() %}
+                <tr class="table-active">
+                  <th scope="row">{{ val['Name'] }}</th>
+                  <td> <a href="https://www.ebi.ac.uk/interpro/search/text/{{ val['uniprot'] }}" target="_blank">{{ val['gene_names'] }}</a> </td> 
+                  <td>{{ val['Score'] }}</td>
+                  <td>{{ val['Mean Perfusion Score'] }}</td>
+                  <td>
+                    {% if val['Validated'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                  <td class="text-center">
+                    <a href="/omics/plots/counts/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Counts</a>
+                    <a href="/omics/plots/intravar/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Brain Intravariance</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-          {% endif %}
-
-          <!-- Main page -->
-          {% if rnaseq_disp == "All" %}
-          <td>
-            {% if val['DESeq2_Appeared'] %}
-            &#x2714;
-            {% else %} 
-            &#x2718;
-            {% endif %}
-          </td>
-
-          <td>
-            {% if val['DESeq2_Validated'] %}
-            &#x2714;
-            {% else %} 
-            &#x2718;
-            {% endif %}
-          </td>
-
-          <td>
-            {% if val['Wilcox_Appeared'] %}
-            &#x2714;
-            {% else %} 
-            &#x2718;
-            {% endif %}
-          </td>
-
-          <td>
-            {% if val['Wilcox_Validated'] %}
-            &#x2714;
-            {% else %} 
-            &#x2718;
-            {% endif %}
-          </td>
-
-          <td>
-            {% if val['Prot_Evidence'] %}
-            &#x2714;
-            {% else %} 
-            &#x2718;
-            {% endif %}
-          </td>
-
-          {% endif %}
-          <td>
-            <a href="/omics/plots/counts/{{ val['Name'] }}" class="btn btn-primary">Counts</a>
-            <a href="/omics/plots/barplot/{{ val['Name'] }}" class="btn btn-primary">Summed Counts</a>
-            <a href="/omics/plots/intravar/{{ val['Name'] }}" class="btn btn-primary">Brain Intravariance</a>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-
+        <!-- Wilcox Validation -->
+        <div class="tab-pane fade" id="Wilcox-Valid" role="tabpanel">
+          <div class="table-responsive">
+            <table class="table table-hover center">
+              <thead>
+                <tr class="table-active bg-transparent">
+                  <th scope="col"><p class="text-info">Ensembl ID</p></th>
+                  <th scope="col"><p class="text-info">Gene Symbol</p></th>
+                  <th scope="col"><p class="text-info">Rank p-val</p></th>
+                  <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
+                  <th scope="col"><p class="text-info">Top in Wilcox?</p></th>
+                  <th scope="col"><p class="text-info text-center">Actions</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for key, val in genes_wilcox_valid_df.iterrows() %}
+                <tr class="table-active">
+                  <th scope="row">{{ val['Name'] }}</th>
+                  <td> <a href="https://www.ebi.ac.uk/interpro/search/text/{{ val['uniprot'] }}" target="_blank">{{ val['gene_names'] }}</a> </td> 
+                  <td>{{ val['Score'] }}</td>
+                  <td>{{ val['Mean Perfusion Score'] }}</td>
+                  <td>
+                    {% if val['Validated'] %}
+                    &#x2714;
+                    {% else %} 
+                    &#x2718;
+                    {% endif %}
+                  </td>
+                  <td class="text-center">
+                    <a href="/omics/plots/counts/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Counts</a>
+                    <a href="/omics/plots/intravar/{{ val['Name'] }}" class="btn btn-primary" target="_blank">Brain Intravariance</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
