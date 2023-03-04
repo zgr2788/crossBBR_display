@@ -14,7 +14,6 @@ templates = _templates.Jinja2Templates(directory = "Templates")
 @app.get("/")
 async def landing(request: _fastapi.Request):
     response = templates.TemplateResponse('landing.html', context = {'request' : request})
-    response.set_cookie(key="rnaseq_disp", value="All")
     return response
 
 #################################################################
@@ -40,3 +39,9 @@ async def counts_plot(request: _fastapi.Request, gene_id: str):
     return templates.TemplateResponse(gene_id + "_counts_whisk_log1p" + "_csexc.html", context={'request' : request})
 
 #################################################################
+
+# Download links page
+@app.get("/downloads")
+async def downloads_page(request: _fastapi.Request):
+    response = templates.TemplateResponse('download_links.html', context = {'request' : request})
+    return response
