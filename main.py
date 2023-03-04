@@ -20,13 +20,13 @@ async def landing(request: _fastapi.Request):
 #################################################################
 
 # CS excluded results page
-@app.get("/RNASeq")
+@app.get("/omics")
 async def ex_main_page(request: _fastapi.Request, rnaseq_disp : Union[str, None] = _fastapi.Cookie(default="All")):
     gene_list = await _services.fetchExGeneList(rnaseq_disp)
     return templates.TemplateResponse('display_ex_home.html', context = {'request' : request, 'genes_df' : gene_list, 'rnaseq_disp' : rnaseq_disp})
 
 # Search CS excluded results
-@app.post("/RNASeq")
+@app.post("/omics")
 async def ex_main_search(request: _fastapi.Request, search_string : str = _fastapi.Form(), rnaseq_disp : Union[str, None] = _fastapi.Cookie(default="All")):
     gene_list = await _services.fetchExGeneList(rnaseq_disp)
 
@@ -36,42 +36,42 @@ async def ex_main_search(request: _fastapi.Request, search_string : str = _fasta
     return templates.TemplateResponse('display_ex_home.html', context = {'request' : request, 'genes_df' : gene_list, 'rnaseq_disp' : rnaseq_disp})
 
 # CS excluded (reset route)
-@app.get("/RNASeq/reset")
+@app.get("/omics/reset")
 async def ex_main_reset(request: _fastapi.Request, rnaseq_disp : Union[str, None] = _fastapi.Cookie(default="All")):
-    response = RedirectResponse("/RNASeq")
+    response = RedirectResponse("/omics")
     response.set_cookie(key="rnaseq_disp", value="All")
     return response
 
 # CS excluded (deseq2 only route)
-@app.get("/RNASeq/deseq2")
+@app.get("/omics/deseq2")
 async def ex_main_deseq2(request: _fastapi.Request, rnaseq_disp : Union[str, None] = _fastapi.Cookie(default="All")):
-    response = RedirectResponse("/RNASeq")
+    response = RedirectResponse("/omics")
     response.set_cookie(key="rnaseq_disp", value="DESeq2")
     return response
 
 # CS excluded (deseq2 valid route)
-@app.get("/RNASeq/valid/deseq2")
+@app.get("/omics/valid/deseq2")
 async def ex_main_deseq2_valid(request: _fastapi.Request, rnaseq_disp : Union[str, None] = _fastapi.Cookie(default="All")):
-    response = RedirectResponse("/RNASeq")
+    response = RedirectResponse("/omics")
     response.set_cookie(key="rnaseq_disp", value="DESeq2 Validation")
     return response
 
 # CS excluded (wilcox valid route)
-@app.get("/RNASeq/valid/wilcox")
+@app.get("/omics/valid/wilcox")
 async def ex_main_deseq2_valid(request: _fastapi.Request, rnaseq_disp : Union[str, None] = _fastapi.Cookie(default="All")):
-    response = RedirectResponse("/RNASeq")
+    response = RedirectResponse("/omics")
     response.set_cookie(key="rnaseq_disp", value="Wilcox Validation")
     return response
 
 # CS excluded (wilcox only route)
-@app.get("/RNASeq/wilcox")
+@app.get("/omics/wilcox")
 async def ex_main_wilcox(request: _fastapi.Request, rnaseq_disp : Union[str, None] = _fastapi.Cookie(default="All")):
-    response = RedirectResponse("/RNASeq")
+    response = RedirectResponse("/omics")
     response.set_cookie(key="rnaseq_disp", value="Wilcox")
     return response
 
 # For count barplots
-@app.get("/RNASeq/plots/barplot/{gene_id}")
+@app.get("/omics/plots/barplot/{gene_id}")
 async def bar_plot(request: _fastapi.Request, gene_id: str):
 
     counts_dict, gene_id = await _services.fetchCounts(gene_id, include_cs=False)
@@ -81,7 +81,7 @@ async def bar_plot(request: _fastapi.Request, gene_id: str):
     return templates.TemplateResponse(gene_id + "_counts_log1p" + "_csexc.html", context={'request' : request})
 
 # For intra-sample variance
-@app.get("/RNASeq/plots/intravar/{gene_id}")
+@app.get("/omics/plots/intravar/{gene_id}")
 async def intravar_box_plot(request: _fastapi.Request, gene_id: str):
     counts_dict, gene_id = await _services.fetchCounts(gene_id, include_cs=False)
     
@@ -90,7 +90,7 @@ async def intravar_box_plot(request: _fastapi.Request, gene_id: str):
     return templates.TemplateResponse(gene_id + "_counts_intravar_box_log1p" + "_csexc.html", context={'request' : request})
 
 # For count plots with sample info
-@app.get("/RNASeq/plots/counts/{gene_id}")
+@app.get("/omics/plots/counts/{gene_id}/")
 async def counts_plot(request: _fastapi.Request, gene_id: str):
 
     counts_dict, gene_id = await _services.fetchCounts(gene_id, include_cs=False)

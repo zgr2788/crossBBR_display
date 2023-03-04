@@ -12,7 +12,7 @@
 </head>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
  <div class="container-fluid">
    <a class="navbar-brand" href=""><h1><p class="text-primary">BBB Data Repository</p></h1></a>
    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
          <a class="nav-link" href="/">Homepage</a>
        </li>
        <li class="nav-item px-5">
-         <a class="nav-link active" href="/RNASeq">RNA-Seq
+         <a class="nav-link active" href="/omics">RNA-Seq
           <span class="visually-hidden">(current)</span>
          </a>
        </li>
@@ -41,12 +41,9 @@
 </nav>
 
 <body>
-
-
-
-
-  <!-- Metadata -->
   <div class="container-fluid p-4">
+
+    <!-- Metadata -->
     <div class="row">
       <h1>Methods</h1>
       <br>
@@ -59,23 +56,24 @@
       <p>Vestibulum pretium metus aliquam tortor dapibus, non vestibulum lorem accumsan. Vestibulum interdum tortor vitae nisl laoreet, in interdum lacus consequat. In tempor dolor at nulla dictum, quis pretium metus euismod. Nam feugiat sit amet enim vitae blandit. Integer facilisis justo at velit pharetra ultricies. Sed eu lectus non felis blandit sagittis. Ut hendrerit non dolor id aliquam. Pellentesque consequat nisi vel eros rhoncus, eget consectetur metus rhoncus. In sed neque mollis, rhoncus turpis in, feugiat felis. Quisque posuere euismod consequat. Praesent vitae ante et lacus vehicula fringilla in ac ligula. Morbi nec suscipit tortor. Sed aliquet lorem quam, et molestie nisl vulputate ac. Donec faucibus ligula vel hendrerit sollicitudin. In hac habitasse platea dictumst.</p>
     </div>
     <br>
-  </div>
+    <div class="row">
+      <h1>Gene Table</h1>
+    </div>
+    <br>
 
-
-  <!-- Genetable -->
-  <div class="container-fluid p-4">
+    <!-- Genetable -->
     <table class="table table-hover center">
       <thead>
-        <tr>
+        <tr class="table-active bg-transparent">
           <th scope="col"><p class="text-info">Ensembl ID</p></th>
           <th scope="col"><p class="text-info">Gene Symbol</p></th>
           <th scope="col"><p class="text-info">Rank p-val</p></th>
           <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
-          {% if exmode == "DESeq2" or exmode == "Wilcox" %}
+          {% if rnaseq_disp == "DESeq2" or rnaseq_disp == "Wilcox" %}
           <th scope="col"><p class="text-info">Top in Bootstrap?</p></th>
           {% endif %}
 
-          {% if exmode == "All" %}
+          {% if rnaseq_disp  == "All"%}
           <th scope="col"><p class="text-info">Top in DESeq2 Aggregate?</p></th>
           <th scope="col"><p class="text-info">Top in DESeq2 Bootstrap?</p></th>
           <th scope="col"><p class="text-info">Top in WRST Aggregate?</p></th>
@@ -83,11 +81,11 @@
           <th scope="col"><p class="text-info">Protein Evidence?</p></th>
           {% endif %}
 
-          {% if exmode == "DESeq2 Validation" or exmode == "Wilcox Validation" %}
+          {% if rnaseq_disp == "DESeq2 Validation" or rnaseq_disp == "Wilcox Validation" %}
           <th scope="col"><p class="text-info">Top in Original?</p></th>
           {% endif %}
 
-          <th scope="col"><p class="text-info">Actions</p></th>
+          <th scope="col"><p class="text-info text-center">Actions</p></th>
 
         </tr>
       </thead>
@@ -100,7 +98,7 @@
           <td>{{ val['Mean Perfusion Score'] }}</td>
           
           <!-- Validation pages -->
-          {% if exmode != "All" %}
+          {% if rnaseq_disp != "All" %}
           
           <td>
             {% if val['Validated'] %}
@@ -113,7 +111,7 @@
           {% endif %}
 
           <!-- Main page -->
-          {% if exmode == "All" %}
+          {% if rnaseq_disp == "All" %}
           <td>
             {% if val['DESeq2_Appeared'] %}
             &#x2714;
@@ -156,20 +154,16 @@
 
           {% endif %}
           <td>
-            <a href="/RNASeq/plots/counts/{{ val['Name'] }}" class="btn btn-primary">Counts</a>
-            <a href="/RNASeq/plots/barplot/{{ val['Name'] }}" class="btn btn-primary">Summed Counts</a>
-            <a href="/RNASeq/plots/intravar/{{ val['Name'] }}" class="btn btn-primary">Brain Intravariance</a>
+            <a href="/omics/plots/counts/{{ val['Name'] }}" class="btn btn-primary">Counts</a>
+            <a href="/omics/plots/barplot/{{ val['Name'] }}" class="btn btn-primary">Summed Counts</a>
+            <a href="/omics/plots/intravar/{{ val['Name'] }}" class="btn btn-primary">Brain Intravariance</a>
           </td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
+
   </div>
-
-
-
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
