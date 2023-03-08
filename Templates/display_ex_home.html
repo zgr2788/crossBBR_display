@@ -51,23 +51,60 @@
   <div class="container-fluid p-4">
     <!-- Metadata -->
     <div class="row">
-      <h1>Methods</h1>
-      <br>
-      <p>Vestibulum pretium metus aliquam tortor dapibus, non vestibulum lorem accumsan. Vestibulum interdum tortor vitae nisl laoreet, in interdum lacus consequat. In tempor dolor at nulla dictum, quis pretium metus euismod. Nam feugiat sit amet enim vitae blandit. Integer facilisis justo at velit pharetra ultricies. Sed eu lectus non felis blandit sagittis. Ut hendrerit non dolor id aliquam. Pellentesque consequat nisi vel eros rhoncus, eget consectetur metus rhoncus. In sed neque mollis, rhoncus turpis in, feugiat felis. Quisque posuere euismod consequat. Praesent vitae ante et lacus vehicula fringilla in ac ligula. Morbi nec suscipit tortor. Sed aliquet lorem quam, et molestie nisl vulputate ac. Donec faucibus ligula vel hendrerit sollicitudin. In hac habitasse platea dictumst.</p>
+      <h1 class="text-primary">Methods</h1>
     </div>
     <br>
+
     <div class="row">
-      <h1>Contents</h1>
-      <br>
-      <p>Vestibulum pretium metus aliquam tortor dapibus, non vestibulum lorem accumsan. Vestibulum interdum tortor vitae nisl laoreet, in interdum lacus consequat. In tempor dolor at nulla dictum, quis pretium metus euismod. Nam feugiat sit amet enim vitae blandit. Integer facilisis justo at velit pharetra ultricies. Sed eu lectus non felis blandit sagittis. Ut hendrerit non dolor id aliquam. Pellentesque consequat nisi vel eros rhoncus, eget consectetur metus rhoncus. In sed neque mollis, rhoncus turpis in, feugiat felis. Quisque posuere euismod consequat. Praesent vitae ante et lacus vehicula fringilla in ac ligula. Morbi nec suscipit tortor. Sed aliquet lorem quam, et molestie nisl vulputate ac. Donec faucibus ligula vel hendrerit sollicitudin. In hac habitasse platea dictumst.</p>
+      <h3 class="text-muted">Raw data, alignment & quantification</h3>
+      <p>
+        Raw read data was downloaded from the <a class="text-info" href="https://www.ebi.ac.uk/ena/browser/home" target="_blank">European Nucleotide Archive</a> FASP server.
+        Reads were aligned to the human genome using <a class="text-info" href="https://github.com/alexdobin/STAR" target="_blank">STAR</a> (release 2.7.0e) with the reference index generated
+        from <a class="text-info" href="https://ftp.ensembl.org/pub/release-107/">GRCh38 - Release 107</a> primary assembly file & annotations. Alignments were quantified through
+        R using the featureCounts method provided by the <a class="text-info" href="https://bioconductor.org/packages/release/bioc/html/Rsubread.html" target="_blank">Rsubread</a> package (ver. 2.8.2).
+      </p>
     </div>
+    
+    <br>
+
+    <div class="row">
+      <h3 class="text-muted">Differential gene expression analyses</h3>
+      <p>
+        Pairwise differential gene expression analyses between brain endothelial cells (NOT sourced from stem cells) and other tissues were conducted using two approaches.
+        First, <a class="text-info" href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html" target="_blank">DESeq2</a> was used with a zero-intercept design which also integrated batch variables 
+        (indicated by layout and instrument model in the sample metadata). Model contrasts were extracted for each of the 15 comparisons. A second group of contrasts was obtained only by considering vital tissues (colon, heart, intestine, kidney, liver, lung, vessel).
+        Genes with adjusted P < 0.05 and fold change (log2) > 1 were considered significant, which were then ranked based on the number of times they have appeared as significant over 15 or 8 comparisons depending on the run.
+      </p>
+      <p>
+        Using the normalized (median of ratios, see <a class="text-info" href="https://hbctraining.github.io/DGE_workshop/lessons/02_DGE_count_normalization.html" target="_blank">here</a>) count matrices, <a class="text-info" href="https://rpubs.com/LiYumei/806213" target="_blank">Wilcoxon rank-sum test over R</a> was conducted 
+        with the same two contrast groups to compare for potential false positives from the negative binomial model. Here, genes with FDR corrected P < 0.05 and fold change (log2) > 0 were considered significant, which were again ranked in the previous manner.   
+      </p>
+      <p>
+        The resulting 4 ranked lists were aggregated through <a class="text-info" href="https://cran.r-project.org/web/packages/RobustRankAggreg/index.html" target="_blank">RobustRankAggreg</a> to derive the final list below (with the tag <a class="text-warning" style="text-decoration:none"><strong>All</strong></a>).
+        List pairs from the 2 workflows were also aggregated separately (tagged <a class="text-warning" style="text-decoration:none"><strong>DESeq2</strong></a> and <a class="text-warning" style="text-decoration:none"><strong>Wilcox</strong></a>). Finally for both workflows, 100 runs with subsamples comprised of %60 of the original sample size were generated (without replacement)
+        to validate significantly expressed genes and partially rule out sample bias (tagged <a class="text-warning" style="text-decoration:none"><strong>DESeq2 Validation</strong></a> and <a class="text-warning" style="text-decoration:none"><strong>Wilcox Validation</strong></a>).   
+      </p>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <h3 class="text-muted">Tables guide</h1>
+      <p>
+        Click the <a class="text-warning" style="text-decoration:none"><strong>yellow tags</strong></a> to switch between aggregated lists. Within a list, click the <a class="text-info" style="text-decoration:none"><strong>Gene symbol</strong></a> of an entry to search its corresponding
+        UniProt ID over InterPro. To see the count distribution of samples over tissues, click the <a class="text-info" style="text-decoration:none"><strong>Counts</strong></a> button. For only brain endothelial cells, use the <a class="text-info" style="text-decoration:none"><strong>Brain Intravariance</strong></a> button instead. 
+      </p>
+    </div>
+  
+    <br>
     <br>
 
     <!-- Genetable -->
     <div class="row">
-      <h1>Gene Tables</h1>
+      <h1 class="text-primary">Gene Tables</h1>
       <br>
     </div>
+    <br>
       <!-- Tab switch -->
     <div class="container-fluid">
       <ul class="nav nav-tabs" role="tablist">
