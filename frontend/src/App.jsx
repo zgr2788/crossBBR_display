@@ -1,11 +1,12 @@
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import { UserContext } from './context/UserContext';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
+import Downloads from './components/Downloads';
 
 const App = () => {
 
-  const [pageArgs, setPageArgs, filtArgs, setFiltArgs, sortArgs, setSortArgs]  = useContext(UserContext)
+  const [pageArgs]  = useContext(UserContext)
 
 
   // Get current page
@@ -13,7 +14,8 @@ const App = () => {
     return(
       <div>
         {{
-          home: <Homepage />
+          home: <Homepage />,
+          downloads : <Downloads />
         }[pageArgs]}
       </div>
     )
