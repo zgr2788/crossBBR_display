@@ -3,6 +3,7 @@ import Homepage from './components/Homepage';
 import { UserContext } from './context/UserContext';
 import { useContext } from 'react';
 import Downloads from './components/Downloads';
+import Transmemfoc from './components/Transmemfoc';
 
 const App = () => {
 
@@ -15,7 +16,8 @@ const App = () => {
       <div>
         {{
           home: <Homepage />,
-          downloads : <Downloads />
+          downloads : <Downloads />,
+          trmemfoc : <Transmemfoc />
         }[pageArgs]}
       </div>
     )

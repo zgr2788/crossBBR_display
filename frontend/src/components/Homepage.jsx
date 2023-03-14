@@ -2,12 +2,8 @@
 
 import React from "react";
 import './Fade.css'
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
 
 const Homepage = () => {
-
-    const [pageArgs]  = useContext(UserContext)
 
     return(
       <div className="fadeIn">
