@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react'
 
+
 const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
 
 
     const [genes, setGenes] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [active, setActive] = useState(false)
+
 
     const fetchGenes = async () => {
         const requestOptions = {
@@ -47,9 +50,23 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
         else {
             const data = await response.json()
             const bokehDump = JSON.parse(data)
-            window.Bokeh.embed.embed_item(bokehDump, 'testPlot')
+            
+            // Clean previous plot
+            var parent = document.getElementById("test")
+            var child = document.getElementById("plot")
+            parent.removeChild(child)
+
+            // Add new plot
+            var newchild = document.createElement('div');
+            newchild.id = "plot"
+            newchild.className = "bk-root"
+            parent.appendChild(newchild)
+
+            window.Bokeh.embed.embed_item(bokehDump, 'plot')
         }
     }
+
+    
 
     // For mount purposes
    
@@ -66,11 +83,9 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
                 {{
                     all:
                     <>
-                      <div className=""> 
-                      test space
-                      <div id='testPlot' className="bk-root"></div>
+                      <div id="test">testing area 
+                        <div id="plot" className="bk-root"></div>
                       </div>
-
 
                       <div className="table-responsive">
                             <table className="table table-hover center">
