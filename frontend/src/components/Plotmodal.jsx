@@ -1,9 +1,11 @@
 // Modal to display bokeh plot
-import React from 'react';
+import {React, useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const Plotmodal = ({active, geneID, handleModal}) => {
+
+    const [loading, setLoading] = useState(false)
 
     const handleCounts = async(geneID) => {
         const requestOptions = {
@@ -22,34 +24,55 @@ const Plotmodal = ({active, geneID, handleModal}) => {
         else {
             const data = await response.json()
             const bokehDump = JSON.parse(data)
-            console.log("Modal with gene id: " + geneID)
+
+            // Clean previous plot
+            var parent = document.getElementById("plotParent")
+            var child = document.getElementById("plot")
+            parent.removeChild(child)
+
+            // Add new plot
+            var newchild = document.createElement('div');
+            newchild.id = "plot"
+            newchild.className = "bk-root"
+            parent.appendChild(newchild)
             window.Bokeh.embed.embed_item(bokehDump, 'plot')
+
+            setLoading(false)
         }
     }
 
-    //handleCounts(geneID)
-
+    useEffect(() => {
+        setLoading(true)
+        geneID !== undefined && geneID !== null && handleCounts(geneID)
+    }, [geneID])
     
 
     return(
+        <>
+        
+            <Modal show={active} onHide={() => {setLoading(false);handleModal();}}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{geneID} - Counts Plot</Modal.Title>
+                </Modal.Header>
 
-        <Modal show={active} onHide={handleModal}>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            
-            <Modal.Body>
-                Woohoo, you're reading this text in a modal!
+                <Modal.Body>
+                    {loading && <p className='text-info'>Loading Modal, please wait...</p>}
+                    <div id="plotParent">
+                        <div id="plot" className="bk-root"></div>
+                    </div> 
+                </Modal.Body>
 
-            </Modal.Body>
-            
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleModal}>
-                Close
-              </Button>
-            </Modal.Footer>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={() => {setLoading(false);handleModal();}}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+         
+    
+        </>
 
-        </Modal>
+
 
     )
 

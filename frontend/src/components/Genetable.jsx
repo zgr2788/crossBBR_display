@@ -38,7 +38,7 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
 
     const handleModal = () => {
         setActive(!active);
-        setCurID(null);
+        setTimeout(() => setCurID(null), 200);
     }
 
     const handlePlot = (geneID) => {
