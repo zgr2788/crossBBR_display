@@ -9,7 +9,30 @@ import Genetable from "./Genetable";
 const Transmemfoc = () => {
 
 
-  const [,, filtArgs,,sortArgs,] = useContext(UserContext)
+  const [,,filtArgs,,sortArgs,,tableArgs,setTableArgs] = useContext(UserContext)
+
+
+  const TabPanel = ({tableArgs}) => {
+    return(
+      <ul className="nav nav-tabs" role="tablist">
+          <li className="nav-item" role="presentation">
+            <button className={tableArgs === "all" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "all" && setTableArgs("all")}}><strong>All</strong></button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button className={tableArgs === "deseq2" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "deseq2" && setTableArgs("deseq2")}}><strong>DESeq2</strong></button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button className={tableArgs === "deseq2valid" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "deseq2valid" &&setTableArgs("deseq2valid")}}><strong>DESeq2 Validation</strong></button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button className={tableArgs === "wilcox" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "wilcox" && setTableArgs("wilcox")}}><strong>Wilcox</strong></button>
+          </li>
+          <li className="nav-item" role="presentation">
+            <button className={tableArgs === "wilcoxvalid" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "wilcoxvalid" && setTableArgs("wilcoxvalid")}}><strong>Wilcox Validation</strong></button>
+          </li>
+      </ul>
+    )
+  };
 
   return(
     <div className="fadeIn">
@@ -95,7 +118,13 @@ const Transmemfoc = () => {
         <br />
 
         <div className="row">
-          <Genetable sortArgs={sortArgs} filtArgs={filtArgs} apiURL={"all"}/> 
+          <TabPanel tableArgs={tableArgs}/>
+        </div>
+
+        <br />
+
+        <div className="row">
+          <Genetable sortArgs={sortArgs} filtArgs={filtArgs} apiURL={tableArgs} inclusive={true}/> 
         </div>
 
 

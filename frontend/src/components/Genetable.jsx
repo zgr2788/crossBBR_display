@@ -5,13 +5,14 @@ import Plotmodal from './Plotmodal'
 
 
 
-const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
+const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
 
 
     const [genes, setGenes] = useState(null)
     const [loading, setLoading] = useState(false)
     const [active, setActive] = useState(false)
     const [curID, setCurID] = useState(null)
+
 
 
     const fetchGenes = async () => {
@@ -65,7 +66,7 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
 
             <div>
                 {{
-                    all:
+                    true:
                     <>
                       <div className="table-responsive">
                             <table className="table table-hover center">
@@ -103,27 +104,50 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
                                 </tbody>
                             </table>
                         </div>
-
-                        
                       </>
-                    
                     ,
 
-                    downloads : null,
-                    trmemfoc : null
-                }[apiURL]}
+                    false:
+                    <>
+                      <div className="table-responsive">
+                            <table className="table table-hover center">
+                                <thead>
+                                    <tr className="table-active bg-transparent">
+                                        <th scope="col"><p class="text-info">Ensembl ID</p></th>
+                                        <th scope="col"><p class="text-info">Gene Symbol</p></th>
+                                        <th scope="col"><p class="text-info">Rank p-val</p></th>
+                                        <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
+                                        <th scope="col"><p class="text-info">Top in Bootstrap?</p></th>
+                                        <th scope="col"><p class="text-info text-center">Actions</p></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  {Object.keys(genes).map((geneID, idx) => (
+                                      <tr key={geneID}>
+                                          <td><p className="text-info"><strong>{genes[geneID]["Name"]}</strong></p></td>
+                                          <td><a href={genes[geneID]["uniprot"]} target="_blank" rel='noreferrer'>{genes[geneID]["gene_names"]}</a></td>
+                                          <td>{genes[geneID]["Score"]}</td>
+                                          <td>{genes[geneID]["Mean Perfusion Score"]}</td>
+                                          <td>{genes[geneID]["Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
+                                          <td>
+                                            <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
+                                          </td>
+                                      </tr>
+                                  ))}
+                                </tbody>
+                            </table>
+                        </div> 
+                    </>
+                                    
+                }[inclusive]}
             </div>
  
             </>
 
-        ) : (<p className="text-info">Loading</p>)}
+        ) : (<h1 className="text-info text-center"><strong>Loading</strong></h1>)}
       </>
 
     )
-    
-
-    
-    
 }
 
 export default Genetable;

@@ -1,10 +1,10 @@
 .fadeIn{
-    animation: fadeInPage 1s;
-    -webkit-animation: fadeInPage 1s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadeInPage 1s; /* Firefox < 16 */
-     -ms-animation: fadeInPage 1s; /* Internet Explorer */
-      -o-animation: fadeInPage 1s; /* Opera < 12.1 */
-         animation: fadeInPage 1s;
+    animation: fadeInPage 2s;
+    -webkit-animation: fadeInPage 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadeInPage 2s; /* Firefox < 16 */
+     -ms-animation: fadeInPage 2s; /* Internet Explorer */
+      -o-animation: fadeInPage 2s; /* Opera < 12.1 */
+         animation: fadeInPage 2s;
 }
 
 @keyframes fadeInPage {

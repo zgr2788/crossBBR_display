@@ -51,7 +51,7 @@ const Plotmodal = ({active, geneID, handleModal}) => {
         <>
         
             <Modal show={active} onHide={() => {setLoading(false);handleModal();}} size="xl">
-                
+
                 <Modal.Header closeButton>
                     <Modal.Title>{geneID} - Counts Plot</Modal.Title>
                 </Modal.Header>
