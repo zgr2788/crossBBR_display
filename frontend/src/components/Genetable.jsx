@@ -1,6 +1,8 @@
 // Genetable base component
 
 import { useState, useEffect } from 'react'
+import Plotmodal from './Plotmodal'
+
 
 
 const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
@@ -9,6 +11,7 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
     const [genes, setGenes] = useState(null)
     const [loading, setLoading] = useState(false)
     const [active, setActive] = useState(false)
+    const [curID, setCurID] = useState(null)
 
 
     const fetchGenes = async () => {
@@ -33,39 +36,15 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
         }
     }
 
-    const handleCounts = async(geneID) => {
-        const requestOptions = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        };
-
-        const response = await fetch("/api/omics/plots/counts/" + geneID + "/", requestOptions);
-
-
-        if (!response.ok) {
-            console.log("Bad Request")
-        }
-        else {
-            const data = await response.json()
-            const bokehDump = JSON.parse(data)
-            
-            // Clean previous plot
-            var parent = document.getElementById("test")
-            var child = document.getElementById("plot")
-            parent.removeChild(child)
-
-            // Add new plot
-            var newchild = document.createElement('div');
-            newchild.id = "plot"
-            newchild.className = "bk-root"
-            parent.appendChild(newchild)
-
-            window.Bokeh.embed.embed_item(bokehDump, 'plot')
-        }
+    const handleModal = () => {
+        setActive(!active);
+        setCurID(null);
     }
 
+    const handlePlot = (geneID) => {
+        setCurID(geneID)
+        setActive(true)
+    }
     
 
     // For mount purposes
@@ -78,15 +57,16 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
     return(
         
         <>
+        
+
         {loading ? (
+            <>
+            <Plotmodal active={active} geneID={curID} handleModal={handleModal}/>
+
             <div>
                 {{
                     all:
                     <>
-                      <div id="test">testing area 
-                        <div id="plot" className="bk-root"></div>
-                      </div>
-
                       <div className="table-responsive">
                             <table className="table table-hover center">
                                 <thead>
@@ -116,7 +96,7 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
                                           <td>{genes[geneID]["Wilcox_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
                                           <td>{genes[geneID]["Prot_Evidence"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
                                           <td>
-                                            <button className="btn btn-primary" onClick={ () => {handleCounts(geneID)} }>Check Counts</button>
+                                            <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
                                           </td>
                                       </tr>
                                   ))}
@@ -133,6 +113,8 @@ const Genetable = ({ sortArgs, filtArgs, apiURL }) => {
                     trmemfoc : null
                 }[apiURL]}
             </div>
+ 
+            </>
 
         ) : (<p className="text-info">Loading</p>)}
       </>
