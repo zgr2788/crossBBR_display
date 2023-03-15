@@ -69,7 +69,6 @@ async def fetchExGeneList():
 # Precondition : counts -> count_dict primitive, NOT from fetchCounts
 # Returns : Sample count distribution in runs per tissue  
 async def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count_dict, scale_type = "log1p", include_cs = False):
-    #if not os.path.exists("Templates/" + gene_id + "_counts_whisk_" + scale_type + "_csexc.html"):
         graph_df_list = []
         
         # Switch brain to 1st level
@@ -128,12 +127,7 @@ async def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count
         for df in graph_df_list:
             y_max = max(y_max, max([num for num in df.to_numpy().flatten() if isinstance(num, float)]))
     
-        
-        # Construct the plot
-        if include_cs: # Unused
-            _io.output_file("Templates/" + gene_id + "_counts_whisk_" + scale_type + ".html", title=gene_id + "_counts_whisk_" + scale_type)
-        else:
-            _io.output_file("Templates/" + gene_id + "_counts_whisk_" + scale_type + "_csexc.html", title=gene_id + "_counts_whisk_" + scale_type)
+
         
         _plot.curdoc().theme = 'light_minimal'
     
@@ -168,8 +162,6 @@ async def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count
         p.x_range.range_padding = 0.1
         p.xaxis.major_label_orientation = 1
         p.xgrid.grid_line_color = None
-    
-        _io.save(p)
 
         return json.dumps(_embed.json_item(p, gene_id + "_counts_whisk_" + scale_type))
 
