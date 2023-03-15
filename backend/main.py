@@ -42,21 +42,10 @@ async def ex_wilcoxv_page():
     gene_list = await _services.fetchExGeneList()
     return gene_list[4].to_json(orient="index")
 
-
-# For intra-sample variance
-@app.get("/api/omics/plots/intravar/{gene_id}/")
-async def intravar_box_plot(request: _fastapi.Request, gene_id: str):    
-    await _services.fetchCountsIntraVariancePlot(gene_id, zero_filt=True, include_cs=False)
-
-    return templates.TemplateResponse(gene_id + "_counts_intravar_box_log1p" + "_csexc.html", context={'request' : request})
-
-
 # For count plots with sample info
 @app.get("/api/omics/plots/counts/{gene_id}/")
-async def counts_plot(request: _fastapi.Request, gene_id: str):    
-    await _services.fetchSampleCountDistrib(gene_id, include_cs=False)
-
-    return templates.TemplateResponse(gene_id + "_counts_whisk_log1p" + "_csexc.html", context={'request' : request})
+async def counts_plot(request: _fastapi.Request, gene_id: str):
+    return await _services.fetchSampleCountDistrib(gene_id, include_cs=False)
 
 #################################################################
 

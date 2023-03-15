@@ -34,9 +34,9 @@ const Homepage = () => {
 
           <footer id="footer" className="container-fluid p-4">
             <ul className="list-group list-group-horizontal">
-              <li className="list-group-item bg-transparent"><a href="">GitHub</a></li>
-              <li className="list-group-item bg-transparent"><a href="">Links-1</a></li>
-              <li className="list-group-item bg-transparent"><a href="">Links-2</a></li>
+              <li className="list-group-item bg-transparent">GitHub</li>
+              <li className="list-group-item bg-transparent">Links-1</li>
+              <li className="list-group-item bg-transparent">Links-2</li>
             </ul>
             <br />
             <div className="row">
