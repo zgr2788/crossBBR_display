@@ -50,13 +50,14 @@ const Plotmodal = ({active, geneID, handleModal}) => {
     return(
         <>
         
-            <Modal show={active} onHide={() => {setLoading(false);handleModal();}}>
+            <Modal show={active} onHide={() => {setLoading(false);handleModal();}} size="xl">
+                
                 <Modal.Header closeButton>
                     <Modal.Title>{geneID} - Counts Plot</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
-                    {loading && <p className='text-info'>Loading Modal, please wait...</p>}
+                    {loading && <h1 className='text-info text-center'><strong>Loading...</strong></h1>}
                     <div id="plotParent">
                         <div id="plot" className="bk-root"></div>
                     </div> 
@@ -67,6 +68,7 @@ const Plotmodal = ({active, geneID, handleModal}) => {
                         Close
                     </Button>
                 </Modal.Footer>
+
             </Modal>
          
     
