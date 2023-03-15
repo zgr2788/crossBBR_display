@@ -35,20 +35,28 @@ def perfWrapper(gene_id, ref=perf_score_ref):
     return score
 
 # Read and construct aggregation reference
-aggreg_ref = _pd.read_csv("Aggregs/aggreg.csv")
-aggreg_ex_ref = _pd.read_csv("Aggregs/aggreg_all.csv")
-aggreg_ex_deseq2 = _pd.read_csv("Aggregs/aggreg_deseq2.csv")
-aggreg_ex_deseq2_valid = _pd.read_csv("Aggregs/aggreg_deseq2_valid.csv")
-aggreg_ex_wilcox = _pd.read_csv("Aggregs/aggreg_wilcox.csv")
-aggreg_ex_wilcox_valid = _pd.read_csv("Aggregs/aggreg_wilcox_valid.csv")
+aggreg_ex_ref = _pd.read_csv("Aggregs/aggreg_all.csv", index_col=0)
+aggreg_ex_deseq2 = _pd.read_csv("Aggregs/aggreg_deseq2.csv", index_col=0)
+aggreg_ex_deseq2_valid = _pd.read_csv("Aggregs/aggreg_deseq2_valid.csv", index_col=0)
+aggreg_ex_wilcox = _pd.read_csv("Aggregs/aggreg_wilcox.csv", index_col=0)
+aggreg_ex_wilcox_valid = _pd.read_csv("Aggregs/aggreg_wilcox_valid.csv", index_col=0)
 
 # Add perfusion scores to aggregates
-aggreg_ref["Mean Perfusion Score"] = aggreg_ref["Name"].apply(lambda x: perfWrapper(x))
 aggreg_ex_ref["Mean Perfusion Score"] = aggreg_ex_ref["Name"].apply(lambda x: perfWrapper(x))
 aggreg_ex_deseq2["Mean Perfusion Score"] = aggreg_ex_deseq2["Name"].apply(lambda x: perfWrapper(x))
 aggreg_ex_deseq2_valid["Mean Perfusion Score"] = aggreg_ex_deseq2_valid["Name"].apply(lambda x: perfWrapper(x))
 aggreg_ex_wilcox["Mean Perfusion Score"] = aggreg_ex_wilcox["Name"].apply(lambda x: perfWrapper(x))
 aggreg_ex_wilcox_valid["Mean Perfusion Score"] = aggreg_ex_wilcox_valid["Name"].apply(lambda x: perfWrapper(x))
+
+# Map uniprot ids to links
+aggreg_ex_ref["uniprot"] = aggreg_ex_ref["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
+aggreg_ex_deseq2["uniprot"] = aggreg_ex_deseq2["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
+aggreg_ex_deseq2_valid["uniprot"] = aggreg_ex_deseq2_valid["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
+aggreg_ex_wilcox["uniprot"] = aggreg_ex_wilcox["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
+aggreg_ex_wilcox_valid["uniprot"] = aggreg_ex_wilcox_valid["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
+
+
+
 
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes for SC excluded

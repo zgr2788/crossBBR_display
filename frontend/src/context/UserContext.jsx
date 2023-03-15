@@ -5,8 +5,8 @@ export const UserContext = createContext();
 export const UserProvider = (props) => {
 
     sessionStorage.setItem("pageArgs", "home")
-    sessionStorage.setItem("filtArgs", "none")
-    sessionStorage.setItem("sortArgs", "none")
+    sessionStorage.setItem("filtArgs", null)
+    sessionStorage.setItem("sortArgs", null)
 
 
     const [pageArgs, setPageArgs] = useState(sessionStorage.getItem("pageArgs"))
