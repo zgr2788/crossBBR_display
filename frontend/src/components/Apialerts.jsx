@@ -39,7 +39,7 @@ const Apialerts = () => {
     // Ping api on load, then ping every 5 seconds until connection is established
     useEffect(() => {
         setTimeout(() => pingApi(), 5000);
-    }, [fails])
+    }, [pingApi, fails])
 
     return(
         <>
