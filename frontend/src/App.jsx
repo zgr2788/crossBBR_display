@@ -4,7 +4,7 @@ import { UserContext } from './context/UserContext';
 import { useContext } from 'react';
 import Downloads from './components/Downloads';
 import Transmemfoc from './components/Transmemfoc';
-import Loader from './components/Loader';
+import Apialert from './components/Apialerts';
 
 const App = () => {
 
@@ -22,7 +22,7 @@ const App = () => {
           test: 
           <div className='container-fluid'>
             <br/>
-            <div className="container-fluid d-flex justify-content-center"><Loader /></div>
+            <div className="container-fluid d-flex justify-content-center"><Apialert /></div>
           </div>
         }[pageArgs]}
       </div>
