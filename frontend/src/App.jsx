@@ -4,7 +4,7 @@ import { UserContext } from './context/UserContext';
 import { useContext } from 'react';
 import Downloads from './components/Downloads';
 import Transmemfoc from './components/Transmemfoc';
-import Apialert from './components/Apialerts';
+import Apialerts from './components/Apialerts';
 
 const App = () => {
 
@@ -21,8 +21,6 @@ const App = () => {
           trmemfoc : <Transmemfoc />,
           test: 
           <div className='container-fluid'>
-            <br/>
-            <div className="container-fluid d-flex justify-content-center"><Apialert /></div>
           </div>
         }[pageArgs]}
       </div>
@@ -36,6 +34,8 @@ const App = () => {
       <Navbar />
 
       <CurrentPage />
+
+      <Apialerts />
 
     </>
   );
