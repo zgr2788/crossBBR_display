@@ -2,6 +2,8 @@
 import {React, useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Loader from './Loader';
+
 
 const Plotmodal = ({active, geneID, handleModal}) => {
 
@@ -57,7 +59,7 @@ const Plotmodal = ({active, geneID, handleModal}) => {
                 </Modal.Header>
 
                 <Modal.Body>
-                    {loading && <h1 className='text-info text-center'><strong>Loading...</strong></h1>}
+                    {loading && <><br/><div className="container-fluid d-flex justify-content-center"><Loader /></div></>}
                     <div id="plotParent">
                         <div id="plot" className="bk-root"></div>
                     </div> 

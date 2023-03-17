@@ -1,9 +1,8 @@
 // Genetable base component
 
 import { useState, useEffect } from 'react'
+import Loader from './Loader'
 import Plotmodal from './Plotmodal'
-
-
 
 const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
 
@@ -144,10 +143,11 @@ const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
  
             </>
 
-        ) : (<h1 className="text-info text-center"><strong>Loading</strong></h1>)}
+        ) : (<><br/><div className="container-fluid d-flex justify-content-center"><Loader /></div></>)}
       </>
 
     )
 }
 
 export default Genetable;
+

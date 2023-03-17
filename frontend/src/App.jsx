@@ -4,6 +4,7 @@ import { UserContext } from './context/UserContext';
 import { useContext } from 'react';
 import Downloads from './components/Downloads';
 import Transmemfoc from './components/Transmemfoc';
+import Loader from './components/Loader';
 
 const App = () => {
 
@@ -17,7 +18,12 @@ const App = () => {
         {{
           home: <Homepage />,
           downloads : <Downloads />,
-          trmemfoc : <Transmemfoc />
+          trmemfoc : <Transmemfoc />,
+          test: 
+          <div className='container-fluid'>
+            <br/>
+            <div className="container-fluid d-flex justify-content-center"><Loader /></div>
+          </div>
         }[pageArgs]}
       </div>
     )
