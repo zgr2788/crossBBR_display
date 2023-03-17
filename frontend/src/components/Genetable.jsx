@@ -71,32 +71,34 @@ const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
                             <table className="table table-hover center">
                                 <thead>
                                     <tr className="table-active bg-transparent">
-                                      <th scope="col"><p className="text-info">Ensembl ID</p></th>
-                                      <th scope="col"><p className="text-info">Gene Symbol</p></th>
-                                      <th scope="col"><p className="text-info">Rank p-val</p></th>
-                                      <th scope="col"><p className="text-info">Mean Perfusion Score</p></th>
-                                      <th scope="col"><p className="text-info">Top in DESeq2 Aggregate?</p></th>
-                                      <th scope="col"><p className="text-info">Top in DESeq2 Bootstrap?</p></th>
-                                      <th scope="col"><p className="text-info">Top in WRST Aggregate?</p></th>
-                                      <th scope="col"><p className="text-info">Top in WRST Bootstrap?</p></th>
-                                      <th scope="col"><p className="text-info">Protein Evidence from PXD01862?</p></th>
+                                      <th scope="col"><p className="text-info text-center">Ensembl ID</p></th>
+                                      <th scope="col"><p className="text-info text-center">Gene Symbol</p></th>
+                                      <th scope="col"><p className="text-info text-center">Rank p-val</p></th>
+                                      <th scope="col"><p className="text-info text-center">Mean Perfusion Score</p></th>
+                                      <th scope="col"><p className="text-info text-center">Top in DESeq2 Aggregate?</p></th>
+                                      <th scope="col"><p className="text-info text-center">Top in DESeq2 Bootstrap?</p></th>
+                                      <th scope="col"><p className="text-info text-center">Top in WRST Aggregate?</p></th>
+                                      <th scope="col"><p className="text-info text-center">Top in WRST Bootstrap?</p></th>
+                                      <th scope="col"><p className="text-info text-center">Protein Evidence from PXD01862?</p></th>
                                       <th scope="col"><p className="text-info text-center">Actions</p></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                   {Object.keys(genes).map((geneID, idx) => (
                                       <tr key={geneID}>
-                                          <td><p className="text-info"><strong>{genes[geneID]["Name"]}</strong></p></td>
-                                          <td><a href={genes[geneID]["uniprot"]} target="_blank" rel='noreferrer'>{genes[geneID]["gene_names"]}</a></td>
-                                          <td>{genes[geneID]["Score"]}</td>
-                                          <td>{genes[geneID]["Mean Perfusion Score"]}</td>
-                                          <td>{genes[geneID]["DESeq2_Appeared"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
-                                          <td>{genes[geneID]["DESeq2_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
-                                          <td>{genes[geneID]["Wilcox_Appeared"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
-                                          <td>{genes[geneID]["Wilcox_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
-                                          <td>{genes[geneID]["Prot_Evidence"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
+                                          <td><p className="text-info text-center"><strong>{genes[geneID]["Name"]}</strong></p></td>
+                                          <td><p className="text-center"><a href={genes[geneID]["uniprot"]} target="_blank" rel='noreferrer'>{genes[geneID]["gene_names"]}</a></p></td>
+                                          <td><p className="text-center">{genes[geneID]["Score"]}</p></td>
+                                          <td><p className="text-center">{genes[geneID]["Mean Perfusion Score"]}</p></td>
+                                          <td><p className="text-center">{genes[geneID]["DESeq2_Appeared"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
+                                          <td><p className="text-center">{genes[geneID]["DESeq2_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
+                                          <td><p className="text-center">{genes[geneID]["Wilcox_Appeared"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
+                                          <td><p className="text-center">{genes[geneID]["Wilcox_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
+                                          <td><p className="text-center">{genes[geneID]["Prot_Evidence"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
                                           <td>
-                                            <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
+                                            <div className="d-flex justify-content-center">
+                                                <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
+                                            </div>
                                           </td>
                                       </tr>
                                   ))}
@@ -112,24 +114,26 @@ const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
                             <table className="table table-hover center">
                                 <thead>
                                     <tr className="table-active bg-transparent">
-                                        <th scope="col"><p class="text-info">Ensembl ID</p></th>
-                                        <th scope="col"><p class="text-info">Gene Symbol</p></th>
-                                        <th scope="col"><p class="text-info">Rank p-val</p></th>
-                                        <th scope="col"><p class="text-info">Mean Perfusion Score</p></th>
-                                        <th scope="col"><p class="text-info">Top in Bootstrap?</p></th>
-                                        <th scope="col"><p class="text-info text-center">Actions</p></th>
+                                        <th scope="col"><p className="text-info text-center">Ensembl ID</p></th>
+                                        <th scope="col"><p className="text-info text-center">Gene Symbol</p></th>
+                                        <th scope="col"><p className="text-info text-center">Rank p-val</p></th>
+                                        <th scope="col"><p className="text-info text-center">Mean Perfusion Score</p></th>
+                                        <th scope="col"><p className="text-info text-center">Top in Bootstrap?</p></th>
+                                        <th scope="col"><p className="text-info text-center">Actions</p></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                   {Object.keys(genes).map((geneID, idx) => (
                                       <tr key={geneID}>
-                                          <td><p className="text-info"><strong>{genes[geneID]["Name"]}</strong></p></td>
-                                          <td><a href={genes[geneID]["uniprot"]} target="_blank" rel='noreferrer'>{genes[geneID]["gene_names"]}</a></td>
-                                          <td>{genes[geneID]["Score"]}</td>
-                                          <td>{genes[geneID]["Mean Perfusion Score"]}</td>
-                                          <td>{genes[geneID]["Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</td>
+                                          <td ><p className="text-info text-center"><strong>{genes[geneID]["Name"]}</strong></p></td>
+                                          <td><p className="text-center"><a href={genes[geneID]["uniprot"]} target="_blank" rel='noreferrer'>{genes[geneID]["gene_names"]}</a></p></td>
+                                          <td><p className="text-center">{genes[geneID]["Score"]}</p></td>
+                                          <td><p className="text-center">{genes[geneID]["Mean Perfusion Score"]}</p></td>
+                                          <td><p className="text-center">{genes[geneID]["Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
                                           <td>
-                                            <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
+                                            <div className="d-flex justify-content-center">
+                                                <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
+                                            </div>
                                           </td>
                                       </tr>
                                   ))}

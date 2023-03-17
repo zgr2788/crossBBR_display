@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import './Fade.css'
 import Genetable from "./Genetable";
+import Sortmenu from "./Sortmenu";
 
 const Transmemfoc = () => {
 
@@ -22,7 +23,7 @@ const Transmemfoc = () => {
             <button className={tableArgs === "deseq2" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "deseq2" && setTableArgs("deseq2")}}><strong>DESeq2</strong></button>
           </li>
           <li className="nav-item" role="presentation">
-            <button className={tableArgs === "deseq2valid" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "deseq2valid" &&setTableArgs("deseq2valid")}}><strong>DESeq2 Validation</strong></button>
+            <button className={tableArgs === "deseq2valid" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "deseq2valid" && setTableArgs("deseq2valid")}}><strong>DESeq2 Validation</strong></button>
           </li>
           <li className="nav-item" role="presentation">
             <button className={tableArgs === "wilcox" ? "nav-link text-warning active" : "nav-link text-warning"} onClick={() => {tableArgs !== "wilcox" && setTableArgs("wilcox")}}><strong>Wilcox</strong></button>
@@ -99,20 +100,23 @@ const Transmemfoc = () => {
         </div>
 
         <br />
-
-        <div className="row">
-          <h3 className="text-muted">Tables guide</h3>
-          <p>
-            Click the <span className="text-warning"><strong>yellow tags</strong></span> to switch between aggregated lists. Within a list, click the <span className="text-info"><strong>Gene symbol</strong></span> of an entry to search its corresponding
-            UniProt ID over InterPro. To see the count distribution of samples over tissues, click the <span className="text-info"><strong>Counts</strong></span> button. For only brain endothelial cells, use the <span className="text-info"><strong>Brain Intravariance</strong></span> button instead. 
-          </p>
-        </div>
     
         <br />
         <br />
 
         <div className="row">
           <h1>Gene Tables</h1>
+        </div>
+
+        <br />
+
+
+        <div className="row">
+          <h3 className="text-muted">Guide</h3>
+          <p>
+            Click the <span className="text-warning"><strong>yellow tags</strong></span> to switch between aggregated lists. Within a list, click the <span className="text-info"><strong>Gene symbol</strong></span> of an entry to search its corresponding
+            UniProt ID over InterPro if mapping is available. To see the count distribution of samples over tissues, click the <span className="text-info"><strong>Check Counts</strong></span> button.
+          </p>
         </div>
 
         <br />
@@ -124,7 +128,13 @@ const Transmemfoc = () => {
         <br />
 
         <div className="row">
-          <Genetable sortArgs={sortArgs} filtArgs={filtArgs} apiURL={tableArgs} inclusive={true}/> 
+          <Sortmenu />
+        </div>
+
+        <br />
+
+        <div className="row">
+          <Genetable sortArgs={sortArgs} filtArgs={filtArgs} apiURL={tableArgs} inclusive={tableArgs === "all"}/> 
         </div>
 
 
