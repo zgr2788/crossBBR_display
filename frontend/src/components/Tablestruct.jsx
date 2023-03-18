@@ -10,11 +10,13 @@ import Sortmenu from "./Sortmenu";
 const TableStruct = () => {
 
 
-  const [,setFiltArgs,,,tableArgs,setTableArgs,,setLoading] = useContext(TableContext)
+  const [,setFiltArgs,,setSortArgs,tableArgs,setTableArgs,,setLoading,,setNextPrio] = useContext(TableContext)
 
   const changeTable = (tableName) => {
     setLoading(false)
     setTableArgs(tableName)
+    setNextPrio([7,6,5,4,3,2,1])
+    
 
     if (tableName === "all") {
       setFiltArgs(
@@ -29,13 +31,34 @@ const TableStruct = () => {
           Actions : true
         })
       )
+
+      setSortArgs(
+        JSON.stringify({
+          Rank_p__val_s : -1,
+          Mean_Perfusion_Score_s : -1,
+          DESeq2_Appeared_s : -1,
+          DESeq2_Validated_s : -1,
+          Wilcox_Appeared_s : -1,
+          Wilcox_Validated_s : -1,
+          Prot_Evidence_s : -1,
+        })
+      )
     } else {
+
       setFiltArgs(
         JSON.stringify({
           Rank_p__val : true,
           Mean_Perfusion_Score : true,
           Validated : true,
           Actions : true
+        })
+      )
+
+      setSortArgs(
+        JSON.stringify({
+          Rank_p__val_s : -1,
+          Mean_Perfusion_Score_s : -1,
+          Validated_s : -1,
         })
       )
     }

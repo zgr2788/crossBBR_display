@@ -3,11 +3,10 @@ import fastapi as _fastapi
 import fastapi.templating as _templates
 import fastapi.staticfiles as _StaticFiles
 from starlette.responses import RedirectResponse
-import jinja2 as _jinja2
 from typing import Union
 
 app = _fastapi.FastAPI()
-templates = _templates.Jinja2Templates(directory = "Templates")
+
 
 # Landing page
 @app.get("/api/")
@@ -48,9 +47,3 @@ async def counts_plot(request: _fastapi.Request, gene_id: str):
     return await _services.fetchSampleCountDistrib(gene_id, include_cs=False)
 
 #################################################################
-
-# Download links page
-@app.get("/api/downloads")
-async def downloads_page(request: _fastapi.Request):
-    response = templates.TemplateResponse('download_links.html', context = {'request' : request})
-    return response

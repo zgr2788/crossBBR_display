@@ -6,7 +6,6 @@ export const TableContext = createContext();
 
 export const TableProvider = (props) => {
 
-    //Default is all
     
     sessionStorage.setItem("filtArgs",   JSON.stringify({
         Rank_p__val : true,
@@ -19,7 +18,15 @@ export const TableProvider = (props) => {
         Actions : true
       }))
     
-    sessionStorage.setItem("sortArgs", null)
+    sessionStorage.setItem("sortArgs", JSON.stringify({
+        Rank_p__val_s : -1,
+        Mean_Perfusion_Score_s : -1,
+        DESeq2_Appeared_s : -1,
+        DESeq2_Validated_s : -1,
+        Wilcox_Appeared_s : -1,
+        Wilcox_Validated_s : -1,
+        Prot_Evidence_s : -1,
+      }))
     
     sessionStorage.setItem("tableArgs", "all")
 
@@ -28,6 +35,7 @@ export const TableProvider = (props) => {
     const [sortArgs, setSortArgs] = useState(sessionStorage.getItem("sortArgs"))
     const [tableArgs, setTableArgs] = useState(sessionStorage.getItem("tableArgs"))
     const [loading, setLoading] = useState(false)
+    const [nextPrio, setNextPrio] = useState([7,6,5,4,3,2,1]) 
 
 
     useEffect(() => 
@@ -39,7 +47,7 @@ export const TableProvider = (props) => {
     ) 
 
     return (
-        <TableContext.Provider value={[filtArgs, setFiltArgs, sortArgs, setSortArgs, tableArgs, setTableArgs, loading, setLoading]}>
+        <TableContext.Provider value={[filtArgs, setFiltArgs, sortArgs, setSortArgs, tableArgs, setTableArgs, loading, setLoading, nextPrio, setNextPrio]}>
             {props.children}
         </TableContext.Provider>
     )

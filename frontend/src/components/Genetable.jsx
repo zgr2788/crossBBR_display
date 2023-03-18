@@ -15,7 +15,9 @@ const Genetable = () => {
     const [active, setActive] = useState(false)
     const [curID, setCurID] = useState(null)
     const [curName, setCurName] = useState(null)
+    
     const parsedFilt = JSON.parse(filtArgs)
+    const parsedSort = JSON.parse(sortArgs)
 
 
 
@@ -35,10 +37,15 @@ const Genetable = () => {
         }
         else {
             const data = await response.json()
-            setGenes(JSON.parse(data))
-            setLoading(true)
+            return(JSON.parse(data))
         }
     }
+
+    const handleSort = (genes) => {
+        console.log(parsedSort, genes)
+        setGenes(genes)
+        setLoading(true)
+    } 
 
     const handleModal = () => {
         setActive(!active);
@@ -55,9 +62,9 @@ const Genetable = () => {
     // For mount purposes
    
     useEffect(() => {
-      fetchGenes()
+      fetchGenes().then((genes) => {handleSort(genes)})
     // eslint-disable-next-line
-    }, [tableArgs])
+    }, [tableArgs, sortArgs])
 
     return(
         
