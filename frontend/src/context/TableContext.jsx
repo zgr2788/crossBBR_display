@@ -8,24 +8,24 @@ export const TableProvider = (props) => {
 
     
     sessionStorage.setItem("filtArgs",   JSON.stringify({
-        Rank_p__val : true,
-        Mean_Perfusion_Score : true,
-        DESeq2_Appeared : true,
-        DESeq2_Validated : true,
-        Wilcox_Appeared : true,
-        Wilcox_Validated : true,
-        Prot_Evidence : true,
-        Actions : true
+        Rank_p__val_f : true,
+        Mean_Perfusion_Score_f : true,
+        DESeq2_Appeared_f : true,
+        DESeq2_Validated_f : true,
+        Wilcox_Appeared_f : true,
+        Wilcox_Validated_f : true,
+        Prot_Evidence_f : true,
+        Actions_f : true
       }))
     
     sessionStorage.setItem("sortArgs", JSON.stringify({
-        Rank_p__val_s : -1,
-        Mean_Perfusion_Score_s : -1,
-        DESeq2_Appeared_s : -1,
-        DESeq2_Validated_s : -1,
-        Wilcox_Appeared_s : -1,
-        Wilcox_Validated_s : -1,
-        Prot_Evidence_s : -1,
+        "Score" : -1,
+        "Mean Perfusion Score" : -1,
+        DESeq2_Appeared : -1,
+        DESeq2_Validated : -1,
+        Wilcox_Appeared : -1,
+        Wilcox_Validated : -1,
+        Prot_Evidence : -1,
       }))
     
     sessionStorage.setItem("tableArgs", "all")

@@ -95,23 +95,23 @@ const Sortmenu = () => {
                 {{
                     true:
                     <>
-                        <FiltSwitch text={"Rank p-val"} id={"Rank_p__val"}/> 
-                        <FiltSwitch text={"Mean Perfusion Score"} id={"Mean_Perfusion_Score"} />
-                        <FiltSwitch text={"Top in DESeq2 Aggregate?"} id={"DESeq2_Appeared"} />
-                        <FiltSwitch text={"Top in DESeq2 Bootstrap?"} id={"DESeq2_Validated"} />
-                        <FiltSwitch text={"Top in WRST Aggregate?"} id={"Wilcox_Appeared"} />
-                        <FiltSwitch text={"Top in WRST Bootstrap?"} id={"Wilcox_Validated"} />
-                        <FiltSwitch text={"Protein Evidence from PXD01862?"} id={"Prot_Evidence"} />
-                        <FiltSwitch text={"Actions"} id={"Actions"} />
+                        <FiltSwitch text={"Rank p-val"} id={"Rank_p__val_f"}/> 
+                        <FiltSwitch text={"Mean Perfusion Score"} id={"Mean_Perfusion_Score_f"} />
+                        <FiltSwitch text={"Top in DESeq2 Aggregate?"} id={"DESeq2_Appeared_f"} />
+                        <FiltSwitch text={"Top in DESeq2 Bootstrap?"} id={"DESeq2_Validated_f"} />
+                        <FiltSwitch text={"Top in WRST Aggregate?"} id={"Wilcox_Appeared_f"} />
+                        <FiltSwitch text={"Top in WRST Bootstrap?"} id={"Wilcox_Validated_f"} />
+                        <FiltSwitch text={"Protein Evidence from PXD01862?"} id={"Prot_Evidence_f"} />
+                        <FiltSwitch text={"Actions"} id={"Actions_f"} />
                     </>
                     ,
 
                     false:
                     <>
-                        <FiltSwitch text={"Rank p-val"} id={"Rank_p__val"}/> 
-                        <FiltSwitch text={"Mean Perfusion Score"} id={"Mean_Perfusion_Score"} />
-                        <FiltSwitch text={"Top in Bootstrap?"} id={"Validated"} />
-                        <FiltSwitch text={"Actions"} id={"Actions"} />
+                        <FiltSwitch text={"Rank p-val"} id={"Rank_p__val_f"}/> 
+                        <FiltSwitch text={"Mean Perfusion Score"} id={"Mean_Perfusion_Score_f"} />
+                        <FiltSwitch text={"Top in Bootstrap?"} id={"Validated_f"} />
+                        <FiltSwitch text={"Actions"} id={"Actions_f"} />
                     </>
 
 
@@ -135,21 +135,21 @@ const Sortmenu = () => {
                 {{
                     true:
                     <>
-                        <SortSwitch text={"Rank p-val"} id={"Rank_p__val_s"}/> 
-                        <SortSwitch text={"Mean Perfusion Score"} id={"Mean_Perfusion_Score_s"} />
-                        <SortSwitch text={"Top in DESeq2 Aggregate?"} id={"DESeq2_Appeared_s"} />
-                        <SortSwitch text={"Top in DESeq2 Bootstrap?"} id={"DESeq2_Validated_s"} />
-                        <SortSwitch text={"Top in WRST Aggregate?"} id={"Wilcox_Appeared_s"} />
-                        <SortSwitch text={"Top in WRST Bootstrap?"} id={"Wilcox_Validated_s"} />
-                        <SortSwitch text={"Protein Evidence from PXD01862?"} id={"Prot_Evidence_s"} />
+                        <SortSwitch text={"Rank p-val"} id={"Score"}/> 
+                        <SortSwitch text={"Mean Perfusion Score"} id={"Mean Perfusion Score"} />
+                        <SortSwitch text={"Top in DESeq2 Aggregate?"} id={"DESeq2_Appeared"} />
+                        <SortSwitch text={"Top in DESeq2 Bootstrap?"} id={"DESeq2_Validated"} />
+                        <SortSwitch text={"Top in WRST Aggregate?"} id={"Wilcox_Appeared"} />
+                        <SortSwitch text={"Top in WRST Bootstrap?"} id={"Wilcox_Validated"} />
+                        <SortSwitch text={"Protein Evidence from PXD01862?"} id={"Prot_Evidence"} />
                     </>
                     ,
 
                     false:
                     <>
-                        <SortSwitch text={"Rank p-val"} id={"Rank_p__val_s"}/> 
-                        <SortSwitch text={"Mean Perfusion Score"} id={"Mean_Perfusion_Score_s"} />
-                        <SortSwitch text={"Top in Bootstrap?"} id={"Validated_s"} />
+                        <SortSwitch text={"Rank p-val"} id={"Score"}/> 
+                        <SortSwitch text={"Mean Perfusion Score"} id={"Mean Perfusion Score"} />
+                        <SortSwitch text={"Top in Bootstrap?"} id={"Validated"} />
                     </>
 
 

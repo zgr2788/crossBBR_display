@@ -57,7 +57,12 @@ aggreg_ex_deseq2_valid["uniprot"] = aggreg_ex_deseq2_valid["uniprot"].apply(lamb
 aggreg_ex_wilcox["uniprot"] = aggreg_ex_wilcox["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
 aggreg_ex_wilcox_valid["uniprot"] = aggreg_ex_wilcox_valid["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
 
-
+# Convert scores to significance
+aggreg_ex_ref["Score"] = aggreg_ex_ref["Score"].apply(lambda x : -_np.log10(x))
+aggreg_ex_deseq2["Score"] = aggreg_ex_deseq2["Score"].apply(lambda x : -_np.log10(x))
+aggreg_ex_deseq2_valid["Score"] = aggreg_ex_deseq2_valid["Score"].apply(lambda x : -_np.log10(x))
+aggreg_ex_wilcox["Score"] = aggreg_ex_wilcox["Score"].apply(lambda x : -_np.log10(x))
+aggreg_ex_wilcox_valid["Score"] = aggreg_ex_wilcox_valid["Score"].apply(lambda x : -_np.log10(x))
 
 
 # Precondition : none
@@ -65,6 +70,21 @@ aggreg_ex_wilcox_valid["uniprot"] = aggreg_ex_wilcox_valid["uniprot"].apply(lamb
 
 async def fetchExGeneList():
     return [aggreg_ex_ref, aggreg_ex_deseq2, aggreg_ex_deseq2_valid, aggreg_ex_wilcox, aggreg_ex_wilcox_valid]
+
+
+# Precondition : glist is gene list, sortArgs is json matrix form frontend
+# Returns : Sorted glist
+async def sortList(glist : _pd.DataFrame, sortArgs):
+    
+    # Parse array
+    sortArray = [elem[0] for elem in sortArgs if elem[1] != "-1"]
+
+    # Sort
+    glist = glist.sort_values(sortArray, ascending=False)
+
+
+    return glist
+
 
 # Precondition : counts -> count_dict primitive, NOT from fetchCounts
 # Returns : Sample count distribution in runs per tissue  
