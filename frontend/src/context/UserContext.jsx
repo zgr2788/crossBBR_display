@@ -6,9 +6,23 @@ export const UserContext = createContext();
 
 export const UserProvider = (props) => {
 
+    //Default is all
+
     sessionStorage.setItem("pageArgs", "home")
-    sessionStorage.setItem("filtArgs", null)
+    
+    sessionStorage.setItem("filtArgs",   JSON.stringify({
+        Rank_p__val : true,
+        Mean_Perfusion_Score : true,
+        DESeq2_Appeared : true,
+        DESeq2_Validated : true,
+        Wilcox_Appeared : true,
+        Wilcox_Validated : true,
+        Prot_Evidence : true,
+        Actions : true
+      }))
+    
     sessionStorage.setItem("sortArgs", null)
+    
     sessionStorage.setItem("tableArgs", "all")
 
 

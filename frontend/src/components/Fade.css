@@ -37,12 +37,12 @@
 
 .fadeOut{
     opacity: 0;
-    animation: fadeOutPage 4s;
-    -webkit-animation: fadeOutPage 4s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadeOutPage 4s; /* Firefox < 16 */
-     -ms-animation: fadeOutPage 4s; /* Internet Explorer */
-      -o-animation: fadeOutPage 4s; /* Opera < 12.1 */
-         animation: fadeOutPage 4s;
+    animation: fadeOutPage 5s;
+    -webkit-animation: fadeOutPage 5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadeOutPage 5s; /* Firefox < 16 */
+     -ms-animation: fadeOutPage 5s; /* Internet Explorer */
+      -o-animation: fadeOutPage 5s; /* Opera < 12.1 */
+         animation: fadeOutPage 5s;
 }
 
 @keyframes fadeOutPage {
