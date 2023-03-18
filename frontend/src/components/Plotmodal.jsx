@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Loader from './Loader';
 
 
-const Plotmodal = ({active, geneID, handleModal}) => {
+const Plotmodal = ({active, geneID, geneName, handleModal}) => {
 
     const [loading, setLoading] = useState(false)
 
@@ -55,7 +55,7 @@ const Plotmodal = ({active, geneID, handleModal}) => {
             <Modal show={active} onHide={() => {setLoading(false);handleModal();}} size="xl">
 
                 <Modal.Header closeButton>
-                    <Modal.Title>{geneID} - Counts Plot</Modal.Title>
+                    <Modal.Title>{geneName} - Counts Plot</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>

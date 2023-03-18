@@ -14,6 +14,7 @@ const Genetable = () => {
     const [genes, setGenes] = useState(null)
     const [active, setActive] = useState(false)
     const [curID, setCurID] = useState(null)
+    const [curName, setCurName] = useState(null)
     const parsedFilt = JSON.parse(filtArgs)
 
 
@@ -44,8 +45,9 @@ const Genetable = () => {
         setTimeout(() => setCurID(null), 200);
     }
 
-    const handlePlot = (geneID) => {
+    const handlePlot = (geneID, geneName) => {
         setCurID(geneID)
+        setCurName(geneName)
         setActive(true)
     }
     
@@ -64,7 +66,7 @@ const Genetable = () => {
 
         {loading ? (
             <>
-            <Plotmodal active={active} geneID={curID} handleModal={handleModal}/>
+            <Plotmodal active={active} geneID={curID} geneName={curName} handleModal={handleModal}/>
 
             <div>
                 {{
@@ -100,7 +102,7 @@ const Genetable = () => {
                                           { parsedFilt["Prot_Evidence"] && <td><p className="text-center">{genes[geneID]["Prot_Evidence"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>}
                                           { parsedFilt["Actions"] && <td>
                                             <div className="d-flex justify-content-center">
-                                                <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
+                                                <button className="btn btn-primary" onClick={ () => {handlePlot(geneID, genes[geneID]["gene_names"])} }>Check Counts</button>
                                             </div>
                                           </td>}
                                       </tr>
