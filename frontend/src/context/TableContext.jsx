@@ -27,6 +27,7 @@ export const TableProvider = (props) => {
     const [filtArgs, setFiltArgs] = useState(sessionStorage.getItem("filtArgs"))
     const [sortArgs, setSortArgs] = useState(sessionStorage.getItem("sortArgs"))
     const [tableArgs, setTableArgs] = useState(sessionStorage.getItem("tableArgs"))
+    const [loading, setLoading] = useState(false)
 
 
     useEffect(() => 
@@ -38,7 +39,7 @@ export const TableProvider = (props) => {
     ) 
 
     return (
-        <TableContext.Provider value={[filtArgs, setFiltArgs, sortArgs, setSortArgs, tableArgs, setTableArgs]}>
+        <TableContext.Provider value={[filtArgs, setFiltArgs, sortArgs, setSortArgs, tableArgs, setTableArgs, loading, setLoading]}>
             {props.children}
         </TableContext.Provider>
     )

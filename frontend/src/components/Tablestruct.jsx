@@ -10,9 +10,10 @@ import Sortmenu from "./Sortmenu";
 const TableStruct = () => {
 
 
-  const [,setFiltArgs,,,tableArgs,setTableArgs] = useContext(TableContext)
+  const [,setFiltArgs,,,tableArgs,setTableArgs,,setLoading] = useContext(TableContext)
 
   const changeTable = (tableName) => {
+    setLoading(false)
     setTableArgs(tableName)
 
     if (tableName === "all") {

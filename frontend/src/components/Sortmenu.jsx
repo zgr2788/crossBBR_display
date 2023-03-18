@@ -8,36 +8,26 @@ import Form from 'react-bootstrap/Form';
 const Sortmenu = () => {
 
     const [filtArgs,setFiltArgs,sortArgs,setSortArgs,tableArgs,setTableArgs] = useContext(TableContext)
-
     
 
     const DropSwitch = ({text, id}) => {
 
-        const [checked, setChecked] = useState(true)
-        
-
         const handleCheck = () => {
-            if (checked) {
-                setChecked(false)
-                var args = JSON.parse(filtArgs)
-                args[id] = false
-                setFiltArgs(JSON.stringify(args))
-            } else {
-                setChecked(true)
-                var args = JSON.parse(filtArgs)
-                args[id] = true
-                setFiltArgs(JSON.stringify(args))
-            }
+            var args = JSON.parse(filtArgs)
+            args[id] = !args[id]
+            setFiltArgs(JSON.stringify(args))
         }
 
         return(
             <div className='container-fluid'>
+                <Dropdown.Item disabled>
+                </Dropdown.Item>
                 <Form>
                     <Form.Check 
                       type="switch"
                       id={id}
                       label={text}
-                      defaultChecked
+                      checked={JSON.parse(filtArgs)[id]}
                       onChange={handleCheck}
                     />
                 </Form>

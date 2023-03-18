@@ -7,12 +7,11 @@ import Plotmodal from './Plotmodal'
 
 const Genetable = () => {
 
-    const [filtArgs,,sortArgs,,apiURL,] = useContext(TableContext)
+    const [filtArgs,,sortArgs,,tableArgs,,loading,setLoading] = useContext(TableContext)
 
 
 
     const [genes, setGenes] = useState(null)
-    const [loading, setLoading] = useState(false)
     const [active, setActive] = useState(false)
     const [curID, setCurID] = useState(null)
 
@@ -26,7 +25,7 @@ const Genetable = () => {
             },
         };
 
-        const response = await fetch("/api/omics/" + apiURL +"/", requestOptions);
+        const response = await fetch("/api/omics/" + tableArgs +"/", requestOptions);
         
 
         if (!response.ok) {
@@ -53,10 +52,9 @@ const Genetable = () => {
     // For mount purposes
    
     useEffect(() => {
-      setLoading(false)
       fetchGenes()
     // eslint-disable-next-line
-    }, [apiURL])
+    }, [tableArgs])
 
     return(
         
@@ -146,7 +144,7 @@ const Genetable = () => {
                         </div> 
                     </>
                                     
-                }[apiURL === "all"]}
+                }[tableArgs === "all"]}
             </div>
  
             </>
