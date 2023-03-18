@@ -9,6 +9,7 @@ const Sortmenu = () => {
 
     const [filtArgs,setFiltArgs,sortArgs,setSortArgs,tableArgs,setTableArgs] = useContext(TableContext)
     
+    const parsedFilt = JSON.parse(filtArgs)
 
     const DropSwitch = ({text, id}) => {
 
@@ -27,7 +28,7 @@ const Sortmenu = () => {
                       type="switch"
                       id={id}
                       label={text}
-                      checked={JSON.parse(filtArgs)[id]}
+                      checked={parsedFilt[id]}
                       onChange={handleCheck}
                     />
                 </Form>

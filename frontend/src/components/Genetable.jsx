@@ -14,6 +14,7 @@ const Genetable = () => {
     const [genes, setGenes] = useState(null)
     const [active, setActive] = useState(false)
     const [curID, setCurID] = useState(null)
+    const parsedFilt = JSON.parse(filtArgs)
 
 
 
@@ -75,14 +76,14 @@ const Genetable = () => {
                                     <tr className="table-active bg-transparent">
                                       <th scope="col"><p className="text-info text-center">Ensembl ID</p></th>
                                       <th scope="col"><p className="text-info text-center">Gene Symbol</p></th>
-                                      <th scope="col"><p className="text-info text-center">Rank p-val</p></th>
-                                      <th scope="col"><p className="text-info text-center">Mean Perfusion Score</p></th>
-                                      <th scope="col"><p className="text-info text-center">Top in DESeq2 Aggregate?</p></th>
-                                      <th scope="col"><p className="text-info text-center">Top in DESeq2 Bootstrap?</p></th>
-                                      <th scope="col"><p className="text-info text-center">Top in WRST Aggregate?</p></th>
-                                      <th scope="col"><p className="text-info text-center">Top in WRST Bootstrap?</p></th>
-                                      <th scope="col"><p className="text-info text-center">Protein Evidence from PXD01862?</p></th>
-                                      <th scope="col"><p className="text-info text-center">Actions</p></th>
+                                      { parsedFilt["Rank_p__val"] && <th scope="col"><p className="text-info text-center">Rank p-val</p></th> }
+                                      { parsedFilt["Mean_Perfusion_Score"] && <th scope="col"><p className="text-info text-center">Mean Perfusion Score</p></th> }
+                                      { parsedFilt["DESeq2_Appeared"] && <th scope="col"><p className="text-info text-center">Top in DESeq2 Aggregate?</p></th> }
+                                      { parsedFilt["DESeq2_Validated"] && <th scope="col"><p className="text-info text-center">Top in DESeq2 Bootstrap?</p></th> }
+                                      { parsedFilt["Wilcox_Appeared"] && <th scope="col"><p className="text-info text-center">Top in WRST Aggregate?</p></th> }
+                                      { parsedFilt["Wilcox_Validated"] && <th scope="col"><p className="text-info text-center">Top in WRST Bootstrap?</p></th> }
+                                      { parsedFilt["Prot_Evidence"] && <th scope="col"><p className="text-info text-center">Protein Evidence from PXD01862?</p></th> }
+                                      { parsedFilt["Actions"] && <th scope="col"><p className="text-info text-center">Actions</p></th> }
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -90,18 +91,18 @@ const Genetable = () => {
                                       <tr key={geneID}>
                                           <td><p className="text-info text-center"><strong>{genes[geneID]["Name"]}</strong></p></td>
                                           <td><p className="text-center"><a href={genes[geneID]["uniprot"]} target="_blank" rel='noreferrer'>{genes[geneID]["gene_names"]}</a></p></td>
-                                          <td><p className="text-center">{genes[geneID]["Score"]}</p></td>
-                                          <td><p className="text-center">{genes[geneID]["Mean Perfusion Score"]}</p></td>
-                                          <td><p className="text-center">{genes[geneID]["DESeq2_Appeared"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
-                                          <td><p className="text-center">{genes[geneID]["DESeq2_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
-                                          <td><p className="text-center">{genes[geneID]["Wilcox_Appeared"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
-                                          <td><p className="text-center">{genes[geneID]["Wilcox_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
-                                          <td><p className="text-center">{genes[geneID]["Prot_Evidence"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
-                                          <td>
+                                          { parsedFilt["Rank_p__val"] && <td><p className="text-center">{genes[geneID]["Score"]}</p></td>}
+                                          { parsedFilt["Mean_Perfusion_Score"] && <td><p className="text-center">{genes[geneID]["Mean Perfusion Score"]}</p></td>}
+                                          { parsedFilt["DESeq2_Appeared"] && <td><p className="text-center">{genes[geneID]["DESeq2_Appeared"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>}
+                                          { parsedFilt["DESeq2_Validated"] && <td><p className="text-center">{genes[geneID]["DESeq2_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>}
+                                          { parsedFilt["Wilcox_Appeared"] && <td><p className="text-center">{genes[geneID]["Wilcox_Appeared"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>}
+                                          { parsedFilt["Wilcox_Validated"] && <td><p className="text-center">{genes[geneID]["Wilcox_Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>}
+                                          { parsedFilt["Prot_Evidence"] && <td><p className="text-center">{genes[geneID]["Prot_Evidence"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>}
+                                          { parsedFilt["Actions"] && <td>
                                             <div className="d-flex justify-content-center">
                                                 <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
                                             </div>
-                                          </td>
+                                          </td>}
                                       </tr>
                                   ))}
                                 </tbody>
@@ -118,10 +119,10 @@ const Genetable = () => {
                                     <tr className="table-active bg-transparent">
                                         <th scope="col"><p className="text-info text-center">Ensembl ID</p></th>
                                         <th scope="col"><p className="text-info text-center">Gene Symbol</p></th>
-                                        <th scope="col"><p className="text-info text-center">Rank p-val</p></th>
-                                        <th scope="col"><p className="text-info text-center">Mean Perfusion Score</p></th>
-                                        <th scope="col"><p className="text-info text-center">Top in Bootstrap?</p></th>
-                                        <th scope="col"><p className="text-info text-center">Actions</p></th>
+                                        { parsedFilt["Rank_p__val"] && <th scope="col"><p className="text-info text-center">Rank p-val</p></th>}
+                                        { parsedFilt["Mean_Perfusion_Score"] && <th scope="col"><p className="text-info text-center">Mean Perfusion Score</p></th>}
+                                        { parsedFilt["Validated"] && <th scope="col"><p className="text-info text-center">Top in Bootstrap?</p></th>}
+                                        { parsedFilt["Actions"] &&  <th scope="col"><p className="text-info text-center">Actions</p></th>}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -129,14 +130,14 @@ const Genetable = () => {
                                       <tr key={geneID}>
                                           <td ><p className="text-info text-center"><strong>{genes[geneID]["Name"]}</strong></p></td>
                                           <td><p className="text-center"><a href={genes[geneID]["uniprot"]} target="_blank" rel='noreferrer'>{genes[geneID]["gene_names"]}</a></p></td>
-                                          <td><p className="text-center">{genes[geneID]["Score"]}</p></td>
-                                          <td><p className="text-center">{genes[geneID]["Mean Perfusion Score"]}</p></td>
-                                          <td><p className="text-center">{genes[geneID]["Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>
-                                          <td>
+                                          { parsedFilt["Rank_p__val"] && <td><p className="text-center">{genes[geneID]["Score"]}</p></td>}
+                                          { parsedFilt["Mean_Perfusion_Score"] && <td><p className="text-center">{genes[geneID]["Mean Perfusion Score"]}</p></td>}
+                                          { parsedFilt["Validated"] && <td><p className="text-center">{genes[geneID]["Validated"] ? <span>&#x2714;</span> : <span>&#x2718;</span>}</p></td>}
+                                          { parsedFilt["Actions"] &&  <td>
                                             <div className="d-flex justify-content-center">
                                                 <button className="btn btn-primary" onClick={ () => {handlePlot(geneID)} }>Check Counts</button>
                                             </div>
-                                          </td>
+                                          </td>}
                                       </tr>
                                   ))}
                                 </tbody>
