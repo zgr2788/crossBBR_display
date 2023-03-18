@@ -20,7 +20,12 @@ const App = () => {
           downloads : <Downloads />,
           trmemfoc : <Transmemfoc />,
           test: 
-          <div className='container-fluid'>
+          <div className='fadeIn'>
+            <div className="container-fluid p-4">
+              <div className="row">
+                <p>For all issues & suggestions, contact <u>ozgurbeker@sabanciuniv.edu</u>.</p>
+              </div>
+            </div>
           </div>
         }[pageArgs]}
       </div>

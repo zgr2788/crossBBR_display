@@ -74,7 +74,6 @@ const Transmemfoc = () => {
         <br />
     
         <br />
-        <br />
 
         <div className="row">
           <h1>Gene Tables</h1>
@@ -84,7 +83,7 @@ const Transmemfoc = () => {
 
 
         <div className="row">
-          <h3 className="text-muted">Guide</h3>
+          <h3 className="text-muted">Basics</h3>
           <p>
             Click the <span className="text-warning"><strong>yellow tags</strong></span> to switch between aggregated lists. Within a list, click the <span className="text-info"><strong>Gene symbol</strong></span> of an entry to search its corresponding
             UniProt ID over InterPro if mapping is available. To see the count distribution of samples over tissues, click the <span className="text-info"><strong>Check Counts</strong></span> button.
@@ -92,6 +91,26 @@ const Transmemfoc = () => {
         </div>
 
         <br />
+
+        <div className="row">
+          <h3 className="text-muted">Filter, Sort & Search</h3>
+          <p>
+            To filter out columns, click the entries in the corresponding dropdown.
+          </p>
+          <p>
+            For sorting, click the arguments <strong className="text-info">in the order you want to sort.</strong> The priority for sorting will be shown next to the term. Default indexing is by <strong className="text-info">P value (significance)</strong>.  
+            Clicking again to a selected sort argument will undo its effects, and make its priority available for the user again. To understand the behaviour fully, try clicking on <span className="text-info">"Protein Evidence"</span> and 
+            <span className="text-info">"Rank p-val"</span> in the <strong className="text-warning">All</strong> table and observe the changes to the top of the list. 
+          </p> 
+          <p>
+            To search a specific entry name/ID, you can use the browser search feature (Ctrl+F) when the tables are loaded. 
+          </p>
+            
+
+        </div>
+
+        <br />
+        <br /> 
         <TableProvider>
           <TableStruct />
         </TableProvider>
