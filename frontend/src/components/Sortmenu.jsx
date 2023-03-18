@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { UserContext } from '../context/UserContext';
+import { TableContext } from '../context/TableContext';
 import Dropdown from 'react-bootstrap/Dropdown';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -7,21 +7,26 @@ import Form from 'react-bootstrap/Form';
 
 const Sortmenu = () => {
 
-    const [,,filtArgs,setFiltArgs,sortArgs,setSortArgs,tableArgs,setTableArgs] = useContext(UserContext)
+    const [filtArgs,setFiltArgs,sortArgs,setSortArgs,tableArgs,setTableArgs] = useContext(TableContext)
 
     
 
     const DropSwitch = ({text, id}) => {
 
         const [checked, setChecked] = useState(true)
+        
 
         const handleCheck = () => {
             if (checked) {
                 setChecked(false)
-                console.log("removed")
+                var args = JSON.parse(filtArgs)
+                args[id] = false
+                setFiltArgs(JSON.stringify(args))
             } else {
                 setChecked(true)
-                console.log("added")
+                var args = JSON.parse(filtArgs)
+                args[id] = true
+                setFiltArgs(JSON.stringify(args))
             }
         }
 

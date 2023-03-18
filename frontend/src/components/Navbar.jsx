@@ -2,11 +2,11 @@
 
 import React from "react";
 import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import { PageContext } from "../context/PageContext";
 
 const Navbar = () => {
 
-  const [pageArgs, setPageArgs]  = useContext(UserContext)
+  const [pageArgs, setPageArgs]  = useContext(PageContext)
 
   const Navlink = ({text, isActive, pageArg}) => {  
     return(

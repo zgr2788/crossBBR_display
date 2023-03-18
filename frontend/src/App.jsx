@@ -1,14 +1,14 @@
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
-import { UserContext } from './context/UserContext';
 import { useContext } from 'react';
 import Downloads from './components/Downloads';
 import Transmemfoc from './components/Transmemfoc';
 import Apialerts from './components/Apialerts';
+import { PageContext } from './context/PageContext';
 
 const App = () => {
 
-  const [pageArgs]  = useContext(UserContext)
+  const [pageArgs]  = useContext(PageContext)
 
 
   // Get current page

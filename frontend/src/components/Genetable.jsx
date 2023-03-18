@@ -1,10 +1,14 @@
 // Genetable base component
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { TableContext } from '../context/TableContext'
 import Loader from './Loader'
 import Plotmodal from './Plotmodal'
 
-const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
+const Genetable = () => {
+
+    const [filtArgs,,sortArgs,,apiURL,] = useContext(TableContext)
+
 
 
     const [genes, setGenes] = useState(null)
@@ -21,7 +25,6 @@ const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
                 "Content-Type": "application/json",
             },
         };
-
 
         const response = await fetch("/api/omics/" + apiURL +"/", requestOptions);
         
@@ -50,9 +53,10 @@ const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
     // For mount purposes
    
     useEffect(() => {
-      fetchGenes();
+      setLoading(false)
+      fetchGenes()
     // eslint-disable-next-line
-    }, [])
+    }, [apiURL])
 
     return(
         
@@ -142,7 +146,7 @@ const Genetable = ({ sortArgs, filtArgs, apiURL, inclusive}) => {
                         </div> 
                     </>
                                     
-                }[inclusive]}
+                }[apiURL === "all"]}
             </div>
  
             </>
