@@ -15,12 +15,10 @@ from bokeh.sampledata.autompg2 import autompg2
 
 # Folder metadata
 counts = "Counts/"
-aggreg = "Aggregs/"
-
-count_dict = {}
-aggreg_dict = {}
+aggregs = "Aggregs/"
 
 count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.listdir(counts) if ".csv" in fname}
+aggreg_dict = {fname : _pd.read_csv(aggregs + fname, index_col=0) for fname in os.listdir(aggregs) if ".csv" in fname}
 sample_table = _pd.read_csv("Metadata/sampleTable_final_ideal_dots.csv")
 perf_score_ref  = _pd.read_csv("Metadata/gene_perf_rate_master.csv", index_col=0)
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
@@ -36,54 +34,17 @@ def perfWrapper(gene_id, ref=perf_score_ref):
     
     return score
 
-# Read and construct aggregation reference
-aggreg_ex_ref = _pd.read_csv("Aggregs/aggreg_all.csv", index_col=0)
-aggreg_ex_deseq2 = _pd.read_csv("Aggregs/aggreg_deseq2.csv", index_col=0)
-aggreg_ex_deseq2_valid = _pd.read_csv("Aggregs/aggreg_deseq2_valid.csv", index_col=0)
-aggreg_ex_wilcox = _pd.read_csv("Aggregs/aggreg_wilcox.csv", index_col=0)
-aggreg_ex_wilcox_valid = _pd.read_csv("Aggregs/aggreg_wilcox_valid.csv", index_col=0)
-
-# Add perfusion scores to aggregates
-aggreg_ex_ref["Mean Perfusion Score"] = aggreg_ex_ref["Name"].apply(lambda x: perfWrapper(x))
-aggreg_ex_deseq2["Mean Perfusion Score"] = aggreg_ex_deseq2["Name"].apply(lambda x: perfWrapper(x))
-aggreg_ex_deseq2_valid["Mean Perfusion Score"] = aggreg_ex_deseq2_valid["Name"].apply(lambda x: perfWrapper(x))
-aggreg_ex_wilcox["Mean Perfusion Score"] = aggreg_ex_wilcox["Name"].apply(lambda x: perfWrapper(x))
-aggreg_ex_wilcox_valid["Mean Perfusion Score"] = aggreg_ex_wilcox_valid["Name"].apply(lambda x: perfWrapper(x))
-
-# Map uniprot ids to links
-aggreg_ex_ref["uniprot"] = aggreg_ex_ref["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
-aggreg_ex_deseq2["uniprot"] = aggreg_ex_deseq2["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
-aggreg_ex_deseq2_valid["uniprot"] = aggreg_ex_deseq2_valid["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
-aggreg_ex_wilcox["uniprot"] = aggreg_ex_wilcox["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
-aggreg_ex_wilcox_valid["uniprot"] = aggreg_ex_wilcox_valid["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x))
-
-# Convert scores to significance
-aggreg_ex_ref["Score"] = aggreg_ex_ref["Score"].apply(lambda x : -_np.log10(x))
-aggreg_ex_deseq2["Score"] = aggreg_ex_deseq2["Score"].apply(lambda x : -_np.log10(x))
-aggreg_ex_deseq2_valid["Score"] = aggreg_ex_deseq2_valid["Score"].apply(lambda x : -_np.log10(x))
-aggreg_ex_wilcox["Score"] = aggreg_ex_wilcox["Score"].apply(lambda x : -_np.log10(x))
-aggreg_ex_wilcox_valid["Score"] = aggreg_ex_wilcox_valid["Score"].apply(lambda x : -_np.log10(x))
-
+# Pre-process aggregate files
+for key in list(aggreg_dict.keys()):
+    aggreg_dict[key]["Mean Perfusion Score"] = aggreg_dict[key]["Name"].apply(lambda x: perfWrapper(x)) # Perf
+    aggreg_dict[key]["uniprot"] = aggreg_dict[key]["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x)) # InterPro
+    aggreg_dict[key]["Score"] = aggreg_dict[key]["Score"].apply(lambda x : -_np.log10(x)) # Score change
 
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes for SC excluded
 
-async def fetchExGeneList():
-    return [aggreg_ex_ref, aggreg_ex_deseq2, aggreg_ex_deseq2_valid, aggreg_ex_wilcox, aggreg_ex_wilcox_valid]
-
-
-# Precondition : glist is gene list, sortArgs is json matrix form frontend
-# Returns : Sorted glist
-async def sortList(glist : _pd.DataFrame, sortArgs):
-    
-    # Parse array
-    sortArray = [elem[0] for elem in sortArgs if elem[1] != "-1"]
-
-    # Sort
-    glist = glist.sort_values(sortArray, ascending=False)
-
-
-    return glist
+async def fetchExGeneList(type : str):
+    return aggreg_dict["aggreg_" + type + ".csv"]
 
 
 # Precondition : counts -> count_dict primitive, NOT from fetchCounts
