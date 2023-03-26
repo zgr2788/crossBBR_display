@@ -37,8 +37,8 @@ def perfWrapper(gene_id, ref=perf_score_ref):
 # Pre-process aggregate files
 for key in list(aggreg_dict.keys()):
     aggreg_dict[key]["mean_perf_score"] = aggreg_dict[key]["Name"].apply(lambda x: perfWrapper(x)) # Perf
-    aggreg_dict[key]["uniprot"] = aggreg_dict[key]["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x)) # InterPro
     aggreg_dict[key]["Score"] = aggreg_dict[key]["Score"].apply(lambda x : -_np.log10(x)) # Score change
+    aggreg_dict[key] = aggreg_dict[key][["Name", "gene_names", "uniprot", "Score", "DESeq2_Appeared", "DESeq2_Validated", "Wilcox_Appeared", "Wilcox_Validated", "Prot_Evidence", "mean_perf_score"]] # Reorder for pretty exports
 
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes for SC excluded

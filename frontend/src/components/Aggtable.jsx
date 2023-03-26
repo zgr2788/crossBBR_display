@@ -3,7 +3,9 @@ import Plotmodal from './Plotmodal'
 import {useContext, useEffect, useMemo, useState} from 'react'
 import { TableContext } from '../context/TableContext'
 import MaterialReactTable from 'material-react-table';
-import { Button } from '@mui/material';
+import { Button, Box } from '@mui/material';
+import { ExportToCsv } from 'export-to-csv';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 
 
@@ -17,6 +19,7 @@ const Aggtable = () => {
     const [curID, setCurID] = useState(null)
     const [curName, setCurName] = useState(null)
 
+    const longcolsize=150
 
     const fetchGenes = async () => {
 
@@ -72,6 +75,20 @@ const Aggtable = () => {
               },
           },
           {
+            accessorKey: 'uniprot',
+            header: "Uniprot ID", 
+            Header: <strong className="text-secondary">Uniprot ID</strong>,
+            Cell: ({ cell }) => (<>{cell.row.original.uniprot ?  <span>{cell.row.original.uniprot}</span> : <span>Not matched</span>}</>) ,
+            enableSorting: false,
+
+            muiTableHeadCellProps: {
+                align: 'center',
+              },
+              muiTableBodyCellProps: {
+                align: 'center',
+              },
+          },
+          {
             accessorKey: 'Score',
             header: "Significance", 
             Header: <strong className="text-secondary">Significance</strong>,
@@ -88,7 +105,7 @@ const Aggtable = () => {
             accessorKey: 'DESeq2_Appeared',
             header: "DESeq2 Aggregate Appearance", 
             Header: <strong className="text-secondary">Top in DESeq2 aggregate?</strong>,
-            size: 200,
+            size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
             enableColumnFilter : false,
 
@@ -103,7 +120,7 @@ const Aggtable = () => {
             accessorKey: 'DESeq2_Validated',
             header: "DESeq2 Bootstrap Appearance", 
             Header: <strong className="text-secondary">Top in DESeq2 bootstrap?</strong>,
-            size: 200,
+            size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
             enableColumnFilter : false,
 
@@ -118,7 +135,7 @@ const Aggtable = () => {
             accessorKey: 'Wilcox_Appeared',
             header: "WRST Aggregate Appearance", 
             Header: <strong className="text-secondary">Top in WRST aggregate?</strong>,
-            size: 200,
+            size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
             enableColumnFilter : false,
 
@@ -133,7 +150,7 @@ const Aggtable = () => {
             accessorKey: 'Wilcox_Validated',
             header: "WRST Bootstrap Appearance", 
             Header: <strong className="text-secondary">Top in WRST bootstrap?</strong>,
-            size: 200,
+            size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
             enableColumnFilter : false,
 
@@ -147,9 +164,22 @@ const Aggtable = () => {
           {
             accessorKey: 'Prot_Evidence',
             header: "Protein Evidence", 
-            Header: <strong className="text-secondary">Protein Evidence from PXD01862?</strong>,
-            size: 200,
+            Header: <strong className="text-secondary">Protein Evidence?</strong>,
+            size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.Prot_Evidence ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>),
+            enableColumnFilter : false,
+
+            muiTableHeadCellProps: {
+                align: 'center',
+              },
+              muiTableBodyCellProps: {
+                align: 'center',
+              },
+          },
+          {
+            accessorKey: 'mean_perf_score',
+            header: "Mean Perfusion Score", 
+            Header: <strong className="text-secondary">Perfusion Score</strong>,
             enableColumnFilter : false,
 
             muiTableHeadCellProps: {
@@ -176,6 +206,28 @@ const Aggtable = () => {
             },
           },
         ],[],);
+    
+    //CSV export
+    const csvOptions = {
+        fieldSeparator: ',',
+        quoteStrings: '"',
+        decimalSeparator: '.',
+        showLabels: true,
+        useBom: true,
+        useKeysAsHeaders: false,
+        headers: cols.map((c) => c.header),
+        filename: "export_list"
+    };
+    
+    const csvExporter = new ExportToCsv(csvOptions);
+
+    const handleExportRows = (rows) => {
+        csvExporter.generateCsv(rows.map((row) => row.original));
+    };
+    
+    const handleExportData = () => {
+      csvExporter.generateCsv(genes);
+    };
 
     const handleModal = () => {
         setActive(!active);
@@ -209,6 +261,34 @@ const Aggtable = () => {
             <MaterialReactTable 
             columns={cols} 
             data={genes}
+            enableRowSelection
+            muiTableBodyRowProps={({ row }) => ({
+                onClick: row.getToggleSelectedHandler(),
+                sx: { cursor: 'pointer' },
+            })}
+            renderTopToolbarCustomActions={({ table }) => (
+                <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                  <Button
+                    color="primary"
+                    //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                    onClick={handleExportData}
+                    startIcon={<FileDownloadIcon />}
+                    variant="contained"
+                  >
+                    Export All genes
+                  </Button>
+        
+                  <Button
+                    disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                    //only export selected rows
+                    onClick={() => handleExportRows(table.getSelectedRowModel().rows)}
+                    startIcon={<FileDownloadIcon />}
+                    variant="contained"
+                  >
+                    Export Selection
+                  </Button>
+                </Box>
+              )}
             />
             </div>
             </>
