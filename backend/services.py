@@ -36,7 +36,7 @@ def perfWrapper(gene_id, ref=perf_score_ref):
 
 # Pre-process aggregate files
 for key in list(aggreg_dict.keys()):
-    aggreg_dict[key]["Mean Perfusion Score"] = aggreg_dict[key]["Name"].apply(lambda x: perfWrapper(x)) # Perf
+    aggreg_dict[key]["mean_perf_score"] = aggreg_dict[key]["Name"].apply(lambda x: perfWrapper(x)) # Perf
     aggreg_dict[key]["uniprot"] = aggreg_dict[key]["uniprot"].apply(lambda x : "https://www.ebi.ac.uk/interpro/search/text/" + str(x)) # InterPro
     aggreg_dict[key]["Score"] = aggreg_dict[key]["Score"].apply(lambda x : -_np.log10(x)) # Score change
 

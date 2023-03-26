@@ -1,9 +1,10 @@
 // Transmembrane focused tables page
 
-import React from "react";
+import {React} from "react";
 import { TableProvider } from "../context/TableContext";
+import Aggtable from "./Aggtable";
 import './Fade.css'
-import TableStruct from "./Tablestruct";
+
 
 const Transmemfoc = () => {
 
@@ -45,9 +46,9 @@ const Transmemfoc = () => {
             with the same two contrast groups to compare for potential false positives from the negative binomial model. Here, genes with FDR corrected P &lt; 0.05 and fold change (log2) &gt; 0 were considered significant, which were again ranked in the previous manner.   
           </p>
           <p>
-            The resulting 4 ranked lists were aggregated through <a className="text-info" href="https://cran.r-project.org/web/packages/RobustRankAggreg/index.html" target="_blank" rel="noreferrer">RobustRankAggreg</a> to derive the final list below (with the tag <span className="text-warning"><strong>All</strong></span>).
-            List pairs from the 2 workflows were also aggregated separately (tagged <span className="text-warning"><strong>DESeq2</strong></span> and <span className="text-warning"><strong>Wilcox</strong></span>). Finally for both workflows, 100 runs with subsamples comprised of %60 of the original sample size were generated (without replacement)
-            to validate significantly expressed genes and partially rule out sample bias (tagged <span className="text-warning"><strong>DESeq2 Validation</strong></span> and <span className="text-warning"><strong>Wilcox Validation</strong></span>).   
+            The resulting 4 ranked lists were aggregated through <a className="text-info" href="https://cran.r-project.org/web/packages/RobustRankAggreg/index.html" target="_blank" rel="noreferrer">RobustRankAggreg</a> to derive the final list below.
+            List pairs from the 2 workflows were also aggregated separately. Finally for both workflows, 100 runs with subsamples comprised of %60 of the original sample size were generated (without replacement)
+            to validate significantly expressed genes and partially rule out sample bias.   
           </p>
         </div>
 
@@ -111,11 +112,11 @@ const Transmemfoc = () => {
 
         <br />
         <br /> 
+        
         <TableProvider>
-          <TableStruct />
+          <Aggtable/>
         </TableProvider>
-
-
+      
       </div>
     </div> 
   );
