@@ -12,8 +12,8 @@ const Navbar = () => {
     return(
       <div>
       {{  
-        true : <button className="nav-link active"><p className="text-info"><strong>{ text }</strong></p></button>,
-        false : <button className="nav-link" onClick={() => {setPageArgs(pageArg)}}>{ text }</button>
+        true : <a href="#" className="nav-link active"><p className="text-info"><strong>{ text }</strong></p></a>,
+        false : <a href="#" className="nav-link" onClick={() => {setPageArgs(pageArg)}}>{ text }</a>
       }[isActive]}
       </div>
     ) 

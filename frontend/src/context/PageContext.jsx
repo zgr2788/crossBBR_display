@@ -6,7 +6,7 @@ export const PageContext = createContext();
 
 export const PageProvider = (props) => {
 
-    //Default is all
+    //Declare defaults
 
     sessionStorage.setItem("pageArgs", "home")
 
