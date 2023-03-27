@@ -106,7 +106,7 @@ const Aggtable = () => {
           },
           {
             accessorKey: 'DESeq2_Appeared',
-            header: "DESeq2 Aggregate Appearance", 
+            header: "DESeq2", 
             Header: <strong className="text-secondary">Top in DESeq2 aggregate?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
@@ -122,7 +122,7 @@ const Aggtable = () => {
           },
           {
             accessorKey: 'DESeq2_Validated',
-            header: "DESeq2 Bootstrap Appearance", 
+            header: "DESeq2 Bootstrap", 
             Header: <strong className="text-secondary">Top in DESeq2 bootstrap?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
@@ -138,7 +138,7 @@ const Aggtable = () => {
           },
           {
             accessorKey: 'Wilcox_Appeared',
-            header: "WRST Aggregate Appearance", 
+            header: "WRST", 
             Header: <strong className="text-secondary">Top in WRST aggregate?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
@@ -154,7 +154,7 @@ const Aggtable = () => {
           },
           {
             accessorKey: 'Wilcox_Validated',
-            header: "WRST Bootstrap Appearance", 
+            header: "WRST Bootstrap", 
             Header: <strong className="text-secondary">Top in WRST bootstrap?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,

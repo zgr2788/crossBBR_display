@@ -84,28 +84,58 @@ const Transmemfoc = () => {
 
 
         <div className="row">
-          <h3 className="text-muted">Basics</h3>
+          <h3 className="text-muted">Columns</h3>
           <p>
-            Click the <span className="text-warning"><strong>yellow tags</strong></span> to switch between aggregated lists. Within a list, click the <span className="text-info"><strong>Gene symbol</strong></span> of an entry to search its corresponding
-            UniProt ID over InterPro if mapping is available. To see the count distribution of samples over tissues, click the <span className="text-info"><strong>Check Counts</strong></span> button.
+            <ul>
+              <li>
+                <strong>Gene ID:</strong> Ensembl gene ID for the given gene.
+              </li>
+              <li>
+                <strong>Gene Name:</strong> Matched HGNC name for the given ID.
+              </li>
+              <li>
+                <strong>Uniprot ID:</strong> Matched Uniprot ID for the associated protein. 
+              </li>
+              <li>
+                <strong>Significance:</strong> This refers to the aggregation significance (-log10) which is calculated during robust rank aggregation. Refer to <i>Differential gene expression analyses</i> for more information.
+              </li>
+              <li>
+                <strong>Top in ...?:</strong> These columns indicate whether the given gene was also encountered in the corresponding aggregate.
+              </li>
+              <li>
+                <strong>Protein Evidence:</strong> Evidence obtained from PXD018602. Refer to <i>Proteomics cross reference</i> for more information.
+              </li>
+              <li>
+                <strong>Perfusion Score:</strong> Mean score based on perfusion rates for tissues where the gene was relatively underexpressed. Refer to <i>Perfusion scores</i> for more information.
+              </li>
+            </ul>
           </p>
         </div>
 
         <br />
 
         <div className="row">
-          <h3 className="text-muted">Filter, Sort & Search</h3>
-          <p>
-            To filter out columns, click the entries in the corresponding dropdown.
-          </p>
-          <p>
-            For sorting, click the arguments <strong className="text-info">in the order you want to sort.</strong> The priority for sorting will be shown next to the term. Default indexing is by <strong className="text-info">P value (significance)</strong>.  
-            Clicking again to a selected sort argument will undo its effects, and make its priority available for the user again. To understand the behaviour fully, try clicking on <span className="text-info">"Protein Evidence"</span> and 
-            <span className="text-info">"Rank p-val"</span> in the <strong className="text-warning">All</strong> table and observe the changes to the top of the list. 
-          </p> 
-          <p>
-            To search a specific entry name/ID, you can use the browser search feature (Ctrl+F) when the tables are loaded. 
-          </p>
+          <h3 className="text-muted">Features</h3>
+            <p>
+              <ul>
+                <li>
+                  <strong>Sorts & Filters:</strong> Click the <i>Significance & Perfusion Score</i> columns to sort ascending/descending. Text search/filter is possible for the 
+                  <i> Gene ID, Gene Name & Uniprot ID</i> columns. For the <i>Top in ...?</i> columns, it is possible to filter for true/false rows. To search text within the entire table, use
+                  the search function in top right.  
+                </li>
+                <li>
+                  <strong>Toolbar:</strong> Select which columns to display, density of the display, show/hide global search & filters, and make the table fullscreen.
+                </li>
+                <li>
+                  <strong>Export:</strong> To export the entire table (does not respect ordering/filtering), use the <i>Export All Genes</i> button. To export selected rows with respect to order,
+                  use the <i>Export Selection</i> button.
+                </li>
+                <li>
+                  <strong>Click to Copy / Search / Get Counts:</strong> For the <i>Gene ID</i> column, click the Ensembl ID to copy it to your clipboard. For <i>Gene Name & Uniprot ID</i> columns, click the text to
+                  be taken to search the corresponding entry on Human Protein Atlas / InterPro. Click the values in <i>Significance</i> column to check the count distribution for samples. 
+                </li>
+              </ul>
+            </p>
             
 
         </div>
