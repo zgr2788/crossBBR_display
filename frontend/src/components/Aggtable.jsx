@@ -13,13 +13,12 @@ const Aggtable = () => {
 
     const [loading, setLoading, tableArgs,] = useContext(TableContext)
 
-
     const [genes, setGenes] = useState(null)
     const [active, setActive] = useState(false)
     const [curID, setCurID] = useState(null)
     const [curName, setCurName] = useState(null)
 
-    const longcolsize=150
+    const longcolsize = 150
 
     const fetchGenes = async () => {
 
@@ -39,7 +38,6 @@ const Aggtable = () => {
         else {
             const data = await response.json()
             setGenes(Object.values(JSON.parse(data)))
-            console.log(Object.values(JSON.parse(data)))
             setLoading(true)
         }
     }
@@ -53,6 +51,7 @@ const Aggtable = () => {
             header: "Gene ID", 
             Header: <strong className="text-secondary">Gene ID</strong>,
             enableClickToCopy: true,
+            enableSorting: false,
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -66,6 +65,8 @@ const Aggtable = () => {
             header: "Gene Name", 
             Header: <strong className="text-secondary">Gene Name</strong>,
             enableSorting: false,
+            enableClickToCopy: true,
+            Cell: ({ cell }) => <a href={`https://www.proteinatlas.org/search/${cell.row.original.gene_names}`} target="_blank" rel="noreferrer">{cell.row.original.gene_names}</a> ,
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -78,8 +79,9 @@ const Aggtable = () => {
             accessorKey: 'uniprot',
             header: "Uniprot ID", 
             Header: <strong className="text-secondary">Uniprot ID</strong>,
-            Cell: ({ cell }) => (<>{cell.row.original.uniprot ?  <span>{cell.row.original.uniprot}</span> : <span>Not matched</span>}</>) ,
+            Cell: ({ cell }) => (<>{cell.row.original.uniprot ?  <a href={`https://www.ebi.ac.uk/interpro/search/text/${cell.row.original.uniprot}`} target="_blank" rel="noreferrer">{cell.row.original.uniprot}</a> : <span>Not matched</span>}</>) ,
             enableSorting: false,
+            enableClickToCopy: true,
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -93,6 +95,7 @@ const Aggtable = () => {
             header: "Significance", 
             Header: <strong className="text-secondary">Significance</strong>,
             enableColumnFilter : false,
+            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Name, cell.row.original.gene_names)} }>{cell.row.original.Score}</strong>),
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -107,7 +110,8 @@ const Aggtable = () => {
             Header: <strong className="text-secondary">Top in DESeq2 aggregate?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
-            enableColumnFilter : false,
+            filterVariant: 'checkbox',            
+            enableSorting: false,
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -122,7 +126,8 @@ const Aggtable = () => {
             Header: <strong className="text-secondary">Top in DESeq2 bootstrap?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
-            enableColumnFilter : false,
+            filterVariant: 'checkbox',        
+            enableSorting: false,
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -137,7 +142,8 @@ const Aggtable = () => {
             Header: <strong className="text-secondary">Top in WRST aggregate?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
-            enableColumnFilter : false,
+            filterVariant: 'checkbox',
+            enableSorting: false,
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -152,7 +158,8 @@ const Aggtable = () => {
             Header: <strong className="text-secondary">Top in WRST bootstrap?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
-            enableColumnFilter : false,
+            filterVariant: 'checkbox',
+            enableSorting: false,
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -167,7 +174,8 @@ const Aggtable = () => {
             Header: <strong className="text-secondary">Protein Evidence?</strong>,
             size: longcolsize,
             Cell: ({ cell }) => (<>{cell.row.original.Prot_Evidence ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>),
-            enableColumnFilter : false,
+            filterVariant: 'checkbox',
+            enableSorting: false,
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -181,6 +189,8 @@ const Aggtable = () => {
             header: "Mean Perfusion Score", 
             Header: <strong className="text-secondary">Perfusion Score</strong>,
             enableColumnFilter : false,
+            Cell: ({ cell }) => <strong>{cell.row.original.mean_perf_score}</strong>, 
+
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -188,22 +198,6 @@ const Aggtable = () => {
               muiTableBodyCellProps: {
                 align: 'center',
               },
-          },
-          {
-            accessorKey: 'actions',
-            header: "Actions", 
-            Header: <strong className="text-secondary">Actions</strong>,
-            columnDefType: 'display',
-            Cell: ({ row }) => (
-                <Button onClick={ () => {handlePlot(row.original.Name, row.original.gene_names)} }>Get Counts</Button>
-            ),
-            
-            muiTableHeadCellProps: {
-              align: 'center',
-            },
-            muiTableBodyCellProps: {
-              align: 'center',
-            },
           },
         ],[],);
     
@@ -262,10 +256,22 @@ const Aggtable = () => {
             columns={cols} 
             data={genes}
             enableRowSelection
+
             muiTableBodyRowProps={({ row }) => ({
                 onClick: row.getToggleSelectedHandler(),
                 sx: { cursor: 'pointer' },
             })}
+
+            muiTableHeadCellProps={{
+
+                sx: {
+                  '& .Mui-TableHeadCell-Content': {
+        
+                    justifyContent: 'space-between',
+                  },
+                },
+            }}
+
             renderTopToolbarCustomActions={({ table }) => (
                 <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
                   <Button
