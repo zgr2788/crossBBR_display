@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import { useContext } from 'react';
-import Downloads from './components/Downloads';
+import Methods from './components/Methods';
 import Transmemfoc from './components/Transmemfoc';
 import Apialerts from './components/Apialerts';
 import { PageContext } from './context/PageContext';
@@ -17,7 +17,7 @@ const App = () => {
       <div>
         {{
           home: <Homepage />,
-          downloads : <Downloads />,
+          methods : <Methods />,
           trmemfoc : <Transmemfoc />,
           test: 
           <div className='fadeIn'>

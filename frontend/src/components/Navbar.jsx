@@ -38,7 +38,7 @@ const Navbar = () => {
                 {pageArgs === "allcod" ? <Navlink text={"All Coding Genes"} isActive={true}/> :  <Navlink text={"All Coding Genes"} isActive={false} pageArg="allcod"/>}
               </li>
               <li className="nav-item px-5">
-                {pageArgs === "downloads" ? <Navlink text={"Downloads"} isActive={true}/> :  <Navlink text={"Downloads"} isActive={false} pageArg="downloads"/>}
+                {pageArgs === "methods" ? <Navlink text={"Methods"} isActive={true}/> :  <Navlink text={"Methods"} isActive={false} pageArg="methods"/>}
               </li>
               <li className="nav-item px-5">
                 {pageArgs === "test" ? <Navlink text={"Testing"} isActive={true}/> :  <Navlink text={"Testing"} isActive={false} pageArg="test"/>}
