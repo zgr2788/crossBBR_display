@@ -11,14 +11,24 @@ async def landing():
 #################################################################
 
 # CS excluded results page
-@app.get("/api/omics/data/{type}")
-async def ex_main_page(type: str):
+@app.get("/api/omics/data/{typeof}")
+async def ex_main_page(typeof: str):
 
-    if type not in ["all", "deseq2", "wilcox", "deseq2_valid", "wilcox_valid"]:
+    if typeof not in ["all", "deseq2", "wilcox", "deseq2_valid", "wilcox_valid"]:
         raise _fastapi.HTTPException(status_code = 404, detail = "Table identifier not found!")
 
-    gene_list = await _services.fetchExGeneList(type=type)
+    gene_list = await _services.fetchExGeneList(typeof=typeof)
     return gene_list.to_json(orient="index")
+
+@app.get("/api/omics/dumps/{typeof}")
+async def dump_tables(typeof: str):
+
+    if typeof not in ["deseq2_all", "deseq2_select", "wilcox_all", "wilcox_select"]:
+        raise _fastapi.HTTPException(status_code = 404, detail = "Table identifier not found!")
+
+    gene_list = await _services.fetchDumpList(typeof=typeof)
+    return gene_list.to_json(orient="index") 
+
 
 # For count plots with sample info
 @app.get("/api/omics/plots/counts/{gene_id}/")

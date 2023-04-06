@@ -16,9 +16,11 @@ from bokeh.sampledata.autompg2 import autompg2
 # Folder metadata
 counts = "Counts/"
 aggregs = "Aggregs/"
+dumps = "Lists/"
 
 count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.listdir(counts) if ".csv" in fname}
 aggreg_dict = {fname : _pd.read_csv(aggregs + fname, index_col=0) for fname in os.listdir(aggregs) if ".csv" in fname}
+dumps_dict = {fname : _pd.read_csv(dumps + fname, index_col=0) for fname in os.listdir(dumps) if ".csv" in fname}
 sample_table = _pd.read_csv("Metadata/sampleTable_final_ideal_dots.csv")
 perf_score_ref  = _pd.read_csv("Metadata/gene_perf_rate_master.csv", index_col=0)
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
@@ -43,9 +45,15 @@ for key in list(aggreg_dict.keys()):
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes for SC excluded
 
-async def fetchExGeneList(type : str):
-    return aggreg_dict["aggreg_" + type + ".csv"]
+async def fetchExGeneList(typeof : str):
+    return aggreg_dict["aggreg_" + typeof + ".csv"]
 
+
+# Precondition : none
+# Returns : Dump list -> List of genes from experiments
+
+async def fetchDumpList(typeof : str):
+    return dumps_dict[typeof + ".csv"]
 
 # Precondition : counts -> count_dict primitive, NOT from fetchCounts
 # Returns : Sample count distribution in runs per tissue  

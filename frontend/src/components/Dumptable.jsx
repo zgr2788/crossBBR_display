@@ -44,7 +44,7 @@ const Dumptable = () => {
                 },
             };
     
-            const response = await fetch("/api/omics/data/" + key, requestOptions);
+            const response = await fetch("/api/omics/dumps/" + key, requestOptions);
             
     
             if (!response.ok) {
@@ -62,7 +62,7 @@ const Dumptable = () => {
 
 
     // Column operations here for table
-    const cols = useMemo(
+    const cols_deseq2 = useMemo(
         () => [
           {
             accessorKey: 'Name',
@@ -227,7 +227,7 @@ const Dumptable = () => {
         showLabels: true,
         useBom: true,
         useKeysAsHeaders: false,
-        headers: cols.map((c) => c.header),
+        headers: cols_deseq2.map((c) => c.header),
         filename: "export_list"
     };
     
@@ -284,8 +284,8 @@ const Dumptable = () => {
 
             <div>
             <MaterialReactTable 
-            columns={cols} 
-            data={genes}
+            columns={cols_deseq2} 
+            data={geneDict["deseq2_all"]}
             enableRowSelection
 
             muiTableBodyRowProps={({ row }) => ({
