@@ -1,0 +1,1134 @@
+,baseMean,log2FoldChange,sigAdj,hgncSymbol,appCount,tissList
+ENSG00000018625,1266.40874418668,8.348769604143994,10.412709063102149,ATP1A2,13,"['Cornea', 'Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000163873,19.324426816569,8.291931854287435,6.209289121259416,GRIK3,13,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000078549,100.594705458111,5.537211172635791,6.064843711667108,ADCYAP1R1,13,"['Heart', 'Liver', 'Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000143226,5195.71720890606,8.852445232296372,18.09605841646945,FCGR2A,12,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000196218,116.629580793884,6.775039130418506,11.47386247941157,RYR1,12,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000203747,221.793797144784,13.220808559436728,11.334349162555862,FCGR3A,12,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000198019,56.1422103896391,9.876142774609171,10.903952333623623,FCGR1B,12,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000110436,786.368945692005,6.967302711631205,10.072702031042054,SLC1A2,12,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000124731,28.0383498533364,7.846339238922511,8.58017123073358,TREM1,12,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000105383,29.3526169034446,6.713948187708141,7.553461660680051,CD33,12,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000135472,44.0100766854337,5.335413892721981,5.9837337688201835,FAIM2,12,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000112053,18.9423215597852,2.4045056650610395,3.8444655142228172,SLC26A8,12,"['Heart', 'Liver', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000160886,89.1582387184478,2.5635409790701487,3.7195076938722624,LY6K,12,"['Cornea', 'Heart', 'Liver', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000104888,60.7414264884687,4.791753805639208,9.60751249369148,SLC17A7,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000118777,523.985292044223,3.4504619991161465,9.359269942022134,ABCG2,11,"['Cornea', 'Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000197471,57.7266208550337,6.978745358939693,8.866807211196557,SPN,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000005844,62.5960256295684,5.096428770214995,8.824964857433692,ITGAL,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000171951,110.538818482116,4.250813494530772,8.774908754001713,SCG2,11,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000081237,284.649200079472,6.6688813591834455,8.768125884372795,PTPRC,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000132164,38.1444677901406,8.258967847203216,8.662116286290576,SLC6A11,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000174123,26.4168491187618,7.364941060970338,8.395481648421498,TLR10,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000142235,22.4076052046222,3.59876818817055,8.13173053545112,LMTK3,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000181790,36.7576112055126,6.1755002411177395,7.946370251444012,ADGRB1,11,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000173705,415.509197254466,2.982806776577775,7.8378571763468905,SUSD5,11,"['Cornea', 'Heart', 'Liver', 'Lymph.node', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000167613,107.586296873302,6.8492729875805045,7.706517353037511,LAIR1,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000081138,27.9379919883878,9.193481897946464,7.085661120284453,CDH7,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000172461,36.4406087958096,9.105408329058557,7.013831325320052,FUT9,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000169896,79.5927318017618,5.453755383281589,6.918612930180382,ITGAM,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000205277,120.606802709352,5.505719358289851,6.535473415135203,MUC12,11,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000167889,50.5875392135112,2.7495176877409317,6.293599813484289,MGAT5B,11,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000105609,32.0533192441335,5.3483604264890525,6.077806241115437,LILRB5,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000142583,113.072873274182,5.333516453505765,5.830999050940124,SLC2A5,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000169181,18.3394876065721,7.255961649544203,5.585400053614536,GSG1L,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000080854,47.4473535718003,4.016573501256811,5.467262080851921,IGSF9B,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000196660,50.4300930484732,6.332329651131397,5.376831706234756,SLC30A10,11,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000169876,10.0540502555446,10.682344375011716,4.912929961040254,MUC17,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000132681,14.4595628157833,5.1480381592767905,4.912699891782553,ATP1A4,11,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000167281,28.6225766746244,3.116286180353103,4.831675943318033,RBFOX3,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000197992,21.3479717290712,3.549218799446844,4.51105496911979,CLEC9A,11,"['Cornea', 'Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000183317,13.0024822973192,3.3678670681686085,3.4475005501306275,EPHA10,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000158955,13.0159383105646,4.667088950947765,3.413716352275868,WNT9B,11,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000143195,29.3566155592346,7.49774257029542,13.337661718159922,ILDR2,10,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000167664,5.05441145554256,12.380272767543339,13.299524643952063,TMIGD2,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000143297,12.8176605633494,15.809549063822079,12.38804491869249,FCRL5,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000254521,15.0338469621174,15.567969741920876,10.544203505414378,SIGLEC12,10,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000152092,65.4217569336373,7.821913690812609,10.473602384606364,ASTN1,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000120251,62.21197213676,9.373105147692053,10.106967299208739,GRIA2,10,"['Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000168079,14.8597424682119,10.849836896865906,9.879672181479517,SCARA5,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000177511,22.5332958954108,14.113354676437183,9.72487470012644,ST8SIA3,10,"['Cornea', 'Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000188338,89.7593194385538,6.372933414173376,9.567357727901546,SLC38A3,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000258227,21.3388242549729,12.236779842453526,9.494039190859619,CLEC5A,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000110079,56.382686415546,10.886889306522349,9.217625298145757,MS4A4A,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000121871,11.8714504325414,16.928686616758934,9.124133741424448,SLITRK3,10,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000187474,23.3915383686739,7.104747833026958,9.05897240160803,FPR3,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000042980,121.107540458967,4.420960328936689,9.049219779677301,ADAM28,10,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000134460,22.3607307213468,11.946746796141362,8.820811196939708,IL2RA,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000165548,13.4884841113707,8.388026771299385,8.692491324444465,TMEM63C,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000109956,33.6523945698797,7.277977812093077,8.55098611851049,B3GAT1,10,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Peripheral.blood', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000105366,32.52643990575,12.70862789838017,8.353185120685696,SIGLEC8,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000086730,101.21671697471,2.9050725350213327,8.114109794351018,LAT2,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000203985,3.93678705713638,14.516956914668066,7.825229374066706,LDLRAD1,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000157087,45.8006639929301,5.32569839756954,7.6276480567961285,ATP2B2,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000198216,47.2717723601172,7.923080907598061,7.6251110199833505,CACNA1E,10,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000171049,13.579309705534,6.626758605975401,7.623062825033993,FPR2,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000154080,8.74941357845642,9.773461302672075,7.113220853324664,CHST9,10,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000140015,29.2752264677543,8.976744789261845,7.061255932438894,KCNH5,10,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000181785,5.52035919447664,11.123506469173005,6.598183545164997,OR5AS1,10,"['Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000075035,10.6402646356142,11.510674718210877,6.491299704520385,WSCD2,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000187037,5.90361081070156,7.111856413549065,6.40939658065309,GPR141,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000141837,149.149317632216,2.900065989429918,6.342253307256265,CACNA1A,10,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000185942,64.2996527600716,4.10037104507534,6.300604130972537,NKAIN3,10,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000150625,152.591612915707,5.214452734838807,6.262021884736857,GPM6A,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000169894,38.4856234451268,6.1111571586606885,6.218001806158053,MUC3A,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Tonsil']"
+ENSG00000120457,32.1364717774127,4.314391748711572,6.190763218695962,KCNJ5,10,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000183166,27.5402703747715,7.658855095512486,6.133937476869231,CALN1,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Tonsil']"
+ENSG00000006283,31.0846831441197,7.191110799557817,6.075424613375768,CACNA1G,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000105352,2.87111354052372,10.52574197797686,5.75525786237087,CEACAM4,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000128596,66.5498169851849,2.23731702042935,5.753878393605568,CCDC136,10,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000126262,16.3933197735202,6.556258183316811,5.436728770159461,FFAR2,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000165478,21.4285483940311,4.622784618942203,5.37720202503939,HEPACAM,10,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000103056,11.2107150738471,4.160516718399627,4.922471773135529,SMPD3,10,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000154118,32.886248104148,3.173134057252202,4.897110178383793,JPH3,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000204577,35.5334157198754,3.1341080667383845,4.884012109668889,LILRB3,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000124215,16.4124289004519,2.956753482681274,4.87798999221262,CDH26,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000167619,11.1268459870522,2.5378753569233248,4.7909963234247686,TMEM145,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000129159,10.5088975419186,3.4296464292962483,4.196640472835373,KCNC1,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000196778,2.98817090410961,9.242395073747058,4.018953407674475,OR52K1,10,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000163377,4.32564737582666,4.295552866596091,4.002863081571691,TAFA4,10,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000136040,90.7780271664827,2.3125919389439114,3.9882608341294867,PLXNC1,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000130208,86.8829672390052,2.765697885357782,3.8954554746771484,APOC1,10,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000101542,21.3394123897434,2.625475084477253,3.3958348629166712,CDH20,10,"['Heart', 'Liver', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000166928,8.16985754931237,14.62293404370007,17.05282888184379,MS4A14,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000142185,74.0627682119259,5.228752287671111,12.218077097869287,TRPM2,9,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000055957,138.953807731588,12.798217907916024,12.178407918645572,ITIH1,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000095970,42.8555361286133,14.971286220279714,11.31155427039618,TREM2,9,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000166527,4.20284934370503,13.730420909263358,10.296529101381864,CLEC4D,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000162728,17.8914872678439,7.205697676697787,10.146600409339957,KCNJ9,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000268500,26.7406120169827,5.505675455554965,9.231139298837462,SIGLEC5,9,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000254415,46.133692573505,4.466120369301674,9.224332024259791,SIGLEC14,9,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000151490,76.233137945792,5.4726645709063515,9.094040747103072,PTPRO,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000177272,23.3766979517696,8.700428776401731,8.913338531313938,KCNA3,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000178789,6.28937222810224,11.600741184638679,8.458942833996092,CD300LB,9,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000169403,49.3978598361707,3.747326401034938,8.367048464651253,PTAFR,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000185885,428.196973192992,3.3628219794489542,8.216778971178353,IFITM1,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Lung', 'Skin', 'Intestine']"
+ENSG00000149294,264.158867712722,4.182794261962517,8.180500416860536,NCAM1,9,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000085563,505.084186386747,3.395755782347378,8.091935141920644,ABCB1,9,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000197629,124.908016053803,7.650975152866574,7.959760973260454,MPEG1,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000203710,78.4712249372093,10.767076698747617,7.878973486142884,CR1,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000166927,94.5647029657168,9.944428178009549,7.866937512345755,MS4A7,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000137463,497.570742443322,4.8544034998237535,7.77960829430444,MGARP,9,"['Liver', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Foreskin', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000142512,36.5080144091517,5.252603184813444,7.192850592080662,SIGLEC10,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000198822,27.8107609253585,3.9338842333338766,7.185642361269446,GRM3,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000164604,157.011736234414,3.3443967390234812,7.180541450775067,GPR85,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000170419,12.4692149148213,16.099566954256527,7.041152152667826,VSTM2A,9,"['Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000131042,38.3307051251089,7.556739629612458,6.964693983370753,LILRB2,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000159398,4.79053344151406,16.15794177251072,6.956137348332941,CES5A,9,"['Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000140678,81.8250951769507,3.4628259569083237,6.863441634930159,ITGAX,9,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000167654,16.345659870897,5.347480913473747,6.821687228460259,ATCAY,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000010379,76.9165899281966,4.6380249950260755,6.821361596188327,SLC6A13,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000177807,138.726040180303,5.172903018804563,6.676709109453694,KCNJ10,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000185862,108.336499827993,2.550208938594562,6.573226605325311,EVI2B,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000242574,91.1916836768333,4.368713933125807,6.553265026430247,HLA-DMB,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000151320,112.050982327958,2.81149902546187,6.38057041114211,AKAP6,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000172116,8.44573172299727,7.332364471029716,6.3780243284964415,CD8B,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000055118,47.5837212701697,6.05062661462248,6.301408441840459,KCNH2,9,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000185818,84.8762446704447,3.711367750768452,6.2936744859330895,NAT8L,9,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000160593,62.0856867534888,5.1364904741064725,6.229046765046844,JAML,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000171502,55.7063686000441,4.412337089572293,6.038782925923053,COL24A1,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000166862,13.8450449931079,13.14973937812645,5.967105453269814,CACNG2,9,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000084628,11.6557928590986,3.5281960426400216,5.965900829868037,NKAIN1,9,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000138741,37.3342320765657,3.7078370852083236,5.925419382066945,TRPC3,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000150471,126.680066378896,4.54924111542275,5.794789345712917,ADGRL3,9,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000008277,88.8204282148783,2.4969890656026994,5.698266333292052,ADAM22,9,"['Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000101489,28.3935252331976,3.9710932586814445,5.408411858382479,CELF4,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000134755,98.4473679139256,3.951152319497921,5.166373206485566,DSC2,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000153822,128.068959030788,3.620251122563219,5.105467233915707,KCNJ16,9,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000196376,20.671311811594,3.8825559329485233,5.095335383782815,SLC35F1,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000145416,109.508423936837,2.3910113517514793,5.068591514040341,MARCHF1,9,"['Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000164796,38.6649945861596,3.295519916880737,4.963183187770602,CSMD3,9,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000100867,53.9202600737346,3.473582768310828,4.949728303672806,DHRS2,9,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000167614,58.760547955833,2.7821863587126643,4.937127810251753,TTYH1,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000100678,24.2115635257521,3.0916237526858654,4.925299725638857,SLC8A3,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000088053,10.434835891529,3.4885519413058903,4.897630540701825,GP6,9,"['Heart', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000105642,12.1330437213857,3.0995196084750196,4.768511064111234,KCNN1,9,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000161944,34.5964478797487,8.430075316838591,4.76470137393664,ASGR2,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000214212,14.4951214234592,3.7137701680334496,4.689494199132053,C19orf38,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000118160,9.88859530305485,3.8707243473303308,4.574476601976101,SLC8A2,9,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000146839,19.4897148871237,7.122512475387661,4.545637781660329,ZAN,9,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000075429,14.5114920812029,4.775472733378482,4.483416329974706,CACNG5,9,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000111452,40.0096556349986,4.862094919198818,4.452670991232075,ADGRD1,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000178233,17.0182634391716,3.633749256759121,4.412178922367583,TMEM151B,9,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000204655,20.3138510111668,5.723633768777717,3.696425765412426,MOG,9,"['Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000124493,9.27379527188055,3.3883831309391352,3.547427731177613,GRM4,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000258986,5.27993895281817,3.2624604876805146,3.4664829588173403,TMEM179,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000095932,65.8583937461925,4.089571311893005,3.449185177114411,SMIM24,9,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000140030,24.662735713754,3.210261017407243,3.234441203800306,GPR65,9,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000134020,5.91728902755223,3.3632623497077176,3.1900740409425303,PEBP4,9,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000186723,4.81382249526158,3.168205687901168,2.677880474895586,OR10H1,9,"['Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000147434,7.55910948086149,2.2409496527720476,1.9655491366651026,CHRNA6,9,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000166523,25.7257933699617,13.700121253613133,17.218451008815492,CLEC4E,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000179520,10.5347912368785,11.330826584031316,14.028557224170783,SLC17A8,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000162747,93.2462820435281,15.754428713350826,12.686565972356554,FCGR3B,8,"['Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000163534,9.05752260040069,18.14074164504659,12.506142431278983,FCRL1,8,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000110077,191.931064184479,7.410609509219741,10.91576774708036,MS4A6A,8,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000126251,2.67394018522486,13.889639536378864,10.860634279828862,GPR42,8,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000168539,7.90262894362583,11.793013329068039,10.74418483762294,CHRM1,8,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000018236,156.795086227983,7.110799243647001,10.00732447075832,CNTN1,8,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000152954,17.0163697362205,9.877702377199189,8.822881427320542,NRSN1,8,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000150637,45.8043817190943,4.185529911825169,8.564075672617783,CD226,8,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney']"
+ENSG00000112414,2216.55498476825,2.989070009943655,8.523136411045389,ADGRG6,8,"['Cornea', 'Heart', 'Lymph.node', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney']"
+ENSG00000166428,53.1264707560394,6.990665865305613,8.509857353580637,PLD4,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000096996,14.1239581976521,3.9677985864751433,8.359791267179816,IL12RB1,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney']"
+ENSG00000069206,6.53892911992966,19.794118959436787,8.334843575887685,ADAM7,8,"['Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000197901,161.383392736521,17.42560643866033,8.107379356855521,SLC22A6,8,"['Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000162738,74.6927864727251,6.118552275175663,7.674347843770227,VANGL2,8,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000146477,30.5251989825615,5.317689174333573,7.6251417218143915,SLC22A3,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000174130,87.1071971713857,2.0283215401412376,7.390652257199909,TLR6,8,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Foreskin', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000153012,30.0616070872751,3.728581892415755,7.3653664086981205,LGI2,8,"['Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000205045,28.5597323513696,3.592271573506349,7.323833400812351,SLFN12L,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000158457,86.2684508198687,3.2510114770983836,7.154420471763706,TSPAN33,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000153563,14.2317111808185,6.98479120771877,6.859322899248953,CD8A,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000170929,2.11167910568814,13.678455769071778,6.04799172845212,OR1M1,8,"['Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000121895,109.855534796366,2.9978072152411475,6.019970375497071,TMEM156,8,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000177098,56.8030536868197,4.260637232595077,5.996830367496225,SCN4B,8,"['Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000140749,76.6488230189228,3.400284645379852,5.8127366911403895,IGSF6,8,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000206077,49.3900624457098,3.7112606437044438,5.783067526210418,ZDHHC11B,8,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Peripheral.blood', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000165970,9.61894656316737,13.400302662768397,5.772247661579347,SLC6A5,8,"['Liver', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000134121,89.0009447742868,6.3544093772539805,5.596164437976591,CHL1,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000170382,28.1050878958615,4.315865663836288,5.489811936417283,LRRN2,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000237515,33.0959679382409,4.34370800142788,5.489736088669096,SHISA9,8,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000102854,14.5119566721528,6.467647135004758,5.420457507720482,MSLN,8,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000169413,44.1973614843401,3.4990593617195938,5.398131741913096,RNASE6,8,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000197641,8.1862090320351,14.374097252413657,5.284986352573737,SERPINB13,8,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000165071,47.9544925621625,2.7460666796510935,5.0944093014306775,TMEM71,8,"['Lymph.node', 'Sciatic.nerve', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000130433,60.8412098666891,3.27175016100255,5.077834566813946,CACNG6,8,"['Cornea', 'Heart', 'Liver', 'Lymph.node', 'Lung', 'Skin', 'Kidney', 'Tonsil']"
+ENSG00000105699,194.679266965449,2.8576224029482162,4.969687944469358,LSR,8,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000226887,17.0224721737645,3.1561632917070885,4.925900082950038,ERVMER34-1,8,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000004846,16.6422870833106,5.625379473693399,4.845681034917657,ABCB5,8,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000183908,87.830193224144,4.346396414372553,4.759150566029775,LRRC55,8,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000175356,117.081809646417,2.5966065186181773,4.579915186449801,SCUBE2,8,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Lung', 'Kidney', 'Intestine']"
+ENSG00000174600,237.782216386069,4.093602259897538,4.529214932726956,CMKLR1,8,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000105605,26.4197797047166,4.662752831239792,4.500227398646441,CACNG7,8,"['Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Skin', 'Intestine']"
+ENSG00000177455,12.879649497164,5.214156586814178,4.4379394768657585,CD19,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000180616,55.6719270556679,3.1964706111263714,4.360382226499713,SSTR2,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000120903,2.20246800859448,7.958616123900058,4.106445964597509,CHRNA2,8,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000152315,5.90364564552926,4.693820845177555,4.091140172377548,KCNK13,8,"['Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000132874,9.21546317628996,3.9557328343375433,3.8493137510726756,SLC14A2,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000167895,61.1059734680967,2.951007410914858,3.8313717060018693,TMC8,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000183423,4.68168436512287,2.9648262761255064,3.8174319059631614,LRIT3,8,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000085552,14.3286957173723,3.7131311227298123,3.5891626662327285,IGSF9,8,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000134539,40.1189908540896,2.6539536566360353,3.573221284916369,KLRD1,8,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000174125,102.327560945138,1.5594299315465026,3.492826843809243,TLR1,8,"['Heart', 'Umbilical.vein', 'Colon', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000162877,19.2748174710981,2.9304505707317525,3.4611136431870952,PM20D1,8,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000189068,5.04064891848466,3.616393117645476,3.409143849841196,VSTM1,8,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000149654,5.45462366226838,4.021085827199762,3.1972838861704465,CDH22,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Tonsil']"
+ENSG00000099998,773.842063817449,1.7413672192686263,3.108119873587915,GGT5,8,"['Cornea', 'Heart', 'Colon', 'Vessel', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000122224,16.8972948910082,4.317507196134317,3.0840396598956836,LY9,8,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000188822,4.73657290680526,4.441579578217898,3.049902988941123,CNR2,8,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000165325,4.77859193527603,12.941301520278584,18.80953131382509,DEUP1,7,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000101425,6.59416914169421,13.640187267174095,16.228218749442934,BPI,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000007062,115.078601568759,8.126355295784256,13.075912305520898,PROM1,7,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000182255,2.93211696222754,15.36386422051774,12.085732854222138,KCNA4,7,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000011600,464.953468304285,14.168794132814993,11.123980508051515,TYROBP,7,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000139292,18.3991555557072,8.768353390941309,11.123553174402852,LGR5,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Intestine']"
+ENSG00000166091,12.2915371217995,15.419079417958402,10.782886626438218,CMTM5,7,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000179639,5.25518847963044,15.066027250586156,10.747415713423115,FCER1A,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000139915,27.9121134823343,9.692611847544608,10.698492893448968,MDGA2,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000014257,26.9011753381067,8.26634537929475,10.678290067035336,ACP3,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000275302,61.2052849449484,13.197785919915061,10.651760959230884,CCL4,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000146039,9.74783223980464,14.073025217601002,10.289437469968219,SLC17A4,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000175489,54.751494524469,6.773190207458121,10.175828326915404,LRRC25,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000166342,10.6219955873288,5.851736549955988,9.667388195764742,NETO1,7,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000117322,16.9608193143741,14.817906963706589,9.647455150193242,CR2,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Tonsil']"
+ENSG00000163519,5.2678974910583,16.664639805704557,9.619211713333446,TRAT1,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000149452,79.5634436847215,15.369091700913966,9.274167904058993,SLC22A8,7,"['Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000110975,4.45035381874023,15.326372978913454,8.974493804964695,SYT10,7,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000116824,6.94142848639725,14.141609459305679,8.878060327876407,CD2,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000181001,2.59470017199677,11.858303973101796,8.038468243383859,OR52N1,7,"['Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000197977,35.2355598975226,5.565974410284597,8.027749506160038,ELOVL2,7,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000170927,86.5448614928441,12.467609345883034,8.02563308284573,PKHD1,7,"['Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000187323,69.9065811385023,6.744194929598636,7.934461792215234,DCC,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000165323,82.9842777423384,5.001834160854323,7.61502575125475,FAT3,7,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000160712,326.254094717157,2.05729437342978,7.543037283707927,IL6R,7,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000151834,34.1140020530195,5.707876005612383,7.512720253535443,GABRA2,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000180287,13.672061562931,7.61425761689992,7.368901875829123,PLD5,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000138061,333.496479878211,3.864197118851083,7.131077285820851,CYP1B1,7,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000117560,1.61927274313136,10.637831405965334,7.018104214549784,FASLG,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000167600,71.6294135690193,3.31970443516983,6.755518319785203,CYP2S1,7,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000168389,167.431591916046,2.985338915736264,6.667139083391841,MFSD2A,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000196620,11.6599967046243,17.368744830921784,6.657269678192094,UGT2B15,7,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000118640,439.645022451886,2.3979853327622043,6.624586104048051,VAMP8,7,"['Heart', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000174914,5.99868164450188,18.130632689640105,6.603043993762797,OR9G1,7,"['Colon', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000187955,238.203457222779,4.9446174605180655,6.303830178139841,COL14A1,7,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Lung', 'Intestine']"
+ENSG00000125498,4.85572516128354,12.39228367080349,6.130209938769596,KIR2DL1,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000026751,22.1514676413487,6.3852989550786345,6.086631971454973,SLAMF7,7,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000161649,32.0639170108547,8.415624490576525,6.063996013207037,CD300LG,7,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000141574,86.5462629051378,2.220686672646673,5.968400595375863,SECTM1,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000158473,16.0708440078792,6.367630248002172,5.882436120653414,CD1D,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000163630,12.0853381891242,16.254928786815395,5.864639808703173,SYNPR,7,"['Umbilical.vein', 'Colon', 'Foreskin', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000162399,13.3035861608712,13.04073422522654,5.771401481164311,BSND,7,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000188580,21.2748233694869,5.872369645015982,5.701344295542233,NKAIN2,7,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000068078,169.26433471355,3.354140051546082,5.6778783427912325,FGFR3,7,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000197106,75.9282929975618,3.7067611931971896,5.632422320503019,SLC6A17,7,"['Cornea', 'Heart', 'Umbilical.vein', 'Lymph.node', 'Colon', 'Vessel', 'Lung']"
+ENSG00000178623,19.849685914962,3.0212450184146227,5.49353667451227,GPR35,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000171310,455.03512197842,1.4038741897050602,5.431797744046053,CHST11,7,"['Heart', 'Lymph.node', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000170956,10.8258903656619,5.324691595885189,5.31757108911507,CEACAM3,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Kidney']"
+ENSG00000143469,88.8747599981867,3.0503732815592204,5.200947617332323,SYT14,7,"['Umbilical.vein', 'Lymph.node', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000101187,227.452219463101,3.989931125390948,5.185433446475592,SLCO4A1,7,"['Umbilical.vein', 'Colon', 'Vessel', 'Peripheral.blood', 'Lung', 'Skin', 'Intestine']"
+ENSG00000127954,81.1538312386616,5.114503271001388,5.09904284714871,STEAP4,7,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000257743,17.6524771326069,13.116292474267143,4.980752499100814,MGAM2,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000126860,48.1277496142889,2.2403106834027326,4.92815786118508,EVI2A,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000196581,189.065900073879,3.7600527272972064,4.741081030504561,AJAP1,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000005471,39.4411414801739,2.5287766335208857,4.695621085703077,ABCB4,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Kidney', 'Intestine']"
+ENSG00000152034,4.55211212414332,12.133916432658525,4.61998716972866,MCHR2,7,"['Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000159618,15.3597996680863,4.8082404790693545,4.397352626655785,ADGRG5,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000182183,6.05935993458346,4.084181284245622,4.357755602647333,SHISAL2A,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000158220,26.4233838156956,3.1660658151187255,4.311351582467647,ESYT3,7,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000161929,26.9117750335732,3.381546387843297,4.2776780896510145,SCIMP,7,"['Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000143473,10.9297718960259,3.256727940041472,4.274514137144857,KCNH1,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000013725,10.1345861071116,5.838291321608927,4.241640825519819,CD6,7,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000169495,6.63639077600673,5.053556123889442,4.209701446688888,HTRA4,7,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000172519,3.56285565114438,7.363181819522977,4.209342071230691,OR10H5,7,"['Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000185245,52.1909424109594,2.1495725577068088,4.202119131528377,GP1BA,7,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000169248,58.0802356536462,2.6269995381860203,4.116271733862833,CXCL11,7,"['Heart', 'Liver', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000213937,3.3847777307514,7.775721896099491,4.0726659496031115,CLDN9,7,"['Heart', 'Lymph.node', 'Sciatic.nerve', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000160868,10.5353428105621,6.948681177694353,4.015766754230088,CYP3A4,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000071991,13.5153975536837,3.659284025309962,3.862869610656442,CDH19,7,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney']"
+ENSG00000178531,255.704981746731,2.664885884760431,3.7983588170850195,CTXN1,7,"['Cornea', 'Heart', 'Lymph.node', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000188910,7.12873564050293,3.2507245225767716,3.7479127187805985,GJB3,7,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000198515,12.9115730250819,3.1113276276441044,3.675055062325628,CNGA1,7,"['Umbilical.vein', 'Lymph.node', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000183960,9.75126938530588,3.5818991821497197,3.6157988193165695,KCNH8,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000056291,12.005583331252,3.3962167786202926,3.464850346894974,NPFFR2,7,"['Liver', 'Umbilical.vein', 'Foreskin', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000165959,260.155134201704,1.7694117565606986,3.4071876777279018,CLMN,7,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000127325,16.7398676024684,2.905229381716187,3.2957807253833478,BEST3,7,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000082684,59.6133072297571,4.45234995820059,3.102755701309498,SEMA5B,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000196119,11.7404004320079,3.886311827997203,3.092599002898371,OR8A1,7,"['Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000278023,6.07343484366803,2.9571029653835734,2.7739857686970657,RDM1,7,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000196242,5.53201678251717,3.6030170182772947,2.769326096354419,OR2C3,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000169427,5.42231430265578,3.3898221905459733,2.724522779451349,KCNK9,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000188037,11.1461839127229,2.5853742879766903,2.7120399091759766,CLCN1,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000221858,3.21212995945993,3.5547288302272144,2.5539559554603146,OR2A12,7,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000166676,19.6997418418475,1.626309261419444,2.5217648268581585,TVP23A,7,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000171126,7.8408839291725,2.75302427360636,2.5174991394550585,KCNG3,7,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000162753,12.5994838730878,3.1726011043885003,2.5138476384335684,SLC9C2,7,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000151704,50.6095935281167,2.386459219631527,2.4408739102734267,KCNJ1,7,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Intestine']"
+ENSG00000176695,6.69603938285998,3.1818531494214453,2.1694034470397585,OR4F17,7,"['Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000121594,8.20244386013745,2.349041495257283,1.8525094599145562,CD80,7,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000185565,96.933115532941,8.820612555450566,22.808077399910683,LSAMP,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000117091,17.7009159232448,16.76961841919462,17.2837152578515,CD48,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000160856,9.0894310816854,16.02600380717062,15.295110332404983,FCRL3,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000175928,130.538150015764,7.468168789513804,12.979884974087739,LRRN1,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000112796,61.3631299397286,7.486683019854632,12.121246689326007,ENPP5,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Intestine']"
+ENSG00000223609,7.79474547732856,14.30086803674252,11.521318733107693,HBD,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000276070,38.7647289343805,13.97553568834821,10.491590996885051,CCL4L2,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000188778,2.57356303865221,12.745902456506267,9.386710364369547,ADRB3,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000104381,166.101275348035,1.9282623961149064,9.178034388163537,GDAP1,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000185559,100.298264090076,10.753975789218979,8.776589149547716,DLK1,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000044524,55.0087593730557,6.059800602018238,8.12722013751127,EPHA3,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000151952,9.71352929094554,6.459333168666546,7.902697813270344,TMEM132D,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000076641,228.698408435072,2.880582089593373,7.868686442692824,PAG1,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000110195,24.5543860619832,14.77714491516206,7.717864761705293,FOLR1,6,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Foreskin', 'Intestine']"
+ENSG00000080166,9.54029777791991,7.948485727260972,7.555924702303539,DCT,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Lung', 'Intestine']"
+ENSG00000110446,158.54452726615,1.9928629179581916,7.522009319994947,SLC15A3,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000130037,14.0963128953472,9.246270176694344,7.3037020782894855,KCNA5,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000176495,2.08303132293914,14.427067629758648,7.24140654714046,OR5AN1,6,"['Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000186431,12.9931354463661,7.277178502298483,7.217751762164876,FCAR,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000156886,11.6546391966237,10.090705446489444,7.1443095862853765,ITGAD,6,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000188257,14.441177644507,15.236277531872304,6.977940858622215,PLA2G2A,6,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Foreskin', 'Tonsil']"
+ENSG00000173391,68.8124375052538,5.087158419995991,6.592167792898175,OLR1,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000179817,2.42072640603131,8.264608727805532,6.506853162657454,MRGPRX4,6,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Lung', 'Kidney']"
+ENSG00000184922,127.878952621641,2.734437430145915,6.298876124105836,FMNL1,6,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000078081,460.124524267403,2.8304650584082687,6.2546717570040835,LAMP3,6,"['Heart', 'Liver', 'Sciatic.nerve', 'Lung', 'Skin', 'Kidney']"
+ENSG00000197406,4.72751218682186,11.608748243506904,6.241573466050814,DIO3,6,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Foreskin', 'Lung', 'Intestine']"
+ENSG00000185742,10.1344772676208,5.130509417130685,6.238131709183314,C11orf87,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000130303,1161.49532636966,3.407559809641144,6.169217795069353,BST2,6,"['Cornea', 'Heart', 'Foreskin', 'Lung', 'Skin', 'Kidney']"
+ENSG00000033170,741.839309868936,1.9705407552231085,5.898007959350404,FUT8,6,"['Cornea', 'Lymph.node', 'Colon', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000149403,22.3194071210602,3.2256267140481216,5.771145684883781,GRIK4,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000184985,49.5617969414797,3.1191859718344204,5.752941724681885,SORCS2,6,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000117394,2210.13661654467,2.2353065449482514,5.7503359148377085,SLC2A1,6,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000172243,57.7480713657917,4.143438875387534,5.6474272403147685,CLEC7A,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000182272,85.0254912731254,3.306078160368937,5.493141126226924,B4GALNT4,6,"['Heart', 'Lymph.node', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000129450,25.8559747754173,6.4734231937027955,5.369423569406611,SIGLEC9,6,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Skin', 'Tonsil']"
+ENSG00000182885,38.1024302100039,6.9414611477647545,5.144837001605015,ADGRG3,6,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Lung', 'Kidney']"
+ENSG00000105374,12.4678439659301,5.432730237543267,5.117921837224983,NKG7,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000112195,6.41187728922449,11.873503923066572,5.11779130650346,TREML2,6,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000137648,29.0738870502347,8.923783729503798,5.007833266841433,TMPRSS4,6,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000170571,126.240642315635,3.9636743526437876,5.0072308077618635,EMB,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000168824,235.070322441323,3.886470771196505,4.9994978950042865,NSG1,6,"['Umbilical.vein', 'Lymph.node', 'Colon', 'Foreskin', 'Skin', 'Tonsil']"
+ENSG00000144847,22.8463904515208,6.573930184747527,4.988407123351389,IGSF11,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000111058,155.535778452388,3.07963512813245,4.926398999848265,ACSS3,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Intestine']"
+ENSG00000134955,82.006160222246,1.763667452782815,4.852847929786376,SLC37A2,6,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin']"
+ENSG00000162692,717.356454884306,3.0317494094946866,4.838454226788843,VCAM1,6,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000182985,263.062984501928,2.421053907238305,4.7742300545205625,CADM1,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000152822,14.9451518973945,2.517557820726447,4.603323812236106,GRM1,6,"['Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin']"
+ENSG00000182070,9.2189114311308,7.568606709425086,4.291128474552955,OR52A1,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Lung', 'Tonsil']"
+ENSG00000168350,26.9615650914399,3.383130752310752,4.279931259182407,DEGS2,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000198829,16.6433514420504,3.4150076654120554,4.264197860772952,SUCNR1,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000170615,14.5998807206966,6.404396882309778,4.242817876237368,SLC26A5,6,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Lung', 'Skin', 'Kidney']"
+ENSG00000161270,52.9518119331115,6.195231343074181,4.160704401135615,NPHS1,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000115705,38.3757270754411,3.45524830304522,4.1433900824560865,TPO,6,"['Liver', 'Umbilical.vein', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000176239,2.17839582064375,13.839053670332872,4.120207804336961,OR51B6,6,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Skin']"
+ENSG00000155897,6.99916167541032,3.615790654677607,4.091860716860251,ADCY8,6,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000109163,13.0239141182126,2.27669838249737,4.016553973764028,GNRHR,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000139044,38.0124359737481,3.204754634256433,3.9690554526624156,B4GALNT3,6,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000196296,22.87679926059,1.7843605510101035,3.87097379800449,ATP2A1,6,"['Heart', 'Liver', 'Umbilical.vein', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000143199,19.1434707814062,2.567981149556103,3.8307631135037075,ADCY10,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000171631,50.2682675198806,2.36736149800882,3.733993453131601,P2RY6,6,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000165125,13.8851263335052,4.887385569772866,3.7146484355516125,TRPV6,6,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000100626,56.4609680121959,2.5753522502303734,3.684548985543375,GALNT16,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000184785,107.006388137624,1.65829627239805,3.635995772458145,SMIM10,6,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000142408,386.655780585529,2.826730941735278,3.6093364877298213,CACNG8,6,"['Liver', 'Umbilical.vein', 'Lymph.node', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000133687,674.580291049127,2.5552116905603484,3.5753742018593755,TMTC1,6,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Foreskin', 'Skin']"
+ENSG00000146233,28.6384161470668,4.410001376468387,3.4816158940189332,CYP39A1,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Peripheral.blood', 'Skin', 'Intestine']"
+ENSG00000149418,73.9165951506948,4.168357269854341,3.445532755857421,ST14,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000184185,40.8381221867351,2.776492136936865,3.40984214932906,KCNJ12,6,"['Heart', 'Colon', 'Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000106304,1.47317872960073,12.887720860606956,3.3759002902245907,SPAM1,6,"['Liver', 'Umbilical.vein', 'Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000042781,28.4583811981593,2.7026908473256515,3.3366591442963496,USH2A,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Skin', 'Intestine']"
+ENSG00000182324,22.689527019848,1.7273638555132402,3.3247783785975074,KCNJ14,6,"['Heart', 'Liver', 'Umbilical.vein', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000179913,8.99082696241987,3.152651812825143,3.1928490710406607,B3GNT3,6,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Skin']"
+ENSG00000271079,32.275277767004,2.2136346405821334,3.119568177352057,CTAGE15,6,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Sciatic.nerve', 'Vessel', 'Intestine']"
+ENSG00000108932,67.6558406924086,1.7352222003839082,3.1093580150017512,SLC16A6,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000143552,27.3967416929747,2.1830889714331883,3.033321687648977,NUP210L,6,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Kidney', 'Intestine']"
+ENSG00000119699,232.484875891613,1.4663879902942967,3.0273538021264375,TGFB3,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000139626,10.5165320340093,3.083329649935918,2.983966970478422,ITGB7,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000124249,9.51594156716103,3.7470464441178284,2.8838677939625117,KCNK15,6,"['Heart', 'Umbilical.vein', 'Colon', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000105641,8.06165184131954,3.4538141611923163,2.8352209252960265,SLC5A5,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000166257,210.116806050731,2.0151709231045296,2.7391337794579083,SCN3B,6,"['Heart', 'Liver', 'Umbilical.vein', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000118004,34.5355452105734,2.8593459233001717,2.6667290699229427,COLEC11,6,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000171903,13.470811823975,3.4701768395940853,2.658980206315342,CYP4F11,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000196277,21.2109146205478,3.1890956726654203,2.524568701271033,GRM7,6,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000117598,2.78077402812988,2.79064006036772,2.4835166924741277,PLPPR5,6,"['Heart', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000106128,3.69732843485591,3.341126392145665,2.420175599813979,GHRHR,6,"['Liver', 'Umbilical.vein', 'Lymph.node', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000174871,13.2299783255601,1.5933329942226901,2.414621904363559,CNIH2,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000198049,4.22248840503761,3.6993705841823346,2.3514045266990475,AVPR1B,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000221933,9.84676708708518,2.889081086753835,2.2687817454222245,OR2A25,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000212807,19.5487442155701,2.0713534148139567,2.240194166508456,OR2A42,6,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000130643,3.80883456529397,2.6128448295856286,2.208711854114357,CALY,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000094661,4.81103616466528,3.48447614923197,2.1788396050885894,OR1I1,6,"['Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000156097,4.32846663199664,2.635524190669875,2.121913839511741,GPR61,6,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000151715,34.5303181539158,1.9645340113275918,2.0913072411705573,TMEM45B,6,"['Heart', 'Liver', 'Umbilical.vein', 'Colon', 'Skin', 'Tonsil']"
+ENSG00000149534,26.0385199629344,3.3386135576169536,2.015956193055105,MS4A2,6,"['Colon', 'Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000197706,3.57771410454029,3.281952103150193,1.9861153231266588,OR6C74,6,"['Liver', 'Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000085741,16.3004941154952,2.4231439344836665,1.9491431507927774,WNT11,6,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000197177,6.16824805788254,2.92417331624238,1.834835060830743,ADGRA1,6,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000150394,25.3907330082499,9.588931834386528,20.727587868646165,CDH8,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000105894,172.182153552958,9.153213825286306,20.19988104130941,PTN,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000166363,1.78110579925102,17.973315329458096,16.7659859908478,OR10A5,5,"['Liver', 'Lymph.node', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000117069,22.0233160830244,9.891374142612815,16.676784233018033,ST6GALNAC5,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000138755,15.6682912955567,9.74645556980088,16.3490839151523,CXCL9,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000234906,2.01130434140258,20.49756737886666,12.355021500922893,APOC2,5,"['Sciatic.nerve', 'Colon', 'Vessel', 'Skin', 'Tonsil']"
+ENSG00000163736,27.9285957243431,17.930934407985323,10.403600801086904,PPBP,5,"['Colon', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000187048,229.44358734068,11.52963322786276,9.61989377424101,CYP4A11,5,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000087253,1364.75863991455,2.714073674198528,8.713652186420223,LPCAT2,5,"['Liver', 'Lymph.node', 'Foreskin', 'Kidney', 'Intestine']"
+ENSG00000099365,51.1353023949012,2.5865311146869105,8.358741479238317,STX1B,5,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000137462,107.780070235045,3.174687897160172,8.272276098465994,TLR2,5,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Lung', 'Skin']"
+ENSG00000189013,4.42404469555499,14.616343881979645,7.427502371857601,KIR2DL4,5,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Skin', 'Tonsil']"
+ENSG00000196557,51.6005230626571,4.584694212736325,7.312778347604715,CACNA1H,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000163737,2.21860067678784,13.868519821303462,7.175834796519219,PF4,5,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000204740,25.1805873521862,8.74357259586117,6.939917887038815,MALRD1,5,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000029534,176.487709749638,2.9375501351830837,6.813532604138449,ANK1,5,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000155893,119.927195343826,2.354750290620828,6.76184694618095,PXYLP1,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000104369,20.7241268688014,4.206999776265238,6.671860204379283,JPH1,5,"['Vessel', 'Lung', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000171944,6.03347260406738,19.861102199195432,6.6303176226466976,OR52A5,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000185737,97.2961404390464,4.107240394654853,6.5049649091296615,NRG3,5,"['Heart', 'Sciatic.nerve', 'Lung', 'Skin', 'Kidney']"
+ENSG00000146555,86.3830662999584,2.559794637994922,6.253255368300209,SDK1,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000204882,1.97185082726013,12.93471169142951,6.004390176370606,GPR20,5,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Peripheral.blood', 'Tonsil']"
+ENSG00000112149,341.232381544793,2.7789808870048462,5.9873130584223695,CD83,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Tonsil']"
+ENSG00000174599,34.9734792283487,2.876804153490128,5.918830429954118,TRAM1L1,5,"['Heart', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000165186,13.8222191427461,4.578339581201832,5.854417636434122,PTCHD1,5,"['Heart', 'Umbilical.vein', 'Colon', 'Lung', 'Intestine']"
+ENSG00000261115,71.163460829666,3.215371579057076,5.762876213756765,TMEM178B,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000164626,72.6294913230564,6.11032673649318,5.7027487422559044,KCNK5,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000099822,61.8131298034797,3.3825029413511922,5.697656462981516,HCN2,5,"['Cornea', 'Heart', 'Umbilical.vein', 'Lymph.node', 'Foreskin']"
+ENSG00000182107,39.612993524053,3.035929378258966,5.611966858308318,TMEM30B,5,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Intestine']"
+ENSG00000169245,82.7272798875271,3.5323374583562783,5.489095094504648,CXCL10,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin']"
+ENSG00000203805,131.57385471927,4.1192053420113215,5.457147699649157,PLPP4,5,"['Lymph.node', 'Foreskin', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000106123,98.2123529743117,3.4836461143192103,5.2309493202434805,EPHB6,5,"['Heart', 'Colon', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000141338,435.162463900132,4.359872227391716,5.176806235888363,ABCA8,5,"['Sciatic.nerve', 'Colon', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000145103,8.64540008758673,10.523266657875123,5.175307519361256,ILDR1,5,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Tonsil']"
+ENSG00000152078,66.0622783764931,2.840413112461232,5.127544071575652,TLCD4,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000183395,11.0914618050453,6.285843075418508,5.092767879688064,PMCH,5,"['Cornea', 'Umbilical.vein', 'Vessel', 'Skin', 'Kidney']"
+ENSG00000183019,5.61166302990887,7.550603136382992,4.991601916868738,MCEMP1,5,"['Umbilical.vein', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000170837,4.9879231745597,4.2406684658895175,4.9758871880683655,GPR27,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000133321,183.265461143382,1.96946585761413,4.775870702070219,PLAAT4,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Skin']"
+ENSG00000163393,46.3378054752505,3.482084545231706,4.692799029425052,SLC22A15,5,"['Heart', 'Umbilical.vein', 'Foreskin', 'Lung', 'Intestine']"
+ENSG00000104921,8.12392941327133,9.523851377968521,4.634294302221939,FCER2,5,"['Umbilical.vein', 'Colon', 'Vessel', 'Skin', 'Tonsil']"
+ENSG00000131398,46.8968682052344,3.005895386324956,4.547213711472754,KCNC3,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin', 'Tonsil']"
+ENSG00000183117,73.1459478505787,3.651833703981018,4.517579786740167,CSMD1,5,"['Heart', 'Liver', 'Vessel', 'Lung', 'Skin']"
+ENSG00000153132,44.8505112173645,2.0952946114508983,4.485294161639325,CLGN,5,"['Vessel', 'Lung', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000149451,715.998333178312,4.6242622225137655,4.36553379139755,ADAM33,5,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Foreskin', 'Intestine']"
+ENSG00000204161,101.021105090909,2.4873008797593905,4.284677021513823,TMEM273,5,"['Heart', 'Vessel', 'Lung', 'Skin', 'Kidney']"
+ENSG00000153898,15.7050794661356,3.2660245773322822,4.223751564497615,MCOLN2,5,"['Heart', 'Umbilical.vein', 'Colon', 'Vessel', 'Intestine']"
+ENSG00000204278,14.1170570586162,3.065906273327936,4.107417391736569,TMEM235,5,"['Heart', 'Liver', 'Umbilical.vein', 'Lung', 'Kidney']"
+ENSG00000001626,43.2469393924231,4.263025262914708,4.074467938330829,CFTR,5,"['Umbilical.vein', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000137975,16.7665272598259,2.302606283512008,3.9924604755885964,CLCA2,5,"['Umbilical.vein', 'Foreskin', 'Lung', 'Kidney', 'Intestine']"
+ENSG00000243896,31.2340149544432,2.7770892160951943,3.9819231988025834,OR2A7,5,"['Umbilical.vein', 'Colon', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000288558,150.624794452917,1.1048454028889578,3.9501438982234767,DUS4L-BCAP29,5,"['Umbilical.vein', 'Lymph.node', 'Vessel', 'Foreskin', 'Skin']"
+ENSG00000168995,4.62482276787062,9.933448283315148,3.9318953271092716,SIGLEC7,5,"['Umbilical.vein', 'Lymph.node', 'Vessel', 'Skin', 'Tonsil']"
+ENSG00000187416,10.1222625735111,4.144810923328472,3.841905622855356,LHFPL3,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000205336,1969.0443615456,2.1212260133685903,3.806906371002139,ADGRG1,5,"['Cornea', 'Heart', 'Lymph.node', 'Vessel', 'Skin']"
+ENSG00000182747,2.01815790864614,10.629724964568886,3.806793765991653,SLC35D3,5,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Tonsil']"
+ENSG00000203727,176.693801620637,2.015093046392834,3.761195676859363,SAMD5,5,"['Heart', 'Lymph.node', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000089041,93.4725955236335,2.1425667459729096,3.728578044901081,P2RX7,5,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Lung', 'Kidney']"
+ENSG00000146411,123.863825018623,2.16412811043257,3.4396929051557152,SLC2A12,5,"['Heart', 'Liver', 'Umbilical.vein', 'Sciatic.nerve', 'Kidney']"
+ENSG00000189108,4.5615884092443,3.4237333161380556,3.425475546124069,IL1RAPL2,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin', 'Tonsil']"
+ENSG00000243566,9.89026167658675,2.516369710473106,3.419918393167335,UPK3B,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000196666,3.63019689252899,5.254615103660217,3.3591879904599304,FAM180B,5,"['Umbilical.vein', 'Lung', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000121753,64.1904765028705,2.08199861909622,3.347446064176876,ADGRB2,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000093072,393.77955535733,2.2537683756236677,3.33680590956853,ADA2,5,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Vessel', 'Skin']"
+ENSG00000105509,10.4337524958607,2.6243964983482857,3.3007164438012673,HAS1,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000126264,9.3664674617641,3.1744621952415057,3.3004146371809178,HCST,5,"['Umbilical.vein', 'Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000150594,21.2779227728767,2.333127965443308,3.2913362394220016,ADRA2A,5,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Lung', 'Intestine']"
+ENSG00000004468,114.587153893462,2.86789143155976,3.2380216306199734,CD38,5,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Lung', 'Skin']"
+ENSG00000103044,91.69678599691,2.351736491945636,3.21441277434468,HAS3,5,"['Heart', 'Liver', 'Sciatic.nerve', 'Skin', 'Tonsil']"
+ENSG00000165633,175.835240133333,2.458428877285602,3.187638624794232,VSTM4,5,"['Heart', 'Liver', 'Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000149573,1155.41112996012,2.09694304974557,3.0191726443356375,MPZL2,5,"['Cornea', 'Liver', 'Foreskin', 'Skin', 'Kidney']"
+ENSG00000221836,5.73951318558477,4.183425026585094,2.9909172627487477,OR2A5,5,"['Umbilical.vein', 'Colon', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000168229,5.98996165040164,3.3564069705251365,2.9855058219037582,PTGDR,5,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000117586,963.898817213193,2.4603052656742097,2.7473837017224882,TNFSF4,5,"['Cornea', 'Lymph.node', 'Skin', 'Kidney', 'Intestine']"
+ENSG00000095303,1328.86784006043,2.5611550195413804,2.6991116197368457,PTGS1,5,"['Colon', 'Foreskin', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000112164,13.7062412535756,5.53377084658648,2.6714411279643295,GLP1R,5,"['Umbilical.vein', 'Sciatic.nerve', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000066813,209.997923808881,2.866534381858696,2.6626940669561696,ACSM2B,5,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Tonsil']"
+ENSG00000064270,18.8292217846642,1.8090722102308618,2.626527192757857,ATP2C2,5,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Intestine']"
+ENSG00000132517,8.99606084838187,1.466899741213418,2.6259569579430933,SLC52A1,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Kidney']"
+ENSG00000178297,17.8128420418319,1.7253343950682019,2.625440289455337,TMPRSS9,5,"['Heart', 'Umbilical.vein', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000081985,25.0006542956545,1.9287600156122018,2.620577173309275,IL12RB2,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000162706,231.82135234221,3.6477612162192203,2.604634942459124,CADM3,5,"['Heart', 'Colon', 'Kidney', 'Intestine', 'Tonsil']"
+ENSG00000021461,6.31900681895727,2.7409457121234704,2.5682423946439052,CYP3A43,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000160951,14.5186703676631,2.56964759393992,2.4835586265771417,PTGER1,5,"['Heart', 'Umbilical.vein', 'Colon', 'Foreskin', 'Intestine']"
+ENSG00000186439,20.677884250693,3.126647834471802,2.1571973277699095,TRDN,5,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000110448,5.73366988673569,2.381181977333406,2.156703722669964,CD5,5,"['Heart', 'Umbilical.vein', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000168412,7.71601579427995,3.157652714836876,2.137213673754164,MTNR1A,5,"['Umbilical.vein', 'Colon', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000284733,3.63633776690036,2.774177583903668,2.0593914983292416,OR4F29,5,"['Heart', 'Umbilical.vein', 'Lung', 'Kidney', 'Tonsil']"
+ENSG00000180638,44.5981144798522,2.3930292098375157,2.0404165447002285,SLC47A2,5,"['Heart', 'Umbilical.vein', 'Colon', 'Lung', 'Tonsil']"
+ENSG00000121446,8.44353786394116,3.358574780041482,2.0303090807688937,RGSL1,5,"['Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000180245,10.3099476500193,1.706419857272826,1.996570047290751,RRH,5,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin', 'Intestine']"
+ENSG00000143858,9.78089493119039,1.6195385834174503,1.9904095491237008,SYT2,5,"['Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000183379,7.18074678437656,2.20763299859491,1.9710635428195615,SYNDIG1L,5,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000165799,4.84411082061928,2.25890607339037,1.9320046850179935,RNASE7,5,"['Heart', 'Liver', 'Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000151812,3.75350693093503,2.4370583941281683,1.8969847870258711,SLC35F4,5,"['Liver', 'Umbilical.vein', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000143603,274.696165497589,1.281772587093084,1.6972915909854134,KCNN3,5,"['Heart', 'Umbilical.vein', 'Sciatic.nerve', 'Lung', 'Intestine']"
+ENSG00000143595,5.88282105843792,2.092977383356014,1.5704494866425058,AQP10,5,"['Umbilical.vein', 'Lung', 'Skin', 'Kidney', 'Tonsil']"
+ENSG00000104290,89.6643822000906,3.4892185566811795,11.770959335247905,FZD3,4,"['Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000187747,1.38685599463477,15.089064075630684,11.633492945673204,OR52B6,4,"['Liver', 'Sciatic.nerve', 'Vessel', 'Intestine']"
+ENSG00000154764,7.83479387324488,6.711031297172485,9.307050746874104,WNT7A,4,"['Umbilical.vein', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000163581,54.4523986772989,9.096841911444578,8.048820837815361,SLC2A2,4,"['Umbilical.vein', 'Sciatic.nerve', 'Foreskin', 'Intestine']"
+ENSG00000181009,4.70632065901164,19.738672053681025,7.781324099027296,OR52N5,4,"['Liver', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000123104,2238.76031555485,1.8901249384309775,7.289106068249647,ITPR2,4,"['Lymph.node', 'Skin', 'Kidney', 'Tonsil']"
+ENSG00000139971,103.843375542945,2.677234782982015,7.183240779708374,ARMH4,4,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000188404,118.314318523223,4.202023001278432,6.57313473880774,SELL,4,"['Foreskin', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000135749,178.051782644456,2.7173118813012396,6.5625891262859195,PCNX2,4,"['Lymph.node', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000204642,517.889811647328,1.7786923104823873,6.556404498012552,HLA-F,4,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000001561,193.700365913821,2.8603871394817473,5.993829407078152,ENPP4,4,"['Vessel', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000003989,1143.58113371931,2.9094592932828203,5.911876586071822,SLC7A2,4,"['Cornea', 'Lymph.node', 'Skin', 'Kidney']"
+ENSG00000146648,733.173022553412,1.9081517428126,5.897332229605666,EGFR,4,"['Umbilical.vein', 'Colon', 'Foreskin', 'Intestine']"
+ENSG00000087301,193.185705241271,1.3708430262208977,5.859573089481364,TXNDC16,4,"['Umbilical.vein', 'Sciatic.nerve', 'Foreskin', 'Skin']"
+ENSG00000116299,51.2778672503541,2.4850518326113575,5.854763517856854,ELAPOR1,4,"['Heart', 'Lymph.node', 'Skin', 'Kidney']"
+ENSG00000181291,9.50358195542933,8.64758764211009,5.4558327361338215,TMEM132E,4,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Tonsil']"
+ENSG00000105711,311.541312291981,1.99255374867605,5.347920972193392,SCN1B,4,"['Heart', 'Liver', 'Lymph.node', 'Colon']"
+ENSG00000007908,728.040079806001,3.1636487665042075,5.310995596676724,SELE,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin']"
+ENSG00000197891,134.786587792566,16.571636115133153,5.239430480219996,SLC22A12,4,"['Vessel', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000132704,6.31428929803156,15.749107385152396,5.101472751073311,FCRL2,4,"['Umbilical.vein', 'Sciatic.nerve', 'Colon', 'Tonsil']"
+ENSG00000138696,62.0879629248664,3.3595410606482825,4.932251376114903,BMPR1B,4,"['Vessel', 'Skin', 'Intestine', 'Tonsil']"
+ENSG00000175538,52.3904169150532,2.4819402659558776,4.880477538440372,KCNE3,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000151690,323.25224208713,1.4366423089935252,4.604542026451887,MFSD6,4,"['Umbilical.vein', 'Sciatic.nerve', 'Foreskin', 'Intestine']"
+ENSG00000104783,36.3989721184053,3.1363385441257323,4.585589608817282,KCNN4,4,"['Heart', 'Umbilical.vein', 'Colon', 'Intestine']"
+ENSG00000188820,10.4972328995473,5.0755880494217145,4.5192611234308,CALHM6,4,"['Umbilical.vein', 'Colon', 'Intestine', 'Tonsil']"
+ENSG00000091129,1537.33530790873,2.8212988195420774,4.367154783800041,NRCAM,4,"['Cornea', 'Lymph.node', 'Skin', 'Kidney']"
+ENSG00000023171,283.852646014277,1.4568643958751075,4.362835189776961,GRAMD1B,4,"['Heart', 'Umbilical.vein', 'Colon', 'Lung']"
+ENSG00000168830,2.70939679550423,12.769293882564941,4.236310472457064,HTR1E,4,"['Liver', 'Foreskin', 'Skin', 'Intestine']"
+ENSG00000057704,892.092592676992,1.9787495102278951,4.200737127986885,TMCC3,4,"['Lymph.node', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000126259,10.0094699749424,3.4369305087068573,4.199535334328809,KIRREL2,4,"['Umbilical.vein', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000105696,37.2830969496613,2.70874846508058,4.1887712467100275,TMEM59L,4,"['Heart', 'Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000133069,148.429493405702,1.470144512396105,4.164873556706883,TMCC2,4,"['Umbilical.vein', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000214978,5.45096117225696,9.63551472352883,4.118473899780515,GSG1L2,4,"['Umbilical.vein', 'Colon', 'Skin', 'Tonsil']"
+ENSG00000090661,134.549880934983,1.9276091884204476,4.055384505666385,CERS4,4,"['Heart', 'Vessel', 'Lung', 'Skin']"
+ENSG00000114771,38.9339557245091,3.5179964938633947,3.7754563947281943,AADAC,4,"['Lymph.node', 'Lung', 'Skin', 'Kidney']"
+ENSG00000162496,839.380422589371,2.0305369432525273,3.7740432777079826,DHRS3,4,"['Heart', 'Sciatic.nerve', 'Lung', 'Skin']"
+ENSG00000258839,58.1427463504275,1.699073742415125,3.7736663455573947,MC1R,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000198643,4.48735644368931,2.807782357644385,3.670444570840051,FAM3D,4,"['Heart', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000214814,24.8581789026787,5.597455041013827,3.6595813718597205,FER1L6,4,"['Umbilical.vein', 'Colon', 'Peripheral.blood', 'Lung']"
+ENSG00000198821,15.4054603397693,3.892222228262663,3.630792023491562,CD247,4,"['Umbilical.vein', 'Colon', 'Vessel', 'Tonsil']"
+ENSG00000153233,39.5537405096905,2.1067505562444473,3.5843542106676365,PTPRR,4,"['Liver', 'Umbilical.vein', 'Lung', 'Skin']"
+ENSG00000204681,667.139522606128,1.9219341097540172,3.46489215742299,GABBR1,4,"['Umbilical.vein', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000103257,1557.14569619886,2.00880806786,3.3722655838855253,SLC7A5,4,"['Cornea', 'Heart', 'Umbilical.vein', 'Peripheral.blood']"
+ENSG00000007129,53.6181763724571,1.6258214708061824,3.231917813434289,CEACAM21,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Kidney']"
+ENSG00000174792,42.2160610049943,3.121672307342355,3.2001939464147906,ODAPH,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000196689,52.9700899058368,1.6272823999265125,3.1656337712751768,TRPV1,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000109927,25.6577164183677,1.6495632477468622,3.1598376064454827,TECTA,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000172689,3.53248049365001,4.085095843570505,3.1394798113169546,MS4A10,4,"['Umbilical.vein', 'Colon', 'Lung', 'Tonsil']"
+ENSG00000133962,10.3151151040521,6.015518722452164,3.1358667109479708,CATSPERB,4,"['Umbilical.vein', 'Sciatic.nerve', 'Lung', 'Kidney']"
+ENSG00000214279,31.6067403781354,1.9877104080320775,3.044071352719671,SCART1,4,"['Heart', 'Umbilical.vein', 'Lung', 'Tonsil']"
+ENSG00000146904,34.2768038777204,1.22381358611757,2.952346366977395,EPHA1,4,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000111729,1.51714799371145,2.8152939753489976,2.9127235635368636,CLEC4A,4,"['Heart', 'Umbilical.vein', 'Lung', 'Intestine']"
+ENSG00000213853,868.408194754422,1.6605329516654925,2.8289468914771554,EMP2,4,"['Heart', 'Liver', 'Colon', 'Lung']"
+ENSG00000175294,16.0637350850708,2.5530536616905075,2.828269584727042,CATSPER1,4,"['Heart', 'Liver', 'Lymph.node', 'Colon']"
+ENSG00000260458,5.86408643139245,2.823889354481042,2.6039222948633807,KCNJ18,4,"['Umbilical.vein', 'Colon', 'Vessel', 'Intestine']"
+ENSG00000221970,18.9965966705217,1.7867516819884348,2.5766029815905394,OR2A1,4,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Intestine']"
+ENSG00000266964,2.82527795340311,3.32565057873476,2.5625546641766817,FXYD1,4,"['Umbilical.vein', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000105707,107.870153154607,2.24447252493818,2.5516000784910347,HPN,4,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin']"
+ENSG00000137747,6.63789520642399,2.78349490515579,2.471903042238756,TMPRSS13,4,"['Heart', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000153292,44.5721683291767,2.3447665602562,2.4613490312743114,ADGRF1,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000111886,51.716446689622,1.654991147882125,2.43672470162979,GABRR2,4,"['Umbilical.vein', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000139874,96.9654989172291,2.5527937820498825,2.42208732469764,SSTR1,4,"['Heart', 'Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000055732,19.5634266806885,2.312977721016953,2.4181816298612273,MCOLN3,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000124602,28.8227306682116,1.7018424933051075,2.410338977487937,UNC5CL,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Intestine']"
+ENSG00000063015,17.5920827996296,1.615388584586215,2.357951107740596,SEZ6,4,"['Umbilical.vein', 'Vessel', 'Foreskin', 'Skin']"
+ENSG00000248592,4.4312888051953,1.6692984132909574,2.329581876349751,STIMATE-MUSTN1,4,"['Umbilical.vein', 'Lung', 'Intestine', 'Tonsil']"
+ENSG00000176485,1035.19343345601,1.702094693358845,2.2426532044236644,PLAAT3,4,"['Heart', 'Liver', 'Colon', 'Tonsil']"
+ENSG00000164935,4.50965336148685,2.6955356931112124,2.234521651658116,DCSTAMP,4,"['Heart', 'Umbilical.vein', 'Lung', 'Intestine']"
+ENSG00000261949,1.50911822275068,3.0269265881620626,2.20006778172956,GFY,4,"['Heart', 'Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000168928,13.7344255784441,2.6707330098440574,2.166626807665111,CTRB2,4,"['Heart', 'Umbilical.vein', 'Intestine', 'Tonsil']"
+ENSG00000167769,4.82952385816757,2.3872821171252525,2.112057234503695,ACER1,4,"['Liver', 'Umbilical.vein', 'Lung', 'Intestine']"
+ENSG00000166961,3.60253083285345,2.2273039581724126,2.0727158012450024,MS4A15,4,"['Heart', 'Umbilical.vein', 'Lung', 'Skin']"
+ENSG00000254834,4.38682543316959,7.84473619267184,2.0321545808558628,OR5M10,4,"['Vessel', 'Foreskin', 'Lung', 'Skin']"
+ENSG00000103089,8.1095320364954,2.4146117540265424,2.0265536942799534,FA2H,4,"['Heart', 'Umbilical.vein', 'Vessel', 'Skin']"
+ENSG00000264717,4.95298111942571,2.64425473721169,1.9977998766402472,NPY4R2,4,"['Umbilical.vein', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000179314,965.97893480086,2.2527104644528526,1.992095722743521,WSCD1,4,"['Lymph.node', 'Peripheral.blood', 'Intestine', 'Tonsil']"
+ENSG00000244476,20.4912843365693,1.4330126736245474,1.9790690817810894,ERVFRD-1,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin']"
+ENSG00000188051,6.04540684585625,1.65352579594893,1.9522499573899452,TMEM221,4,"['Heart', 'Vessel', 'Intestine', 'Tonsil']"
+ENSG00000215262,9.65320167515177,3.0045419128381905,1.9319424794948794,KCNU1,4,"['Umbilical.vein', 'Lymph.node', 'Vessel', 'Lung']"
+ENSG00000099834,45.2507121751536,1.842782992315535,1.925151039993232,CDHR5,4,"['Heart', 'Umbilical.vein', 'Lung', 'Intestine']"
+ENSG00000116218,12.7892420472904,5.883343356337738,1.897190966510336,NPHS2,4,"['Liver', 'Umbilical.vein', 'Vessel', 'Intestine']"
+ENSG00000172139,22.1198554598513,2.102362849178065,1.834490484097966,SLC9C1,4,"['Liver', 'Umbilical.vein', 'Lung', 'Tonsil']"
+ENSG00000070915,37.8065323449356,2.138502770284185,1.803761227698541,SLC12A3,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Skin']"
+ENSG00000283654,5.07303009684887,2.467017907088815,1.7713477885308297,LMLN2,4,"['Umbilical.vein', 'Lymph.node', 'Lung', 'Tonsil']"
+ENSG00000169327,6.17757602889087,2.8957201284066,1.7384925991267872,OR5AU1,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000189051,3.89796450755034,2.472320059414465,1.7295589781633103,RNF222,4,"['Umbilical.vein', 'Vessel', 'Lung', 'Tonsil']"
+ENSG00000126266,5.06687523940637,2.2036102500496026,1.609561950295243,FFAR1,4,"['Heart', 'Umbilical.vein', 'Vessel', 'Intestine']"
+ENSG00000082556,5.80177626351834,2.249733698997475,1.6001000258049616,OPRK1,4,"['Umbilical.vein', 'Vessel', 'Skin', 'Intestine']"
+ENSG00000170782,1.0939286867014,13.43460514935827,27.252083988819326,OR10A4,3,"['Heart', 'Skin', 'Intestine']"
+ENSG00000179178,12.8665897273885,16.539717063418934,12.141856794544465,TMEM125,3,"['Sciatic.nerve', 'Intestine', 'Tonsil']"
+ENSG00000279000,7.39682527096497,16.410567367803267,11.731735733522761,OR10A6,3,"['Liver', 'Intestine', 'Tonsil']"
+ENSG00000157404,974.985410883205,4.578312572757031,10.960865901127901,KIT,3,"['Foreskin', 'Intestine', 'Tonsil']"
+ENSG00000171714,72.7731022360497,5.56627056804716,9.533760510870605,ANO5,3,"['Foreskin', 'Skin', 'Intestine']"
+ENSG00000123384,9416.23797683316,4.020007500746797,9.40511986384186,LRP1,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000259207,1660.59590133294,3.5772275551688337,8.807643628028261,ITGB3,3,"['Cornea', 'Lymph.node', 'Skin']"
+ENSG00000162733,2415.96028087528,4.662350105984893,8.698418203154686,DDR2,3,"['Peripheral.blood', 'Kidney', 'Intestine']"
+ENSG00000136960,463.781267413201,4.491280442379606,8.519274157320085,ENPP2,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000144724,1402.01639235459,1.8885870474666666,7.729015494686364,PTPRG,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000173706,3413.9150396823,2.19211267752395,7.688521660079794,HEG1,3,"['Umbilical.vein', 'Lymph.node', 'Foreskin']"
+ENSG00000164729,6.04013398316317,12.715456241533714,7.131039420401609,SLC35G3,3,"['Umbilical.vein', 'Colon', 'Tonsil']"
+ENSG00000137393,1638.14084895495,2.6205132813523933,6.604484336046771,RNF144B,3,"['Lymph.node', 'Skin', 'Intestine']"
+ENSG00000100368,674.06180254328,2.9626981910691064,6.55175670292379,CSF2RB,3,"['Cornea', 'Vessel', 'Skin']"
+ENSG00000138759,349.344235390269,3.98968173735013,6.305808618472462,FRAS1,3,"['Lymph.node', 'Foreskin', 'Intestine']"
+ENSG00000111962,110.110416509443,2.5575065394025565,5.871261552305448,UST,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000189184,660.963681211155,4.223463077176366,5.664264449229482,PCDH18,3,"['Heart', 'Foreskin', 'Intestine']"
+ENSG00000118762,881.498546936946,1.5802060460109033,5.4587503774505555,PKD2,3,"['Lymph.node', 'Foreskin', 'Intestine']"
+ENSG00000162494,17.4928129809195,4.7188403011988065,5.402593510207439,LRRC38,3,"['Umbilical.vein', 'Lymph.node', 'Lung']"
+ENSG00000145476,184.408141315897,1.5978325168241867,5.194920251322718,CYP4V2,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000100647,982.847682020091,1.13010141777998,5.184523675217998,SUSD6,3,"['Heart', 'Umbilical.vein', 'Tonsil']"
+ENSG00000163293,46.2858211514653,2.6102749976639363,5.01096146129012,NIPAL1,3,"['Lymph.node', 'Skin', 'Intestine']"
+ENSG00000125910,19.9647678076948,2.8306987882415435,4.930841348467143,S1PR4,3,"['Heart', 'Skin', 'Intestine']"
+ENSG00000174807,853.014366448295,3.5528594132681235,4.711587921930195,CD248,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000282881,0.764108576351401,13.16216382631645,4.662327429652679,TMEM275,3,"['Cornea', 'Vessel', 'Intestine']"
+ENSG00000138821,223.282359756848,1.8175984971231,4.646282639387772,SLC39A8,3,"['Vessel', 'Foreskin', 'Intestine']"
+ENSG00000158008,22.6340360411847,3.70836426213169,4.5074540824366744,EXTL1,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000060140,185.045666072347,2.91323166861452,4.384008984178923,STYK1,3,"['Lymph.node', 'Skin', 'Kidney']"
+ENSG00000188167,80.3858757546235,1.6856823179219702,4.329214641529382,TMPPE,3,"['Umbilical.vein', 'Lymph.node', 'Foreskin']"
+ENSG00000124882,134.709633231365,3.2581493823958128,4.2772070025381295,EREG,3,"['Umbilical.vein', 'Vessel', 'Intestine']"
+ENSG00000006210,381.967865279367,2.526502342736423,4.184887994084929,CX3CL1,3,"['Liver', 'Umbilical.vein', 'Lung']"
+ENSG00000164647,524.516096191833,2.9370444736230734,4.074403410316744,STEAP1,3,"['Cornea', 'Lymph.node', 'Kidney']"
+ENSG00000101188,66.7023953802693,4.789136535887033,3.8790084449843376,NTSR1,3,"['Lymph.node', 'Intestine', 'Tonsil']"
+ENSG00000118402,76.2668320929098,2.6752796755942803,3.7744630258799376,ELOVL4,3,"['Lymph.node', 'Foreskin', 'Intestine']"
+ENSG00000141429,5391.03869818885,1.2444869945000165,3.774051616659954,GALNT1,3,"['Cornea', 'Skin', 'Kidney']"
+ENSG00000085117,698.89646603076,1.6767550508671734,3.7467855337510856,CD82,3,"['Umbilical.vein', 'Intestine', 'Tonsil']"
+ENSG00000140937,1726.38980450574,3.777508246938956,3.65329297386398,CDH11,3,"['Foreskin', 'Peripheral.blood', 'Intestine']"
+ENSG00000129951,15.0431819336139,2.7840535331014498,3.6113092306190517,PLPPR3,3,"['Cornea', 'Heart', 'Intestine']"
+ENSG00000064687,209.17300940438,1.5183206694235098,3.5969137694384674,ABCA7,3,"['Heart', 'Umbilical.vein', 'Tonsil']"
+ENSG00000186806,28.7351708126906,1.4811010864994,3.5888651201113593,VSIG10L,3,"['Heart', 'Umbilical.vein', 'Tonsil']"
+ENSG00000151726,715.223743875229,2.024008995857777,3.4006883225438087,ACSL1,3,"['Lymph.node', 'Colon', 'Foreskin']"
+ENSG00000118804,7.61039382651572,2.0060342727477636,3.3175481022947646,STBD1,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000144040,394.768888393863,1.4995661971082799,3.227066015025885,SFXN5,3,"['Heart', 'Lymph.node', 'Tonsil']"
+ENSG00000178201,13.3636070172198,1.5991142808622332,3.2205158417478104,VN1R1,3,"['Umbilical.vein', 'Vessel', 'Intestine']"
+ENSG00000244242,20.8867088927693,2.5374053994242365,3.2067689337845806,IFITM10,3,"['Heart', 'Umbilical.vein', 'Tonsil']"
+ENSG00000167642,196.005104848621,1.9622957607714635,3.117032209177269,SPINT2,3,"['Umbilical.vein', 'Sciatic.nerve', 'Skin']"
+ENSG00000183813,7.9634222179947,2.33900943779076,3.07373167883908,CCR4,3,"['Umbilical.vein', 'Vessel', 'Skin']"
+ENSG00000102934,223.202709612962,1.6562057306154567,3.0531848363035685,PLLP,3,"['Liver', 'Lung', 'Tonsil']"
+ENSG00000277893,2.06807345933635,3.8204049603418304,3.0020283245689416,SRD5A2,3,"['Heart', 'Umbilical.vein', 'Intestine']"
+ENSG00000170017,4048.84439136805,1.3780229873692333,2.969157060969332,ALCAM,3,"['Lymph.node', 'Skin', 'Kidney']"
+ENSG00000171611,4.93941923092394,2.63118449263358,2.918138921440424,PTCRA,3,"['Umbilical.vein', 'Vessel', 'Skin']"
+ENSG00000164690,14.0190445529211,2.762194929083357,2.8863416319874364,SHH,3,"['Heart', 'Lymph.node', 'Intestine']"
+ENSG00000108375,6.91539672072288,6.113598407488336,2.8831936485492933,RNF43,3,"['Sciatic.nerve', 'Skin', 'Intestine']"
+ENSG00000205560,8.95964787784421,2.42174402807206,2.862377516436126,CPT1B,3,"['Umbilical.vein', 'Lung', 'Tonsil']"
+ENSG00000177752,5.96359410353631,2.08415474828446,2.860387535478751,YIPF7,3,"['Umbilical.vein', 'Lung', 'Intestine']"
+ENSG00000069696,4.21430142474316,2.745368390944717,2.847275537729955,DRD4,3,"['Umbilical.vein', 'Intestine', 'Tonsil']"
+ENSG00000117480,45.4900839209727,2.02845970547839,2.795009300024255,FAAH,3,"['Heart', 'Umbilical.vein', 'Tonsil']"
+ENSG00000110427,870.237239519467,2.249146961436343,2.7580204090898306,KIAA1549L,3,"['Cornea', 'Lymph.node', 'Intestine']"
+ENSG00000100652,17.6509520049995,2.4468616512843866,2.74711427974561,SLC10A1,3,"['Umbilical.vein', 'Lung', 'Intestine']"
+ENSG00000109321,121.334883716733,1.48579998557386,2.7389711687110356,AREG,3,"['Heart', 'Umbilical.vein', 'Vessel']"
+ENSG00000128602,142.421559043266,1.5827085030181731,2.710977085460741,SMO,3,"['Vessel', 'Foreskin', 'Intestine']"
+ENSG00000067715,273.813426484517,1.5365746652527335,2.6751161984433263,SYT1,3,"['Heart', 'Lung', 'Kidney']"
+ENSG00000111796,8.97990554869394,3.91020316077973,2.664507792164089,KLRB1,3,"['Vessel', 'Skin', 'Tonsil']"
+ENSG00000158014,28.5740964588028,3.4016125656215404,2.647673211981562,SLC30A2,3,"['Umbilical.vein', 'Lung', 'Tonsil']"
+ENSG00000272398,603.627931266555,1.8292760225307234,2.5656736659125343,CD24,3,"['Umbilical.vein', 'Skin', 'Intestine']"
+ENSG00000175318,15.0125710963865,1.6870583433444033,2.5126284820484397,GRAMD2A,3,"['Heart', 'Liver', 'Vessel']"
+ENSG00000102962,5.20910703494742,3.4763662387405265,2.4447242746944506,CCL22,3,"['Umbilical.vein', 'Vessel', 'Tonsil']"
+ENSG00000125648,699.443864489127,1.7156949341161367,2.4197699029924347,SLC25A23,3,"['Lymph.node', 'Sciatic.nerve', 'Tonsil']"
+ENSG00000162576,764.126500735752,1.7074833010765265,2.419276868965051,MXRA8,3,"['Umbilical.vein', 'Foreskin', 'Intestine']"
+ENSG00000157214,179.038320994117,1.6423543112872936,2.3524429416606956,STEAP2,3,"['Heart', 'Sciatic.nerve', 'Intestine']"
+ENSG00000170289,6.04886362268744,1.7169908368681301,2.3261536914611516,CNGB3,3,"['Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000204956,19.0635695470463,1.5167495798624735,2.305101688501162,PCDHGA1,3,"['Umbilical.vein', 'Foreskin', 'Tonsil']"
+ENSG00000240583,1654.8912281414,3.691520551799643,2.2889376594583832,AQP1,3,"['Foreskin', 'Peripheral.blood', 'Intestine']"
+ENSG00000137522,580.825330104693,1.3584626097716,2.2673094483892937,RNF121,3,"['Cornea', 'Lymph.node', 'Tonsil']"
+ENSG00000166292,117.884622542,2.542221640568393,2.02100209746929,TMEM100,3,"['Liver', 'Umbilical.vein', 'Sciatic.nerve']"
+ENSG00000128040,4.69879109784748,2.5120005197635167,1.9677142571702155,SPINK2,3,"['Umbilical.vein', 'Lung', 'Skin']"
+ENSG00000171561,7.30463222833571,3.0978659530448867,1.9222758135567013,OR2AT4,3,"['Umbilical.vein', 'Vessel', 'Tonsil']"
+ENSG00000152672,3.80657757699788,2.1624727539757167,1.9168884514016649,CLEC4F,3,"['Heart', 'Umbilical.vein', 'Lung']"
+ENSG00000146276,6.42128020400306,2.92729731293255,1.8919774170578136,GABRR1,3,"['Umbilical.vein', 'Lung', 'Tonsil']"
+ENSG00000188175,8.83166611041792,2.0886408939897367,1.8829597817444954,HEPACAM2,3,"['Umbilical.vein', 'Vessel', 'Intestine']"
+ENSG00000161798,14.3366009854263,5.337612461680149,1.8268373330891778,AQP5,3,"['Peripheral.blood', 'Skin', 'Tonsil']"
+ENSG00000072071,352.022695520965,1.86965198572435,1.7947687316548209,ADGRL1,3,"['Sciatic.nerve', 'Lung', 'Tonsil']"
+ENSG00000176269,1.2667924821281,1.99680221167449,1.7943697937627956,OR4F21,3,"['Heart', 'Umbilical.vein', 'Lung']"
+ENSG00000189067,760.646466484467,2.1251678479231733,1.7935971882417456,LITAF,3,"['Colon', 'Lung', 'Intestine']"
+ENSG00000175229,15.0658683185894,2.4826546864262036,1.7868268950710942,GAL3ST3,3,"['Heart', 'Lung', 'Tonsil']"
+ENSG00000105889,500.237218389459,1.3319179325135166,1.773915755700963,STEAP1B,3,"['Cornea', 'Liver', 'Kidney']"
+ENSG00000182870,16.3234561881497,2.12169592372513,1.7702448489019176,GALNT9,3,"['Heart', 'Vessel', 'Tonsil']"
+ENSG00000135973,3.9655147219963,2.51223879838105,1.7671580081508285,GPR45,3,"['Heart', 'Lung', 'Tonsil']"
+ENSG00000174667,4.77034274582859,2.1723041662202633,1.7052770532047334,OR7D4,3,"['Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000174950,1.51282193910273,2.176097004771117,1.6885379722201848,CD164L2,3,"['Heart', 'Umbilical.vein', 'Vessel']"
+ENSG00000105492,6.41439241562186,2.675058969110067,1.670354155974542,SIGLEC6,3,"['Umbilical.vein', 'Intestine', 'Tonsil']"
+ENSG00000197993,34.5610509496854,2.261718067663143,1.6626163986163107,KEL,3,"['Umbilical.vein', 'Lung', 'Tonsil']"
+ENSG00000196832,7.04055255037993,2.12339868911951,1.6449077842799635,OR11G2,3,"['Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000154143,2.23154141004874,2.4160021646526566,1.636570115668733,PANX3,3,"['Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000112218,13.0075402481241,1.1855428613158667,1.634704039631578,GPR63,3,"['Vessel', 'Skin', 'Intestine']"
+ENSG00000174970,0.862514302710037,3.63178011920464,1.6345852109105021,OR10AG1,3,"['Vessel', 'Lung', 'Skin']"
+ENSG00000196341,9.66487192159434,2.2927506750040334,1.5799323446032905,OR8D1,3,"['Umbilical.vein', 'Vessel', 'Lung']"
+ENSG00000021488,23.2197327203262,2.0354377370067134,1.576076405542869,SLC7A9,3,"['Umbilical.vein', 'Lung', 'Tonsil']"
+ENSG00000089356,1.17305460967049,2.10232564483261,1.5724992853106172,FXYD3,3,"['Heart', 'Umbilical.vein', 'Vessel']"
+ENSG00000174898,8.75720277972116,2.0086289595749967,1.3451467568165292,CATSPERD,3,"['Umbilical.vein', 'Vessel', 'Tonsil']"
+ENSG00000076706,17065.7180723487,5.823738300946645,19.088871957299144,MCAM,2,"['Cornea', 'Lymph.node']"
+ENSG00000161638,22516.1997813336,3.70656379946956,15.210848985768514,ITGA5,2,"['Cornea', 'Lymph.node']"
+ENSG00000111817,612.507976055244,2.429648570760965,14.532056550509822,DSE,2,"['Foreskin', 'Intestine']"
+ENSG00000175040,411.068661816926,3.8385309183427196,14.288135075862343,CHST2,2,"['Cornea', 'Intestine']"
+ENSG00000196591,2456.30093229984,1.20306356827905,12.91025961569548,HDAC2,2,"['Cornea', 'Skin']"
+ENSG00000138119,8242.79918811386,3.85840725609385,12.117470964406918,MYOF,2,"['Cornea', 'Lymph.node']"
+ENSG00000162618,5090.10176128398,3.25315886699053,10.24995485772308,ADGRL4,2,"['Cornea', 'Lymph.node']"
+ENSG00000171388,9928.96067317209,6.914592390938354,10.203334034903206,APLN,2,"['Cornea', 'Lymph.node']"
+ENSG00000167601,4494.619636371,4.704079253133635,9.498186661930195,AXL,2,"['Cornea', 'Lymph.node']"
+ENSG00000177697,5565.16876147772,2.092809005236645,9.486562797259754,CD151,2,"['Cornea', 'Heart']"
+ENSG00000102119,923.081044357814,1.9247533195155402,9.165986063698998,EMD,2,"['Cornea', 'Heart']"
+ENSG00000144668,421.449234047536,3.8465984341536945,9.086255714614035,ITGA9,2,"['Umbilical.vein', 'Colon']"
+ENSG00000149564,3727.81024914384,3.42167411858001,8.991916712643233,ESAM,2,"['Cornea', 'Lymph.node']"
+ENSG00000157168,765.171346102399,5.9736449154145745,8.64331439864487,NRG1,2,"['Lymph.node', 'Skin']"
+ENSG00000120802,1897.84028253487,1.688090780006985,8.514564946495598,TMPO,2,"['Cornea', 'Skin']"
+ENSG00000177694,115.449931833192,3.8183860580406,8.390457387192818,NAALADL2,2,"['Foreskin', 'Intestine']"
+ENSG00000221963,494.330927463658,1.768835949961535,8.127332981458952,APOL6,2,"['Heart', 'Umbilical.vein']"
+ENSG00000117525,228.374905090579,2.15291192829526,8.011624816514306,F3,2,"['Heart', 'Umbilical.vein']"
+ENSG00000116260,5750.66945626221,2.24465168335775,7.867728453806544,QSOX1,2,"['Cornea', 'Heart']"
+ENSG00000169429,3877.62724422382,2.69126449148672,7.5673094817521624,CXCL8,2,"['Lung', 'Skin']"
+ENSG00000166562,492.702584035459,1.30351560834104,7.544457618284777,SEC11C,2,"['Foreskin', 'Skin']"
+ENSG00000065308,4168.35878508885,2.802503315609715,7.0941622173409264,TRAM2,2,"['Cornea', 'Lymph.node']"
+ENSG00000087088,1900.70185637621,1.903873402611265,6.84979528643515,BAX,2,"['Cornea', 'Heart']"
+ENSG00000173852,1885.16340546751,1.8111278221120348,6.829054671694394,DPY19L1,2,"['Cornea', 'Lymph.node']"
+ENSG00000125505,2012.9428469704,2.448884242339245,6.781634594860262,MBOAT7,2,"['Cornea', 'Lymph.node']"
+ENSG00000225968,66.4610016175147,3.56601049564137,6.271436921562044,ELFN1,2,"['Foreskin', 'Intestine']"
+ENSG00000181562,5.38821608775071,15.48538223285859,6.134720302194454,EDDM3A,2,"['Intestine', 'Tonsil']"
+ENSG00000171603,3322.29407334429,2.30384952518301,5.866373129454056,CLSTN1,2,"['Cornea', 'Lymph.node']"
+ENSG00000224531,507.696884751942,1.39481958999067,5.865981607170185,SMIM13,2,"['Cornea', 'Lymph.node']"
+ENSG00000096433,2051.88239625816,3.17981251348762,5.6877799216345775,ITPR3,2,"['Cornea', 'Lymph.node']"
+ENSG00000117868,2244.64165434373,1.40721814016559,5.516735562991596,ESYT2,2,"['Lymph.node', 'Foreskin']"
+ENSG00000173826,20.4692411066468,12.309061541886486,5.487989217420411,KCNH6,2,"['Sciatic.nerve', 'Peripheral.blood']"
+ENSG00000181804,133.851697290917,1.77096832348908,5.44456000270154,SLC9A9,2,"['Heart', 'Umbilical.vein']"
+ENSG00000125384,75.97657367519,4.0789869544255,5.161357616027496,PTGER2,2,"['Umbilical.vein', 'Foreskin']"
+ENSG00000115363,535.719815110006,3.233997514976105,5.073042967768988,EVA1A,2,"['Cornea', 'Lymph.node']"
+ENSG00000168077,1661.38107185666,1.655799805202045,4.928602244051893,SCARA3,2,"['Skin', 'Kidney']"
+ENSG00000101439,3842.26555009558,1.3085677576768502,4.718623042262901,CST3,2,"['Heart', 'Foreskin']"
+ENSG00000172071,519.793894807882,1.0731769910145599,4.7016759948105395,EIF2AK3,2,"['Foreskin', 'Intestine']"
+ENSG00000164919,2519.68640045807,1.22458726690878,4.679432704055037,COX6C,2,"['Skin', 'Intestine']"
+ENSG00000086289,104.947984541751,2.10622570490513,4.67533211350155,EPDR1,2,"['Umbilical.vein', 'Vessel']"
+ENSG00000155970,118.257502045383,1.522189320420345,4.650554498354741,MICU3,2,"['Foreskin', 'Intestine']"
+ENSG00000196313,1467.09179707204,1.92060618463282,4.629430534909472,POM121,2,"['Umbilical.vein', 'Lymph.node']"
+ENSG00000167680,2984.85651318022,3.3649288588113,4.615208098303756,SEMA6B,2,"['Cornea', 'Lymph.node']"
+ENSG00000058804,838.86931621316,1.309442383966525,4.573120971761898,NDC1,2,"['Lymph.node', 'Skin']"
+ENSG00000174059,4889.98724786134,3.150765223593665,4.552782969324597,CD34,2,"['Cornea', 'Liver']"
+ENSG00000143643,437.691457611317,1.0906336034472401,4.551064347150215,TTC13,2,"['Foreskin', 'Intestine']"
+ENSG00000050438,225.714916041527,2.317879897234905,4.4845049340336525,SLC4A8,2,"['Lymph.node', 'Intestine']"
+ENSG00000248771,6.30372395102487,16.318461413957202,4.37685544306906,SMIM31,2,"['Sciatic.nerve', 'Tonsil']"
+ENSG00000049249,89.9716428983836,2.1537260519291,4.252499424915767,TNFRSF9,2,"['Umbilical.vein', 'Skin']"
+ENSG00000144366,434.650269512538,1.406772286185955,4.223713376074175,GULP1,2,"['Foreskin', 'Intestine']"
+ENSG00000032444,1500.27762502353,1.7563878913180901,4.218404852488267,PNPLA6,2,"['Cornea', 'Lymph.node']"
+ENSG00000163162,1210.60971305021,1.4608943735738849,4.144583254138119,RNF149,2,"['Intestine', 'Tonsil']"
+ENSG00000171517,8.50162040033043,2.919987809570765,4.103904587534386,LPAR3,2,"['Umbilical.vein', 'Vessel']"
+ENSG00000180432,21.4380978106076,9.86219504681558,4.103024463297409,CYP8B1,2,"['Umbilical.vein', 'Sciatic.nerve']"
+ENSG00000171208,774.317269513051,1.738072444164485,4.036996027305767,NETO2,2,"['Cornea', 'Lymph.node']"
+ENSG00000126861,51.564913405341,2.869245881262445,3.922163103818022,OMG,2,"['Liver', 'Kidney']"
+ENSG00000181652,51.2430752980992,4.135170711242655,3.896773024433097,ATG9B,2,"['Colon', 'Tonsil']"
+ENSG00000165895,221.480996774462,1.090177359084085,3.8804394137699667,ARHGAP42,2,"['Umbilical.vein', 'Vessel']"
+ENSG00000143786,74.2529942806088,1.71862490421761,3.829916751726742,CNIH3,2,"['Foreskin', 'Intestine']"
+ENSG00000104419,1904.08909208036,2.183826387322935,3.7470361416450544,NDRG1,2,"['Umbilical.vein', 'Colon']"
+ENSG00000170545,555.064512559426,2.030275539775115,3.736596859245269,SMAGP,2,"['Cornea', 'Colon']"
+ENSG00000065618,69.894459752438,2.87957289398497,3.6421609433606523,COL17A1,2,"['Lymph.node', 'Skin']"
+ENSG00000112276,180.58837392293,1.8291272471071751,3.6226535224121594,BVES,2,"['Foreskin', 'Intestine']"
+ENSG00000122420,116.162804895813,2.009145977473625,3.598316716294648,PTGFR,2,"['Heart', 'Umbilical.vein']"
+ENSG00000168140,319.075518379702,1.912751571590195,3.5903464544705375,VASN,2,"['Umbilical.vein', 'Intestine']"
+ENSG00000006118,1214.40118820265,1.963649843867895,3.5138483185333396,TMEM132A,2,"['Cornea', 'Lymph.node']"
+ENSG00000079385,580.923990657012,1.75240364374336,3.4830499903567773,CEACAM1,2,"['Umbilical.vein', 'Lung']"
+ENSG00000164855,25.2142888020609,1.669928867756115,3.477925958474278,TMEM184A,2,"['Heart', 'Umbilical.vein']"
+ENSG00000162073,135.954766006783,2.317034571156585,3.46596782429806,PAQR4,2,"['Cornea', 'Lymph.node']"
+ENSG00000106302,5.7371451929954,2.377352700403935,3.448591545350893,HYAL4,2,"['Umbilical.vein', 'Lung']"
+ENSG00000151233,811.61460934164,1.18710433251373,3.438871499502472,GXYLT1,2,"['Cornea', 'Lymph.node']"
+ENSG00000152952,5379.70535409426,1.706714051900785,3.425936966571186,PLOD2,2,"['Lymph.node', 'Kidney']"
+ENSG00000184292,761.002244316747,2.33200469380779,3.3890857259714577,TACSTD2,2,"['Liver', 'Lung']"
+ENSG00000254245,29.9644170592668,2.39351063706417,3.340467955572695,PCDHGA3,2,"['Umbilical.vein', 'Tonsil']"
+ENSG00000273820,68.0112663162783,1.228851017126705,3.3303738477707654,USP27X,2,"['Lymph.node', 'Foreskin']"
+ENSG00000171462,19.4523642436019,1.537972742691275,3.315608992611689,DLK2,2,"['Umbilical.vein', 'Tonsil']"
+ENSG00000162512,1587.55237271898,1.5243373437383099,3.280222477338911,SDC3,2,"['Cornea', 'Umbilical.vein']"
+ENSG00000062282,40.1322744137905,2.253208516029725,3.2350103754193147,DGAT2,2,"['Intestine', 'Tonsil']"
+ENSG00000177054,1015.64153105122,1.766451191806905,3.202732239515562,ZDHHC13,2,"['Lymph.node', 'Skin']"
+ENSG00000164291,242.300406045417,1.16442133557691,3.139951341521438,ARSK,2,"['Lymph.node', 'Intestine']"
+ENSG00000142606,9.26438768749907,3.800997011631395,3.0796023803319903,MMEL1,2,"['Heart', 'Colon']"
+ENSG00000188517,58.4791479712071,2.041502364210265,3.000311861411485,COL25A1,2,"['Lung', 'Skin']"
+ENSG00000275591,3.98431812903648,2.40947558848092,2.9932922947921505,XKR5,2,"['Vessel', 'Skin']"
+ENSG00000105290,143.782286895458,1.2622725927394298,2.969958369785913,APLP1,2,"['Vessel', 'Skin']"
+ENSG00000010310,20.1247352098744,4.17767656136542,2.9513215238452797,GIPR,2,"['Umbilical.vein', 'Colon']"
+ENSG00000163518,2.25072344436958,10.25505265449112,2.9050074385186004,FCRL4,2,"['Vessel', 'Skin']"
+ENSG00000164106,35.836785817041,3.705601136139615,2.8207782078665256,SCRG1,2,"['Intestine', 'Tonsil']"
+ENSG00000177666,1291.83243788039,1.2881165840553601,2.791477589215134,PNPLA2,2,"['Cornea', 'Heart']"
+ENSG00000174502,21.4418507457784,2.17324663740898,2.74013741539408,SLC26A9,2,"['Liver', 'Umbilical.vein']"
+ENSG00000121716,101.949191228155,1.946681399176525,2.7134702729987,PILRB,2,"['Heart', 'Tonsil']"
+ENSG00000129749,18.2266851572723,2.12922830391375,2.6315627049691166,CHRNA10,2,"['Intestine', 'Tonsil']"
+ENSG00000100292,1924.23341258752,2.439907425560115,2.6224066228590113,HMOX1,2,"['Heart', 'Lymph.node']"
+ENSG00000136026,5144.87310196029,1.2932619798320002,2.577340528947082,CKAP4,2,"['Cornea', 'Lymph.node']"
+ENSG00000100739,9.74849992608677,2.3078445112112353,2.5527188013434357,BDKRB1,2,"['Umbilical.vein', 'Lung']"
+ENSG00000129538,1928.91019514178,2.01219862126273,2.551528238230511,RNASE1,2,"['Foreskin', 'Intestine']"
+ENSG00000164889,1279.5541866226,1.8088566832026451,2.5352069976875735,SLC4A2,2,"['Cornea', 'Lymph.node']"
+ENSG00000163814,320.257218932688,2.48126691027941,2.4749130036738007,CDCP1,2,"['Umbilical.vein', 'Lymph.node']"
+ENSG00000145242,50.8237486001699,2.186838203076535,2.4665471453575236,EPHA5,2,"['Foreskin', 'Skin']"
+ENSG00000185101,104.759895474659,1.436648969014195,2.4488271531467825,ANO9,2,"['Umbilical.vein', 'Lung']"
+ENSG00000116199,1082.44429968898,1.07540534097269,2.4085564942823563,FAM20B,2,"['Lymph.node', 'Peripheral.blood']"
+ENSG00000170509,8.59509967343029,1.696125283959045,2.403705141398014,HSD17B13,2,"['Umbilical.vein', 'Intestine']"
+ENSG00000143816,73.4174309101116,2.9409863042204147,2.383729169801532,WNT9A,2,"['Cornea', 'Tonsil']"
+ENSG00000188596,416.727097740361,2.139979002076505,2.329600202879907,CFAP54,2,"['Lymph.node', 'Kidney']"
+ENSG00000028137,878.01482298103,1.12149169674308,2.315722853904088,TNFRSF1B,2,"['Lung', 'Kidney']"
+ENSG00000177363,53.1032904704072,1.9803348997127102,2.299683900598198,LRRN4CL,2,"['Umbilical.vein', 'Intestine']"
+ENSG00000164411,8.49614408067845,3.12824466953112,2.2798805214176703,GJB7,2,"['Kidney', 'Tonsil']"
+ENSG00000239697,251.993728615721,2.18230934278135,2.2518602453266308,TNFSF12,2,"['Colon', 'Tonsil']"
+ENSG00000167608,50.0510842637392,2.423277998404295,2.2475059224173597,TMC4,2,"['Vessel', 'Tonsil']"
+ENSG00000158270,888.145925589572,1.830324482469135,2.1928364544803256,COLEC12,2,"['Sciatic.nerve', 'Kidney']"
+ENSG00000177398,5.85375858793739,2.624226745122955,2.183542152223053,UMODL1,2,"['Umbilical.vein', 'Lung']"
+ENSG00000109854,876.879361929163,1.18577034301543,2.171292658013274,HTATIP2,2,"['Cornea', 'Liver']"
+ENSG00000164850,87.1251726484675,2.15253273695952,2.16776192078298,GPER1,2,"['Intestine', 'Tonsil']"
+ENSG00000168925,21.9050699101259,2.214833487879455,2.146808146696573,CTRB1,2,"['Heart', 'Intestine']"
+ENSG00000197540,2.72138457219917,2.32976143276118,2.1301697934647694,GZMM,2,"['Umbilical.vein', 'Intestine']"
+ENSG00000197561,3.40007278343684,3.076479860256875,2.1132956184951595,ELANE,2,"['Umbilical.vein', 'Intestine']"
+ENSG00000147432,1.45782119933561,3.6621652171720998,2.094393428050095,CHRNB3,2,"['Lung', 'Tonsil']"
+ENSG00000198523,59.6050078195851,5.207131917027375,2.067848975596778,PLN,2,"['Peripheral.blood', 'Intestine']"
+ENSG00000069702,885.726262114301,2.395652810481735,2.067013995525267,TGFBR3,2,"['Sciatic.nerve', 'Peripheral.blood']"
+ENSG00000118298,30.8097029060791,1.7283206607957,2.025739646478121,CA14,2,"['Sciatic.nerve', 'Lung']"
+ENSG00000077498,3.69051573260818,3.2867082021167398,2.0215592550172734,TYR,2,"['Lymph.node', 'Lung']"
+ENSG00000156413,49.1898808467443,3.106596185553305,2.005768571959778,FUT6,2,"['Umbilical.vein', 'Tonsil']"
+ENSG00000162594,10.6627845194003,2.477152009553545,1.9806444923401672,IL23R,2,"['Umbilical.vein', 'Vessel']"
+ENSG00000260001,12.2846485959873,1.61052061454635,1.9789002250641459,TGFBR3L,2,"['Heart', 'Intestine']"
+ENSG00000149305,7.42242307593092,2.55541371900536,1.945149113720817,HTR3B,2,"['Umbilical.vein', 'Lung']"
+ENSG00000095539,85.7360141997582,2.2958247065427253,1.9092164386914203,SEMA4G,2,"['Lymph.node', 'Tonsil']"
+ENSG00000189430,9.50694423552183,4.07153774338852,1.900944188948964,NCR1,2,"['Intestine', 'Tonsil']"
+ENSG00000131650,5.9597428741293,2.239704815130445,1.8702590995053985,KREMEN2,2,"['Heart', 'Lymph.node']"
+ENSG00000188000,12.1687742355578,1.66851868715795,1.8497612703857036,OR7D2,2,"['Umbilical.vein', 'Lung']"
+ENSG00000158315,25.1660084332489,1.05526983834381,1.8130584922034578,RHBDL2,2,"['Vessel', 'Intestine']"
+ENSG00000240403,4.20445764846869,2.9829526933981603,1.7987946056076431,KIR3DL2,2,"['Umbilical.vein', 'Vessel']"
+ENSG00000149295,8.87125378611547,2.10979769916776,1.796180059068704,DRD2,2,"['Umbilical.vein', 'Lung']"
+ENSG00000068615,98.9183555870231,3.398176607298605,1.796034332132049,REEP1,2,"['Sciatic.nerve', 'Colon']"
+ENSG00000273777,4.3172692464232,2.1399823111583,1.7753929126737262,CEACAM20,2,"['Lung', 'Kidney']"
+ENSG00000184698,10.8666865899726,1.8873547387410952,1.7628053985247465,OR51M1,2,"['Heart', 'Umbilical.vein']"
+ENSG00000166391,4.95706164424423,2.552843314575905,1.7289844477286975,MOGAT2,2,"['Umbilical.vein', 'Lung']"
+ENSG00000259224,3.77141870328104,2.126036131979965,1.6714672166109255,SLC35G6,2,"['Lung', 'Tonsil']"
+ENSG00000164023,707.475808296491,1.2243003085435902,1.6589819604493496,SGMS2,2,"['Liver', 'Lymph.node']"
+ENSG00000196131,1.02599651627746,1.79297974930034,1.657078036909,VN1R2,2,"['Umbilical.vein', 'Lung']"
+ENSG00000184350,1.23540018260875,1.955811048275435,1.6464783137100278,MRGPRE,2,"['Heart', 'Umbilical.vein']"
+ENSG00000106178,16.7206992617397,1.85739606707987,1.6170570967230455,CCL24,2,"['Lung', 'Kidney']"
+ENSG00000168065,45.7536512056516,2.185397746097615,1.556467632364474,SLC22A11,2,"['Umbilical.vein', 'Lung']"
+ENSG00000110148,3.57066600946824,1.987561094522135,1.5521400992386507,CCKBR,2,"['Umbilical.vein', 'Vessel']"
+ENSG00000174417,3.05145967422666,1.9121380376506951,1.542426643711166,TRHR,2,"['Liver', 'Kidney']"
+ENSG00000091972,455.96320802312,1.554891681891595,1.538836244018574,CD200,2,"['Liver', 'Sciatic.nerve']"
+ENSG00000158748,4.90405949680317,2.07408222327118,1.5339446852158125,HTR6,2,"['Liver', 'Lung']"
+ENSG00000184022,1.8997178240713,3.7299251058498646,1.5189674797715944,OR2T10,2,"['Vessel', 'Skin']"
+ENSG00000166509,5.81438421717324,2.137922356279125,1.5091906324130249,CLEC3A,2,"['Umbilical.vein', 'Vessel']"
+ENSG00000167780,6.97186965316106,1.898907210315705,1.4909132096274549,SOAT2,2,"['Umbilical.vein', 'Intestine']"
+ENSG00000140675,17.0075005361358,1.64745022598483,1.4853995127364665,SLC5A2,2,"['Heart', 'Intestine']"
+ENSG00000175514,0.709368634589908,2.0924152278201102,1.4837099456379494,GPR152,2,"['Umbilical.vein', 'Lung']"
+ENSG00000212710,14.2406441661867,3.06425071944276,1.4713122131008047,CTAGE1,2,"['Colon', 'Tonsil']"
+ENSG00000164756,7.32332506367232,2.16469209481406,1.4636902784035515,SLC30A8,2,"['Heart', 'Lung']"
+ENSG00000256870,34.5898106267626,2.045220862955945,1.4532651948840414,SLC5A8,2,"['Umbilical.vein', 'Lung']"
+ENSG00000268964,6.00339015151908,3.11800324854259,1.4515627406959177,ERVV-2,2,"['Liver', 'Tonsil']"
+ENSG00000039987,3.60393483469846,1.6677549542430499,1.4119592104521614,BEST2,2,"['Heart', 'Lung']"
+ENSG00000198077,2.54258958002347,2.924522590824585,1.4073685948616945,CYP2A7,2,"['Lung', 'Tonsil']"
+ENSG00000130167,5.0375835977203,1.9492506060953598,1.3809355659958145,TSPAN16,2,"['Liver', 'Kidney']"
+ENSG00000213413,5.46477429917742,2.10473719390879,1.371826795000707,PVRIG,2,"['Lymph.node', 'Tonsil']"
+ENSG00000185385,3.94324704737431,2.609847193021725,1.3627758897710622,OR7A17,2,"['Umbilical.vein', 'Tonsil']"
+ENSG00000221938,1.05190080462837,1.85797677960182,1.3570034166917333,OR2A14,2,"['Umbilical.vein', 'Lung']"
+ENSG00000213949,1584.41548871194,3.21667033493039,22.73310151577626,ITGA1,1,['Umbilical.vein']
+ENSG00000168484,82.7809718225608,14.8561696904759,20.258758648935817,SFTPC,1,['Skin']
+ENSG00000176435,5211.05276717757,5.42938203999114,18.225808704200983,CLEC14A,1,['Cornea']
+ENSG00000124783,3244.81309779688,1.01711935782908,14.83028209040233,SSR1,1,['Skin']
+ENSG00000163513,12716.0435550511,2.52871534752005,14.470866234843106,TGFBR2,1,['Cornea']
+ENSG00000204381,454.153276897278,2.71110197402519,13.894804417503474,LAYN,1,['Umbilical.vein']
+ENSG00000074527,3824.84637284994,5.98989024467689,12.730183438467098,NTN4,1,['Lymph.node']
+ENSG00000173085,354.673134233338,1.63563359845151,12.478369753855912,COQ2,1,['Skin']
+ENSG00000143162,747.634332650958,1.58132025214859,11.408706131133801,CREG1,1,['Umbilical.vein']
+ENSG00000170989,3575.43584877067,3.0583251668885,10.59646187228071,S1PR1,1,['Cornea']
+ENSG00000107731,1832.44808333522,2.39796586448486,10.540595642675877,UNC5B,1,['Umbilical.vein']
+ENSG00000120675,1031.7293454531,2.23747706171472,10.198337532064619,DNAJC15,1,['Foreskin']
+ENSG00000171130,348.956903979222,2.21221335698723,10.040493949456366,ATP6V0E2,1,['Skin']
+ENSG00000131626,1066.01025386148,1.93408319029338,9.92732524044067,PPFIA1,1,['Lymph.node']
+ENSG00000066056,8434.34334959493,3.83826893368935,9.799505892764499,TIE1,1,['Cornea']
+ENSG00000177464,582.125399117239,4.26452085686693,9.700021107738346,GPR4,1,['Cornea']
+ENSG00000226761,4.00480325691698,16.8893150811787,9.585963506266502,TAS2R46,1,['Sciatic.nerve']
+ENSG00000126777,5767.47634179651,1.04444882928725,9.571215360284583,KTN1,1,['Skin']
+ENSG00000212126,4.67281122119677,17.8540672130212,9.548317036427449,TAS2R50,1,['Sciatic.nerve']
+ENSG00000103174,341.713532322753,1.84052039689904,8.747595011579369,NAGPA,1,['Cornea']
+ENSG00000187688,553.064235980462,1.71129821214922,8.63622087759259,TRPV2,1,['Umbilical.vein']
+ENSG00000105722,1009.86989568061,3.00814192584197,8.600361569223187,ERF,1,['Cornea']
+ENSG00000046604,214.95774196637,3.59833510641826,8.313980353951097,DSG2,1,['Umbilical.vein']
+ENSG00000115310,11069.2642918043,1.68632940843474,8.214302454543095,RTN4,1,['Cornea']
+ENSG00000141424,680.960637894987,1.58012216739068,8.0788850735906,SLC39A6,1,['Intestine']
+ENSG00000158715,267.035639728219,2.01801206744101,7.973872994657012,SLC45A3,1,['Heart']
+ENSG00000173250,9.97490934554916,16.7346681754672,7.751582832693621,GPR151,1,['Sciatic.nerve']
+ENSG00000116815,292.955723943474,1.13118957785334,7.54472950712651,CD58,1,['Skin']
+ENSG00000198162,1587.77442180757,1.13637248933435,7.415468351953054,MAN1A2,1,['Foreskin']
+ENSG00000105854,2610.47306711979,1.6616835640508,7.358631863501909,PON2,1,['Cornea']
+ENSG00000085871,1130.0274701801,2.08392213641133,7.335495907877192,MGST2,1,['Cornea']
+ENSG00000183018,911.600189678098,4.26656375175367,7.169051824295357,SPNS2,1,['Cornea']
+ENSG00000164125,3389.14879606183,3.36290286100212,7.129705464285981,GASK1B,1,['Cornea']
+ENSG00000166479,1898.5198655568,1.29209724193899,6.685316103923,TMX3,1,['Cornea']
+ENSG00000117362,2363.09501345769,1.36295906066989,6.453850856947365,APH1A,1,['Cornea']
+ENSG00000127314,4742.50789975744,1.20822479697264,6.2571300254205555,RAP1B,1,['Cornea']
+ENSG00000160588,193.646908859917,1.35761962041445,6.2053212208629285,MPZL3,1,['Skin']
+ENSG00000069849,4803.44226787946,1.0826255217929,6.200154380849439,ATP1B3,1,['Skin']
+ENSG00000187513,780.399821433367,5.76393792459666,6.030819655210458,GJA4,1,['Cornea']
+ENSG00000147650,366.914963628369,1.55118375982312,6.010549856222514,LRP12,1,['Intestine']
+ENSG00000155016,256.831733826091,1.33044518700415,5.9763505733093165,CYP2U1,1,['Foreskin']
+ENSG00000049245,3084.87036340392,1.05442441247686,5.975094974662795,VAMP3,1,['Cornea']
+ENSG00000100528,1778.21858737547,1.20462754711238,5.968309800738717,CNIH1,1,['Cornea']
+ENSG00000103335,4270.6729516981,2.0440367127891,5.91827775641945,PIEZO1,1,['Cornea']
+ENSG00000185483,285.91370908238,2.60086094587712,5.870054650009549,ROR1,1,['Intestine']
+ENSG00000168216,625.912913329797,1.31453725552471,5.787374483769458,LMBRD1,1,['Intestine']
+ENSG00000103064,407.548116874119,2.49206388890886,5.739424548060509,SLC7A6,1,['Lymph.node']
+ENSG00000006007,1044.77954779079,1.74699396543204,5.680032991754791,GDE1,1,['Lymph.node']
+ENSG00000162236,704.322660898634,1.12695039558018,5.623149963029455,STX5,1,['Heart']
+ENSG00000108219,3885.92786965636,1.43028330913366,5.545893537815802,TSPAN14,1,['Cornea']
+ENSG00000186318,441.221410147241,2.11963585717346,5.509218674035388,BACE1,1,['Lymph.node']
+ENSG00000173218,800.653680604813,1.26299135818693,5.461280786474838,VANGL1,1,['Cornea']
+ENSG00000100336,112.878274019168,2.19187716173727,5.387209087629835,APOL4,1,['Umbilical.vein']
+ENSG00000188763,23.3684984880261,2.51776197058569,5.371820794632661,FZD9,1,['Heart']
+ENSG00000110108,2416.29763754908,1.30036494403632,5.320927178417992,TMEM109,1,['Cornea']
+ENSG00000182197,1913.14866082751,2.38646730703503,5.305353479388591,EXT1,1,['Lymph.node']
+ENSG00000139629,1038.69858528726,3.67532646574142,5.297456033858119,GALNT6,1,['Lymph.node']
+ENSG00000196712,1375.91416747489,1.15567346129183,5.287270844695489,NF1,1,['Intestine']
+ENSG00000152661,6998.7982780593,1.80851065016027,5.229171917327665,GJA1,1,['Cornea']
+ENSG00000106803,2559.88003279601,2.12556685263189,5.219422164318948,SEC61B,1,['Cornea']
+ENSG00000218305,8.78977592230464,2.20447493387815,5.177701384311461,CDC14C,1,['Umbilical.vein']
+ENSG00000088543,92.2764162637397,1.98494213484838,5.1751541150278255,C3orf18,1,['Intestine']
+ENSG00000184831,209.034085197292,1.07098285882554,5.162725560511718,APOO,1,['Skin']
+ENSG00000172986,100.387419710233,3.47831638949447,5.0956457394567805,GXYLT2,1,['Intestine']
+ENSG00000178719,1947.82745467629,1.92950214022247,5.0683586522845445,GRINA,1,['Cornea']
+ENSG00000083454,15.4998949922639,2.09110525677044,5.0319205579951705,P2RX5,1,['Umbilical.vein']
+ENSG00000143702,3240.51511639676,2.16694733279167,4.944669237407254,CEP170,1,['Lymph.node']
+ENSG00000162694,685.589125047445,1.21992953612425,4.8942408107656705,EXTL2,1,['Intestine']
+ENSG00000108523,955.310157406792,1.06182963654865,4.890441894484778,RNF167,1,['Heart']
+ENSG00000164930,1420.6617105225,1.24488935547076,4.657024033130771,FZD6,1,['Cornea']
+ENSG00000157193,484.688204213794,3.06242586976448,4.5194597448905505,LRP8,1,['Lymph.node']
+ENSG00000198715,663.467276642183,1.62863570142274,4.517823914262988,GLMP,1,['Cornea']
+ENSG00000127774,32.5025570372325,4.31760784045722,4.487970811948521,EMC6,1,['Lymph.node']
+ENSG00000171017,6.99565234285948,2.38459218371838,4.485693709755964,LRRC8E,1,['Heart']
+ENSG00000112759,2888.455144553,1.14261554617233,4.453966576006248,SLC29A1,1,['Skin']
+ENSG00000117862,143.469094343334,1.52406184667832,4.365146230708109,TXNDC12,1,['Foreskin']
+ENSG00000006327,1538.2799956602,2.45771448892004,4.314780286045674,TNFRSF12A,1,['Cornea']
+ENSG00000120156,2428.49683388647,2.12644487885361,4.267853376645507,TEK,1,['Cornea']
+ENSG00000171492,548.651660299595,1.64737263906883,4.263565593491924,LRRC8D,1,['Lymph.node']
+ENSG00000076356,4993.80904499743,2.00499724206459,4.216263382730335,PLXNA2,1,['Cornea']
+ENSG00000092969,735.671934308779,2.07439409130174,4.21567702726623,TGFB2,1,['Skin']
+ENSG00000173530,2566.47504906089,1.49278845188518,4.160342024121269,TNFRSF10D,1,['Intestine']
+ENSG00000075420,4379.29124520917,1.88959934107587,4.148925176430992,FNDC3B,1,['Lymph.node']
+ENSG00000105852,24.6087236384277,3.21766128116479,4.095311211473827,PON3,1,['Intestine']
+ENSG00000146828,674.841037315405,1.57157635560335,4.059487087317327,SLC12A9,1,['Cornea']
+ENSG00000049130,1046.49287951388,2.15377259566869,4.035051964301288,KITLG,1,['Cornea']
+ENSG00000182108,60.4982889607057,2.49242134587334,4.026358161266262,DEXI,1,['Lymph.node']
+ENSG00000163682,22282.4095763521,1.60885159098931,3.9862858156751706,RPL9,1,['Cornea']
+ENSG00000040531,439.502397087947,1.04114189004335,3.9861553494247057,CTNS,1,['Cornea']
+ENSG00000048392,1366.990555609,2.19570267337745,3.923631811578146,RRM2B,1,['Lymph.node']
+ENSG00000105701,2688.44401029641,1.19661439590376,3.8983391314321216,FKBP8,1,['Heart']
+ENSG00000105438,2787.23214068718,1.24317311274489,3.867355500777611,KDELR1,1,['Cornea']
+ENSG00000113594,1530.61608882535,1.25146761859224,3.8647854082827813,LIFR,1,['Skin']
+ENSG00000160087,931.065619991861,1.06149238209572,3.8548350050207025,UBE2J2,1,['Cornea']
+ENSG00000180257,104.74137916909,1.2852849606625,3.82572561706766,ZNF816,1,['Foreskin']
+ENSG00000176438,903.382740242782,1.08227698433004,3.8014122050505303,SYNE3,1,['Heart']
+ENSG00000277399,7.10751509234569,4.25270194380217,3.772589194997532,GPR179,1,['Intestine']
+ENSG00000138688,2148.89882174042,1.05875678646944,3.7458937266171297,KIAA1109,1,['Intestine']
+ENSG00000099625,79.4847456873075,3.3788612574527,3.745217016514008,CBARP,1,['Lymph.node']
+ENSG00000151353,441.576939796536,1.12014779186397,3.7003169903188136,TMEM18,1,['Cornea']
+ENSG00000116237,1877.6447863506,1.51353544664795,3.669101815761126,ICMT,1,['Lymph.node']
+ENSG00000114902,1516.61454695135,1.28849349134152,3.662755383376516,SPCS1,1,['Cornea']
+ENSG00000185652,18.0051906652195,4.42118782376554,3.6496194757810865,NTF3,1,['Intestine']
+ENSG00000134825,1331.21434056749,1.54716644923118,3.6291979097552973,TMEM258,1,['Cornea']
+ENSG00000184163,11.2164962010533,3.47551068258941,3.624973992055421,C1QTNF12,1,['Cornea']
+ENSG00000163762,2674.06320065695,2.21412138924839,3.5849001717156597,TM4SF18,1,['Cornea']
+ENSG00000067057,4817.56229047584,2.34925518516294,3.559765443538319,PFKP,1,['Lymph.node']
+ENSG00000182674,5.34511395907622,3.82826785335265,3.521752369170034,KCNB2,1,['Lung']
+ENSG00000072840,882.125243458189,2.51886082900742,3.503470577794083,EVC,1,['Lymph.node']
+ENSG00000060656,212.07299376061,1.5296080848272,3.4982973162195936,PTPRU,1,['Intestine']
+ENSG00000156599,1878.0693227374,1.35289182606786,3.430247804321189,ZDHHC5,1,['Lymph.node']
+ENSG00000186326,3.76875415108822,2.33578658494544,3.3854010948591875,RGS9BP,1,['Heart']
+ENSG00000109736,957.185934819307,1.26830873908409,3.373797241993426,MFSD10,1,['Cornea']
+ENSG00000090686,2028.34783871123,1.08838802238253,3.3625208425754916,USP48,1,['Lymph.node']
+ENSG00000168273,245.871377770183,1.12265806969864,3.360127291295079,SMIM4,1,['Heart']
+ENSG00000103415,1421.04438247775,1.25054497777285,3.3409562165298743,HMOX2,1,['Cornea']
+ENSG00000184005,789.945143513216,1.88368020049652,3.3396695127515383,ST6GALNAC3,1,['Cornea']
+ENSG00000120451,1530.42021061026,1.06342327254865,3.329597271862799,SNX19,1,['Lymph.node']
+ENSG00000196411,3720.62857309564,1.62568038978978,3.299451273283257,EPHB4,1,['Cornea']
+ENSG00000104689,376.689662493614,1.39057218209973,3.245961451318112,TNFRSF10A,1,['Cornea']
+ENSG00000136720,615.889678946853,1.28238273226646,3.228356741938879,HS6ST1,1,['Foreskin']
+ENSG00000112212,4.11547409354966,2.50433836935754,3.2048450344703823,TSPO2,1,['Umbilical.vein']
+ENSG00000160991,1384.07037677142,1.45905075611733,3.19054198695616,ORAI2,1,['Lymph.node']
+ENSG00000012232,1533.46909185464,1.64026031820567,3.168916268869794,EXTL3,1,['Lymph.node']
+ENSG00000120889,3576.51723724207,1.44157335516586,3.13870441399518,TNFRSF10B,1,['Cornea']
+ENSG00000121578,224.564619021614,1.08875216081598,3.131975275048301,B4GALT4,1,['Intestine']
+ENSG00000134198,71.8248625974887,1.94680781246363,3.0842547172736445,TSPAN2,1,['Vessel']
+ENSG00000116729,2303.78297541282,1.46211353071637,3.0535802522694433,WLS,1,['Lymph.node']
+ENSG00000142949,4379.8732881265,1.45732441844785,3.038795531461976,PTPRF,1,['Cornea']
+ENSG00000007384,1072.58655660225,1.27498435670508,3.0268080146349217,RHBDF1,1,['Cornea']
+ENSG00000146072,1278.32889135592,1.64622552285889,3.009989847632394,TNFRSF21,1,['Cornea']
+ENSG00000149485,1838.69988052651,1.49234788593093,2.9994616952971653,FADS1,1,['Lymph.node']
+ENSG00000090863,5064.93349081868,1.11175727382552,2.997459401295167,GLG1,1,['Lymph.node']
+ENSG00000059804,1946.59230545114,1.49377359754296,2.956944393814602,SLC2A3,1,['Intestine']
+ENSG00000161671,1124.49888911941,1.46282699103644,2.9382503745194755,EMC10,1,['Cornea']
+ENSG00000129562,2822.69105718037,1.10288344238697,2.9293669368701876,DAD1,1,['Cornea']
+ENSG00000110080,333.421442168366,1.16421926942087,2.9288055465717537,ST3GAL4,1,['Cornea']
+ENSG00000156411,1807.46873040825,1.42555089703184,2.9240588711063764,ATP5MJ,1,['Cornea']
+ENSG00000061656,107.769378595374,1.08229172487806,2.866103539009855,SPAG4,1,['Heart']
+ENSG00000064547,51.2154818045806,3.42274927906116,2.862742448654873,LPAR2,1,['Tonsil']
+ENSG00000150048,368.6809243616,2.2235958315284,2.862514279609443,CLEC1A,1,['Cornea']
+ENSG00000065518,1507.70970282423,1.15904715378187,2.859711686106353,NDUFB4,1,['Cornea']
+ENSG00000198018,521.19792652885,1.23881889075173,2.83577049846486,ENTPD7,1,['Lymph.node']
+ENSG00000166979,424.429532037444,1.22747256389647,2.819296713280269,EVA1C,1,['Liver']
+ENSG00000135318,3848.97504755605,1.48372285893437,2.7827193853363483,NT5E,1,['Cornea']
+ENSG00000171365,396.322093360008,1.68920600205938,2.763235509988379,CLCN5,1,['Lymph.node']
+ENSG00000103042,583.229396652514,1.58005020729293,2.7502593894314495,SLC38A7,1,['Lymph.node']
+ENSG00000154269,19.6739269354862,1.78110070893618,2.691222477973488,ENPP3,1,['Umbilical.vein']
+ENSG00000183853,1743.92977001209,2.23808574022815,2.688942980261202,KIRREL1,1,['Lymph.node']
+ENSG00000288611,19.9826388426686,3.64333847954811,2.6588206261653076,NPBWR1,1,['Lymph.node']
+ENSG00000134780,136.707954944746,1.13194147481025,2.6538183111149345,DAGLA,1,['Heart']
+ENSG00000110628,99.9507788235824,1.05024572230967,2.6258827105945977,SLC22A18,1,['Umbilical.vein']
+ENSG00000179104,230.753460779696,1.59173464097223,2.622711971299648,TMTC2,1,['Liver']
+ENSG00000213699,993.666988008144,1.11613075617968,2.5975511182649815,SLC35F6,1,['Cornea']
+ENSG00000010327,5104.61242168566,1.88894180331947,2.5944410903102972,STAB1,1,['Cornea']
+ENSG00000196329,74.8302139537525,1.50832288011478,2.5741584823028236,GIMAP5,1,['Umbilical.vein']
+ENSG00000196099,1.65514260202119,2.70467475523954,2.569535468289927,OR6M1,1,['Umbilical.vein']
+ENSG00000143324,957.453295790797,1.12366554024572,2.56670108605992,XPR1,1,['Lymph.node']
+ENSG00000168476,419.807414187836,1.29003159281118,2.556637480730427,REEP4,1,['Cornea']
+ENSG00000161091,646.435830745423,1.063956879201,2.5534385207801455,MFSD12,1,['Cornea']
+ENSG00000176340,1619.03313271467,1.56963190009775,2.5396256330055063,COX8A,1,['Cornea']
+ENSG00000128052,7738.29979881501,1.93097061650808,2.5320039842638127,KDR,1,['Cornea']
+ENSG00000170915,462.290569076734,1.08476367453702,2.530284352866014,PAQR8,1,['Kidney']
+ENSG00000168615,6805.26055146929,1.19854120292644,2.5190908769069624,ADAM9,1,['Cornea']
+ENSG00000076258,38.8537162789982,1.33822622854247,2.480985327206126,FMO4,1,['Intestine']
+ENSG00000185000,368.124863819819,1.14502160213739,2.475900683838869,DGAT1,1,['Cornea']
+ENSG00000162572,50.8735080935191,3.27122419391401,2.4692031057924475,SCNN1D,1,['Tonsil']
+ENSG00000151366,660.72262223833,1.37793600736137,2.461337663819865,NDUFC2,1,['Cornea']
+ENSG00000185900,798.999522270548,1.43485029036176,2.442953917429099,POMK,1,['Lymph.node']
+ENSG00000111371,3932.9831800348,1.24019195365725,2.4137503111406082,SLC38A1,1,['Cornea']
+ENSG00000257594,13.5507589052303,1.00399889018982,2.4115785031100883,GALNT4,1,['Umbilical.vein']
+ENSG00000198799,404.432803991401,1.27039608010472,2.401598432492036,LRIG2,1,['Lymph.node']
+ENSG00000227500,840.628560912213,1.30857105122071,2.3953218666438505,SCAMP4,1,['Cornea']
+ENSG00000134824,3122.1397506051,2.21429421893898,2.38888088863289,FADS2,1,['Lymph.node']
+ENSG00000162729,243.030013446022,1.05272138905082,2.373267300859885,IGSF8,1,['Foreskin']
+ENSG00000106003,247.49255462047,2.15901567311221,2.3639812778797102,LFNG,1,['Cornea']
+ENSG00000142459,374.622340036214,1.60638888117296,2.3566763466441345,EVI5L,1,['Lymph.node']
+ENSG00000023839,68.3500409731607,2.91037474208042,2.3551597008935206,ABCC2,1,['Tonsil']
+ENSG00000104853,1671.60876903229,1.05109634775963,2.3477700228048,CLPTM1,1,['Cornea']
+ENSG00000084674,631.248026245968,2.51239488444301,2.330719908220913,APOB,1,['Intestine']
+ENSG00000111670,1200.06016234895,1.06543939686525,2.311618824963748,GNPTAB,1,['Lymph.node']
+ENSG00000170906,645.342521473443,1.12181258545537,2.3075130502937133,NDUFA3,1,['Cornea']
+ENSG00000105429,1785.33373342763,1.7768086142559,2.30476054052332,MEGF8,1,['Lymph.node']
+ENSG00000146859,447.948897282326,1.32507020332478,2.303231642932238,TMEM140,1,['Cornea']
+ENSG00000103254,258.479720461501,1.06788124590319,2.2802585954416608,ANTKMT,1,['Heart']
+ENSG00000196683,2897.13201669114,1.33162909233624,2.2760442891759793,TOMM7,1,['Cornea']
+ENSG00000153993,455.705624938273,1.34385034083557,2.2437321544337627,SEMA3D,1,['Skin']
+ENSG00000091138,11.1593520707244,5.84490673759607,2.242429793428417,SLC26A3,1,['Tonsil']
+ENSG00000189280,2.3046645827606,4.70877881286591,2.241193311112582,GJB5,1,['Lymph.node']
+ENSG00000153485,192.945399031875,1.65728663696666,2.2271826022731807,TMEM251,1,['Lymph.node']
+ENSG00000125356,1562.75638471678,1.07190396182027,2.2214616772874214,NDUFA1,1,['Cornea']
+ENSG00000127533,392.310324848298,1.10137239149672,2.217826221057352,F2RL3,1,['Umbilical.vein']
+ENSG00000116133,2609.35460550392,2.17489644467205,2.2171482358060652,DHCR24,1,['Lymph.node']
+ENSG00000179846,5.48204275104585,1.45804226961809,2.173342026564483,NKPD1,1,['Heart']
+ENSG00000184988,162.764922040992,1.81879272692359,2.144023545854437,TMEM106A,1,['Tonsil']
+ENSG00000075568,1082.23111322521,1.213652701154,2.1426472118956137,TMEM131,1,['Lymph.node']
+ENSG00000168000,46.234921070394,1.8258905578144,2.137801384610779,BSCL2,1,['Tonsil']
+ENSG00000051523,1272.32845578662,1.02350456847376,2.1290683672801114,CYBA,1,['Heart']
+ENSG00000181072,40.0773572195218,3.0698005225088,2.0967543463943104,CHRM2,1,['Foreskin']
+ENSG00000142046,111.469524214144,1.96877974308114,2.072964591519069,TMEM91,1,['Tonsil']
+ENSG00000181392,16.0605267921033,3.69924289516501,2.0721769400171555,SYNE4,1,['Tonsil']
+ENSG00000053501,279.685564594956,1.43229412285542,2.066550776675511,USE1,1,['Tonsil']
+ENSG00000205639,420.17298182728,2.91434389802009,2.0608705174772477,MFSD2B,1,['Lymph.node']
+ENSG00000143515,1460.12853101075,1.38926320992897,2.0070128699371312,ATP8B2,1,['Lymph.node']
+ENSG00000102886,57.824480884308,2.86144440809955,1.999188771866742,GDPD3,1,['Tonsil']
+ENSG00000272391,1489.87858936805,1.75053439720291,1.9970931242757815,POM121C,1,['Lymph.node']
+ENSG00000117528,897.478684486546,1.09137007410007,1.9934846232971193,ABCD3,1,['Lymph.node']
+ENSG00000186265,4.7418857863027,1.87912785046453,1.985471034575339,BTLA,1,['Umbilical.vein']
+ENSG00000162511,1541.85229478078,1.12626869683595,1.9807437916552653,LAPTM5,1,['Heart']
+ENSG00000164707,35.8987981173065,1.29905841113901,1.9739317423916791,SLC13A4,1,['Intestine']
+ENSG00000121853,5.08387004370105,2.75499786437975,1.9734329954837935,GHSR,1,['Kidney']
+ENSG00000163378,1340.27546684289,1.10732450360694,1.9492670098913538,EOGT,1,['Lymph.node']
+ENSG00000134489,3.52829780523095,1.34967152730453,1.9431040277763407,HRH4,1,['Umbilical.vein']
+ENSG00000177951,650.6223360615,1.17008224630723,1.9280420519961625,BET1L,1,['Tonsil']
+ENSG00000166394,77.4946736256908,1.51960148615491,1.9210260761251894,CYB5R2,1,['Intestine']
+ENSG00000012660,2552.08002987701,1.05198096838897,1.9177109879491374,ELOVL5,1,['Lymph.node']
+ENSG00000049540,911.469104172495,2.52874536915687,1.89753190930092,ELN,1,['Intestine']
+ENSG00000135324,134.802350798608,3.60389286933263,1.879438567919064,MRAP2,1,['Colon']
+ENSG00000256436,11.1431964325637,8.04993690401136,1.87576032408567,TAS2R31,1,['Peripheral.blood']
+ENSG00000090554,9.46430125994817,2.6234901730913,1.8752298426282292,FLT3LG,1,['Tonsil']
+ENSG00000186106,260.825069712988,1.0704834211309,1.8587559393998825,ANKRD46,1,['Sciatic.nerve']
+ENSG00000257923,1392.52742748841,1.24646789769856,1.8563807728740847,CUX1,1,['Tonsil']
+ENSG00000170293,161.022127346289,1.40990044013102,1.854776290123001,CMTM8,1,['Cornea']
+ENSG00000155463,2472.67900013018,1.22330866135036,1.8524970680123822,OXA1L,1,['Lymph.node']
+ENSG00000181773,47.7144665841715,2.25284314735259,1.8270098074605583,GPR3,1,['Colon']
+ENSG00000188984,1.3501595473719,5.01274648022338,1.7914508834593377,AADACL3,1,['Vessel']
+ENSG00000205155,306.253855045898,1.07451661889919,1.7512284865874361,PSENEN,1,['Cornea']
+ENSG00000058063,1408.78662006736,1.06907324919288,1.7466054323680988,ATP11B,1,['Lymph.node']
+ENSG00000126460,40.489217267416,2.5214722273657,1.744865141762041,PRRG2,1,['Tonsil']
+ENSG00000186827,170.745052459755,2.36341742244025,1.7413809457872242,TNFRSF4,1,['Cornea']
+ENSG00000163982,1.82882413001927,2.49817990068794,1.7320904742733998,OTOP1,1,['Lung']
+ENSG00000132429,52.8133637174683,1.3505665560975,1.7233357373552443,POPDC3,1,['Kidney']
+ENSG00000261341,4.75125658411526,2.08308787441824,1.7198044251338271,LOC105372440,1,['Liver']
+ENSG00000162490,44.6011634989413,1.1209827750329,1.7167587935299606,DRAXIN,1,['Skin']
+ENSG00000249992,194.760950029856,1.40140827332871,1.7144424327145416,TMEM158,1,['Intestine']
+ENSG00000163297,1423.01185289687,1.49524321066356,1.7125190409709328,ANTXR2,1,['Lymph.node']
+ENSG00000181656,4.00872782620193,3.75379288586291,1.7029277495030115,GPR88,1,['Tonsil']
+ENSG00000187954,605.38876684263,1.40788404383095,1.697383580795088,CYHR1,1,['Tonsil']
+ENSG00000182585,19.2878293406559,1.59785006007534,1.6820353101245782,EPGN,1,['Intestine']
+ENSG00000135740,105.838815541222,1.91899317248059,1.6752508378080102,SLC9A5,1,['Tonsil']
+ENSG00000125107,2764.2592507002,1.24668179565087,1.6504186562287124,CNOT1,1,['Lymph.node']
+ENSG00000104848,4.89638586109363,4.4493455136476,1.6431779923791352,KCNA7,1,['Colon']
+ENSG00000169550,5.01782212063244,2.43623309365696,1.6410503195267654,MUC15,1,['Umbilical.vein']
+ENSG00000104938,223.931466154121,1.57511896042239,1.6384937455302373,CLEC4M,1,['Skin']
+ENSG00000133195,219.651585024361,1.30118440429582,1.6358442454288864,SLC39A11,1,['Tonsil']
+ENSG00000185883,91.0995882476269,1.06041680367895,1.6319164750205757,ATP6V0C,1,['Heart']
+ENSG00000177212,3.29796163517696,2.25691108822217,1.6308970825088775,OR2T33,1,['Umbilical.vein']
+ENSG00000016602,3.58423808722968,1.86375483031064,1.6271513417939856,CLCA4,1,['Umbilical.vein']
+ENSG00000170923,1.62029690366443,2.27451870618075,1.597841000022224,OR7G2,1,['Umbilical.vein']
+ENSG00000105668,3.55174626675592,1.28625148784789,1.5829902113925742,UPK1A,1,['Umbilical.vein']
+ENSG00000147606,26.587349424797,1.79729710391122,1.5741647169324422,SLC26A7,1,['Intestine']
+ENSG00000172375,236.070038677314,1.24526213482365,1.5497947825068363,C2CD2L,1,['Lymph.node']
+ENSG00000103310,11.3945209413144,2.13562801184759,1.5441197870730394,ZP2,1,['Heart']
+ENSG00000108379,37.9746201566175,1.39468190169129,1.5417804477535995,WNT3,1,['Lymph.node']
+ENSG00000096395,1.45691689264059,1.94180090842241,1.54122549466404,MLN,1,['Lung']
+ENSG00000130377,5.70773493883031,1.25318857481245,1.5401703909830537,ACSBG2,1,['Lung']
+ENSG00000211584,561.874378031122,1.28742474434326,1.5393556082386521,SLC48A1,1,['Tonsil']
+ENSG00000126243,196.419602714152,1.64443812363221,1.5381048613481294,LRFN3,1,['Lymph.node']
+ENSG00000131697,233.57647705419,1.2462941000607,1.5207629370862248,NPHP4,1,['Lymph.node']
+ENSG00000198488,5.00151436312311,1.66604579046829,1.5146996802284443,B3GNT6,1,['Umbilical.vein']
+ENSG00000173610,3.92342367715151,4.02756392718108,1.5110212624839927,UGT2A1,1,['Tonsil']
+ENSG00000177042,246.401890705923,1.08920945329396,1.4996933567362953,TMEM80,1,['Tonsil']
+ENSG00000186513,0.749941594109017,3.14507988421977,1.489751889950071,OR9Q2,1,['Vessel']
+ENSG00000171819,218.558632970222,1.72497075903585,1.4890664985261102,ANGPTL7,1,['Lung']
+ENSG00000162391,26.0379881429872,2.96548275026594,1.4632947757482024,FAM151A,1,['Colon']
+ENSG00000167910,3.17319298810626,1.69826697806775,1.4618878137016633,CYP7A1,1,['Lung']
+ENSG00000279270,4.89596789834981,2.9523224232873,1.4502857043858002,OR52R1,1,['Vessel']
+ENSG00000007312,23.9933301687623,2.76216072203779,1.4475663877143332,CD79B,1,['Colon']
+ENSG00000160716,9.10805043563819,1.15861693623169,1.443350803796454,CHRNB2,1,['Lung']
+ENSG00000172663,377.906481762166,1.49689747805198,1.4379173381985682,TMEM134,1,['Tonsil']
+ENSG00000176681,326.965094301116,1.04088010245537,1.417968714128551,LRRC37A,1,['Sciatic.nerve']
+ENSG00000103227,160.174272281555,1.45283337068759,1.4111903620321036,LMF1,1,['Tonsil']
+ENSG00000138079,21.5980716056476,2.00318403107446,1.4032780712565804,SLC3A1,1,['Intestine']
+ENSG00000128617,3.29005105211841,1.66236260717309,1.3975637501012868,OPN1SW,1,['Kidney']
+ENSG00000198719,191.674519973662,2.57969286230081,1.3954683798117933,DLL1,1,['Tonsil']
+ENSG00000105467,2.8265075939303,1.59189600048039,1.388163940116276,SYNGR4,1,['Vessel']
+ENSG00000077454,169.857405239229,1.58539806423741,1.3830568971393764,LRCH4,1,['Tonsil']
+ENSG00000179826,25.6337374601602,1.6663264387631,1.3650447200025686,MRGPRX3,1,['Lung']
+ENSG00000203859,4.24972498868219,1.97761994212994,1.3518527426907232,HSD3B2,1,['Umbilical.vein']
+ENSG00000169682,22.6914441750882,1.54650424055632,1.3517193163363626,SPNS1,1,['Tonsil']
+ENSG00000269855,2.70232170729574,1.93280671679911,1.327307080033164,RNF225,1,['Intestine']
+ENSG00000105131,7.45028558533441,1.10050101493126,1.3155322551617248,EPHX3,1,['Heart']
+ENSG00000176920,12.9736806900777,1.61544165466192,1.3069185751484111,FUT2,1,['Tonsil']
+ENSG00000131781,75.7953427422906,1.69919416149183,1.3027269897891665,FMO5,1,['Tonsil']

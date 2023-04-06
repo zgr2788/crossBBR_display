@@ -11,7 +11,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 
 const Aggtable = () => {
 
-    const [loading, setLoading, tableArgs,] = useContext(TableContext)
+    const [loading, setLoading] = useContext(TableContext)
 
     const [genes, setGenes] = useState(null)
     const [active, setActive] = useState(false)
@@ -29,7 +29,7 @@ const Aggtable = () => {
             },
         };
 
-        const response = await fetch("/api/omics/data/" + tableArgs, requestOptions);
+        const response = await fetch("/api/omics/data/all", requestOptions);
         
 
         if (!response.ok) {
@@ -240,7 +240,7 @@ const Aggtable = () => {
     useEffect(() => {
       fetchGenes()
     // eslint-disable-next-line
-    }, [tableArgs])
+    }, [])
 
     return(
         

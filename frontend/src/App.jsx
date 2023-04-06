@@ -5,6 +5,7 @@ import Methods from './components/Methods';
 import Transmemfoc from './components/Transmemfoc';
 import Apialerts from './components/Apialerts';
 import { PageContext } from './context/PageContext';
+import Allcod from './components/Allcod';
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
           home: <Homepage />,
           methods : <Methods />,
           trmemfoc : <Transmemfoc />,
+          allcod : <Allcod />,
           test: 
           <div className='fadeIn'>
             <div className="container-fluid p-4">
