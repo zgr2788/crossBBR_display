@@ -12,6 +12,7 @@ import bokeh.embed as _embed
 import json
 from bokeh.palettes import Category20, Category10
 from bokeh.sampledata.autompg2 import autompg2
+from ast import literal_eval
 
 # Folder metadata
 counts = "Counts/"
@@ -41,6 +42,19 @@ for key in list(aggreg_dict.keys()):
     aggreg_dict[key]["mean_perf_score"] = aggreg_dict[key]["Name"].apply(lambda x: perfWrapper(x)) # Perf
     aggreg_dict[key]["Score"] = aggreg_dict[key]["Score"].apply(lambda x : -_np.log10(x)) # Score change
     aggreg_dict[key] = aggreg_dict[key][["Name", "gene_names", "uniprot", "Score", "DESeq2_Appeared", "DESeq2_Validated", "Wilcox_Appeared", "Wilcox_Validated", "Prot_Evidence", "mean_perf_score"]] # Reorder for pretty exports
+
+# Pre-process dumps files
+for key in list(dumps_dict.keys()):
+    dumps_dict[key]["Gene_ID"] = dumps_dict[key].index
+    dumps_dict[key]["tissList_array"] = dumps_dict[key]["tissList"].apply(literal_eval)
+    dumps_dict[key]["tissList_array"] = dumps_dict[key]["tissList_array"].apply(lambda x: [tiss.replace('.', ' ') for tiss in x ])
+
+    if 'deseq2' in key:
+        dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "log2FoldChange", "appCount", "tissList", "tissList_array"]]
+    
+    else:
+        dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "appCount", "tissList", "tissList_array"]]
+
 
 # Precondition : none
 # Returns : Gene list -> List of genes with attributes for SC excluded
@@ -153,4 +167,6 @@ async def fetchSampleCountDistrib(gene_id, zero_filt = False, count_dict = count
         p.xgrid.grid_line_color = None
 
         return json.dumps(_embed.json_item(p, gene_id + "_counts_whisk_" + scale_type))
+
+
 

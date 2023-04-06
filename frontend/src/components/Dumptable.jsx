@@ -3,7 +3,7 @@ import Plotmodal from './Plotmodal'
 import {useContext, useEffect, useMemo, useState} from 'react'
 import { TableContext } from '../context/TableContext'
 import MaterialReactTable from 'material-react-table';
-import { Button, Box } from '@mui/material';
+import { Button, Box} from '@mui/material';
 import { ExportToCsv } from 'export-to-csv';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Tab from 'react-bootstrap/Tab';
@@ -11,15 +11,15 @@ import Tabs from 'react-bootstrap/Tabs';
 
 
 
-
 const Dumptable = () => {
 
-    const [loading, setLoading] = useContext(TableContext)
+    const [loading, setLoading] = useContext(TableContext)    
+    
+    const tissListFull = ['Cornea', 'Heart', 'Liver', 'Umbilical vein', 'Lymph node', 'Sciatic nerve', 'Colon', 'Vessel', 'Peripheral blood', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']
+    const tissListSelect = ['Colon', 'Heart', 'Intestine', 'Kidney', 'Liver', 'Lung', 'Vessel']
 
-    const [genes, setGenes] = useState(null)
-    
-    
-    const [geneDict, setGeneDict] = useState({
+
+    const [geneDict, ] = useState({
         deseq2_all : [],
         deseq2_select : [],
         wilcox_all : [],
@@ -29,8 +29,6 @@ const Dumptable = () => {
     const [active, setActive] = useState(false)
     const [curID, setCurID] = useState(null)
     const [curName, setCurName] = useState(null)
-
-    const longcolsize = 150
 
     const fetchGenes = async () => {
 
@@ -61,165 +59,107 @@ const Dumptable = () => {
     }
 
 
-    // Column operations here for table
+    // Column operations for DESeq2 tables
     const cols_deseq2 = useMemo(
         () => [
           {
-            accessorKey: 'Name',
+            accessorKey: 'Gene_ID',
             header: "Gene ID", 
             Header: <strong className="text-secondary">Gene ID</strong>,
             enableClickToCopy: true,
             enableSorting: false,
 
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
           },
           {
-            accessorKey: 'gene_names',
+            accessorKey: 'hgncSymbol',
             header: "Gene Name", 
             Header: <strong className="text-secondary">Gene Name</strong>,
             enableSorting: false,
             enableClickToCopy: true,
-            Cell: ({ cell }) => <a href={`https://www.proteinatlas.org/search/${cell.row.original.gene_names}`} target="_blank" rel="noreferrer">{cell.row.original.gene_names}</a> ,
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+            Cell: ({ cell }) => <a href={`https://www.proteinatlas.org/search/${cell.row.original.hgncSymbol}`} target="_blank" rel="noreferrer">{cell.row.original.hgncSymbol}</a> ,
+            
           },
           {
-            accessorKey: 'uniprot',
-            header: "Uniprot ID", 
-            Header: <strong className="text-secondary">Uniprot ID</strong>,
-            Cell: ({ cell }) => (<>{cell.row.original.uniprot ?  <a href={`https://www.ebi.ac.uk/interpro/search/text/${cell.row.original.uniprot}`} target="_blank" rel="noreferrer">{cell.row.original.uniprot}</a> : <span>Not matched</span>}</>) ,
+            accessorKey: 'sigAdj',
+            header: "Mean Significance", 
+            Header: <strong className="text-secondary">Mean Significance</strong>,
+            enableColumnFilter : false,
+            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.sigAdj}</strong>),
+
+          },
+          {
+            accessorKey: 'log2FoldChange',
+            header: "Mean Fold Change", 
+            Header: <strong className="text-secondary">Mean Fold Change</strong>,
+            enableColumnFilter : false,
+            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.sigAdj}</strong>),
+          },
+          {
+            accessorKey: 'appCount',
+            header: "Appearance Count", 
+            Header: <strong className="text-secondary">Appearance Count</strong>,
+            enableColumnFilter : false,
+            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.appCount}</strong>),
+
+          },
+          {
+            accessorKey: 'tissList',
+            header: "Significant in Comparison", 
+            Header: <strong className="text-secondary">Significant in Comparison</strong>,
+            size: 150,
+            enableSorting: false,
+            enableHiding: false
+          },
+        ],[],);
+
+
+     // Column operations for wcx-rst tables
+     const cols_wcx = useMemo(
+        () => [
+          {
+            accessorKey: 'Gene_ID',
+            header: "Gene ID", 
+            Header: <strong className="text-secondary">Gene ID</strong>,
+            enableClickToCopy: true,
+            enableSorting: false,
+
+          },
+          {
+            accessorKey: 'hgncSymbol',
+            header: "Gene Name", 
+            Header: <strong className="text-secondary">Gene Name</strong>,
             enableSorting: false,
             enableClickToCopy: true,
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+            Cell: ({ cell }) => <a href={`https://www.proteinatlas.org/search/${cell.row.original.hgncSymbol}`} target="_blank" rel="noreferrer">{cell.row.original.hgncSymbol}</a> ,
+            
           },
           {
-            accessorKey: 'Score',
-            header: "Significance", 
-            Header: <strong className="text-secondary">Significance</strong>,
+            accessorKey: 'sigAdj',
+            header: "Mean Significance", 
+            Header: <strong className="text-secondary">Mean Significance</strong>,
             enableColumnFilter : false,
-            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Name, cell.row.original.gene_names)} }>{cell.row.original.Score}</strong>),
+            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.sigAdj}</strong>),
 
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
           },
           {
-            accessorKey: 'DESeq2_Appeared',
-            header: "DESeq2", 
-            Header: <strong className="text-secondary">Top in DESeq2 aggregate?</strong>,
-            size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
-            filterVariant: 'checkbox',            
-            enableSorting: false,
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
-          },
-          {
-            accessorKey: 'DESeq2_Validated',
-            header: "DESeq2 Bootstrap", 
-            Header: <strong className="text-secondary">Top in DESeq2 bootstrap?</strong>,
-            size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
-            filterVariant: 'checkbox',        
-            enableSorting: false,
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
-          },
-          {
-            accessorKey: 'Wilcox_Appeared',
-            header: "WRST", 
-            Header: <strong className="text-secondary">Top in WRST aggregate?</strong>,
-            size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
-            filterVariant: 'checkbox',
-            enableSorting: false,
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
-          },
-          {
-            accessorKey: 'Wilcox_Validated',
-            header: "WRST Bootstrap", 
-            Header: <strong className="text-secondary">Top in WRST bootstrap?</strong>,
-            size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
-            filterVariant: 'checkbox',
-            enableSorting: false,
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
-          },
-          {
-            accessorKey: 'Prot_Evidence',
-            header: "Protein Evidence", 
-            Header: <strong className="text-secondary">Protein Evidence?</strong>,
-            size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.Prot_Evidence ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>),
-            filterVariant: 'checkbox',
-            enableSorting: false,
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
-          },
-          {
-            accessorKey: 'mean_perf_score',
-            header: "Mean Perfusion Score", 
-            Header: <strong className="text-secondary">Perfusion Score</strong>,
+            accessorKey: 'appCount',
+            header: "Appearance Count", 
+            Header: <strong className="text-secondary">Appearance Count</strong>,
             enableColumnFilter : false,
-            Cell: ({ cell }) => <strong>{cell.row.original.mean_perf_score}</strong>, 
+            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.appCount}</strong>),
 
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+          },
+          {
+            accessorKey: 'tissList',
+            header: "Significant in Comparison", 
+            Header: <strong className="text-secondary">Significant in Comparison</strong>,
+            size: 150,
+            enableSorting: false,
+            enableHiding: false
           },
         ],[],);
     
-    //CSV export
+    //CSV export for deseq2
     const csvOptions = {
         fieldSeparator: ',',
         quoteStrings: '"',
@@ -228,17 +168,38 @@ const Dumptable = () => {
         useBom: true,
         useKeysAsHeaders: false,
         headers: cols_deseq2.map((c) => c.header),
-        filename: "export_list"
+        filename: "export_list_deseq2"
+    };
+
+    //CSV export for wcx
+    const csvOptionsWcx = {
+        fieldSeparator: ',',
+        quoteStrings: '"',
+        decimalSeparator: '.',
+        showLabels: true,
+        useBom: true,
+        useKeysAsHeaders: false,
+        headers: cols_wcx.map((c) => c.header),
+        filename: "export_list_wcx"
     };
     
     const csvExporter = new ExportToCsv(csvOptions);
+    const csvExporterWcx = new ExportToCsv(csvOptionsWcx);
 
     const handleExportRows = (rows) => {
         csvExporter.generateCsv(rows.map((row) => row.original));
     };
     
-    const handleExportData = () => {
-      csvExporter.generateCsv(genes);
+    const handleExportData = (key) => {
+      csvExporter.generateCsv(geneDict[key]);
+    };
+
+    const handleExportRowsWcx = (rows) => {
+        csvExporterWcx.generateCsv(rows.map((row) => row.original));
+    };
+    
+    const handleExportDataWcx = (key) => {
+      csvExporterWcx.generateCsv(geneDict[key]);
     };
 
     const handleModal = () => {
@@ -272,62 +233,293 @@ const Dumptable = () => {
             id="gene-list-tabs"
             className="mb-3"
           >
-            <Tab eventKey="deseq2_all" title="DESeq2 - All Comparisons">
-                aaaaa
+            <Tab eventKey="deseq2_all" title="DESeq2">
+                
+
+                <div>
+                <MaterialReactTable 
+                columns={cols_deseq2} 
+                data={geneDict["deseq2_all"]}
+                initialState={{ columnVisibility: { tissList : false } }}
+                globalFilterFn="contains" 
+                enableRowSelection
+
+                muiTableHeadCellProps={{
+
+                    sx: {
+                      '& .Mui-TableHeadCell-Content': {
+                    
+                        justifyContent: 'space-between',
+                      },
+                    },
+                }}
+
+                renderTopToolbarCustomActions={({ table }) => (
+                    <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportData("deseq2_all")}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export All genes
+                      </Button>
+                
+                      <Button
+                        disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                        //only export selected rows
+                        onClick={() => handleExportRows(table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export Selection
+                      </Button>
+                    </Box>
+                )}
+                
+                renderDetailPanel={({ row }) => (
+
+                    <Box
+                      sx={{
+                        display: 'grid',
+                        //margin: 'auto',
+                        gridTemplateColumns: '1fr 1fr',
+                        width: '100%',
+                      }}
+                    >
+                   
+                         <div className="row"> 
+                        {
+                            tissListFull.map((tiss) => <div class="col-md-2">{row.original.tissList_array.includes(tiss) ? (<><span className='text-success'>{tiss}: </span><span>&#x2714;</span></>) : ((<><span className='text-danger'>{tiss}: </span><span>&#x2718;</span></>))}</div>)
+                        }
+                        </div>
+                    
+                    
+                    </Box>            
+                  )}
+
+                />
+                </div>
+
+
             </Tab>
-            <Tab eventKey="deseq2_select" title="DESeq2 - Only Important Tissues"/>
-            <Tab eventKey="wilcox_all" title="Wilcoxon rank-sum test - All Comparisons" />
-            <Tab eventKey="wilcox_select" title="Wilcoxon rank-sum test - Only Important Tissues"/>
+
+
+            <Tab eventKey="deseq2_select" title="DESeq2 - Tissue Subset">
+
+            <div>
+                <MaterialReactTable 
+                columns={cols_deseq2} 
+                data={geneDict["deseq2_select"]}
+                initialState={{ columnVisibility: { tissList : false } }}
+                globalFilterFn="contains" 
+                enableRowSelection
+
+                muiTableHeadCellProps={{
+
+                    sx: {
+                      '& .Mui-TableHeadCell-Content': {
+                    
+                        justifyContent: 'space-between',
+                      },
+                    },
+                }}
+
+                renderTopToolbarCustomActions={({ table }) => (
+                    <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportData("deseq2_select")}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export All genes
+                      </Button>
+                
+                      <Button
+                        disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                        //only export selected rows
+                        onClick={() => handleExportRows(table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export Selection
+                      </Button>
+                    </Box>
+                )}
+                
+                renderDetailPanel={({ row }) => (
+
+                    <Box
+                      sx={{
+                        display: 'grid',
+                        //margin: 'auto',
+                        gridTemplateColumns: '1fr 1fr',
+                        width: '100%',
+                      }}
+                    >
+                   
+                         <div className="row"> 
+                        {
+                            tissListSelect.map((tiss) => <div class="col-md-3">{row.original.tissList_array.includes(tiss) ? (<><span className='text-success'>{tiss}: </span><span>&#x2714;</span></>) : ((<><span className='text-danger'>{tiss}: </span><span>&#x2718;</span></>))}</div>)
+                        }
+                        </div>
+                    
+                    
+                    </Box>            
+                  )}
+
+                />
+                </div>
+
+            </Tab>
+
+
+            <Tab eventKey="wilcox_all" title="Wilcoxon rank-sum test" >
+
+            <div>
+                <MaterialReactTable 
+                columns={cols_wcx} 
+                data={geneDict["wilcox_all"]}
+                initialState={{ columnVisibility: { tissList : false } }}
+                globalFilterFn="contains" 
+                enableRowSelection
+
+                muiTableHeadCellProps={{
+
+                    sx: {
+                      '& .Mui-TableHeadCell-Content': {
+                    
+                        justifyContent: 'space-between',
+                      },
+                    },
+                }}
+
+                renderTopToolbarCustomActions={({ table }) => (
+                    <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportDataWcx("wilcox_all")}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export All genes
+                      </Button>
+                
+                      <Button
+                        disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                        //only export selected rows
+                        onClick={() => handleExportRowsWcx(table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export Selection
+                      </Button>
+                    </Box>
+                )}
+                
+                renderDetailPanel={({ row }) => (
+
+                    <Box
+                      sx={{
+                        display: 'grid',
+                        //margin: 'auto',
+                        gridTemplateColumns: '1fr 1fr',
+                        width: '100%',
+                      }}
+                    >
+                   
+                         <div className="row"> 
+                        {
+                            tissListFull.map((tiss) => <div class="col-md-3">{row.original.tissList_array.includes(tiss) ? (<><span className='text-success'>{tiss}: </span><span>&#x2714;</span></>) : ((<><span className='text-danger'>{tiss}: </span><span>&#x2718;</span></>))}</div>)
+                        }
+                        </div>
+                    
+                    
+                    </Box>            
+                  )}
+
+                />
+                </div>
+
+            </Tab>
+
+            <Tab eventKey="wilcox_select" title="Wilcoxon rank-sum test - Tissue Subset">
+            <div>
+                <MaterialReactTable 
+                columns={cols_wcx} 
+                data={geneDict["wilcox_select"]}
+                initialState={{ columnVisibility: { tissList : false } }}
+                globalFilterFn="contains" 
+                enableRowSelection
+
+                muiTableHeadCellProps={{
+
+                    sx: {
+                      '& .Mui-TableHeadCell-Content': {
+                    
+                        justifyContent: 'space-between',
+                      },
+                    },
+                }}
+
+                renderTopToolbarCustomActions={({ table }) => (
+                    <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportDataWcx("wilcox_select")}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export All genes
+                      </Button>
+                
+                      <Button
+                        disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                        //only export selected rows
+                        onClick={() => handleExportRowsWcx(table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export Selection
+                      </Button>
+                    </Box>
+                )}
+                
+                renderDetailPanel={({ row }) => (
+
+                    <Box
+                      sx={{
+                        display: 'grid',
+                        //margin: 'auto',
+                        gridTemplateColumns: '1fr 1fr',
+                        width: '100%',
+                      }}
+                    >
+                   
+                         <div className="row"> 
+                        {
+                            tissListSelect.map((tiss) => <div class="col-md-3">{row.original.tissList_array.includes(tiss) ? (<><span className='text-success'>{tiss}: </span><span>&#x2714;</span></>) : ((<><span className='text-danger'>{tiss}: </span><span>&#x2718;</span></>))}</div>)
+                        }
+                        </div>
+                    
+                    
+                    </Box>            
+                  )}
+
+                />
+                </div>
+
+            </Tab>
         </Tabs>
 
             <Plotmodal active={active} geneID={curID} geneName={curName} handleModal={handleModal}/>
 
-            <div>
-            <MaterialReactTable 
-            columns={cols_deseq2} 
-            data={geneDict["deseq2_all"]}
-            enableRowSelection
 
-            muiTableBodyRowProps={({ row }) => ({
-                onClick: row.getToggleSelectedHandler(),
-                sx: { cursor: 'pointer' },
-            })}
-
-            muiTableHeadCellProps={{
-
-                sx: {
-                  '& .Mui-TableHeadCell-Content': {
-        
-                    justifyContent: 'space-between',
-                  },
-                },
-            }}
-
-            renderTopToolbarCustomActions={({ table }) => (
-                <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
-                  <Button
-                    color="primary"
-                    //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
-                    onClick={handleExportData}
-                    startIcon={<FileDownloadIcon />}
-                    variant="contained"
-                  >
-                    Export All genes
-                  </Button>
-        
-                  <Button
-                    disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
-                    //only export selected rows
-                    onClick={() => handleExportRows(table.getSelectedRowModel().rows)}
-                    startIcon={<FileDownloadIcon />}
-                    variant="contained"
-                  >
-                    Export Selection
-                  </Button>
-                </Box>
-              )}
-            />
-            </div>
             </>
 
         ) : (<><br/><div className="container-fluid d-flex justify-content-center"><Loader /></div></>)}

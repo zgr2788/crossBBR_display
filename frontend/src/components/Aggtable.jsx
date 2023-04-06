@@ -95,7 +95,7 @@ const Aggtable = () => {
             header: "Significance", 
             Header: <strong className="text-secondary">Significance</strong>,
             enableColumnFilter : false,
-            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Name, cell.row.original.gene_names)} }>{cell.row.original.Score}</strong>),
+            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Name, cell.row.original.gene_names)} } style={{cursor:'pointer'}}>{cell.row.original.Score}</strong>),
 
             muiTableHeadCellProps: {
                 align: 'center',
@@ -256,11 +256,6 @@ const Aggtable = () => {
             columns={cols} 
             data={genes}
             enableRowSelection
-
-            muiTableBodyRowProps={({ row }) => ({
-                onClick: row.getToggleSelectedHandler(),
-                sx: { cursor: 'pointer' },
-            })}
 
             muiTableHeadCellProps={{
 
