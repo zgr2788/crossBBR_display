@@ -18,7 +18,7 @@ const Aggtable = () => {
     const [curID, setCurID] = useState(null)
     const [curName, setCurName] = useState(null)
 
-    const longcolsize = 150
+    const longcolsize = 50
 
     const fetchGenes = async () => {
 
@@ -49,155 +49,252 @@ const Aggtable = () => {
           {
             accessorKey: 'Name',
             header: "Gene ID", 
-            Header: <strong className="text-secondary">Gene ID</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "110px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Gene ID</strong>
+              </div>
+            ),
             enableClickToCopy: true,
             enableSorting: false,
+            enableColumnActions: false,
 
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+
           },
           {
             accessorKey: 'gene_names',
             header: "Gene Name", 
-            Header: <strong className="text-secondary">Gene Name</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "110px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Gene Name</strong>
+              </div>
+            ),
             enableSorting: false,
             enableClickToCopy: true,
+            enableColumnActions: false,
             Cell: ({ cell }) => <a href={`https://www.proteinatlas.org/search/${cell.row.original.gene_names}`} target="_blank" rel="noreferrer">{cell.row.original.gene_names}</a> ,
 
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
           },
           {
             accessorKey: 'uniprot',
             header: "Uniprot ID", 
-            Header: <strong className="text-secondary">Uniprot ID</strong>,
+            Header:() => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "110px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Uniprot ID</strong>
+              </div>
+            ),
             Cell: ({ cell }) => (<>{cell.row.original.uniprot ?  <a href={`https://www.ebi.ac.uk/interpro/search/text/${cell.row.original.uniprot}`} target="_blank" rel="noreferrer">{cell.row.original.uniprot}</a> : <span>Not matched</span>}</>) ,
             enableSorting: false,
             enableClickToCopy: true,
+            enableColumnActions: false,
 
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
           },
           {
             accessorKey: 'Score',
             header: "Significance", 
-            Header: <strong className="text-secondary">Significance</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "110px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Significance</strong>
+              </div>
+            ),
             enableColumnFilter : false,
+            enableColumnActions: false,
             Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Name, cell.row.original.gene_names)} } style={{cursor:'pointer'}}>{cell.row.original.Score}</strong>),
 
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
           },
           {
             accessorKey: 'DESeq2_Appeared',
             header: "DESeq2", 
-            Header: <strong className="text-secondary">Top in DESeq2 aggregate?</strong>,
+            Header:() => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "120px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                DESeq2 Aggregate
+              </div>
+            ),
             size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
+            Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Appeared ?  <span style={{ marginRight: "17px" }}>&#x2714;</span> : <span style={{ marginRight: "17px" }}>&#x2718;</span>}</>) ,
             filterVariant: 'checkbox',            
             enableSorting: false,
+            enableColumnActions: false,
 
             muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
           },
           {
             accessorKey: 'DESeq2_Validated',
             header: "DESeq2 Bootstrap", 
-            Header: <strong className="text-secondary">Top in DESeq2 bootstrap?</strong>,
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "120px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                DESeq2 Bootstrap
+              </div>
+            ),
             size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
+            Cell: ({ cell }) => (<>{cell.row.original.DESeq2_Validated ?  <span style={{ marginRight: "17px" }}>&#x2714;</span> : <span style={{ marginRight: "17px" }}>&#x2718;</span>}</>) ,
             filterVariant: 'checkbox',        
             enableSorting: false,
+            enableColumnActions: false,
 
             muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+
           },
           {
             accessorKey: 'Wilcox_Appeared',
             header: "WRST", 
-            Header: <strong className="text-secondary">Top in WRST aggregate?</strong>,
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "120px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                WRST Aggregate
+              </div>
+            ),
             size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Appeared ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
+            Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Appeared ?  <span style={{ marginRight: "17px" }}>&#x2714;</span> : <span style={{ marginRight: "17px" }}>&#x2718;</span>}</>) ,
             filterVariant: 'checkbox',
             enableSorting: false,
+            enableColumnActions: false,
 
             muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+
           },
           {
             accessorKey: 'Wilcox_Validated',
             header: "WRST Bootstrap", 
-            Header: <strong className="text-secondary">Top in WRST bootstrap?</strong>,
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "120px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                WRST Bootstrap
+              </div>
+            ),
             size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Validated ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>) ,
+            Cell: ({ cell }) => (<>{cell.row.original.Wilcox_Validated ?  <span style={{ marginRight: "17px" }}>&#x2714;</span> : <span style={{ marginRight: "17px" }}>&#x2718;</span>}</>) ,
             filterVariant: 'checkbox',
             enableSorting: false,
+            enableColumnActions: false,
 
             muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+
           },
           {
             accessorKey: 'Prot_Evidence',
             header: "Protein Evidence", 
-            Header: <strong className="text-secondary">Protein Evidence?</strong>,
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "120px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Protein Evidence
+              </div>
+            ),
             size: longcolsize,
-            Cell: ({ cell }) => (<>{cell.row.original.Prot_Evidence ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>),
+            Cell: ({ cell }) => (<>{cell.row.original.Prot_Evidence ?  <span style={{ marginRight: "17px" }}>&#x2714;</span> : <span style={{ marginRight: "17px" }}>&#x2718;</span>}</>),
             filterVariant: 'checkbox',
             enableSorting: false,
+            enableColumnActions: false,
 
             muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
           },
           {
             accessorKey: 'mean_perf_score',
             header: "Mean Perfusion Score", 
-            Header: <strong className="text-secondary">Perfusion Score</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "110px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Perfusion Score</strong>
+              </div>
+            ),
             enableColumnFilter : false,
+            enableColumnActions: false,
             Cell: ({ cell }) => <strong>{cell.row.original.mean_perf_score}</strong>, 
-
-
-            muiTableHeadCellProps: {
-                align: 'center',
-              },
-              muiTableBodyCellProps: {
-                align: 'center',
-              },
           },
         ],[],);
     
