@@ -19,6 +19,7 @@ counts = "Counts/"
 aggregs = "Aggregs/"
 dumps = "Lists/"
 
+# Constants, reads etc.
 count_dict = {fname : _pd.read_csv(counts + fname, index_col=0) for fname in os.listdir(counts) if ".csv" in fname}
 aggreg_dict = {fname : _pd.read_csv(aggregs + fname, index_col=0) for fname in os.listdir(aggregs) if ".csv" in fname}
 dumps_dict = {fname : _pd.read_csv(dumps + fname, index_col=0) for fname in os.listdir(dumps) if ".csv" in fname}
@@ -26,6 +27,8 @@ sample_table = _pd.read_csv("Metadata/sampleTable_final_ideal_dots.csv")
 perf_score_ref  = _pd.read_csv("Metadata/gene_perf_rate_master.csv", index_col=0)
 sample_tissue_map = { sample_table["SRR_ID"][i] : sample_table["Tissue_type"][i] for i in range(len(sample_table))}
 tissues = list(set(list(sample_tissue_map.values())))
+tissListFull = ['Cornea', 'Heart', 'Liver', 'Umbilical vein', 'Lymph node', 'Sciatic nerve', 'Colon', 'Vessel', 'Peripheral blood', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']
+tissListSelect = ['Colon', 'Heart', 'Intestine', 'Kidney', 'Liver', 'Lung', 'Vessel']
 
 # Wrapper for gene perfusion scores
 def perfWrapper(gene_id, ref=perf_score_ref):
@@ -49,11 +52,24 @@ for key in list(dumps_dict.keys()):
     dumps_dict[key]["tissList_array"] = dumps_dict[key]["tissList"].apply(literal_eval)
     dumps_dict[key]["tissList_array"] = dumps_dict[key]["tissList_array"].apply(lambda x: [tiss.replace('.', ' ') for tiss in x ])
 
-    if 'deseq2' in key:
-        dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "log2FoldChange", "appCount", "tissList", "tissList_array"]]
-    
+    if 'all' in key:
+        for tiss in tissListFull:
+            dumps_dict[key][tiss] = dumps_dict[key]["tissList_array"].apply(lambda x : tiss in x)
+
     else:
-        dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "appCount", "tissList", "tissList_array"]]
+        for tiss in tissListSelect:
+            dumps_dict[key][tiss] = dumps_dict[key]["tissList_array"].apply(lambda x : tiss in x)
+
+
+    # Precise re-order before send
+    if key == "deseq2_all.csv":
+        dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "log2FoldChange", "appCount", 'Cornea', 'Heart', 'Liver', 'Umbilical vein', 'Lymph node', 'Sciatic nerve', 'Colon', 'Vessel', 'Peripheral blood', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']]
+
+    #if 'deseq2' in key:
+    #    dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "log2FoldChange", "appCount", "tissList_array"]]
+    #
+    #else:
+    #    dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "appCount", "tissList_array"]]
 
 
 # Precondition : none

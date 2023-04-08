@@ -60,56 +60,562 @@ const Dumptable = () => {
 
 
     // Column operations for DESeq2 tables
-    const cols_deseq2 = useMemo(
+    const colsDeseq2All = useMemo(
         () => [
           {
             accessorKey: 'Gene_ID',
             header: "Gene ID", 
-            Header: <strong className="text-secondary">Gene ID</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Gene ID</strong>
+              </div>
+            ),
             enableClickToCopy: true,
             enableSorting: false,
+            enableColumnActions: false,
 
           },
           {
             accessorKey: 'hgncSymbol',
             header: "Gene Name", 
-            Header: <strong className="text-secondary">Gene Name</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Gene Name</strong>
+              </div>
+            ),
             enableSorting: false,
             enableClickToCopy: true,
+            enableColumnActions: false,
             Cell: ({ cell }) => <a href={`https://www.proteinatlas.org/search/${cell.row.original.hgncSymbol}`} target="_blank" rel="noreferrer">{cell.row.original.hgncSymbol}</a> ,
             
           },
           {
             accessorKey: 'sigAdj',
             header: "Mean Significance", 
-            Header: <strong className="text-secondary">Mean Significance</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Mean Significance</strong>
+              </div>
+            ),
             enableColumnFilter : false,
+            enableColumnActions: false,
             Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.sigAdj}</strong>),
 
           },
           {
             accessorKey: 'log2FoldChange',
             header: "Mean Fold Change", 
-            Header: <strong className="text-secondary">Mean Fold Change</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Mean Fold Change</strong>
+              </div>
+            ),
             enableColumnFilter : false,
+            enableColumnActions: false,
             Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.sigAdj}</strong>),
           },
           {
             accessorKey: 'appCount',
             header: "Appearance Count", 
-            Header: <strong className="text-secondary">Appearance Count</strong>,
+            Header: () => (
+              <div
+                style={{
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <strong style = {{ display: "inline-block", alignSelf: "flex-end" }}>Appearance Count</strong>
+              </div>
+            ),
             enableColumnFilter : false,
+            enableColumnActions: false,
             Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.appCount}</strong>),
+            
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
 
+          //#############################################
+          // ONE HOT COLUMNS HERE
+          // ############################################
+          {
+            accessorKey: 'Cornea',
+            header: "vs_Cornea", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Cornea
+              </div>
+            ),
+
+            Cell: ({ cell }) => (<>{cell.row.original.Cornea ?  <span>&#x2714;</span> : <span>&#x2718;</span>}</>),
+
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 25,
+
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
           },
           {
-            accessorKey: 'tissList',
-            header: "Significant in Comparison", 
-            Header: <strong className="text-secondary">Significant in Comparison</strong>,
-            size: 150,
+            accessorKey: 'Heart',
+            header: "vs_Heart", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Heart
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original.Heart ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
             enableSorting: false,
-            enableHiding: false
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
           },
+          {
+            accessorKey: 'Liver',
+            header: "vs_Liver", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Liver
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original.Liver ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Umbilical vein',
+            header: "vs_Umbilical_vein", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                U.vein
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Umbilical vein'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 25,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Lymph node',
+            header: "vs_Lymph_node", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                L.node
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Lymph node'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Sciatic nerve',
+            header: "vs_Sciatic_nerve", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                S.nerve
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Sciatic nerve'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Colon',
+            header: "vs_Colon", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Colon
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Colon'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Vessel',
+            header: "vs_Vessel", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Vessel
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Vessel'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Peripheral blood',
+            header: "Peripheral blood", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                P.blood
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Peripheral blood'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Lung',
+            header: "vs_Lung", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Lung
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Lung'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Skin',
+            header: "vs_Skin", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Skin
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Skin'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Kidney',
+            header: "vs_Kidney", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Kidney
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Kidney'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Intestine',
+            header: "vs_Intestine", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Intestine
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Intestine'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+          {
+            accessorKey: 'Tonsil',
+            header: "vs_Tonsil", 
+            Header: () => (
+              <div
+                style={{
+                  transform: "rotate(270deg)",
+                  whiteSpace: "nowrap",
+                  height: "60px", // Set the desired height for the header container
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Tonsil
+              </div>
+            ),
+        
+            Cell: ({ cell }) => (<>{cell.row.original['Tonsil'] ?  <span >&#x2714;</span> : <span >&#x2718;</span>}</>),
+        
+            filterVariant: 'checkbox',
+            enableSorting: false,
+            enableColumnActions: false,
+            size: 50,
+        
+            muiTableHeadCellProps: {
+              align: 'center',
+            },
+            muiTableBodyCellProps: {
+              align: 'center',
+            },
+          },
+        
+
+          //{
+          //  accessorKey: 'tissList',
+          //  header: "Significant in Comparison", 
+          //  Header: <strong className="text-secondary">Significant in Comparison</strong>,
+          //  size: 150,
+          //  enableSorting: false,
+          //  enableHiding: false
+          //},
         ],[],);
 
 
@@ -149,14 +655,14 @@ const Dumptable = () => {
             Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.appCount}</strong>),
 
           },
-          {
-            accessorKey: 'tissList',
-            header: "Significant in Comparison", 
-            Header: <strong className="text-secondary">Significant in Comparison</strong>,
-            size: 150,
-            enableSorting: false,
-            enableHiding: false
-          },
+          //{
+          //  accessorKey: 'tissList',
+          //  header: "Significant in Comparison", 
+          //  Header: <strong className="text-secondary">Significant in Comparison</strong>,
+          //  size: 150,
+          //  enableSorting: false,
+          //  enableHiding: false
+          //},
         ],[],);
     
     //CSV export for deseq2
@@ -167,7 +673,7 @@ const Dumptable = () => {
         showLabels: true,
         useBom: true,
         useKeysAsHeaders: false,
-        headers: cols_deseq2.map((c) => c.header),
+        headers: colsDeseq2All.map((c) => c.header),
         filename: "export_list_deseq2"
     };
 
@@ -238,7 +744,7 @@ const Dumptable = () => {
 
                 <div>
                 <MaterialReactTable 
-                columns={cols_deseq2} 
+                columns={colsDeseq2All} 
                 data={geneDict["deseq2_all"]}
                 initialState={{ columnVisibility: { tissList : false } }}
                 globalFilterFn="contains" 
@@ -277,27 +783,6 @@ const Dumptable = () => {
                       </Button>
                     </Box>
                 )}
-                
-                renderDetailPanel={({ row }) => (
-
-                    <Box
-                      sx={{
-                        display: 'grid',
-                        //margin: 'auto',
-                        gridTemplateColumns: '1fr 1fr',
-                        width: '100%',
-                      }}
-                    >
-                   
-                         <div className="row"> 
-                        {
-                            tissListFull.map((tiss) => <div class="col-md-2">{row.original.tissList_array.includes(tiss) ? (<><span className='text-success'>{tiss}: </span><span>&#x2714;</span></>) : ((<><span className='text-danger'>{tiss}: </span><span>&#x2718;</span></>))}</div>)
-                        }
-                        </div>
-                    
-                    
-                    </Box>            
-                  )}
 
                 />
                 </div>
@@ -310,7 +795,7 @@ const Dumptable = () => {
 
             <div>
                 <MaterialReactTable 
-                columns={cols_deseq2} 
+                columns={colsDeseq2All} 
                 data={geneDict["deseq2_select"]}
                 initialState={{ columnVisibility: { tissList : false } }}
                 globalFilterFn="contains" 
