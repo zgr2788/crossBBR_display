@@ -137,7 +137,7 @@ const Aggtable = () => {
                 style={{
                   transform: "rotate(270deg)",
                   whiteSpace: "nowrap",
-                  height: "120px", // Set the desired height for the header container
+                  height: "140px", // Set the desired height for the header container
                   display: "flex",
                   alignItems: "center",
                 }}
@@ -166,7 +166,7 @@ const Aggtable = () => {
                 style={{
                   transform: "rotate(270deg)",
                   whiteSpace: "nowrap",
-                  height: "120px", // Set the desired height for the header container
+                  height: "140px", // Set the desired height for the header container
                   display: "flex",
                   alignItems: "center",
                 }}
@@ -196,7 +196,7 @@ const Aggtable = () => {
                 style={{
                   transform: "rotate(270deg)",
                   whiteSpace: "nowrap",
-                  height: "120px", // Set the desired height for the header container
+                  height: "140px", // Set the desired height for the header container
                   display: "flex",
                   alignItems: "center",
                 }}
@@ -226,7 +226,7 @@ const Aggtable = () => {
                 style={{
                   transform: "rotate(270deg)",
                   whiteSpace: "nowrap",
-                  height: "120px", // Set the desired height for the header container
+                  height: "140px", // Set the desired height for the header container
                   display: "flex",
                   alignItems: "center",
                 }}
@@ -256,7 +256,7 @@ const Aggtable = () => {
                 style={{
                   transform: "rotate(270deg)",
                   whiteSpace: "nowrap",
-                  height: "120px", // Set the desired height for the header container
+                  height: "140px", // Set the desired height for the header container
                   display: "flex",
                   alignItems: "center",
                 }}

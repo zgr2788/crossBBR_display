@@ -19,7 +19,11 @@ const Dumptable = () => {
         deseq2_all : [],
         deseq2_select : [],
         wilcox_all : [],
-        wilcox_select : []
+        wilcox_select : [],
+        deseq2_all_d : [],
+        deseq2_select_d : [],
+        wilcox_all_d : [],
+        wilcox_select_d : []
     })
 
     const [active, setActive] = useState(false)
@@ -141,7 +145,7 @@ const Dumptable = () => {
             ),
             enableColumnFilter : false,
             enableColumnActions: false,
-            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.sigAdj}</strong>),
+            Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.log2FoldChange}</strong>),
           },
           {
             accessorKey: 'appCount',
@@ -690,7 +694,7 @@ const Dumptable = () => {
           ),
           enableColumnFilter : false,
           enableColumnActions: false,
-          Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.sigAdj}</strong>),
+          Cell: ({ cell }) => (<strong onClick={ () => {handlePlot(cell.row.original.Gene_ID, cell.row.original.hgncSymbol)} } style={{cursor:'pointer'}}>{cell.row.original.log2FoldChange}</strong>),
         },
         {
           accessorKey: 'appCount',
@@ -1840,10 +1844,14 @@ const Dumptable = () => {
     };
 
     const exporters = {
-      'deseq2_all' : new ExportToCsv(csvOptions_Deseq2All), 
-      'deseq2_select' : new ExportToCsv(csvOptions_Deseq2Select), 
-      'wilcox_all' : new ExportToCsv(csvOptions_WilcoxAll), 
-      'wilcox_select' : new ExportToCsv(csvOptions_WilcoxSelect)
+      'deseq2_all' : new ExportToCsv(csvOptions_Deseq2All),
+      'deseq2_all_d' : new ExportToCsv(csvOptions_Deseq2All), 
+      'deseq2_select' : new ExportToCsv(csvOptions_Deseq2Select),
+      'deseq2_select_d' : new ExportToCsv(csvOptions_Deseq2Select), 
+      'wilcox_all' : new ExportToCsv(csvOptions_WilcoxAll),
+      'wilcox_all_d' : new ExportToCsv(csvOptions_WilcoxAll), 
+      'wilcox_select' : new ExportToCsv(csvOptions_WilcoxSelect),
+      'wilcox_select_d' : new ExportToCsv(csvOptions_WilcoxSelect)
     }
 
     const handleExportRows = (key, rows) => {
@@ -1882,10 +1890,12 @@ const Dumptable = () => {
             <>
 
         <Tabs
+            fill
+            justify
             id="gene-list-tabs"
             className="mb-3"
           >
-            <Tab eventKey="deseq2_all" title="DESeq2">
+            <Tab eventKey="deseq2_all" title="DESeq2 - UP">
                 
 
                 <div>
@@ -1935,7 +1945,7 @@ const Dumptable = () => {
             </Tab>
 
 
-            <Tab eventKey="deseq2_select" title="DESeq2 - Tissue Subset">
+            <Tab eventKey="deseq2_select" title="DESeq2 - UP - Subset">
 
             <div>
                 <MaterialReactTable 
@@ -1982,7 +1992,7 @@ const Dumptable = () => {
             </Tab>
 
 
-            <Tab eventKey="wilcox_all" title="Wilcoxon rank-sum test" >
+            <Tab eventKey="wilcox_all" title="WRST - UP" >
 
             <div>
                 <MaterialReactTable 
@@ -2029,7 +2039,7 @@ const Dumptable = () => {
 
             </Tab>
 
-            <Tab eventKey="wilcox_select" title="Wilcoxon rank-sum test - Tissue Subset">
+            <Tab eventKey="wilcox_select" title="WRST - UP - Subset">
             <div>
                 <MaterialReactTable 
                 columns={colsWilcoxSelect} 
@@ -2073,12 +2083,202 @@ const Dumptable = () => {
                 </div>
 
             </Tab>
+
+
+            <Tab eventKey="deseq2_all_d" title="DESeq2 - DN">
+                
+
+                <div>
+                <MaterialReactTable 
+                columns={colsDeseq2All} 
+                data={geneDict["deseq2_all_d"]}
+                enableRowSelection
+
+                muiTableHeadCellProps={{
+
+                    sx: {
+                      '& .Mui-TableHeadCell-Content': {
+                    
+                        justifyContent: 'space-between',
+                      },
+                    },
+                }}
+
+                renderTopToolbarCustomActions={({ table }) => (
+                    <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportData("deseq2_all_d")}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export All genes
+                      </Button>
+                
+                      <Button
+                        disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                        //only export selected rows
+                        onClick={() => handleExportRows("deseq2_all_d", table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export Selection
+                      </Button>
+                    </Box>
+                )}
+
+                />
+                </div>
+
+
+            </Tab>
+
+            <Tab eventKey="deseq2_select_d" title="DESeq2 - DN - Subset">
+
+            <div>
+                <MaterialReactTable 
+                columns={colsDeseq2Select} 
+                data={geneDict["deseq2_select_d"]}
+                enableRowSelection
+
+                muiTableHeadCellProps={{
+
+                    sx: {
+                      '& .Mui-TableHeadCell-Content': {
+                    
+                        justifyContent: 'space-between',
+                      },
+                    },
+                }}
+
+                renderTopToolbarCustomActions={({ table }) => (
+                    <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportData("deseq2_select_D")}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export All genes
+                      </Button>
+                
+                      <Button
+                        disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                        //only export selected rows
+                        onClick={() => handleExportRows("deseq2_select_D", table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export Selection
+                      </Button>
+                    </Box>
+                )}
+                />
+                </div>
+
+            </Tab>
+
+
+            <Tab eventKey="wilcox_all_d" title="WRST - DN" >
+
+            <div>
+                <MaterialReactTable 
+                columns={colsWilcoxAll} 
+                data={geneDict["wilcox_all_d"]}
+                enableRowSelection
+
+                muiTableHeadCellProps={{
+
+                    sx: {
+                      '& .Mui-TableHeadCell-Content': {
+                    
+                        justifyContent: 'space-between',
+                      },
+                    },
+                }}
+
+                renderTopToolbarCustomActions={({ table }) => (
+                    <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportData("wilcox_all_d")}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export All genes
+                      </Button>
+                
+                      <Button
+                        disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                        //only export selected rows
+                        onClick={() => handleExportRows("wilcox_all_d", table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export Selection
+                      </Button>
+                    </Box>
+                )}
+
+                />
+                </div>
+
+            </Tab>
+
+
+            <Tab eventKey="wilcox_select_d" title="WRST - DN - Subset">
+            <div>
+                <MaterialReactTable 
+                columns={colsWilcoxSelect} 
+                data={geneDict["wilcox_select_d"]}
+                enableRowSelection
+
+                muiTableHeadCellProps={{
+
+                    sx: {
+                      '& .Mui-TableHeadCell-Content': {
+                    
+                        justifyContent: 'space-between',
+                      },
+                    },
+                }}
+
+                renderTopToolbarCustomActions={({ table }) => (
+                    <Box sx={{ display: 'flex', gap: '1rem', p: '0.5rem', flexWrap: 'wrap' }}>
+                      <Button
+                        color="primary"
+                        //export all data that is currently in the table (ignore pagination, sorting, filtering, etc.)
+                        onClick={() => handleExportData("wilcox_select_d")}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export All genes
+                      </Button>
+                
+                      <Button
+                        disabled={!table.getIsSomeRowsSelected() && !table.getIsAllRowsSelected()}
+                        //only export selected rows
+                        onClick={() => handleExportRows("wilcox_select_d", table.getSelectedRowModel().rows)}
+                        startIcon={<FileDownloadIcon />}
+                        variant="contained"
+                      >
+                        Export Selection
+                      </Button>
+                    </Box>
+                )}
+                />
+                </div>
+
+            </Tab>
         </Tabs>
 
             <Plotmodal active={active} geneID={curID} geneName={curName} handleModal={handleModal}/>
 
 
-            </>
+        </>
 
         ) : (<><br/><div className="container-fluid d-flex justify-content-center"><Loader /></div></>)}
       </>

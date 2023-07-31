@@ -23,7 +23,7 @@ async def ex_main_page(typeof: str):
 @app.get("/api/omics/dumps/{typeof}")
 async def dump_tables(typeof: str):
 
-    if typeof not in ["deseq2_all", "deseq2_select", "wilcox_all", "wilcox_select"]:
+    if typeof not in ["deseq2_all", "deseq2_select", "wilcox_all", "wilcox_select", "deseq2_all_d", "deseq2_select_d", "wilcox_all_d", "wilcox_select_d"]:
         raise _fastapi.HTTPException(status_code = 404, detail = "Table identifier not found!")
 
     gene_list = await _services.fetchDumpList(typeof=typeof)

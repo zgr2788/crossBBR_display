@@ -2,48 +2,62 @@
 
 import React from "react";
 import './Fade.css'
+import Footer from "./Footer";
 
 const Homepage = () => {
 
     return(
-      <div className="fadeIn">
-          <svg xmlns="http://www.w3.org/2000/svg" className="d-block user-select-none container-fluid p-4" width="100%" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180">
-              <rect width="100%" height="100%" fill="#868e96"></rect>
-              <text x="50%" y="50%" fill="#dee2e6" dy=".3em" textAnchor="middle">Home Banner - TBD</text>
-          </svg>
+      <div className="fadeIn mx-4">
+          
 
           <div className="container-fluid p-4">
-            <div className="row">
+            <div className="row px-5 mx-5 pt-5">
+              <img src="/images/home_banner.png" className="img-fluid" alt="BBB-DEX" ></img>
+            </div>
+
+            <div className="row pt-4 mt-5">
               <h1>About</h1>
-              <br />
-              <p>Vestibulum pretium metus aliquam tortor dapibus, non vestibulum lorem accumsan. Vestibulum interdum tortor vitae nisl laoreet, in interdum lacus consequat. In tempor dolor at nulla dictum, quis pretium metus euismod. Nam feugiat sit amet enim vitae blandit. Integer facilisis justo at velit pharetra ultricies. Sed eu lectus non felis blandit sagittis. Ut hendrerit non dolor id aliquam. Pellentesque consequat nisi vel eros rhoncus, eget consectetur metus rhoncus. In sed neque mollis, rhoncus turpis in, feugiat felis. Quisque posuere euismod consequat. Praesent vitae ante et lacus vehicula fringilla in ac ligula. Morbi nec suscipit tortor. Sed aliquet lorem quam, et molestie nisl vulputate ac. Donec faucibus ligula vel hendrerit sollicitudin. In hac habitasse platea dictumst.</p>
+              <p>
+                The BBB-DEX (short for Blood-Brain Barrier Differential Expression eXplorer - or the BBB inDEX) resource aims to provide a reference for 
+                differentially expressed genes in the blood-brain barrier (BBB) - with a special emphasis on genes posessing transmembrane helices - in order 
+                to facilitate future research concerned with finding therapeutic targets on the BBB for drug delivery to the brain. It was created by combining
+                a total of 264 publicly available healthy bulk RNA-Seq samples from 63 studies encompassing 16 different tissues including the BBB. To create the resource, 
+                various configurations for differential gene expression testing (employing <a href="https://doi.org/10.1186/s13059-014-0550-8" target="_blank" rel="noreferrer">DESeq2</a> & <a href="https://doi.org/10.1186/s13059-022-02648-4" target="_blank" rel="noreferrer">WRST</a> as 
+                statistical tests) and <a href=" https://doi.org/10.1093/bioinformatics/btr709" target="_blank" rel="noreferrer">Robust Rank Aggregation (RRA)</a> were 
+                used alongside other minor additions.
+              </p>
             </div>
-            <br />
-            <div className="row">
-              <h1>Contents</h1>
-              <br />
-              <p>Vestibulum pretium metus aliquam tortor dapibus, non vestibulum lorem accumsan. Vestibulum interdum tortor vitae nisl laoreet, in interdum lacus consequat. In tempor dolor at nulla dictum, quis pretium metus euismod. Nam feugiat sit amet enim vitae blandit. Integer facilisis justo at velit pharetra ultricies. Sed eu lectus non felis blandit sagittis. Ut hendrerit non dolor id aliquam. Pellentesque consequat nisi vel eros rhoncus, eget consectetur metus rhoncus. In sed neque mollis, rhoncus turpis in, feugiat felis. Quisque posuere euismod consequat. Praesent vitae ante et lacus vehicula fringilla in ac ligula. Morbi nec suscipit tortor. Sed aliquet lorem quam, et molestie nisl vulputate ac. Donec faucibus ligula vel hendrerit sollicitudin. In hac habitasse platea dictumst.</p>
+            
+
+            <div className="row pt-4">
+              <h1>Additional Information</h1>
+              <p>
+                Source code for the website is available under the GitHub repository for users who wish to keep a local copy of the resource.
+                Similarly, raw result lists can be accessed as part of the source code for additional analyses if needed. For contact and support,
+                use either the GitHub issues page or the contact addresses under the <i><b>Support</b></i> tab. Finally, the website was not designed to
+                be used with mobile devices, so additional bugs may be present.   
+              </p>
             </div>
-            <br />
-            <div className="row">
-              <h1>Layout</h1>
-              <br />
-              <p>Vestibulum pretium metus aliquam tortor dapibus, non vestibulum lorem accumsan. Vestibulum interdum tortor vitae nisl laoreet, in interdum lacus consequat. In tempor dolor at nulla dictum, quis pretium metus euismod. Nam feugiat sit amet enim vitae blandit. Integer facilisis justo at velit pharetra ultricies. Sed eu lectus non felis blandit sagittis. Ut hendrerit non dolor id aliquam. Pellentesque consequat nisi vel eros rhoncus, eget consectetur metus rhoncus. In sed neque mollis, rhoncus turpis in, feugiat felis. Quisque posuere euismod consequat. Praesent vitae ante et lacus vehicula fringilla in ac ligula. Morbi nec suscipit tortor. Sed aliquet lorem quam, et molestie nisl vulputate ac. Donec faucibus ligula vel hendrerit sollicitudin. In hac habitasse platea dictumst.</p>
+
+            <div className="row pt-4">
+              <h1>Acknowledgements</h1>
+              <p>
+                This website was created with the efforts of Sabancı University faculty, particularly with the inputs of <a href="https://adebalilab.org/" target = "_blank" rel="noreferrer">Ogün Adebali</a> and 
+                <a href="https://mustafaoglulab.com/" target = "_blank" rel="noreferrer"> Nur Mustafaoğlu</a>. Special thanks to <a href="https://tfguclu.github.io/" target = "_blank" rel="noreferrer">Tandaç Furkan Güçlü</a> and 
+                <a href="https://zeynepkilinc.github.io/" target = "_blank" rel="noreferrer"> Zeynep Kılınç</a>, for their inputs as the first testers of the resource. This 
+                resource is a part of the project supported by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) 1001 program.  
+              </p>
             </div>
+
+            
+
+            <div className="row mx-0 pt-4">
+              <Footer />
+            </div>
+           
           </div>
 
-          <footer id="footer" className="container-fluid p-4">
-            <ul className="list-group list-group-horizontal">
-              <li className="list-group-item bg-transparent">GitHub</li>
-              <li className="list-group-item bg-transparent">Links-1</li>
-              <li className="list-group-item bg-transparent">Links-2</li>
-            </ul>
-            <br />
-            <div className="row">
-              <p>License info...</p>
-              <p>Acknowledgements...</p>
-            </div>
-          </footer>
+
       </div>
     );
 

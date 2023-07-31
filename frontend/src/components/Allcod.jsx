@@ -4,6 +4,7 @@ import {React} from "react";
 import { TableProvider } from "../context/TableContext";
 import './Fade.css';
 import Dumptable from "./Dumptable";
+import Footer from "./Footer";
 
 
 
@@ -11,75 +12,60 @@ import Dumptable from "./Dumptable";
 const Allcod = () => {
 
   return(
-    <div className="fadeIn">
+    <div className="fadeIn mx-4">
       <br />
       <div className="container-fluid">
-        <div className="row">
-          <h1>Browse gene tables from tests</h1>
+        <div className="row pt-2">
+          <h1 className="px-2">Browse Merged Results Tables</h1>
         </div>
 
-        <br />
-
 
         <div className="row">
-          <h3 className="text-muted">Columns</h3>
+          <h3 className="text-muted pt-4">Help</h3>
           <p>
-            <ul>
-              <li>
-                <strong>Gene ID:</strong> Ensembl gene ID for the given gene.
-              </li>
-              <li>
-                <strong>Gene Name:</strong> Matched HGNC name for the given ID.
-              </li>
-              <li>
-                <strong>Mean Significance:</strong> Significance (-log10 P-adjusted) for gene, averaged over all comparisons where the gene was significantly expressed. 
-              </li>
-              <li>
-                <strong>Mean Fold Change:</strong> Fold Change for gene, averaged over all comparisons where the gene was significantly expressed.
-              </li>
-              <li>
-                <strong>Appearance Count:</strong> Number of comparisons this gene yielded significant. Maximum 14 for all tissues and 7 for tissue subsetted lists.
-              </li>
-            </ul>
+            This section includes the merged results tables for all possible combinations of the following 3 binary conditions: the statistical test performed 
+            (marked by <i><b>DESeq2</b></i> or <i><b>WRST</b></i>), whether the genes of interest were overexpressed or underexpressed in BBB samples 
+            (marked by <i><b>UP</b></i> or <i><b>DN</b></i>), and whether all of the data or select tissues were considered during testing 
+            (marked by <i><b>Subset</b></i>). Use the tabs to navigate between lists.
+
+            <br />
+
+            <i><b className="text-info">Click on the significance value of a gene to view its normalized count distribution across samples.</b></i>
           </p>
         </div>
 
-        <br />
 
         <div className="row">
-          <h3 className="text-muted">Features</h3>
-            <p>
-              <ul>
-                <li>
-                  <strong>Sorts & Filters:</strong> Click <i>Numeric</i> columns to sort ascending/descending. Text search/filter is possible for the 
-                  <i> Gene ID & Gene Name</i> columns. For the <i>Top in ...?</i> columns, it is possible to filter for true/false rows. To search text within the entire table, use
-                  the search function in top right.  
-                </li>
-                <li>
-                  <strong>Toolbar:</strong> Select which columns to display, density of the display, show/hide global search & filters, and make the table fullscreen.
-                </li>
-                <li>
-                  <strong>Export:</strong> To export the entire table (does not respect ordering/filtering), use the <i>Export All Genes</i> button. To export selected rows with respect to order,
-                  use the <i>Export Selection</i> button.
-                </li>
-                <li>
-                  <strong>Click to Copy / Search / Get Counts:</strong> For the <i>Gene ID</i> column, click the Ensembl ID to copy it to your clipboard. For the <i>Gene Name</i> column, click the text to
-                  be taken to search the corresponding entry on Human Protein Atlas. Click the values in <i >Numeric</i> columns to check the count distribution for samples. 
-                </li>
-                <li>
-                  <strong>Tissue Search (Coarse):</strong> Using the table-wide toolbar (top right next to filters icon), enter a tissue name to search genes which were significant in only that comparison. May not work properly for multiple tissues separated by whitespace. 
-                </li>
-              </ul>
-            </p>
-            
-
+          <h3 className="text-muted pt-4">Columns</h3>
+            <ul>
+              <li className="mx-3">
+                <strong>Gene ID:</strong> Ensembl gene ID for the given gene.
+              </li>
+              <li className="mx-3">
+                <strong>Gene Name:</strong> Matched HGNC symbol for the given ID.
+              </li>
+              <li className="mx-3">
+                <strong>Mean Significance:</strong> Significance (<i><b>-log10 of adjusted P value</b></i>) for the given gene, averaged over all comparisons under the selected conditions where the gene was differentially expressed. 
+              </li>
+              <li className="mx-3">
+                <strong>Mean Fold Change:</strong> Fold change (<i><b>log2 -- BBB counts in the numerator</b></i>) for the given gene, averaged over all comparisons under the selected conditions where the gene was differentially expressed.
+              </li>
+              <li className="mx-3">
+                <strong>Appearance Count:</strong> Number of comparisons where this gene was differentially expressed under the selected conditions. Maximum possible is 15 for all tissues and 7 for tissue subsetted lists.
+              </li>
+            </ul>
         </div>
 
-        <br />
-        <br /> 
-        <TableProvider>        
-          <Dumptable/>
-        </TableProvider>
+        <div className="row pt-4">
+          <TableProvider>        
+            <Dumptable/>
+          </TableProvider>
+        </div>
+
+        
+        <div className="row mx-1 pt-4">
+          <Footer />
+        </div>
       </div>  
     </div>
   );

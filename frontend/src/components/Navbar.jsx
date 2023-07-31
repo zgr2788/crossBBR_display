@@ -22,7 +22,7 @@ const Navbar = () => {
   return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div className="container-fluid">
-        <span className="navbar-brand"><h1><p className="text-primary">BBB Data Repository</p></h1></span>
+        <span className="navbar-brand"><h1><p className="text-primary">BBB-DEX</p></h1></span>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -35,13 +35,13 @@ const Navbar = () => {
                 {pageArgs === "trmemfoc" ? <Navlink text={"Transmembrane Focus"} isActive={true}/> :  <Navlink text={"Transmembrane Focus"} isActive={false} pageArg="trmemfoc"/>}
               </li>
               <li className="nav-item px-5">
-                {pageArgs === "allcod" ? <Navlink text={"All Coding Genes"} isActive={true}/> :  <Navlink text={"All Coding Genes"} isActive={false} pageArg="allcod"/>}
+                {pageArgs === "allcod" ? <Navlink text={"All Genes"} isActive={true}/> :  <Navlink text={"All Genes"} isActive={false} pageArg="allcod"/>}
               </li>
               <li className="nav-item px-5">
                 {pageArgs === "methods" ? <Navlink text={"Methods"} isActive={true}/> :  <Navlink text={"Methods"} isActive={false} pageArg="methods"/>}
               </li>
               <li className="nav-item px-5">
-                {pageArgs === "test" ? <Navlink text={"Testing"} isActive={true}/> :  <Navlink text={"Testing"} isActive={false} pageArg="test"/>}
+                {pageArgs === "test" ? <Navlink text={"Support"} isActive={true}/> :  <Navlink text={"Support"} isActive={false} pageArg="test"/>}
               </li>
           </ul>
         </div>

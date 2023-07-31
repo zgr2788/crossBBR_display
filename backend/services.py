@@ -62,14 +62,9 @@ for key in list(dumps_dict.keys()):
 
 
     # Precise re-order before send
-    if key == "deseq2_all.csv":
+    if "deseq2_all" in key:
         dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "log2FoldChange", "appCount", 'Cornea', 'Heart', 'Liver', 'Umbilical vein', 'Lymph node', 'Sciatic nerve', 'Colon', 'Vessel', 'Peripheral blood', 'Lung', 'Skin', 'Kidney', 'Intestine', 'Tonsil']]
-
-    #if 'deseq2' in key:
-    #    dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "log2FoldChange", "appCount", "tissList_array"]]
-    #
-    #else:
-    #    dumps_dict[key] = dumps_dict[key][["Gene_ID", "hgncSymbol", "sigAdj", "appCount", "tissList_array"]]
+    
 
 
 # Precondition : none
