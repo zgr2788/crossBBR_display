@@ -51,7 +51,7 @@ const Homepage = () => {
 
             
 
-            <div className="row mx-0 pt-4">
+            <div className="row mx-0 pt-5">
               <Footer />
             </div>
            
