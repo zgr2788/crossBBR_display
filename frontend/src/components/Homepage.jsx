@@ -43,7 +43,8 @@ const Homepage = () => {
                 This website was created with the efforts of Sabancı University faculty, particularly with the inputs of <a href="https://adebalilab.org/" target = "_blank" rel="noreferrer">Ogün Adebali</a> and 
                 <a href="https://mustafaoglulab.com/" target = "_blank" rel="noreferrer"> Nur Mustafaoğlu</a>. Special thanks to <a href="https://tfguclu.github.io/" target = "_blank" rel="noreferrer">Tandaç Furkan Güçlü</a> and 
                 <a href="https://zeynepkilinc.github.io/" target = "_blank" rel="noreferrer"> Zeynep Kılınç</a>, for their inputs as the first testers of the resource. This 
-                resource is a part of the project supported by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) 1001 program.  
+                resource is a part of the "Determination of transcytosis proteins in cerebral capillaries by computational and experimental methods to carry drugs to the brain" project 
+                supported by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) 1001 program.  
               </p>
             </div>
 
