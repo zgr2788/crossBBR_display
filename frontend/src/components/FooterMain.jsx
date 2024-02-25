@@ -3,6 +3,11 @@ import React from "react";
 const Footer = () => {
     return(
         <footer className="footer">
+
+        <div className="row px-5 mx-5 pb-5">
+              <img src="/images/home_banner.png" className="img-fluid" alt="BBB-DEX" ></img>
+        </div>
+
         <div className="row">
             <ul className="list-group list-group-horizontal container-fluid w-100">
                 <li className="list-group-item bg-transparent"><a href="https://github.com/zgr2788/crossBBR_display" rel="noreferrer" target="_blank" className="mx-4 px-2">GitHub</a></li>

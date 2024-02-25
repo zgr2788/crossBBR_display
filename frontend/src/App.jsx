@@ -15,7 +15,7 @@ const App = () => {
   // Get current page
   const CurrentPage = () => {
     return(
-      <div>
+      <div className='full-height'>
         {{
           home: <Homepage />,
           methods : <Methods />,
@@ -29,7 +29,7 @@ const App = () => {
 
 
   return (
-    <>
+    <div>
 
       <Navbar />
 
@@ -37,7 +37,7 @@ const App = () => {
 
       <Apialerts />
 
-    </>
+    </div>
   );
 }
 

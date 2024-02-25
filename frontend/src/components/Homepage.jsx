@@ -2,23 +2,21 @@
 
 import React from "react";
 import './Fade.css'
-import Footer from "./Footer";
+import Footer from "./FooterMain";
+
 
 const Homepage = () => {
 
     return(
-      <div className="fadeIn mx-4">
+      <div className="fadeIn mx-4 full-height">
           
 
-          <div className="container-fluid p-4">
-            <div className="row px-5 mx-5 pt-5">
-              <img src="/images/home_banner.png" className="img-fluid" alt="BBB-DEX" ></img>
-            </div>
+          <div className="container-fluid position-relative full-height">
 
-            <div className="row pt-4 mt-5">
+            <div className="row pt-2 mt-4">
               <h1>About</h1>
               <p>
-                The BBB-DEX (short for Blood-Brain Barrier Differential Expression eXplorer - or the BBB inDEX) resource aims to provide a reference for 
+                The Brendo (short for Blood-Brain Barrier Differential Expression eXplorer - or the BBB inDEX) resource aims to provide a reference for 
                 differentially expressed genes in the blood-brain barrier (BBB) - with a special emphasis on genes posessing transmembrane helices - in order 
                 to facilitate future research concerned with finding therapeutic targets on the BBB for drug delivery to the brain. It was created by combining
                 a total of 264 publicly available healthy bulk RNA-Seq samples from 63 studies encompassing 16 different tissues including the BBB. To create the resource, 
@@ -49,15 +47,16 @@ const Homepage = () => {
               </p>
             </div>
 
-            
-
-            <div className="row mx-0 pt-5">
+            <div className="row mx-1 position-absolute bottom-0">
               <Footer />
             </div>
-           
+
           </div>
 
 
+          
+       
+           
       </div>
     );
 
