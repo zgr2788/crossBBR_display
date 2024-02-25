@@ -16,7 +16,7 @@ const Homepage = () => {
             <div className="row pt-2 mt-4">
               <h1>About</h1>
               <p>
-                The Brendo (short for Blood-Brain Barrier Differential Expression eXplorer - or the BBB inDEX) resource aims to provide a reference for 
+                The Brendo (short for uniquely transcribed genes in brain endothelial cells) resource aims to provide a reference for 
                 differentially expressed genes in the blood-brain barrier (BBB) - with a special emphasis on genes posessing transmembrane helices - in order 
                 to facilitate future research concerned with finding therapeutic targets on the BBB for drug delivery to the brain. It was created by combining
                 a total of 264 publicly available healthy bulk RNA-Seq samples from 63 studies encompassing 16 different tissues including the BBB. To create the resource, 
