@@ -12,7 +12,7 @@ const Transmemfoc = () => {
   return(
     <div className="fadeIn mx-4">
       <br />
-      <div className="container-fluid">
+      <div className="container-fluid page-body">
         <div className="row pt-2">
           <h1 className="px-2">Transmembrane Focus</h1>
         </div>
@@ -65,7 +65,7 @@ const Transmemfoc = () => {
           </TableProvider>
         </div>
 
-        <div className="row mx-1 pt-4">
+        <div className="footer pt-4">
           <Footer />
         </div>
         

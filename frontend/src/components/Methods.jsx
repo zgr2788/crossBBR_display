@@ -8,7 +8,7 @@ const Methods = () => {
   return(
     <div className="fadeIn mx-4">
 
-      <div className="container-fluid p-4">
+      <div className="container-fluid p-4 page-body">
         <div className="row pt-2">
           <h1 className="px-2">Methods</h1>
           <p>
@@ -68,7 +68,7 @@ const Methods = () => {
           </p>
         </div>
         
-        <div className="row mx-0 pt-5">
+        <div className="footer pt-4">
           <Footer />
         </div>
 

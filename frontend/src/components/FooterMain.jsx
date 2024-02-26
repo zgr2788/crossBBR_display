@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
     return(
-        <footer className="footer">
+        <footer>
 
         <div className="row px-5 mx-5 pb-5">
               <img src="/images/home_banner.png" className="img-fluid" alt="BBB-DEX" ></img>

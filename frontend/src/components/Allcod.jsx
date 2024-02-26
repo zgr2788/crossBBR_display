@@ -14,7 +14,7 @@ const Allcod = () => {
   return(
     <div className="fadeIn mx-4">
       <br />
-      <div className="container-fluid">
+      <div className="container-fluid page-body">
         <div className="row pt-2">
           <h1 className="px-2">Browse Merged Results Tables</h1>
         </div>
@@ -62,8 +62,9 @@ const Allcod = () => {
           </TableProvider>
         </div>
 
+
         
-        <div className="row mx-1 pt-4">
+        <div className="footer pt-4">
           <Footer />
         </div>
       </div>  

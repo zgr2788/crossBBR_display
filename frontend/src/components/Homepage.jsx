@@ -11,7 +11,7 @@ const Homepage = () => {
       <div className="fadeIn mx-4 full-height">
           
 
-          <div className="container-fluid position-relative full-height">
+          <div className="container-fluid position-relative full-height page-body">
 
             <div className="row pt-2 mt-4">
               <h1>About</h1>
@@ -48,7 +48,7 @@ const Homepage = () => {
               </p>
             </div>
 
-            <div className="row mx-1 position-absolute bottom-0">
+            <div className="footer pt-4">
               <Footer />
             </div>
 
